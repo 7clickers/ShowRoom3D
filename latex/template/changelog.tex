@@ -1,0 +1,29 @@
+\section*{Registro delle modifiche}
+
+\newcommand{\changelogTable}[1]{
+	 
+
+\renewcommand{\arraystretch}{1.5}
+\rowcolors{2}{pari}{dispari}
+\begin{longtable}{ 
+		>{\centering}M{0.07\textwidth} 
+		>{\centering}M{0.13\textwidth}
+		>{\centering}M{0.20\textwidth}
+		>{\centering}M{0.17\textwidth} 
+		>{\centering\arraybackslash}M{0.30\textwidth} 
+		 }
+	\rowcolorhead
+	\headertitle{Vers.} &
+	\centering \headertitle{Data} &	
+	\headertitle{Autore} &
+	\headertitle{Ruolo} & 
+	\headertitle{Descrizione} 
+	\endfirsthead	
+	\endhead
+	
+	#1
+
+\end{longtable}
+\vspace{-2em}
+
+}

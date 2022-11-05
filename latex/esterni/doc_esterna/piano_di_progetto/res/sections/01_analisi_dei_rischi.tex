@@ -1,0 +1,69 @@
+\section{Analisi dei rischi}
+Le seguenti tabelle riassumono i possibili rischi a cui potremmo andare incontro aggiudicandoci il capitolato ShowRoom3D.
+\subsection{Legenda}
+\begin{itemize}
+    \item Nome: Identifica il rischio
+    \item Descrizione: Breve descrizione del rischio atteso 
+    \item Prob. : Probabilità che si verifichi il rischio (Bassa=B,Media=M,Alta=A)
+    \item Pericolo: Indica il grado di pericolosità del rischio (Basso=B,Medio=M,Alto=A)
+    \item Precauzioni: Indica i metodi adottati per cercare di impedire che il problema si verifichi
+    \item Contingenza: Indica il modo con cui si intende far fronte al problema 
+\end{itemize}   
+\input{res/risk_table.tex}
+\subsection{Rischi}
+\subsubsection{Rischi Tecnologici}
+\riskTable{
+    \textbf{Inesperienza tecnologica} & Le tecnologie da utilizzare potrebbero essere sconosciute
+     & A & A & Confronto tra pari\tabularnewline
+     \multicolumn{5}{l}{\textbf{Contingenza:} 
+     Impegno comune nell'apprendimento delle tecnologie sconosciute}\tabularnewline
+     \textbf{Problemi software o hardware} & Possibili guasti o problemi ai sistemi
+     hardware e software dei componenti del gruppo
+     & B & M & Condivisione dei file di progetto in un repository comune tramite un sistema di
+     versionamento distribuito\tabularnewline
+     \multicolumn{5}{l}{\textbf{Contingenza:} Continuare il lavoro su un altro dispositivo}\\
+
+}
+
+\subsubsection{Rischi Personali}
+\riskTable{
+    \textbf{Conflitti interni} & I componenti del gruppo potrebbero avere idee contrastanti
+     & M & M & Ognuno esporrà la propria idea con educazione, sotto la guida del Responsabile\tabularnewline
+     \multicolumn{5}{l}{\textbf{Contingenza:}
+     Esaminare ogni idea per scegliere la più adatta}\tabularnewline
+     \textbf{Difficolta comunicative} & La maggior parte degli incontri si svolgeranno per via telematica
+     & B & M & Utilizzo di diversi strumenti per comunicare\tabularnewline
+     \multicolumn{5}{l}{\textbf{Contingenza:}
+     Il Responsabile si assicurerà la partecipazione attiva di tutti}\tabularnewline
+     \textbf{Disponibilita dei componenti} & Gli impegni personali di ogni membro del gruppo consentono disponibilità di
+     lavoro diverse
+     & M & M & Ogni componente comunicherà per tempo la propria disponibilità\tabularnewline
+     \multicolumn{5}{l}{\textbf{Contingenza:} 
+     Ridistribuzione dei compiti}\\
+}
+
+\subsubsection{Rischi Organizzativi}
+\riskTable{
+    \textbf{Pianificazione inadeguata} & Data l'inesperienza del gruppo ad un simile lavoro, potrebbero essere commessi 
+    errori che produrranno un aumento dei costi o spreco di risorse
+     & A & A & Pianificazione su brevi periodi di tempo\tabularnewline
+     \multicolumn{5}{l}{\textbf{Contingenza:}
+     Stilare un nuovo piano di lavoro che migliori l'uso delle risorse}\tabularnewline
+     \textbf{Distibuzione del lavoro} & Lavoro mal distribuito potrebbe portare ad inattività o ad un carico eccessivo
+     di lavoro per componente del gruppo
+     & M & A & Ci si organizzerà tenendo conto delle capacità e delle disponibilità\tabularnewline
+     \multicolumn{5}{l}{\textbf{Contingenza:} 
+     Il lavoro verrà diviso in maniera migliore}\\
+}
+
+\subsubsection{Rischi sui requistiti}
+\riskTable{
+    \textbf{Comprensione dei requisiti} & I requisiti potrebbero non essere compresi a pieno
+     & M & A & Contatti frequenti con i proponenti per chiarire i dubbi\tabularnewline
+     \multicolumn{5}{l}{\textbf{Contingenza:}
+     Contattare il proponente e gestire il problema}\tabularnewline
+     \textbf{Cambiamento dei requisiti} & I requisiti potrebbero subire modifiche dal proponente o dal gruppo
+     & M & M & Tenere in considerazione questa eventualità\tabularnewline
+     \multicolumn{5}{l}{\textbf{Contingenza:}
+     Colloqui di retifica con il proponente}\\
+}
