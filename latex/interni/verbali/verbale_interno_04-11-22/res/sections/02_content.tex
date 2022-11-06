@@ -1,0 +1,34 @@
+\section{Resoconto}
+\subsection{Introduzione}
+Durante questo incontro ci siamo concentrati nel rendere la lettera di presentazione e i file riguardanti la candidatura conformi alle regole ponendo attenzione alle indicazione poste dal docente. 
+
+\subsection{Ripatizione ore}
+Per rendere conforme la candidatura è stato deciso di cambiare il file piano di progetto inserendo una tabellla contenente la dichiarazione degli impegni individuali, quindi abbiamo inserito informazioni riguardanti le ore che ogni membro mette a disposizione durante la settimana e la quantità di ore che ogni membro dovra svolgere per coprire ciascun ruolo. Durante questa operazione ci siamo resi conto che il totale delle ore per persona superava il limite massimo di 95 (infatti erano state stabilite 98 ore per componente del gruppo), quindi ci siamo curati di far rientrare nella norma questo parmametro andando a cambiare le ore assegnate ad ogni ruolo, i costi relativi e il totale delle ore di progetto. 
+
+\subsection{Creazione della nuova repository}
+Sempre al fine di rendere la candidatura conforme alle richieste del docente, abbiamo creato una nuova repository su Github che non fosse associata al nome di un componente del gruppo (a differenza di quella precedente). Abbiamo quindi associato la repo alla e-mail del gruppo e abbiamo colto l'occasione per darci delle norme riguradanti:
+\begin{itemize}
+	\item Titoli e descrizioni dei commit devono seguire uno standard. Ogni volta che viene aggiunto un file bisogna eseguire un commit il cui titolo indichi l'aggiunta del file
+	\item La repo verra gestita in vari rami, al momento sono presenti:
+	\begin{itemize}
+ 		\item il ramo main, dedicato alle release più importanti e formali e che non deve essere utilizzato in fase di sviluppo
+		\item il ramo documentation, dedicato ai file di documentazione
+	\end{itemize}
+	ogni qualvolta si desidera implementare una nuova feature o si vorrà caricare un nuovo file di documentazione, si creerà un nuovo branch corrispondente alla feature da introdurre a partire dal branch di competenza, e si continuerà a lavorare su quel ramo finchè la feature non è completata, a quel punto verrà eseguito un merge col ramo di competenza
+	\item Sono state inseriti dei vincoli tramite i settings di github per quanto rigurarda i push. Ogniqualvolta qualcuno voglia effettuare un push nella repo, quel push dovra essere autorizzato da altri due membri del gruppo (che corrisponderanno ai verificatori)
+	\item I file verranno versionati usando 3 numeri con il formato "\textit{nome\_file\_x.y.z}", dove un cambiamento di \textit{z} indica un piccolo cambiamento, come un fix, un cambiamento di \textit{y} indica un cambiamento più grande, come l'aggiunta di un paragrafo o una piccola feature, mentre  un cambiamento di \textit{x} indica una nuova release del documento
+\end{itemize}
+Tutte queste decisioni verranno inserite nelle norme di progetto.
+
+\subsection{Issue Tracking System}
+Abbiamo deciso di iniziare ad utilizzare l'issue tracking system di Github, iniziando a prendere mano con le milestone e la project-board
+
+\subsection{Obiettivi prossimo periodo}
+Gli obiettivi in programma per il prossimo periodo sono:
+\begin{itemize}
+\item Controllare i file per la candidatura e inviare una mail al docente per portarla a termine
+\item Fare una prima stesura delle norme di progetto
+\item Creare un file gitignore
+\item Una volta aggiudicata la candidatura, discutere le idee di ogni componente rigurdo l'ambito dell'applicazione da sviluppare
+\item Creare una milestone e una project-board ed assegnare le varie issue
+\end{itemize}
