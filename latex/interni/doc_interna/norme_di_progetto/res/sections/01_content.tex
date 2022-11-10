@@ -21,7 +21,6 @@ Questa sezione descrive le convenzioni,gli strumenti e le modalità con cui il g
 Le convenzioni di seguito riportate vengono applicate a tutti i documenti.
 Esse rendono i documenti stilati omogenei tra loro contribuendo a rendere il progetto professionale.
 
-
 \subsubsection{Versionamento}
 Il numero di versione permette di capire lo stato in cui si trova un documento.
 Un documento può trovarsi nei seguenti stati:
@@ -109,16 +108,12 @@ Consiste nell'esaminare i file prodotti da chi ne ha fatto la stesura e segnalar
 la presenza di errori nei concetti esposti.
 Un verificatore dovrà verificare il documento a partire dalle modifiche fatte dopo l'ultima versione verificata.
 Le modifiche da verificare quindi possono essere dedotte dal registro dei cambiamenti presente in ogni documento.
-Una volta verificato un documento un verificatore aggiungerà il propiro nome alla lista dei verificatori 
+Una volta verificato un documento un verificatore aggiungerà il proprio nome alla lista dei verificatori 
 modificando il file titlepage\_input.tex e committando sul branch che si intende integrare in documentation con il merge.
-
-\textit{Nota per i verificatori}: è possibile committare i cambiamenti anche aprendo la Pull Request alla voce file changed premendo 
-edit sul file desiderato.
 Successivamente dovrà spuntare come approvata la Pull Request nella sezione dedicata su GitHub. 
-A questo punto se un secondo verificatore noterà la necessità di qualche altro cambiamento da apportare chi dovrà apportare le modifiche risolverà il conflitto
-dovuto alla modifica fatta dal primo verificatore in locale (accettando le modifiche all'intestazione fatte dal primo verificatore) per continuare con il proprio lavoro e rifare il push del branch
-dopo le modifiche richieste.
-Dopo il push se i file risultano corretti anche dal secondo verificatore esso aggiungerà il proprio nome all'intestazione e creerà la riga di verifica
+A questo punto se un secondo verificatore noterà la necessità di qualche altro cambiamento da apportare chi dovrà apportare le modifiche farà una pull in locale per
+allineare il proprio branch con quello in remoto e continuare con il proprio lavoro.
+Dopo il push delle modifiche se i file risultano corretti anche dal secondo verificatore esso aggiungerà il proprio nome all'intestazione e creerà la riga di verifica
 nel registro delle modifiche inserendo la nuova versione secondo le regole di versionamento e scrivendo nella colonna Autore sia il suo nome
 che quello del primo verificatore e in descrizione "Verifica".
 Infine approva la Pull Request e conferma il merge secondo le norme di progetto descritte nella sezione dedicata.
@@ -135,7 +130,7 @@ IN SOSPESO
 Servizio di hosting per progetti software che implementa uno strumento di controllo versione distribuito Git.
 Oltre alla copia in remoto del repository di progetto ogni componente del gruppo ha una propria copia in locale.
 Per ottenere una copia del repository ogni componente ha scaricato lo strumento Git ed eseguendo il 
-comando 'git clonè da git bash viene creata una cartella collegata alla repository di progetto.
+comando 'git clone' da git bash viene creata una cartella collegata alla repository di progetto.
 Non sono state imposte modalità specifiche sull'interazione con il repository remoto in modo da non sconvolgere le abitudini di lavoro di 
 ciascun componente.
 I componenti del gruppo abituati ad interagire con GitHub da interfaccia grafica possono continuare a farne uso.
@@ -154,7 +149,7 @@ I documenti presenti in documentation sono stati approvati dal Responsabile di p
 Vengono utilizzati per creare nuove funzionalità e gli sviluppatori possono effettuare i commit senza l'approvazione degli altri componenti del gruppo
 in quanto ciascun componente sviluppa su un solo branch alla volta salvo casi eccezionali.
 \subsubsection{Commits}
-è preferibile che ogni commit abbia una singola responsabilità per cambiamento.
+È preferibile che ogni commit abbia una singola responsabilità per cambiamento.
 
 I commits non possono essere effettuati direttamente sui branch protetti ma per integrare delle aggiunte o modifiche sarà necessario aprire una Pull Request.
 All'approvazione di una Pull Request tutti i commit relativi al merge verranno raggruppati in un unico commit che rispetti la struttura sintattica descritta in seguito.
@@ -192,8 +187,12 @@ una review con un review comment sulla parte specifica da revisionare o con un c
 Non sarà possibile effettuare il merge finchè tutti i commenti di revisione non saranno stati risolti.
 Il merge potrà avvenire dopo aver risolto tutti i commenti di revisione ed approvato da almeno due verificatori.
 Per i commit relativi alle Pull Requests seguire le regole descritte nella sottosezione Commits per i branch protetti.
+
+
+
 \subsubsection{Issue Tracking System}
-IN SOSPESO
+
+
 
 \subsection{Glossario}
 All'interno del documento si possono trovare dei termini che possono risultare ambigui a seconda del contesto,o non conosciuti dagli utilizzatori.
