@@ -144,10 +144,11 @@ I collaboratori sono i componenti del gruppo SevenClickers che utilizzano il pro
         \item documentation: contiene i template latex e rispettivi pdf della documentazione
     \end{itemize}
 \textit{documentation}:\\
-I documenti presenti in documentation sono stati approvati dal Responsabile di progetto o almeno verificati dai verificatori.
+I documenti presenti in documentation sono stati approvati dal Responsabile di progetto o almeno verificati dai verificatori.\\
 \textbf{Branches liberi}: 
 Vengono utilizzati per creare nuove funzionalità e gli sviluppatori possono effettuare i commit senza l'approvazione degli altri componenti del gruppo
 in quanto ciascun componente sviluppa su un solo branch alla volta salvo casi eccezionali.
+Un branch\textsubscript{g} libero avrà il nome del documento che si sviluppa su quel branch\textsubscript{g}, oppure della feature\textsubscript{g} che va ad implementare.
 \subsubsection{Commits}
 È preferibile che ogni commit abbia una singola responsabilità per cambiamento.
 
@@ -191,7 +192,24 @@ Per i commit relativi alle Pull Requests seguire le regole descritte nella sotto
 
 
 \subsubsection{Issue Tracking System}
-
+Il gruppo utilizza l'issue tracking system\textsubscript{g} di Github\textsubscript{g} per tenere traccia delle issue\textsubscript{g}. 
+Le issue verranno determinate dal responsabile, ma la loro assegnazione verrà effettuata dai membri del gruppo, in base alle loro preferenze, i loro ruoli e alle loro disponibilità temporali.\\
+Nel caso un membro del gruppo dovesse rendersi conto che l'issue\textsubscript{g} che sta svolgendo potrebbe essere suddiviso in ulteriori issue\textsubscript{g}, dovrà rivolgersi al responsabile, che è l'unico che può aggiungere, modificare o eliminare le issue\textsubscript{g}.\\
+Ogni issue ha almeno un tag associato per specificerne lo scopo, inoltre il gruppo ha agggiunto il seguente tag a quelli già forniti da Github\textsubscript{g}:
+\begin{itemize}
+	\item \textbf{approvable}: indica una issue\textsubscript{g} che dopo esser stata verificata\textsubscript{g}, deve anche essere approvata\textsubscript{g} dal responsabile per andare in fase di release\textsubscript{g}
+	\item \textbf{tag di priorità (alta/media/bassa)}:descrivono quanto è urgente il completamento dell'issue\textsubscript{g} 
+\end{itemize}
+Verrano inoltre predisposte delle \textbf{milestone}\textsubscript{g} con una scadenza temporale a cui potranno essere associate le issue. 
+La scadenza delle milestone\textsubscript{g} e la loro creazione non seguono regole specifiche, ma è preferibile avere almeno una milestone ogni 2 o 3 settimane, allineate quindi con il cambio di ruoli dei membri del gruppo.
+Le issue verranno tracciate nella \textbf{projectboard}\textsubscript{g} della repo, che è visibile e modificabile da tutti i membri del gruppo.
+La projectboard\textsubscript{g} è suddivisa in queste sezioni:
+\begin{itemize}
+	\item \textbf{Todo}: Issue\textsubscript{g} che non sono ancora state iniziate o che non sono ancora state assegnate
+	\item \textbf{In Progress}: Issue\textsubscript{g} che sono state assegnate e sono in fase di svolgimento
+	\item \textbf{Done}: Issue\textsubscript{g} che sono state chiuse e che sono state verificate (se necessitano di verifica\textsubscript{g})
+	\item \textbf{Approved}: Issue\textsubscript{g} col tag "approvable", e che hanno ottenuto l'approvazione\textsubscript{g} del responsabile
+\end{itemize}
 
 
 \subsection{Glossario}
@@ -201,3 +219,59 @@ di interesse accompagnati da una descrizione dettagliata del loro significato.
 I termini presenti all'interno del glossario vengono indicati con il pedice 'g' come nell'esempio seguente: termine\textsubscript{g}.
 Il glossario ordina i termini in ordine alfabetico in modo da permetterne una facile e veloce ricerca.
 Ogni componente del gruppo all'inserimento di un termine ritenuto ambiguo deve preoccuparsi di aggiornare il glossario in modo da mantenerlo sempre aggionato.
+
+\section{Organizzazione del gruppo}
+\subsection{Ruoli}
+I componenti del gruppo si suddivideranno nei seguenti ruoli per periodi di circa 2-3 settimane (dipendentemente dalle esigenze del periodo) e al termine del periodo i ruoli verranno risuddivisi. 
+Visto che nelle varie fasi di sviluppo del progetto le attività da svolgere variano, non sempre sarà necessario coprire tutti i ruoli.
+Inoltre sarà necessario tenere traccia delle ore che ogni componente dedica al progetto ed il ruolo associato a quelle ore, in modo da andare a rispettare la tabella degli impegni individuali.
+I ruoli e le loro competenze sono i seguenti:
+
+\subsubsection{Responsabile}
+Deve avere la visione d'insieme del progetto e coordinare i membri, inoltre si occupa di rappresentare il gruppo con le interazione esterne (proponente, committente ecc...). Le sue competenze specifiche sono:
+\begin{itemize}
+	\item ad ogni iterazione\textsubscript{g} c'è un solo responsabile
+	\item presentare il diario di bordo in aula
+	\item redarre l'ordine del giorno prima di ogni meeting interno del gruppo
+	\item suddivide le attività del gruppo in singole issue (ma non le assegna ai membri del gruppo)
+	\item in fase di release\textsubscript{g} si occupa di approvare\textsubscript{g} tutti i documenti che necessitano approvazione
+\end{itemize}
+
+\subsubsection{Analista}
+Si occupa di trasformare i bisogni del proponente nelle aspettative che il gruppo deve soddisfare per sviluppare un prodotto professionale. Le sue competenze specifiche sono:
+\begin{itemize}
+	\item interrogare il proponente riguardo allo scopo del prodotto e le funzionalità che deve avere
+	\item studiare le risposte del proponente per identificare i requisiti\textsubscript{g} e redarre l'analisi dei requisiti
+\end{itemize}
+
+\subsubsection{Amministratore}
+Si occupa del funzionamente, mantenimento e sviluppo degli strumenti tecnologici usati dal gruppo. Le sue competenze specifiche sono:
+\begin{itemize}
+	\item ad ogni iterazione\textsubscript{g} basta un solo amministratore
+	\item gestione delle segnalazioni e problemi dei membri del gruppo riguardanti problemi e malfunzionamenti con gli strumetni tecnologici
+	\item valuta l'utilizzo di nuove tecnologie e ne fa uno studio preliminare per poter presentare al gruppo i pro e i contro del suo utilizzo
+\end{itemize}
+
+\subsubsection{Progettista}
+Si occupa di scelgiere la modalità migliore per soddisfare le aspettative del committente che gli analisti hanno ricavato dall'analisi dei requisiti\textsubscript{g}. Le sue competenze specifiche sono:
+\begin{itemize}
+	\item scelgiere eventuali pattern architetturali da implementare
+	\item sviluppare lo schema UML delle classi\textsubscript{g}
+\end{itemize}
+
+\subsubsection{Programmatore}
+Si occupa di implementare le scelte e i modelli fatti dal progettista. Le sue competenze specifiche sono:
+\begin{itemize}
+	\item scrivere il codice atto a implementare lo schema delle classi
+	\item scrivere i test di unità DECIDERE COME FAREMO TESTING
+	\item scrivere la documentazione per la comprensione del codice che scrive
+\end{itemize}
+
+\subsubsection{Verificatore}
+Si occupa di controllare che ogni file che viene caricato in un branch protetto della repository sia conforme alle norme di progetto. Le sue competenze specifiche sono:
+\begin{itemize}
+	\item controllare i file modificati o aggiunti durante una pull request tra un ramo non protetto e un ramo protetto siano conformi alle norme di progetto e cercano errori di altra natura (ortografici, sintattici, logici, build ecc...).
+\end{itemize}
+
+
+
