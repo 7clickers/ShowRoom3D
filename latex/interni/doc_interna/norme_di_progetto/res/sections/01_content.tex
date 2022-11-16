@@ -3,9 +3,9 @@
 \subsection{Scopo del documento}
 Lo scopo del documento è quello di stabilire le regole che ogni componente del gruppo SevenClickers
 deve rispettare per mantenere un ambiente di lavoro che mira a massimizzare
-l'economicità dei processi durante il ciclo di vita del prodotto ShowRoom3D.
+l'economicità dei processi durante il ciclo di vita del prodotto ShowRoom3D.\\
 Le norme verranno inserite in modo incrementale per regolamentare le attività di progetto imminenti rimandando quelle meno urgenti a quando 
-se ne presenterà la necessità.
+se ne presenterà la necessità.\\
 Inoltre tali norme potranno subire modifiche nel tempo in modo da garantire un miglioramento continuo della qualità del lavoro svolto.
 Il responsabile di progetto ha il compito di comunicare l'aggiunta di una nuova norma o la modifica di una già esistente a tutti i componenti
 del gruppo e di assicurarsi che siano comprese a pieno.
@@ -105,18 +105,17 @@ All'interno dei documenti i nomi di persona rispetteranno l'ordine nome seguito 
 \subsection{Verifica}
 La verifica viene svolta da due verificatori prima del merge con il branch documentation.
 Consiste nell'esaminare i file prodotti da chi ne ha fatto la stesura e segnalarne la non validità o 
-la presenza di errori nei concetti esposti.
+la presenza di errori nei concetti esposti.\\
 Un verificatore dovrà verificare il documento a partire dalle modifiche fatte dopo l'ultima versione verificata.
 Le modifiche da verificare quindi possono essere dedotte dal registro dei cambiamenti presente in ogni documento.
-Una volta verificato un documento un verificatore aggiungerà il proprio nome alla lista dei verificatori 
-modificando il file titlepage\_input.tex e committando sul branch che si intende integrare in documentation con il merge.
-Successivamente dovrà spuntare come approvata la Pull Request nella sezione dedicata su GitHub. 
-A questo punto se un secondo verificatore noterà la necessità di qualche altro cambiamento da apportare chi dovrà apportare le modifiche farà una pull in locale per
-allineare il proprio branch con quello in remoto e continuare con il proprio lavoro.
-Dopo il push delle modifiche se i file risultano corretti anche dal secondo verificatore esso aggiungerà il proprio nome all'intestazione e creerà la riga di verifica
-nel registro delle modifiche inserendo la nuova versione secondo le regole di versionamento e scrivendo nella colonna Autore sia il suo nome
-che quello del primo verificatore e in descrizione "Verifica".
-Infine approva la Pull Request e conferma il merge secondo le norme di progetto descritte nella sezione dedicata.
+Una volta controllato il documento, il primo verificatore segnalerà eventuali errori e
+successivamente dovrà spuntare come approvata la Pull Request nella sezione dedicata su GitHub. \\
+A questo punto se un secondo verificatore noterà la necessità di qualche altro cambiamento da apportare, chi dovrà apportare le modifiche farà una pull in locale per
+allineare il proprio branch con quello in remoto e continuare con il proprio lavoro.\\
+Dopo il push delle modifiche se i file risultano corretti anche dal secondo verificatore esso aggiungerà i nomi dei verificatori all'intestazione modificando il file titlepage\_input.tex
+ e creerà la riga nel registro delle modifiche, nel file changelog\_input.tex,  inserendo la nuova versione secondo le regole di versionamento e scrivendo nella colonna Autore sia il suo nome,
+che quello del primo verificatore, e in descrizione "Verifica".
+Dopo aver eseguito un commit sul ramo da integrare approva la Pull Request e conferma il merge secondo le norme di progetto descritte nella sezione dedicata.
 
 \subsection{Approvazione}
 IN SOSPESO
@@ -128,11 +127,11 @@ IN SOSPESO
 \section{Strumenti collaborativi}
 \subsection{GitHub}
 Servizio di hosting per progetti software che implementa uno strumento di controllo versione distribuito Git.
-Oltre alla copia in remoto del repository di progetto ogni componente del gruppo ha una propria copia in locale.
+Oltre alla copia in remoto del repository di progetto ogni componente del gruppo ha una propria copia in locale.\\
 Per ottenere una copia del repository ogni componente ha scaricato lo strumento Git ed eseguendo il 
-comando 'git clone' da git bash viene creata una cartella collegata alla repository di progetto.
+comando 'git clone' da git bash viene creata una cartella collegata alla repository di progetto.\\
 Non sono state imposte modalità specifiche sull'interazione con il repository remoto in modo da non sconvolgere le abitudini di lavoro di 
-ciascun componente.
+ciascun componente.\\
 I componenti del gruppo abituati ad interagire con GitHub da interfaccia grafica possono continuare a farne uso.
 \subsubsection{Repository}
 Il repository si può trovare all'indirizzo \textbf{\textit{https://github.com/7clickers/ShowRoom3D}} ed è pubblico. 
@@ -143,7 +142,7 @@ I collaboratori sono i componenti del gruppo SevenClickers che utilizzano il pro
         \item main: contiene le versioni di release del software
         \item documentation: contiene i template latex e rispettivi pdf della documentazione
     \end{itemize}
-\textit{documentation}:\\
+\textit{documentation}: 
 I documenti presenti in documentation sono stati approvati dal Responsabile di progetto o almeno verificati dai verificatori.\\
 \textbf{Branches liberi}: 
 Vengono utilizzati per creare nuove funzionalità e gli sviluppatori possono effettuare i commit senza l'approvazione degli altri componenti del gruppo
@@ -184,7 +183,7 @@ in modo che possano essere compresi anche dagli altri collaboratori.
 Per effettuare un merge su un branch protetto si deve aprire da GitHub una Pull Request.
 La Pull Request permette di verificare il lavoro svolto prima di integrarlo con il branch desiderato.
 I verificatori in carica hanno il compito di trovare eventuali errori o mancanze e fornire un feedback riguardante il contenuto direttamente su GitHub richiedendo
-una review con un review comment sulla parte specifica da revisionare o con un commento generico.
+una review con un review comment sulla parte specifica da revisionare o con un commento generico.\\
 Non sarà possibile effettuare il merge finchè tutti i commenti di revisione non saranno stati risolti.
 Il merge potrà avvenire dopo aver risolto tutti i commenti di revisione ed approvato da almeno due verificatori.
 Per i commit relativi alle Pull Requests seguire le regole descritte nella sottosezione Commits per i branch protetti.
@@ -201,21 +200,29 @@ Ogni issue ha almeno un tag associato per specificerne lo scopo, inoltre il grup
 	\item \textbf{tag di priorità (alta/media/bassa)}:descrivono quanto è urgente il completamento dell'issue\textsubscript{g} 
 \end{itemize}
 Verrano inoltre predisposte delle \textbf{milestone}\textsubscript{g} con una scadenza temporale a cui potranno essere associate le issue. 
-La scadenza delle milestone\textsubscript{g} e la loro creazione non seguono regole specifiche, ma è preferibile avere almeno una milestone ogni 2 o 3 settimane, allineate quindi con il cambio di ruoli dei membri del gruppo.
+La scadenza delle milestone\textsubscript{g} e la loro creazione non seguono regole specifiche, ma è preferibile avere almeno una milestone ogni 2 o 3 settimane, allineate quindi con il cambio di ruoli dei membri del gruppo.\\
 Le issue verranno tracciate nella \textbf{projectboard}\textsubscript{g} della repo, che è visibile e modificabile da tutti i membri del gruppo.
 La projectboard\textsubscript{g} è suddivisa in queste sezioni:
 \begin{itemize}
 	\item \textbf{Todo}: Issue\textsubscript{g} che non sono ancora state iniziate o che non sono ancora state assegnate
-	\item \textbf{In Progress}: Issue\textsubscript{g} che sono state assegnate e sono in fase di svolgimento
+	\item \textbf{In Progress}: Issue\textsubscript{g} che sono state assegnate e a cui almeno un membro a cui è stata assegnata ha iniziato a lavorarci
+	\item \textbf{Pull Request}: Issue che è in fase di integrazione e necessita della verifica dei verificatori. Corrisponde all'inizio di una pull request
 	\item \textbf{Done}: Issue\textsubscript{g} che sono state chiuse e che sono state verificate (se necessitano di verifica\textsubscript{g})
 	\item \textbf{Approved}: Issue\textsubscript{g} col tag "approvable", e che hanno ottenuto l'approvazione\textsubscript{g} del responsabile
 \end{itemize}
+Inoltre nella project board vengono registrate delle issue che non richiedono verifica, approvazione o neache integrazione, con lo scopo di monitorare meglio il lavoro di ogni membro del team.\\
+Queste issue verranno chiuse e archiviate manualmente una volta che avranno terminato la loro utilità, un esempio può essere la seguente issue:\\
+\textbf{diario di bordo 21-11-22}; questa issue non necessità verifica, approvazione o integrazione perchè non è di interesse caricare il file nella repo, però è utile tracciare lo svolgimento della issue
+
+\subsection{Jira}
+All'utilizzo di Github si affianca l'issue tracking system di Jira alle quali se applicano le stesse convenzioni del precedente.\\
+Il motivo per cui si è fatta questa scelta è la possibilità di aggiungere alle issue una data di scedenza e le possibilità di visualizzazione e automazione aggiuntive che offre Jira.
 
 
 \subsection{Glossario}
-All'interno del documento si possono trovare dei termini che possono risultare ambigui a seconda del contesto,o non conosciuti dagli utilizzatori.
+All'interno del documento si possono trovare dei termini che possono risultare ambigui a seconda del contesto,o non conosciuti dagli utilizzatori.\\\
 Per ovviare ad errori di incomprensione che possono portare a problemi di vario genere e rallentamenti si è deciso di stilare un elenco di termini 
-di interesse accompagnati da una descrizione dettagliata del loro significato.
+di interesse accompagnati da una descrizione dettagliata del loro significato.\\
 I termini presenti all'interno del glossario vengono indicati con il pedice 'g' come nell'esempio seguente: termine\textsubscript{g}.
 Il glossario ordina i termini in ordine alfabetico in modo da permetterne una facile e veloce ricerca.
 Ogni componente del gruppo all'inserimento di un termine ritenuto ambiguo deve preoccuparsi di aggiornare il glossario in modo da mantenerlo sempre aggionato.
@@ -223,8 +230,8 @@ Ogni componente del gruppo all'inserimento di un termine ritenuto ambiguo deve p
 \section{Organizzazione del gruppo}
 \subsection{Ruoli}
 I componenti del gruppo si suddivideranno nei seguenti ruoli per periodi di circa 2-3 settimane (dipendentemente dalle esigenze del periodo) e al termine del periodo i ruoli verranno risuddivisi. 
-Visto che nelle varie fasi di sviluppo del progetto le attività da svolgere variano, non sempre sarà necessario coprire tutti i ruoli.
-Inoltre sarà necessario tenere traccia delle ore che ogni componente dedica al progetto ed il ruolo associato a quelle ore, in modo da andare a rispettare la tabella degli impegni individuali.
+Visto che nelle varie fasi di sviluppo del progetto le attività da svolgere variano, non sempre sarà necessario coprire tutti i ruoli.\\
+Inoltre sarà necessario tenere traccia delle ore che ogni componente dedica al progetto ed il ruolo associato a quelle ore, in modo da andare a rispettare la tabella degli impegni individuali.\\
 I ruoli e le loro competenze sono i seguenti:
 
 \subsubsection{Responsabile}
@@ -263,7 +270,7 @@ Si occupa di scelgiere la modalità migliore per soddisfare le aspettative del c
 Si occupa di implementare le scelte e i modelli fatti dal progettista. Le sue competenze specifiche sono:
 \begin{itemize}
 	\item scrivere il codice atto a implementare lo schema delle classi
-	\item scrivere i test di unità DECIDERE COME FAREMO TESTING
+	\item scrivere eventuali test
 	\item scrivere la documentazione per la comprensione del codice che scrive
 \end{itemize}
 
