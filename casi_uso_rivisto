@@ -1,0 +1,533 @@
+Modello utilizzato
+
+-Caso d'uso:
+indica la funzionalita' a cui fa riferimento
+
+-Attore primario:
+indica chi ha accesso alla funzionalita'
+
+-Descrizione:
+informazioni utili alla comprensione della funzionalita'
+
+-Precondizioni:
+condizioni sullo stato del sistema iniziale
+
+-Postcondizioni:
+condizioni sullo stato del sistema finale
+
+-Scenario principale:
+indica le operazioni che portano dalle precondizioni alle postcondizioni
+
+-Estensioni:
+indica un sottocaso d'uso che interrompe la funzionalita' primaria
+
+-Inclusioni:
+indica una funzionalita' che viene eseguita dall'istanza della
+funzionalita' primaria
+
+================================================================== 1
+Caso d'uso:
+UC1 Simulazione acquisto oggetti
+
+Attore primario:
+Utente in ambiente 3D
+
+Descrizione:
+Una simulazione di acquisto prevede la rimozione di uno o piu' oggetti
+dal carrello e la visualizzazione di un messaggio di acquisto effettuato con successo.
+
+Precondizioni:
+-Il carrello contiene almeno un oggetto
+
+Postcondizioni:
+-La simulazione di acquisto e' stata effettuata
+-Il carrello potrebbe essere vuoto
+
+Scenario principale:
+-L'utente interagisce con il sistema per effettuare l'acquisto di uno o piu' oggetti presenti nel carrello
+
+================================================================== 1.1
+Caso d'uso:
+UC1.1 Simulazione acquisto singolo
+
+Attore primario:
+Utente in ambiente 3D
+
+Descrizione:
+-Simulazione acquisto singolo prevede di effettuare una simulazione di acquisto di un solo oggetto presente all'interno
+del carrello.
+La simulazione di acquisto di un oggetto presente nel carrello prevede la rimozione dell'oggetto dal carrello e la
+visualizzazione messaggio di acquisto effettuato con successo.
+
+Precondizioni:
+-Il carrello contiene almeno un oggetto
+
+Postcondizioni:
+-La simulazione di acquisto per l'oggetto selezionato e' stata effettuata
+-Il carrello potrebbe essere vuoto
+
+Scenario principale:
+-L'utente interagisce con il sistema per effettuare l'acquisto di un oggetto presente nel carrello
+
+================================================================== 1.2
+Caso d'uso:
+UC1.2 Simulazione acquisto carrello completo
+
+Attore primario:
+Utente in ambiente 3D
+
+Descrizione:
+-Simulazione acquisto carrello completo prevede di effettuare una simulazione di acquisto di tutti gli
+oggetti presenti all'interno del carrello.
+La simulazione di acquisto di tutti gli oggetti presenti all'interno del carrello prevede la rimozione di tutti
+gli oggetti dal carrello e la visualizzazione messaggio di acquisto effettuato con successo.
+
+Precondizioni:
+-Il carrello contiene almeno un oggetto
+
+Postcondizioni:
+-La simulazione di acquisto di tutti gli oggetti presenti nel carrello e' stata effettuata
+-Il carrello e' vuoto
+
+Scenario principale:
+-L'utente interagisce con il sistema per effettuare l'acquisto di tutti gli oggetti presenti nel carrello
+
+================================================================== 2
+Caso d'uso:
+UC2 Vis. contenuto carrello
+
+Attore primario:
+Utente in ambiente 3D
+
+Descrizione:
+-Funzionalita' autoesplicativa
+
+Precondizioni:
+-Il contenuto del carrello e' nascosto
+
+Postcondizioni:
+-Il contenuto del carrello e' visibile
+
+Scenario principale:
+-L'utente interagisce con il sistema per visualizzare il contenuto del carrello
+
+================================================================== 2.1
+Caso d'uso:
+UC2.1 Vis. oggetti presenti
+
+Attore primario:
+Utente in ambiente 3D
+
+Descrizione:
+Vis. oggetti presenti nel carrello prevede la visualizzazione degli oggetti che sono stati inseriti
+dall'utente in precedenza nel carrello
+
+Precondizioni:
+-Il contenuto del carrello e' visibile
+
+Postcondizioni:
+-Il contenuto del carrello e' visibile
+-La lista degli oggetti presenti all'interno del carrello e' visibile
+
+Scenario principale:
+-nessuna azione richiesta (le pre implicano le post)
+
+================================================================== 2.2
+Caso d'uso:
+UC2.2 Vis. costo totale oggetti
+
+Attore primario:
+Utente in ambiente 3D
+
+Descrizione:
+Vis. costo totale oggetti prevede la visualizzazione della somma di tutti i costi degli oggetti
+presenti all'interno del carrello.
+
+Precondizioni:
+-Il contenuto del carrello e' visibile
+
+Postcondizioni:
+-Il contenuto del carrello e' visibile
+-Il totale della somma di tutti i costi degli oggetti presenti nel carrello e' visibile
+
+Scenario principale:
+-nessuna azione richiesta (le pre implicano le post)
+
+================================================================== 2.1.1
+Caso d'uso:
+UC2.1.1 Vis. oggetto
+
+Attore primario:
+Utente in ambiente 3D
+
+Descrizione:
+Vis. oggetto prevede la visualizzazione di un oggetto all'interno della lista oggetti del carrello
+
+Precondizioni:
+-La lista degli oggetti presenti all'interno del carrello e' visibile
+
+Postcondizioni:
+-La lista degli oggetti presenti all'interno del carrello e' visibile
+-L'oggetto e' visibile nella lista oggetti del carrello
+
+Scenario principale:
+-nessuna azione richiesta (le pre implicano le post)
+
+================================================================== 2.1.1.1
+Caso d'uso:
+UC2.1.1.1 Vis. icona
+
+Attore primario:
+Utente in ambiente 3D
+
+Descrizione:
+Vis. icona prevede la visualizzazione di un'icona associata all'oggetto a cui fa riferimento.
+L'icona e' un'anteprima miniaturizzata dell'oggetto a cui fa riferimento.
+
+Precondizioni:
+-L'oggetto e' visibile nella lista oggetti del carrello
+
+Postcondizioni:
+-L'oggetto e' visibile nella lista oggetti del carrello
+-L'icona associata all'oggetto e' visibile
+
+Scenario principale:
+-nessuna azione richiesta (le pre implicano le post)
+
+================================================================== 2.1.1.2
+Caso d'uso:
+UC2.1.1.2 Vis. nome
+
+Attore primario:
+Utente in ambiente 3D
+
+Descrizione:
+Vis. nome prevede la visualizzazione del nome dell'oggetto.
+Il nome dell'oggetto e' un identificativo che permette di distinguere oggetti diversi tra loro.
+Attenzione: all'interno del carrello possono essere presenti nello stesso momento due oggetti con lo stesso
+nome ma con attributi differenti. esempio: sedia premium (colore rosso), sedia premium (colore verde)
+
+Precondizioni:
+-L'oggetto e' visibile nella lista oggetti del carrello
+
+Postcondizioni:
+-L'oggetto e' visibile nella lista oggetti del carrello
+-Il nome dell'oggetto e' visibile
+
+Scenario principale:
+-nessuna azione richiesta (le pre implicano le post)
+
+================================================================== 3
+Caso d'uso:
+UC3 Aggiungere un oggetto al carrello
+
+Attore primario:
+Utente in ambiente 3D
+
+Descrizione:
+Aggiungere un oggetto al carrello significa aggiungere alla lista degli oggetti presenti nel carrello
+l'oggetto desiderato e visualizzare un messaggio di oggetto aggiunto al carrello con successo.
+L'oggetto all'interno dell'ambiente continua ad esistere anche dopo la sua aggiunta al carrello.
+
+Precondizioni:
+-L'oggetto da aggiungere al carrello si trova all'interno dell'ambiente 3D
+
+Postcondizioni:
+-L'oggetto aggiunto al carrello si trova all'interno dell'ambiente 3D
+-L'oggetto e' presente all'interno del carrello
+
+Scenario principale:
+-L'utente interagisce con l'oggetto da aggiungere all'interno del carrello
+-L'utente seleziona il comando aggiungi oggetto al carrello
+
+================================================================== 4
+Caso d'uso:
+UC4 Compiere azioni di movimento
+
+Attore primario:
+Utente in ambiente 3D
+
+Descrizione:
+Compiere azioni di movimento significa interagire con il sistema per esplorare l'ambiente 3D.
+La posizione dell'utente all'interno dell'ambiente 3D comprende sia la sua posizione nello spazio che l'orientamento
+della sua visuale.
+
+Precondizioni:
+-Le azioni di movimento richieste dall'utente devono essere abilitate
+-Le azioni di movimento richieste dall'utente devono essere valide
+-L'utente si trova in una posizione iniziale
+
+Postcondizioni:
+-L'utente si trova in una posizione diversa da quella iniziale
+
+Scenario principale:
+-L'utente interagisce con il sistema per compiere un'azione di movimento
+
+================================================================== 4.1
+Caso d'uso:
+UC4.1 Compiere movimenti direzionali
+
+Attore primario:
+Utente in ambiente 3D
+
+Descrizione:
+Compiere azioni di movimenti direzionali significa interagire con il sistema per spostarsi nello spazio offerto
+dall'ambiente 3D.
+Attenzione: anche se dei movimenti direzionali non fossero offerti all'utente non e' detto che non si possa
+spostare in quella direzione,infatti,alcuni spostamenti direzionali potrebbero dipendere da vincoli imposti
+dall'ambiente 3D (esempio la presenza di un dislivello o la presenza di scale ecc...)
+
+Precondizioni:
+-Le azioni di movimento direzionali devono essere abilitate
+-Le azioni di movimento direzionali devono essere valide
+-L'utente si trova in una posizione iniziale nello spazio
+
+Postcondizioni:
+-L'utente si trova in una posizione diversa da quella iniziale nello spazio
+
+Scenario principale:
+-L'utente interagisce con il sistema per compiere un'azione di movimento direzionale
+
+================================================================== 4.1.1
+Caso d'uso:
+UC4.1.1 Compiere movimenti direzionali lungo l'asse x
+
+Attore primario:
+Utente in ambiente 3D
+
+Descrizione:
+-caso d'uso autoesplicativo
+
+Precondizioni:
+-Le azioni di movimento direzionale lungo l'asse delle x devono essere abilitate
+-Le azioni di movimento direzionali lungo l'asse x devono essere valide
+-L'utente si trova in una posizione iniziale nello spazio rispetto all'asse x
+
+Postcondizioni:
+-L'utente si trova in una posizione diversa da quella iniziale nello spazio rispetto all'asse x
+
+Scenario principale:
+-L'utente interagisce con il sistema per compiere un'azione di movimento direzionale lungo l'asse x
+
+================================================================== 4.1.2
+Caso d'uso:
+UC4.1.2 Compiere movimenti direzionali lungo l'asse z
+
+Attore primario:
+Utente in ambiente 3D
+
+Descrizione:
+-caso d'uso autoesplicativo
+
+Precondizioni:
+-Le azioni di movimento direzionale lungo l'asse delle z devono essere abilitate
+-Le azioni di movimento direzionali lungo l'asse z devono essere valide
+-L'utente si trova in una posizione iniziale nello spazio rispetto all'asse z
+
+Postcondizioni:
+-L'utente si trova in una posizione diversa da quella iniziale nello spazio rispetto all'asse z
+
+Scenario principale:
+-L'utente interagisce con il sistema per compiere un'azione di movimento direzionale lungo l'asse z
+
+================================================================== 4.2
+Caso d'uso:
+UC4.2 Compiere spostamenti camera
+
+Attore primario:
+Utente in ambiente 3D
+
+Descrizione:
+Compiere un'azione di spostamento camera permette all'utente di vedere l'ambiente che lo circonda variando
+la direzione della propria visuale.
+Non ci sono vincoli alle direzioni in cui puo' variare lo spostamento della camera.
+
+Precondizioni:
+-L'azione di spostamento camera deve essere abilitata
+-La visuale dell'utente e' direzionata verso un punto iniziale
+
+Postcondizioni:
+-La visuale dell'utente e' direzionata verso un punto diverso rispetto a quello iniziale
+
+Scenario principale:
+-L'utente interagisce con il sistema per compiere un'azione di spostamento camera
+
+================================================================== 5
+Caso d'uso:
+UC5 Modificare attributi oggetto
+
+Attore primario:
+Utente in ambiente 3D
+
+Descrizione:
+Modificare attributi oggetto prevede la modifica degli attributi dell'oggetto che l'utente desidera modificare.
+A seconda dell'oggetto da modificare gli attributi modificabili potrebbero essere diversi.
+Potrebbero essere presenti anche oggetti non modificabili.
+
+Precondizioni:
+-L'oggetto da modificare si trova all'interno dell'ambiente 3D
+
+Postcondizioni:
+-L'oggetto modificato si trova all'interno dell'ambiente 3D
+-L'oggetto e' stato modificato
+-L'oggetto assume le caratteristiche visive dovute alle modifiche
+
+Scenario principale:
+-L'utente interagisce con l'oggetto da modificare
+-L'utente seleziona il comando modifica oggetto
+-Il sistema apre una finestra di modifica attributi oggetto
+-L'utente apporta le modifiche desiderate interagendo con la finestra di modifica
+-L'utente conferma le modifiche
+-La finestra delle modifiche viene chiusa
+
+Estensioni:
+-UC6 Vis. mess. oggetto non modificabile
+
+================================================================== 6
+Caso d'uso:
+UC6 Vis. mess. oggetto non modificabile
+
+Attore primario:
+Utente in ambiente 3D
+
+Descrizione:
+Vis. mess. oggetto non modificabile prevede la visualizzazione di un messaggio informativo di oggetto non
+modificabile.
+Un oggetto potrebbe non essere modificabile per la presenza di una sola configurazione per quell'oggetto.
+
+Precondizioni:
+-L'oggetto da modificare si trova all'interno dell'ambiente 3D
+
+Postcondizioni:
+-L'oggetto non e' stato modificato
+-L'oggetto mantiene le sue caratteristiche visive
+-E' visibile un messaggio informativo di non avvenuta modifica (oggetto non modificabile)
+
+Scenario principale:
+-L'utente interagisce con l'oggetto da modificare
+-L'utente seleziona il comando modifica oggetto
+
+================================================================== 7
+Caso d'uso:
+UC7 Vis. contenuto lista oggetti
+
+Attore primario:
+Utente in ambiente 3D
+
+Descrizione:
+Vis. contenuto lista oggetti permette di visualizzare il contenuto della lista oggetti
+
+Precondizioni:
+-Il contenuto della lista oggetti e' nascosto
+
+Postcondizioni:
+-Il contenuto della lista oggetti e' visibile
+
+Scenario principale:
+-L'utente interagisce con il sistema per rendere il contenuto della lista oggetti visibile
+
+================================================================== 7.1
+Caso d'uso:
+UC7.1 Vis. oggetti stanza attuale
+
+Attore primario:
+Utente in ambiente 3D
+
+Descrizione:
+Vis. oggetti stanza attuale prevede la visualizzazione di una lista di oggetti contenente gli oggetti della stanza in
+cui l'utente si trova.
+
+Precondizioni:
+-Il contenuto della lista oggetti e' visibile
+
+Postcondizioni:
+-Gli oggetti contenuti nella lista oggetti sono visibili
+
+Scenario principale:
+-nessuna azione richiesta (le pre implicano le post)
+
+================================================================== 8
+Caso d'uso:
+UC8 Vis. dettagli oggetto
+
+Attore primario:
+Utente in ambiente 3D
+
+Descrizione:
+Vis. dettagli oggetto prevede la visualizzazione dei dettagli di un oggetto.
+
+Precondizioni:
+-I dettagli dell'oggetto non sono visibili
+
+Postcondizioni:
+-I dettagli dell'oggetto sono visibili
+
+Scenario principale:
+L'utente interagisce con il sistema per rendere visibili i dettagli di un oggetto
+
+================================================================== 9
+Caso d'uso:
+UC9 Riposizionamento
+
+Attore primario:
+Utente in ambiente 3D
+
+Descrizione:
+Riposizionamento permette all'utente di posizionarsi in punti prestabiliti all'interno dell'ambiente 3D
+
+Precondizioni:
+-L'utente si trova in un punto di partenza
+
+Postcondizioni:
+-L'utente si trova in un punto diverso
+
+Scenario principale:
+L'utente interagisce con il sistema per riposizionarsi in un punto diverso all'interno dell'ambiente 3D
+
+================================================================== 9.1
+Caso d'uso:
+UC9.1 Riposizionamento vicino ad oggetto stanza attuale
+
+Attore primario:
+Utente in ambiente 3D
+
+Descrizione:
+Riposizionamento vicino ad oggetto stanza attuale prevede il riposizionamento dell'utente vicino ad un oggetto
+della stanza in cui si trova.
+
+Precondizioni:
+-L'utente si trova in un punto di partenza
+
+Postcondizioni:
+-L'utente si trova nelle vicinanze dell'oggetto desiderato
+
+Scenario principale:
+-L'utente manifesta l'intenzione di riposizionarsi nelle vicinanze di un oggetto specifico
+-L'utente seleziona il comando per riposizionarsi nelle vicinanze dell'oggetto scelto
+
+================================================================== 9.2
+Caso d'uso:
+UC9.2 Riposizionamento in stanze
+
+Attore primario:
+Utente in ambiente 3D
+
+Descrizione:
+Riposizionamento in stanze prevede il posizionamento dell'utente in un punto stabilito dal sistema nella stanza
+desiderata.
+
+Precondizioni:
+-L'utente si trova in una stanza di partenza
+
+Postcondizioni:
+-L'utente si trova nella stanza da lui selezionata
+-L'utente si trova nel punto stabilito dal sistema in una stanza diversa da quella di partenza
+
+Scenario principale:
+-L'utente manifesta l'intenzione di riposizionarsi in un'altra stanza
+-L'utente seleziona il comando per riposizionarsi nella stanza desiderata
+
+
+
+
+
