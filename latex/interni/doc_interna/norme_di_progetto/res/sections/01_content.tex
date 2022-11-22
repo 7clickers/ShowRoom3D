@@ -1,0 +1,284 @@
+\newcommand\myfontsize{\fontsize{13pt}{18pt}\selectfont}
+\section{Introduzione}
+\subsection{Scopo del documento}
+Lo scopo del documento è quello di stabilire le regole che ogni componente del gruppo SevenClickers
+deve rispettare per mantenere un ambiente di lavoro che mira a massimizzare
+l'economicità dei processi durante il ciclo di vita del prodotto ShowRoom3D.\\
+Le norme verranno inserite in modo incrementale per regolamentare le attività di progetto imminenti rimandando quelle meno urgenti a quando 
+se ne presenterà la necessità.\\
+Inoltre tali norme potranno subire modifiche nel tempo in modo da garantire un miglioramento continuo della qualità del lavoro svolto.
+Il responsabile di progetto ha il compito di comunicare l'aggiunta di una nuova norma o la modifica di una già esistente a tutti i componenti
+del gruppo e di assicurarsi che siano comprese a pieno.
+\subsection{Scopo del prodotto}
+Il prodotto in questione nasce dalla necessità dell'azienda SanMarco Informatica di fornire una soluzione agli sprechi
+derivati dall'adozione di uno ShowRoom tradizionale proponendo uno ShowRoom3D che sia 
+ugualmente o ancora più immersivo.
+
+
+\section{Documentazione}
+Questa sezione descrive le convenzioni,gli strumenti e le modalità con cui il gruppo si impegna a stilare la documentazione interna ed esterna relativa al progetto.
+\subsection{Convenzioni generali}
+Le convenzioni di seguito riportate vengono applicate a tutti i documenti.
+Esse rendono i documenti stilati omogenei tra loro contribuendo a rendere il progetto professionale.
+
+\subsubsection{Versionamento}
+Il numero di versione permette di capire lo stato in cui si trova un documento.
+Un documento può trovarsi nei seguenti stati:
+\begin{itemize} 
+    \item \textbf{Approvato}:Il documento è verificato ed approvato dal Responsabile di progetto
+    \item \textbf{Verificato}:Il documento risulta verificato ma non ancora visionato dal Responsabile di progetto
+    \item \textbf{In Sviluppo}:Sono presenti delle modifiche che non sono state verificate
+\end{itemize}
+Il numero di versione ha il formato \textbf{X.Y.Z} dove:
+\begin{itemize} 
+    \item \textbf{X} indica una versione approvata dal Responsabile di progetto,la numerazione parte da 0
+    e la prima versione approvata è la 1.0.0
+    \item \textbf{Y} indica una versione verificata dal Verificatore,la numerazione inizia da 0 e si azzera ad ogni incremento di X.La prima versione
+    verificata è la 0.1.0
+    \item \textbf{Z} indica una versione in fase di modifica da parte dei redattori che ne incrementano il numero ad ogni modifica,
+    la numerazione parte da 1 e si azzera ad ogni incremento di X o Y.La prima versione modificata è la 0.0.1
+\end{itemize}
+
+\subsubsection{Struttura Generale}
+Ogni documento deve presentare le seguenti sezioni nell'ordine in cui vengono presentate:
+\begin{itemize} 
+    \item \textbf{Intestazione}:
+    Contiene:
+    \begin{itemize} 
+        \item Logo compreso di motto
+        \item Indirizzo email di gruppo 
+        \item Titolo
+        \item Tabella contenente le informazioni generali
+        \begin{itemize}
+            \item Versione
+            \item Stato
+            \item Uso
+            \item Approvazione: indica il responsabile di progetto che ha approvato il documento 
+            \item Redazione: elenco dei collaboratori che hanno partecipato alla stesura del documento
+            \item Verifica: elenco dei verificatori che hanno verificato il documento
+            \item Distribuzione: elenco delle persone o organizzazioni a cui è destinato il documento
+        \end{itemize}
+        \item Breve descrizione del documento 
+    \end{itemize}
+    \item \textbf{Registro delle modifiche}:
+    Tabella che identifica ogni versione del documento indicandone:
+    \begin{itemize} 
+        \item Versione
+        \item Data
+        \item Autore
+        \item Ruolo
+        \item Descrizione
+    \end{itemize}
+    \item \textbf{Indice}:
+    Elenco ordinato dei titoli dei capitoli, ovvero delle varie parti di cui si compone il documento.
+    \item \textbf{Contenuto}:
+    Varia a seconda del tipo di documento.
+\end{itemize}
+
+\subsubsection{Verbali}
+Rispettano tutta la struttura generale.
+In aggiunta presentano:
+\begin{itemize} 
+    \item \textbf{Informazioni Generali}
+    Contengono:
+    \begin{itemize} 
+        \item Luogo
+        \item Data
+        \item Ora
+        \item Partecipanti
+    \end{itemize}
+\item \textbf{Tabella tracciamento temi affrontati}:
+tabella che riassume i punti salienti della riunione indicandone
+    \begin{itemize} 
+        \item Codice: ha il formato V\textbf{X} \textbf{Y}.\textbf{Z} dove X indica la tipologia di verbale,Y indica il numero di verbale (incrementale rispetto agli altri verbali) 
+        e Z indica il numero dell'argomento trattato (incrementale rispetto agli altri argomenti del verbale) 
+        \item Descrizione: breve descrizione di uno specifico argomento trattato
+    \end{itemize}
+
+\end{itemize}
+
+\subsubsection{Date}
+Le date devono rispettare il seguente formato: \textbf{dd-mm-yyyy}
+All'interno delle tabelle il formato deve essere il seguente: \textbf{dd-mm-yy}
+\subsubsection{Nomi di persona}
+All'interno dei documenti i nomi di persona rispetteranno l'ordine nome seguito dal cognome della persona menzionata.
+\subsection{Verifica}
+La verifica viene svolta da due verificatori prima del merge con il branch documentation.
+Consiste nell'esaminare i file prodotti da chi ne ha fatto la stesura e segnalarne la non validità o 
+la presenza di errori nei concetti esposti.\\
+Un verificatore dovrà verificare il documento a partire dalle modifiche fatte dopo l'ultima versione verificata.
+Le modifiche da verificare quindi possono essere dedotte dal registro dei cambiamenti presente in ogni documento.
+Una volta controllato il documento, il primo verificatore segnalerà eventuali errori e
+successivamente dovrà spuntare come approvata la Pull Request nella sezione dedicata su GitHub\textsubscript{g}. \\
+A questo punto se un secondo verificatore noterà la necessità di qualche altro cambiamento da apportare, chi dovrà apportare le modifiche farà una pull in locale per
+allineare il proprio branch con quello in remoto e continuare con il proprio lavoro.\\
+Dopo il push delle modifiche se i file risultano corretti anche dal secondo verificatore esso aggiungerà i nomi dei verificatori all'intestazione modificando il file titlepage\_input.tex
+ e creerà la riga nel registro delle modifiche, nel file changelog\_input.tex,  inserendo la nuova versione secondo le regole di versionamento e scrivendo nella colonna Autore sia il suo nome,
+che quello del primo verificatore, e in descrizione "Verifica".
+Dopo aver eseguito un commit sul ramo da integrare approva la Pull Request e conferma il merge secondo le norme di progetto descritte nella sezione dedicata.
+
+\subsection{Approvazione}
+IN SOSPESO
+\subsection{Strumenti per la stesura}
+\begin{itemize} 
+    \item Latex: IN SOSPESO
+\end{itemize}
+
+\section{Strumenti collaborativi}
+\subsection{GitHub\textsubscript{g}}
+Servizio di hosting per progetti software che implementa uno strumento di controllo versione distribuito Git\textsubscript{g}.
+Oltre alla copia in remoto del repository\textsubscript{g} di progetto ogni componente del gruppo ha una propria copia in locale.\\
+Per ottenere una copia del repository\textsubscript{g} ogni componente ha scaricato lo strumento Git\textsubscript{g} ed eseguendo il 
+comando 'git clone' da git\textsubscript{g} bash viene creata una cartella collegata alla repository\textsubscript{g} di progetto.\\
+Non sono state imposte modalità specifiche sull'interazione con il repository\textsubscript{g} remoto in modo da non sconvolgere le abitudini di lavoro di 
+ciascun componente.\\
+I componenti del gruppo abituati ad interagire con GitHub\textsubscript{g} da interfaccia grafica possono continuare a farne uso.
+\subsubsection{Repository\textsubscript{g}}
+Il repository\textsubscript{g} si può trovare all'indirizzo \textbf{\textit{https://github.com/7clickers/ShowRoom3D}} ed è pubblico. 
+I collaboratori sono i componenti del gruppo SevenClickers che utilizzano il proprio account GitHub\textsubscript{g} personale per collaborare al progetto.
+\subsubsection{Branching}
+\textbf{Branches protetti}:
+    \begin{itemize} 
+        \item main: contiene le versioni di release\textsubscript{g} del software
+        \item documentation: contiene i template latex\textsubscript{g} e rispettivi pdf della documentazione
+    \end{itemize}
+\textit{documentation}: 
+I documenti presenti in documentation sono stati approvati dal Responsabile di progetto o almeno verificati dai verificatori.\\
+\textbf{Branches liberi}: 
+Vengono utilizzati per creare nuove funzionalità e gli sviluppatori possono effettuare i commit senza l'approvazione degli altri componenti del gruppo
+in quanto ciascun componente sviluppa su un solo branch alla volta salvo casi eccezionali.
+Un branch\textsubscript{g} libero avrà il nome del documento che si sviluppa su quel branch\textsubscript{g}, oppure della feature\textsubscript{g} che va ad implementare.
+\subsubsection{Commits}
+È preferibile che ogni commit abbia una singola responsabilità per cambiamento.
+
+I commits non possono essere effettuati direttamente sui branch protetti ma per integrare delle aggiunte o modifiche sarà necessario aprire una Pull Request.
+All'approvazione di una Pull Request tutti i commit relativi al merge verranno raggruppati in un unico commit che rispetti la struttura sintattica descritta in seguito.
+
+I commit dovranno essere accompagnati da una descrizione solo se ritenuta indispensabile alla comprensione del commit stesso.
+
+I messaggi di commit sui \textbf{\uppercase{branch protetti}} dovranno seguire la seguente struttura sintattica:\\
+
+\textbf{$<$label$>$$<$\#n\_issue$>$$<$testo$>$}\\\\
+dove:\\\\
+\textbf{label}: può assumere i seguenti valori
+\begin{itemize}
+\item feat: indica che è stata implementata una nuova funzionalità
+\item fix: indica che è stato risolto un bug
+\item update: indica che è stata apportata una modifica che non sia fix o feat
+\item test: qualsiasi cosa legata ai test
+\item docs: qualsiasi cosa legata alla documentazione
+\end{itemize}
+\textbf{n\_issue}: indica il numero della issue a cui fa riferimento il commit (se non fa riferimento a nessuna issue viene omesso).\\\\
+\textbf{testo}:indica con quale branch è stato effettuato il merge e deve rispettare la forma: merge from $<$nome branch da integrare$>$ to $<$nome branch corrente$>$ \\\\
+\textbf{descrizione}: se aggiunta ad un commit deve rispondere alle domande WHAT?,WHY?,HOW? ovvero
+cosa è cambiato,perchè sono stati fatti i cambiamenti,in che modo sono stati fatti i cambiamenti.\\
+
+I messaggi di commit sui \textbf{\uppercase{branch liberi}} dovranno seguire la struttura sintattica dei branch protetti ad eccezione del testo.
+Il testo dei commit sui branch liberi non è soggetto a restrizioni particolari a patto che indichi in maniera intuitiva i cambiamenti fatti
+in modo che possano essere compresi anche dagli altri collaboratori.
+
+
+
+\subsubsection{Pull Requests}
+Per effettuare un merge su un branch protetto si deve aprire da GitHub\textsubscript{g} una Pull Request.
+La Pull Request permette di verificare il lavoro svolto prima di integrarlo con il branch desiderato.
+I verificatori in carica hanno il compito di trovare eventuali errori o mancanze e fornire un feedback riguardante il contenuto direttamente su GitHub\textsubscript{g} richiedendo
+una review con un review comment sulla parte specifica da revisionare o con un commento generico.\\
+Non sarà possibile effettuare il merge finchè tutti i commenti di revisione non saranno stati risolti.
+Il merge potrà avvenire dopo aver risolto tutti i commenti di revisione ed approvato da almeno due verificatori.
+Per i commit relativi alle Pull Requests seguire le regole descritte nella sottosezione Commits per i branch protetti.
+
+
+
+\subsubsection{Issue Tracking System\textsubscript{g}}
+Il gruppo utilizza l'issue tracking system\textsubscript{g} di Github\textsubscript{g} per tenere traccia delle issue\textsubscript{g}. 
+Le issue verranno determinate dal responsabile, ma la loro assegnazione verrà effettuata dai membri del gruppo, in base alle loro preferenze, i loro ruoli e alle loro disponibilità temporali.\\
+Nel caso un membro del gruppo dovesse rendersi conto che l'issue\textsubscript{g} che sta svolgendo potrebbe essere suddiviso in ulteriori issue\textsubscript{g}, dovrà rivolgersi al responsabile, che è l'unico che può aggiungere, modificare o eliminare le issue\textsubscript{g}.\\
+Ogni issue ha almeno un tag associato per specificarne lo scopo, inoltre il gruppo ha aggiunto il seguente tag a quelli già forniti da Github\textsubscript{g}:
+\begin{itemize}
+	\item \textbf{approvable}: indica una issue\textsubscript{g} che dopo esser stata verificata\textsubscript{g}, deve anche essere approvata\textsubscript{g} dal responsabile per andare in fase di release\textsubscript{g}
+	\item \textbf{tag di priorità (alta/media/bassa)}:descrivono quanto è urgente il completamento dell'issue\textsubscript{g} 
+\end{itemize}
+Verranno inoltre predisposte delle \textbf{milestone}\textsubscript{g} con una scadenza temporale a cui potranno essere associate le issue. 
+La scadenza delle milestone\textsubscript{g} e la loro creazione non seguono regole specifiche, ma è preferibile avere almeno una milestone ogni 2 o 3 settimane, allineate quindi con il cambio di ruoli dei membri del gruppo.\\
+Le issue verranno tracciate nella \textbf{projectboard}\textsubscript{g} della repo, che è visibile e modificabile da tutti i membri del gruppo.
+La projectboard\textsubscript{g} è suddivisa in queste sezioni:
+\begin{itemize}
+	\item \textbf{Todo}: Issue\textsubscript{g} che non sono ancora state iniziate o che non sono ancora state assegnate
+	\item \textbf{In Progress}: Issue\textsubscript{g} che sono state assegnate e a cui almeno un membro a cui è stata assegnata ha iniziato a lavorarci
+	\item \textbf{Pull Request}: Issue\textsubscript{g} che è in fase di integrazione e necessita della verifica dei verificatori. Corrisponde all'inizio di una pull request
+	\item \textbf{Done}: Issue\textsubscript{g} che sono state chiuse e che sono state verificate (se necessitano di verifica\textsubscript{g})
+	\item \textbf{Approved}: Issue\textsubscript{g} col tag "approvable", e che hanno ottenuto l'approvazione\textsubscript{g} del responsabile
+\end{itemize}
+Inoltre nella project board vengono registrate delle issue che non richiedono verifica, approvazione o neanche integrazione, con lo scopo di monitorare meglio il lavoro di ogni membro del team.\\
+Queste issue verranno chiuse e archiviate manualmente una volta che avranno terminato la loro utilità, un esempio può essere la seguente issue:\\
+\textbf{diario di bordo 21-11-22}; questa issue non necessità verifica, approvazione o integrazione perchè non è di interesse caricare il file nella repo, però è utile tracciare lo svolgimento della issue
+
+\subsection{Jira\textsubscript{g}}
+All'utilizzo di Github\textsubscript{g} si affianca l'issue tracking system\textsubscript{g} di Jira alle quali se applicano le stesse convenzioni del precedente.\\
+Il motivo per cui si è fatta questa scelta è la possibilità di aggiungere alle issue una data di scadenza e le possibilità di visualizzazione e automazione aggiuntive che offre Jira\textsubscript{g}.
+
+
+\subsection{Glossario}
+All'interno del documento si possono trovare dei termini che possono risultare ambigui a seconda del contesto,o non conosciuti dagli utilizzatori.\\\
+Per ovviare ad errori di incomprensione che possono portare a problemi di vario genere e rallentamenti si è deciso di stilare un elenco di termini 
+di interesse accompagnati da una descrizione dettagliata del loro significato.\\
+I termini presenti all'interno del glossario vengono indicati con il pedice 'g' come nell'esempio seguente: termine\textsubscript{g}.
+Il glossario ordina i termini in ordine alfabetico in modo da permetterne una facile e veloce ricerca.
+Ogni componente del gruppo all'inserimento di un termine ritenuto ambiguo deve preoccuparsi di aggiornare il glossario in modo da mantenerlo sempre aggiornato.
+
+\section{Organizzazione del gruppo}
+\subsection{Ruoli}
+I componenti del gruppo si suddivideranno nei seguenti ruoli per periodi di circa 2-3 settimane (dipendentemente dalle esigenze del periodo) e al termine del periodo i ruoli verranno risuddivisi. 
+Visto che nelle varie fasi di sviluppo del progetto le attività da svolgere variano, non sempre sarà necessario coprire tutti i ruoli.\\
+Inoltre sarà necessario tenere traccia delle ore che ogni componente dedica al progetto ed il ruolo associato a quelle ore, in modo da andare a rispettare la tabella degli impegni individuali.\\
+I ruoli e le loro competenze sono i seguenti:
+
+\subsubsection{Responsabile}
+Deve avere la visione d'insieme del progetto e coordinare i membri, inoltre si occupa di rappresentare il gruppo con le interazione esterne (proponente, committente ecc...). Le sue competenze specifiche sono:
+\begin{itemize}
+	\item ad ogni iterazione\textsubscript{g} c'è un solo responsabile
+	\item presentare il diario di bordo in aula
+	\item redarre l'ordine del giorno prima di ogni meeting interno del gruppo
+	\item suddivide le attività del gruppo in singole issue (ma non le assegna ai membri del gruppo)
+	\item in fase di release\textsubscript{g} si occupa di approvare\textsubscript{g} tutti i documenti che necessitano approvazione
+\end{itemize}
+
+\subsubsection{Analista}
+Si occupa di trasformare i bisogni del proponente nelle aspettative che il gruppo deve soddisfare per sviluppare un prodotto professionale. Le sue competenze specifiche sono:
+\begin{itemize}
+	\item interrogare il proponente riguardo allo scopo del prodotto e le funzionalità che deve avere
+	\item studiare le risposte del proponente per identificare i requisiti\textsubscript{g} e redarre l'analisi dei requisiti
+\end{itemize}
+
+\subsubsection{Amministratore}
+Si occupa del funzionamento, mantenimento e sviluppo degli strumenti tecnologici usati dal gruppo. Le sue competenze specifiche sono:
+\begin{itemize}
+	\item ad ogni iterazione\textsubscript{g} basta un solo amministratore
+	\item gestione delle segnalazioni e problemi dei membri del gruppo riguardanti problemi e malfunzionamenti con gli strumenti tecnologici
+	\item valuta l'utilizzo di nuove tecnologie e ne fa uno studio preliminare per poter presentare al gruppo i pro e i contro del suo utilizzo
+\end{itemize}
+
+\subsubsection{Progettista}
+Si occupa di scegliere la modalità migliore per soddisfare le aspettative del committente che gli analisti hanno ricavato dall'analisi dei requisiti\textsubscript{g}. Le sue competenze specifiche sono:
+\begin{itemize}
+	\item scegliere eventuali pattern architetturali da implementare
+	\item sviluppare lo schema UML\textsubscript{g} delle classi\textsubscript{g}
+\end{itemize}
+
+\subsubsection{Programmatore}
+Si occupa di implementare le scelte e i modelli fatti dal progettista. Le sue competenze specifiche sono:
+\begin{itemize}
+	\item scrivere il codice atto a implementare lo schema delle classi
+	\item scrivere eventuali test
+	\item scrivere la documentazione per la comprensione del codice che scrive
+\end{itemize}
+
+\subsubsection{Verificatore}
+Si occupa di controllare che ogni file che viene caricato in un branch protetto della repository\textsubscript{g} sia conforme alle norme di progetto. Le sue competenze specifiche sono:
+\begin{itemize}
+	\item controllare i file modificati o aggiunti durante una pull request tra un ramo non protetto e un ramo protetto siano conformi alle norme di progetto e cercano errori di altra natura (ortografici, sintattici, logici, build ecc...).
+\end{itemize}
+
+
+
