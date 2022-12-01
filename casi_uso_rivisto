@@ -543,25 +543,27 @@ Postcondizioni:
 Scenario principale:
 -L'utente seleziona il comando per riposizionarsi nelle vicinanze di un oggetto
 
-================================================================== 9.2
+================================================================== 10
 Caso d'uso:
-UC9.2 Riposizionamento in stanze
+UC10 Vis. contenuto lista stanze
 
 Attore primario:
 Utente in ambiente 3D
 
 Descrizione:
-Riposizionamento in stanze prevede il posizionamento dell'utente in un punto stabilito dal sistema nella stanza
-desiderata.
+Vis. contenuto lista stanze permette di visualizzare il contenuto della lista stanze.
+Il contenuto della lista stanze prevede l'elenco delle stanze presenti all'interno dell'ambiente 3D.
 
 Precondizioni:
--L'utente si trova in una stanza di partenza
+-Il contenuto della lista stanze e' nascosto
 
 Postcondizioni:
--L'utente si trova nella stanza da lui selezionata nel punto prestabilito dal sistema
+-Il contenuto della lista stanze e' visibile
 
 Scenario principale:
--L'utente seleziona il comando per riposizionarsi nella stanza desiderata
+-L'utente interagisce con il sistema per rendere il contenuto della lista stanze visibile
+
+
 
 
 
