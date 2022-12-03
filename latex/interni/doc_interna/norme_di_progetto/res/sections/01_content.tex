@@ -118,10 +118,33 @@ che quello del primo verificatore, e in descrizione "Verifica".
 Dopo aver eseguito un commit sul ramo da integrare approva la Pull Request e conferma il merge secondo le norme di progetto descritte nella sezione dedicata.
 
 \subsection{Approvazione}
-IN SOSPESO
+L'approvazione viene svolta dal Responsabile di Progetto.\\
+Si effettua questa pratica non appena il file prodotto viene verificato e passa tutte le eventuali reviews create dai verificatori e non necessita di ulteriori modifiche o revisioni future. Spetterà quindi l'ultima parola al Responsabile di Progetto che dovrà approvare la versione del file. In caso si riscontrassero ulteriori problematiche, verrà riportata la pull request nella fase di verifica citata precedentemente nel punto 2.2. \\
+Ad un esito positivo di questa fase di approvazione, verrà aggiunto il nome di chi ha approvato il file nell'intestazione prodotta dal file titlepage\_input.tex, creando una nuova riga nel registro delle modifiche, nel file changelog\_input.tex, inserendo l'ultima versione secondo le regole di versionamento e scrivendo nelle rispettive colonne il suo nome e la descrizione "Approvazione".\\
+Verrà poi chiusa la pull request da parte del Responsabile di Progetto e l'issue associata di approvazione del file, come spiegato dalla sezione dedicata, si chiuderà automaticamente.
+
 \subsection{Strumenti per la stesura}
 \begin{itemize} 
-    \item Latex: IN SOSPESO
+    \item LaTeX: è un linguaggio di marcatura per la preparazione di testi, basato sul 				  		  programma di composizione tipografica TEX.\\
+		  I nostri documenti sono scritti utilizzando solamente questo linguaggio. Nel branch 				  documentation  si possono trovare i file .pdf prodotti e la cartella “latex” che 					  conterrà a sua volta tre cartelle interne:
+	\begin{itemize}
+	\item esterni e interni, contengono file .tex di documentazione esterna ed interna come ad esempio i verbali o altra documentazione esterna/interna
+	\begin{itemize}
+		\item Ogni documento prodotto contiene:
+		\begin{itemize}
+		\item la cartella config, dove troviamo i file di template .tex riscritti in base al documento che si sta producendo
+		\item la cartella res/sections, dove troviamo i file .tex delle sezioni del documento
+		\item un file col nome del documento pdf con estensione .tex in cui raggruppa tutti gli altri file .tex prodotti nelle due cartelle sopracitate
+		\end{itemize}
+	\end{itemize}
+	 \item template, contiene file .tex di base utilizzati in ogni documento prodotto
+	 \begin{itemize}
+	 \item changelog.tex è il file di template che serve per scrivere il registro delle modifiche
+	 \item package.tex è il file che contiene tutti gli usepackage\textsubscript{g}
+	 \item titlepage.tex è il file di template che contiene la configurazione della pagina iniziale di ogni documento  
+	 \item tracking.tex è il file di template che contiene il tracciamento dei temi affrontati nel documento
+	 \end{itemize}
+	\end{itemize}
 \end{itemize}
 
 \section{Strumenti collaborativi}
@@ -144,10 +167,12 @@ I collaboratori sono i componenti del gruppo SevenClickers che utilizzano il pro
     \end{itemize}
 \textit{documentation}: 
 I documenti presenti in documentation sono stati approvati dal Responsabile di progetto o almeno verificati dai verificatori.\\
+Se si devono effettuare delle modifiche a branches protetti GitHub permette la creazione di un ramo di appoggio per la risoluzione dei conflitti. Successivamente, se non ci sono conflitti, verrà effettuato il merge e verrà eliminato il branch di appoggio.\\ 
 \textbf{Branches liberi}: 
 Vengono utilizzati per creare nuove funzionalità e gli sviluppatori possono effettuare i commit senza l'approvazione degli altri componenti del gruppo
 in quanto ciascun componente sviluppa su un solo branch alla volta salvo casi eccezionali.
-Un branch\textsubscript{g} libero avrà il nome del documento che si sviluppa su quel branch\textsubscript{g}, oppure della feature\textsubscript{g} che va ad implementare.
+Un branch\textsubscript{g} libero avrà il nome del documento che si sviluppa su quel branch\textsubscript{g}, oppure della feature\textsubscript{g} che va ad implementare.\\
+Non appena i/il file nel branch sono stati verificati ed il merge è stato fatto, il branch libero verrà eliminato.
 \subsubsection{Commits}
 È preferibile che ogni commit abbia una singola responsabilità per cambiamento.
 
@@ -181,12 +206,40 @@ in modo che possano essere compresi anche dagli altri collaboratori.
 
 \subsubsection{Pull Requests}
 Per effettuare un merge su un branch protetto si deve aprire da GitHub\textsubscript{g} una Pull Request.
-La Pull Request permette di verificare il lavoro svolto prima di integrarlo con il branch desiderato.
-I verificatori in carica hanno il compito di trovare eventuali errori o mancanze e fornire un feedback riguardante il contenuto direttamente su GitHub\textsubscript{g} richiedendo
+La Pull Request permette di verificare il lavoro svolto prima di integrarlo con il branch desiderato.\\
+Alla creazione di una Pull Request bisogna associare:
+\begin{itemize}
+\item i verificatori in carica hanno il compito di trovare eventuali errori o mancanze e fornire un feedback riguardante il contenuto direttamente su GitHub\textsubscript{g} richiedendo
 una review con un review comment sulla parte specifica da revisionare o con un commento generico.\\
 Non sarà possibile effettuare il merge finchè tutti i commenti di revisione non saranno stati risolti.
 Il merge potrà avvenire dopo aver risolto tutti i commenti di revisione ed approvato da almeno due verificatori.
+\item l’issue associata nell’opzione “Development” che verrà automaticamente risolta alla risoluzione della Pull Request
+\item la Projects Board di cui fa parte
+\end{itemize}
 Per i commit relativi alle Pull Requests seguire le regole descritte nella sottosezione Commits per i branch protetti.
+
+
+
+\subsubsection{Milestone\textsubscript{g}}
+Ogni milestone corrisponde ad un aggiornamento di un macroargomento o la creazione di file molto importanti, come ad esempio: norme di progetto, piano di progetto, PoC. Ogni issue inerente a dei determinati macroargomenti verranno associate ad una milestone\textsubscript{g}. Verranno inoltre predisposte delle milestone\textsubscript{g} con una scadenza temporale a cui potranno essere associate le issue. La scadenza delle milestone\textsubscript{g} è impostata in base al carico di lavoro da svolgere o alla rilevanza del file da produrre o aggiornare.\\ 
+I verbali non verranno associati ad alcuna milestone in quanto non rilevanti ai fini di avanzamento di documenti con ben più importanza.
+
+
+
+\subsubsection{Projects Board\textsubscript{g}}
+Le issue verranno tracciate nella \textbf{projectboard}\textsubscript{g} della repo, che è visibile e modificabile da tutti i membri del gruppo.
+La projectboard\textsubscript{g} è suddivisa in queste sezioni:
+\begin{itemize}
+	\item \textbf{Todo}: Issue\textsubscript{g} che non sono ancora state iniziate o che non sono ancora state assegnate
+	\item \textbf{In Progress}: Issue\textsubscript{g} che sono state assegnate e a cui almeno un membro a cui è stata assegnata ha iniziato a lavorarci
+	\item \textbf{Pull Request}: Issue\textsubscript{g} che è in fase di integrazione e necessita della verifica dei verificatori. Corrisponde all'inizio di una pull request
+	\item \textbf{Done}: Issue\textsubscript{g} che sono state chiuse e che sono state verificate (se necessitano di verifica\textsubscript{g})
+	\item \textbf{Approved}: Issue\textsubscript{g} col tag "approvable", e che hanno ottenuto l'approvazione\textsubscript{g} del responsabile
+\end{itemize}
+Inoltre nella project board vengono registrate delle issue che non richiedono verifica, approvazione o neanche integrazione, con lo scopo di monitorare meglio il lavoro di ogni membro del team.\\
+Queste issue verranno chiuse e archiviate manualmente una volta che avranno terminato la loro utilità, un esempio può essere la seguente issue:\\
+\textbf{diario di bordo 21-11-22}; questa issue non necessità verifica, approvazione o integrazione perchè non è di interesse caricare il file nella repo, però è utile tracciare lo svolgimento della issue.
+
 
 
 
@@ -199,24 +252,7 @@ Ogni issue ha almeno un tag associato per specificarne lo scopo, inoltre il grup
 	\item \textbf{approvable}: indica una issue\textsubscript{g} che dopo esser stata verificata\textsubscript{g}, deve anche essere approvata\textsubscript{g} dal responsabile per andare in fase di release\textsubscript{g}
 	\item \textbf{tag di priorità (alta/media/bassa)}:descrivono quanto è urgente il completamento dell'issue\textsubscript{g} 
 \end{itemize}
-Verranno inoltre predisposte delle \textbf{milestone}\textsubscript{g} con una scadenza temporale a cui potranno essere associate le issue. 
-La scadenza delle milestone\textsubscript{g} e la loro creazione non seguono regole specifiche, ma è preferibile avere almeno una milestone ogni 2 o 3 settimane, allineate quindi con il cambio di ruoli dei membri del gruppo.\\
-Le issue verranno tracciate nella \textbf{projectboard}\textsubscript{g} della repo, che è visibile e modificabile da tutti i membri del gruppo.
-La projectboard\textsubscript{g} è suddivisa in queste sezioni:
-\begin{itemize}
-	\item \textbf{Todo}: Issue\textsubscript{g} che non sono ancora state iniziate o che non sono ancora state assegnate
-	\item \textbf{In Progress}: Issue\textsubscript{g} che sono state assegnate e a cui almeno un membro a cui è stata assegnata ha iniziato a lavorarci
-	\item \textbf{Pull Request}: Issue\textsubscript{g} che è in fase di integrazione e necessita della verifica dei verificatori. Corrisponde all'inizio di una pull request
-	\item \textbf{Done}: Issue\textsubscript{g} che sono state chiuse e che sono state verificate (se necessitano di verifica\textsubscript{g})
-	\item \textbf{Approved}: Issue\textsubscript{g} col tag "approvable", e che hanno ottenuto l'approvazione\textsubscript{g} del responsabile
-\end{itemize}
-Inoltre nella project board vengono registrate delle issue che non richiedono verifica, approvazione o neanche integrazione, con lo scopo di monitorare meglio il lavoro di ogni membro del team.\\
-Queste issue verranno chiuse e archiviate manualmente una volta che avranno terminato la loro utilità, un esempio può essere la seguente issue:\\
-\textbf{diario di bordo 21-11-22}; questa issue non necessità verifica, approvazione o integrazione perchè non è di interesse caricare il file nella repo, però è utile tracciare lo svolgimento della issue
 
-\subsection{Jira\textsubscript{g}}
-All'utilizzo di Github\textsubscript{g} si affianca l'issue tracking system\textsubscript{g} di Jira alle quali se applicano le stesse convenzioni del precedente.\\
-Il motivo per cui si è fatta questa scelta è la possibilità di aggiungere alle issue una data di scadenza e le possibilità di visualizzazione e automazione aggiuntive che offre Jira\textsubscript{g}.
 
 
 \subsection{Glossario}
