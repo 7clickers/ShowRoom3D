@@ -118,28 +118,26 @@ che quello del primo verificatore, e in descrizione "Verifica".
 Dopo aver eseguito un commit sul ramo da integrare approva la Pull Request e conferma il merge secondo le norme di progetto descritte nella sezione dedicata.
 
 \subsection{Approvazione}
-L'approvazione viene svolta dal Responsabile di Progetto.\\
-Si effettua questa pratica non appena il file prodotto viene verificato e passa tutte le eventuali reviews create dai verificatori e non necessita di ulteriori modifiche o revisioni future. Spetterà quindi l'ultima parola al Responsabile di Progetto che dovrà approvare la versione del file. In caso si riscontrassero ulteriori problematiche, verrà riportata la pull request nella fase di verifica citata precedentemente nel punto 2.2. \\
-Ad un esito positivo di questa fase di approvazione, verrà aggiunto il nome di chi ha approvato il file nell'intestazione prodotta dal file titlepage\_input.tex, creando una nuova riga nel registro delle modifiche, nel file changelog\_input.tex, inserendo l'ultima versione secondo le regole di versionamento e scrivendo nelle rispettive colonne il suo nome e la descrizione "Approvazione".\\
-Verrà poi chiusa la pull request da parte del Responsabile di Progetto e l'issue associata di approvazione del file, come spiegato dalla sezione dedicata, si chiuderà automaticamente.
+L’approvazione viene svolta dal Responsabile di Progetto.\\
+L'approvazione consiste nell'aprire una Pull Request di approvazione. Nel caso in cui il Responsabile di progetto riscontrasse ulteriori problematiche, segnalerà ai Verificatori le eventuali modifiche da apportare. I verificatori apporteranno tali modifiche prima di chiudere la Pull Request di approvazione e quindi di integrare i cambiamenti nel branch documentation.\\
+Per i verbali si effettua questa pratica non appena il file prodotto viene verificato e quindi passa tutte le eventuali reviews create dai verificatori mentre per tutti gli altri documenti prima di una consegna.\\
+Ad esito positivo di approvazione, il Responsabile di Progetto creerà una nuova riga e compilerà i campi nelle colonne corrispondenti del registro delle modifiche inserendo: l'ultima versione secondo le norme di versionamento, la data, il proprio nome, il suo ruolo e la voce "Approvazione" nell'ultima colonna.
+
 
 \subsection{Strumenti per la stesura}
 \begin{itemize} 
     \item LaTeX: è un linguaggio di marcatura per la preparazione di testi, basato sul 				  		  programma di composizione tipografica TEX.\\
-		  I nostri documenti sono scritti utilizzando solamente questo linguaggio. Nel branch 				  documentation  si possono trovare i file .pdf prodotti e la cartella “latex” che 					  conterrà a sua volta tre cartelle interne:
+	Nel branch documentation  si possono trovare i file .pdf prodotti e la cartella “latex”. La cartella latex contiene tre cartelle interne:
 	\begin{itemize}
-	\item esterni e interni, contengono file .tex di documentazione esterna ed interna come ad esempio i verbali o altra documentazione esterna/interna
+	\item esterni e interni, contengono file .tex di documentazione esterna ed interna come ad esempio i verbali o altra documentazione esterna/interna:
 	\begin{itemize}
-		\item Ogni documento prodotto contiene:
-		\begin{itemize}
-		\item la cartella config, dove troviamo i file di template .tex riscritti in base al documento che si sta producendo
-		\item la cartella res/sections, dove troviamo i file .tex delle sezioni del documento
-		\item un file col nome del documento pdf con estensione .tex in cui raggruppa tutti gli altri file .tex prodotti nelle due cartelle sopracitate
-		\end{itemize}
+		\item la cartella config, contiene i file .tex con le parti fisse dei documenti (intestazione,registro delle modifiche,tracciamento dei temi affrontati) che vengono modificati con i dati del documento specifico 
+		\item la cartella res/sections, contiene i file .tex con il contenuto vero e proprio (sezioni del documento) che viene redatto in maniera libera dal redattore
+		\item un file col nome del documento pdf con estensione .tex che viene compilato per produrre il file pdf
 	\end{itemize}
-	 \item template, contiene file .tex di base utilizzati in ogni documento prodotto
+	 \item template, contiene file .tex di base utilizzati secondo necessità per comporre i documenti:
 	 \begin{itemize}
-	 \item changelog.tex è il file di template che serve per scrivere il registro delle modifiche
+	 \item changelox.tex è il file di template che serve per scrivere il registro delle modifiche
 	 \item package.tex è il file che contiene tutti gli usepackage\textsubscript{g}
 	 \item titlepage.tex è il file di template che contiene la configurazione della pagina iniziale di ogni documento  
 	 \item tracking.tex è il file di template che contiene il tracciamento dei temi affrontati nel documento
@@ -167,15 +165,14 @@ I collaboratori sono i componenti del gruppo SevenClickers che utilizzano il pro
     \end{itemize}
 \textit{documentation}: 
 I documenti presenti in documentation sono stati approvati dal Responsabile di progetto o almeno verificati dai verificatori.\\
-Se si devono effettuare delle modifiche a branches protetti GitHub permette la creazione di un ramo di appoggio per la risoluzione dei conflitti. Successivamente, se non ci sono conflitti, verrà effettuato il merge e verrà eliminato il branch di appoggio.\\ 
-\textbf{Branches liberi}: 
+Per integrare delle modifiche da un branch protetto ad uno libero si utilizza un branch d’appoggio creato in locale partendo dall'ultimo commit di documentation e facendone il merge con il branch che necessita delle integrazioni. In seguito il branch di appoggio verrà eliminato.\\
+\textbf{Branches liberi}:
 Vengono utilizzati per creare nuove funzionalità e gli sviluppatori possono effettuare i commit senza l'approvazione degli altri componenti del gruppo
 in quanto ciascun componente sviluppa su un solo branch alla volta salvo casi eccezionali.
 Un branch\textsubscript{g} libero avrà il nome del documento che si sviluppa su quel branch\textsubscript{g}, oppure della feature\textsubscript{g} che va ad implementare.\\
 Non appena i/il file nel branch sono stati verificati ed il merge è stato fatto, il branch libero verrà eliminato.
 \subsubsection{Commits}
-È preferibile che ogni commit abbia una singola responsabilità per cambiamento.
-
+È preferibile che ogni commit abbia una singola responsabilità per cambiamento.\\
 I commits non possono essere effettuati direttamente sui branch protetti ma per integrare delle aggiunte o modifiche sarà necessario aprire una Pull Request.
 All'approvazione di una Pull Request tutti i commit relativi al merge verranno raggruppati in un unico commit che rispetti la struttura sintattica descritta in seguito.
 
@@ -211,10 +208,11 @@ Alla creazione di una Pull Request bisogna associare:
 \begin{itemize}
 \item i verificatori in carica hanno il compito di trovare eventuali errori o mancanze e fornire un feedback riguardante il contenuto direttamente su GitHub\textsubscript{g} richiedendo
 una review con un review comment sulla parte specifica da revisionare o con un commento generico.\\
-Non sarà possibile effettuare il merge finchè tutti i commenti di revisione non saranno stati risolti.
-Il merge potrà avvenire dopo aver risolto tutti i commenti di revisione ed approvato da almeno due verificatori.
-\item l’issue associata nell’opzione “Development” che verrà automaticamente risolta alla risoluzione della Pull Request
+Non sarà possibile effettuare il merge finchè tutti i commenti di revisione non saranno stati risolti e la Pull Request approvata da due verificatori
+\item l’issue associata nell’opzione “Development” che verrà chiusa alla risoluzione della Pull Request
 \item la Projects Board di cui fa parte
+\item gli assegnatari che hanno il compito di apportare le modifiche necessarie in fase di verifica
+\item le labels associate
 \end{itemize}
 Per i commit relativi alle Pull Requests seguire le regole descritte nella sottosezione Commits per i branch protetti.
 
@@ -245,12 +243,12 @@ Queste issue verranno chiuse e archiviate manualmente una volta che avranno term
 
 \subsubsection{Issue Tracking System\textsubscript{g}}
 Il gruppo utilizza l'issue tracking system\textsubscript{g} di Github\textsubscript{g} per tenere traccia delle issue\textsubscript{g}. 
-Le issue verranno determinate dal responsabile, ma la loro assegnazione verrà effettuata dai membri del gruppo, in base alle loro preferenze, i loro ruoli e alle loro disponibilità temporali.\\
+Le issues\textsubscript{g} verranno determinate dal responsabile, ma la loro assegnazione verrà effettuata dai membri del gruppo, in base alla priorità delle issues\textsubscript{g}, i loro ruoli e alle loro disponibilità temporali.\\
 Nel caso un membro del gruppo dovesse rendersi conto che l'issue\textsubscript{g} che sta svolgendo potrebbe essere suddiviso in ulteriori issue\textsubscript{g}, dovrà rivolgersi al responsabile, che è l'unico che può aggiungere, modificare o eliminare le issue\textsubscript{g}.\\
-Ogni issue ha almeno un tag associato per specificarne lo scopo, inoltre il gruppo ha aggiunto il seguente tag a quelli già forniti da Github\textsubscript{g}:
+Ogni issue\textsubscript{g} ha almeno una label associata per specificarne lo scopo, inoltre il gruppo ha aggiunto le seguenti label:
 \begin{itemize}
 	\item \textbf{approvable}: indica una issue\textsubscript{g} che dopo esser stata verificata\textsubscript{g}, deve anche essere approvata\textsubscript{g} dal responsabile per andare in fase di release\textsubscript{g}
-	\item \textbf{tag di priorità (alta/media/bassa)}:descrivono quanto è urgente il completamento dell'issue\textsubscript{g} 
+	\item \textbf{label di priorità (alta/media/bassa)}:descrivono quanto è urgente il completamento dell'issue\textsubscript{g} 
 \end{itemize}
 
 
