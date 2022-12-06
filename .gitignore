@@ -5,4 +5,7 @@
 *.toc
 *.txt
 *.log
-
+*.fdb_latexmk
+*.fls
+*.ilg
+*.ind
