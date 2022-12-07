@@ -27,70 +27,63 @@ funzionalita' primaria
 
 ================================================================== 1
 Caso d'uso:
-UC1 Simulazione acquisto oggetti
+UC1 Rimozione oggetti dal carrello
 
 Attore primario:
 Utente in ambiente 3D
 
 Descrizione:
-Una simulazione di acquisto prevede la rimozione di uno o piu' oggetti
-dal carrello e la visualizzazione di un messaggio di acquisto effettuato con successo.
+Vengono rimossi uno o più oggetti
 
 Precondizioni:
 -Il carrello contiene almeno un oggetto
 
 Postcondizioni:
--La simulazione di acquisto e' stata effettuata
+-Uno o più oggetti sono stati rimossi dal carrello
 -Il carrello potrebbe essere vuoto
 
 Scenario principale:
--L'utente interagisce con il sistema per effettuare l'acquisto di uno o piu' oggetti presenti nel carrello
+-L'utente interagisce con il sistema per effettuare la rimozione di uno o piu' oggetti dal carrello
 
 ================================================================== 1.1
 Caso d'uso:
-UC1.1 Simulazione acquisto singolo
+UC1.1 Rimozione oggetto singolo dal carrello
 
 Attore primario:
 Utente in ambiente 3D
 
 Descrizione:
--Simulazione acquisto singolo prevede di effettuare una simulazione di acquisto di un solo oggetto presente all'interno
-del carrello.
-La simulazione di acquisto di un oggetto presente nel carrello prevede la rimozione dell'oggetto dal carrello e la
-visualizzazione messaggio di acquisto effettuato con successo.
+Viene rimosso un singolo oggetto dal carrello
 
 Precondizioni:
 -Il carrello contiene almeno un oggetto
 
 Postcondizioni:
--La simulazione di acquisto per l'oggetto selezionato e' stata effettuata
+-Un oggetto è stato rimosso dal carrello
 -Il carrello potrebbe essere vuoto
 
 Scenario principale:
--L'utente interagisce con il sistema per effettuare l'acquisto di un oggetto presente nel carrello
-
+-L'utente interagisce con il sistema per la rimozione di un oggetto dal carrello
 ================================================================== 1.2
 Caso d'uso:
-UC1.2 Simulazione acquisto carrello completo
+UC1.2 Svuotamento totale carrello
 
 Attore primario:
 Utente in ambiente 3D
 
 Descrizione:
--Simulazione acquisto carrello completo prevede di effettuare una simulazione di acquisto di tutti gli
-oggetti presenti all'interno del carrello.
-La simulazione di acquisto di tutti gli oggetti presenti all'interno del carrello prevede la rimozione di tutti
-gli oggetti dal carrello e la visualizzazione messaggio di acquisto effettuato con successo.
+Svuotamento totale carrello prevede la rimozione di tutti gli oggetti presenti
+nel carrello.
 
 Precondizioni:
 -Il carrello contiene almeno un oggetto
 
 Postcondizioni:
--La simulazione di acquisto di tutti gli oggetti presenti nel carrello e' stata effettuata
+-Tutti gli oggetti sono stati rimossi rimossi dal carrello
 -Il carrello e' vuoto
 
 Scenario principale:
--L'utente interagisce con il sistema per effettuare l'acquisto di tutti gli oggetti presenti nel carrello
+-L'utente interagisce con il sistema per svuotare completamente il carrello
 
 ================================================================== 2
 Caso d'uso:
@@ -512,7 +505,7 @@ Attore primario:
 Utente in ambiente 3D
 
 Descrizione:
-Riposizionamento permette all'utente di posizionarsi in punti prestabiliti all'interno dell'ambiente 3D
+Riposizionamento permette all'utente di posizionarsi in una coordinata x,y,z all'interno dell'ambiente 3D
 
 Precondizioni:
 -L'utente si trova in un punto di partenza
@@ -522,6 +515,9 @@ Postcondizioni:
 
 Scenario principale:
 L'utente interagisce con il sistema per riposizionarsi in un punto diverso all'interno dell'ambiente 3D
+
+Estensioni:
+-UC10 Riposizionamento non concesso
 
 ================================================================== 9.1
 Caso d'uso:
@@ -543,9 +539,52 @@ Postcondizioni:
 Scenario principale:
 -L'utente seleziona il comando per riposizionarsi nelle vicinanze di un oggetto
 
+================================================================== 9.2
+Caso d'uso:
+UC9.2 Riposizionamento in stanze
+
+Attore primario:
+Utente in ambiente 3D
+
+Descrizione:
+Riposizionamento in stanze prevede il riposizionamento dell'utente in un punto
+prestabilito di una stanza da lui selezionata
+
+Precondizioni:
+-L'utente si trova in un punto di partenza di una determinata stanza
+
+Postcondizioni:
+-L'utente si trova in un punto prestabilito di una stanza da lui selezionata
+
+Scenario principale:
+-L'utente seleziona il comando per riposizionarsi nella stanza desiderata
+
 ================================================================== 10
 Caso d'uso:
-UC10 Vis. contenuto lista stanze
+UC10 Riposizionamento non concesso
+
+Attore primario:
+Utente in ambiente 3D
+
+Descrizione:
+L'utente si trova in un determinato raggio d'azione dell'oggetto o del punto di riposizionamento della stanza, di
+conseguenza non sarà concesso il riposizionamento in quell'oggetto o stanza.
+
+Precondizioni:
+-L'utente si trova nel raggio d'azione dell'oggetto o del punto di riposizionamento della stanza
+-L'utente interagisce con il comando di riposizionamento selezionando quel oggetto o quella stanza
+
+Postcondizioni:
+-L'utente si trova nel raggio d'azione dell'oggetto o del punto di riposizionamento della stanza
+-Il riposizionamento non è stato effettuato
+
+Scenario principale:
+L'utente interagisce con il sistema per riposizionarsi ad un oggetto o punto di riposizionamento della stanza
+già vicine a lui, di conseguenza non viene concesso
+
+================================================================== 11
+Caso d'uso:
+UC11 Vis. contenuto lista stanze
 
 Attore primario:
 Utente in ambiente 3D
@@ -562,6 +601,70 @@ Postcondizioni:
 
 Scenario principale:
 -L'utente interagisce con il sistema per rendere il contenuto della lista stanze visibile.
+
+================================================================== 12
+Caso d'uso:
+UC12 Spostamento oggetto
+
+Attore primario:
+Utente in ambiente 3D
+
+Descrizione:
+Riposizionamento di un oggetto in un altro punto della stanza in cui ci si trova
+
+Precondizioni:
+-L'oggetto da spostare si trova all'interno dell'ambiente 3D.
+-L'oggetto si trova in una coordinata x,y,z di una stanza.
+
+Postcondizioni:
+-L'oggetto si trova in una coordinata x,y,z diversa da quella di partenza nella stessa stanza.
+
+Scenario principale:
+L'utente interagisce con l'oggetto per poterlo spostare in un altra coordinata all'interno della stanza di partenza.
+
+Estensioni:
+-UC13 Oggetto non posizionato
+
+================================================================== 13
+Caso d'uso:
+UC13 Oggetto non posizionato
+
+Attore primario:
+Utente in ambiente 3D
+
+Descrizione:
+Quando l'utente cerca di posizionare un oggetto in una coordinata x,y,z non legittima, l'oggetto non viene posizionato
+
+Precondizioni:
+-L'oggetto si trova in una coordinata x,y,z non valida.
+-l'oggetto è in fase di spostamento
+
+Postcondizioni:
+-L'oggetto è in fase di spostamento
+-L'oggetto non è stato posizionato.
+
+Scenario principale:
+-L'utente cerca di posizionare un oggetto in una coordinata non legale.
+
+================================================================== 14
+Caso d'uso:
+UC14 Torcia
+
+Attore primario:
+Utente in ambiente 3D
+
+Descrizione:
+L'utente può utilizzare una torcia per illuminare parte dell'ambiente
+Di fronte a lui
+
+Precondizioni:
+-La torcia è spenta
+
+Postcondizioni:
+-La torcia è accesa
+
+Scenario principale:
+-L'utente utilizza la torcia per illuminare zone scarsamente visibili
 
 
 
