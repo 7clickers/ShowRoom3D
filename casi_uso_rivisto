@@ -25,9 +25,9 @@ indica un sottocaso d'uso che interrompe la funzionalita' primaria
 indica una funzionalita' che viene eseguita dall'istanza della
 funzionalita' primaria
 
-================================================================== 1
+================================================================== 1 (Facoltativo)
 Caso d'uso:
-UC1 Rimozione oggetti dal carrello
+UC1 Rimozione oggetti dal carrello 
 
 Attore primario:
 Utente in ambiente 3D
@@ -45,7 +45,7 @@ Postcondizioni:
 Scenario principale:
 -L'utente interagisce con il sistema per effettuare la rimozione di uno o piu' oggetti dal carrello
 
-================================================================== 1.1
+================================================================== 1.1 (Facoltativo)
 Caso d'uso:
 UC1.1 Rimozione oggetto singolo dal carrello
 
@@ -64,7 +64,8 @@ Postcondizioni:
 
 Scenario principale:
 -L'utente interagisce con il sistema per la rimozione di un oggetto dal carrello
-================================================================== 1.2
+
+================================================================== 1.2 (Facoltativo)
 Caso d'uso:
 UC1.2 Svuotamento totale carrello
 
@@ -79,7 +80,7 @@ Precondizioni:
 -Il carrello contiene almeno un oggetto
 
 Postcondizioni:
--Tutti gli oggetti sono stati rimossi rimossi dal carrello
+-Tutti gli oggetti sono stati rimossi dal carrello
 -Il carrello e' vuoto
 
 Scenario principale:
@@ -93,7 +94,7 @@ Attore primario:
 Utente in ambiente 3D
 
 Descrizione:
--Funzionalita' autoesplicativa
+Permette di visualizzare il contenuto del carrello
 
 Precondizioni:
 -Il contenuto del carrello e' nascosto
@@ -260,7 +261,7 @@ Utente in ambiente 3D
 
 Descrizione:
 Aggiungere un oggetto al carrello significa aggiungere alla lista degli oggetti presenti nel carrello
-l'oggetto desiderato e visualizzare un messaggio di oggetto aggiunto al carrello con successo.
+l'oggetto desiderato, e visualizzare un messaggio di oggetto aggiunto al carrello con successo.
 L'oggetto all'interno dell'ambiente continua ad esistere anche dopo la sua aggiunta al carrello.
 
 Precondizioni:
@@ -364,6 +365,27 @@ Postcondizioni:
 Scenario principale:
 -L'utente interagisce con il sistema per compiere un'azione di movimento direzionale lungo l'asse y
 
+================================================================== 4.1.3 (Facoltativo)
+Caso d'uso:
+UC4.1.3 Compiere movimenti direzionali lungo l'asse z
+
+Attore primario:
+Utente in ambiente 3D
+
+Descrizione:
+-caso d'uso autoesplicativo
+
+Precondizioni:
+-Le azioni di movimento direzionale lungo l'asse delle z devono essere abilitate
+-Le azioni di movimento direzionali lungo l'asse z devono essere valide
+-L'utente si trova in una posizione iniziale nello spazio rispetto all'asse z
+
+Postcondizioni:
+-L'utente si trova in una posizione diversa da quella iniziale nello spazio rispetto all'asse z
+
+Scenario principale:
+-L'utente interagisce con il sistema per compiere un'azione di movimento direzionale lungo l'asse z
+
 ================================================================== 4.2
 Caso d'uso:
 UC4.2 Compiere spostamenti camera
@@ -374,7 +396,6 @@ Utente in ambiente 3D
 Descrizione:
 Compiere un'azione di spostamento camera permette all'utente di vedere l'ambiente che lo circonda variando
 la direzione della propria visuale.
-Non ci sono vincoli alle direzioni in cui puo' variare lo spostamento della camera.
 
 Precondizioni:
 -L'azione di spostamento camera deve essere abilitata
@@ -439,7 +460,7 @@ Scenario principale:
 -L'utente interagisce con l'oggetto da modificare
 -L'utente seleziona il comando modifica oggetto
 
-================================================================== 7
+================================================================== 7 (Facoltativo)
 Caso d'uso:
 UC7 Vis. contenuto lista oggetti
 
@@ -458,7 +479,7 @@ Postcondizioni:
 Scenario principale:
 -L'utente interagisce con il sistema per rendere il contenuto della lista oggetti visibile
 
-================================================================== 7.1
+================================================================== 7.1 (Facoltativo)
 Caso d'uso:
 UC7.1 Vis. oggetti stanza attuale
 
@@ -497,7 +518,7 @@ Postcondizioni:
 Scenario principale:
 L'utente interagisce con il sistema per rendere visibili i dettagli di un oggetto
 
-================================================================== 9
+================================================================== 9 (Facoltativo)
 Caso d'uso:
 UC9 Riposizionamento
 
@@ -511,7 +532,7 @@ Precondizioni:
 -L'utente si trova in un punto di partenza
 
 Postcondizioni:
--L'utente si trova in un punto diverso da quello di partenza prestabilito dal sistema
+-L'utente si trova in un punto diverso da quello di partenza.
 
 Scenario principale:
 L'utente interagisce con il sistema per riposizionarsi in un punto diverso all'interno dell'ambiente 3D
@@ -519,7 +540,7 @@ L'utente interagisce con il sistema per riposizionarsi in un punto diverso all'i
 Estensioni:
 -UC10 Riposizionamento non concesso
 
-================================================================== 9.1
+================================================================== 9.1 (Facoltativo)
 Caso d'uso:
 UC9.1 Riposizionamento vicino ad oggetto stanza attuale
 
@@ -534,12 +555,12 @@ Precondizioni:
 -L'utente si trova in un punto di partenza
 
 Postcondizioni:
--L'utente si trova nelle vicinanze dell'oggetto desiderato in un punto prestabilito
+-L'utente si trova nelle vicinanze dell'oggetto desiderato
 
 Scenario principale:
 -L'utente seleziona il comando per riposizionarsi nelle vicinanze di un oggetto
 
-================================================================== 9.2
+================================================================== 9.2 (Facoltativo)
 Caso d'uso:
 UC9.2 Riposizionamento in stanze
 
@@ -559,7 +580,7 @@ Postcondizioni:
 Scenario principale:
 -L'utente seleziona il comando per riposizionarsi nella stanza desiderata
 
-================================================================== 10
+================================================================== 10 (Facoltativo)
 Caso d'uso:
 UC10 Riposizionamento non concesso
 
@@ -567,22 +588,20 @@ Attore primario:
 Utente in ambiente 3D
 
 Descrizione:
-L'utente si trova in un determinato raggio d'azione dell'oggetto o del punto di riposizionamento della stanza, di
-conseguenza non sarà concesso il riposizionamento in quell'oggetto o stanza.
+Se l'utente si trova in prossimità del punto di destinazione, il riposizionamento non avviene.
 
 Precondizioni:
--L'utente si trova nel raggio d'azione dell'oggetto o del punto di riposizionamento della stanza
--L'utente interagisce con il comando di riposizionamento selezionando quel oggetto o quella stanza
+-L'utente si trova in prossimità del punto di destinazione 
+-L'utente interagisce con il comando di riposizionamento in quella destinazione
 
 Postcondizioni:
--L'utente si trova nel raggio d'azione dell'oggetto o del punto di riposizionamento della stanza
+-L'utente si trova in prossimità del punto di destinazione 
 -Il riposizionamento non è stato effettuato
 
 Scenario principale:
-L'utente interagisce con il sistema per riposizionarsi ad un oggetto o punto di riposizionamento della stanza
-già vicine a lui, di conseguenza non viene concesso
+-nessuna azione richiesta (le pre implicano le post)
 
-================================================================== 11
+================================================================== 11 (Facoltativo)
 Caso d'uso:
 UC11 Vis. contenuto lista stanze
 
@@ -602,7 +621,7 @@ Postcondizioni:
 Scenario principale:
 -L'utente interagisce con il sistema per rendere il contenuto della lista stanze visibile.
 
-================================================================== 12
+================================================================== 12 (Facoltativo)
 Caso d'uso:
 UC12 Spostamento oggetto
 
@@ -625,7 +644,7 @@ L'utente interagisce con l'oggetto per poterlo spostare in un altra coordinata a
 Estensioni:
 -UC13 Oggetto non posizionato
 
-================================================================== 13
+================================================================== 13 (Facoltativo)
 Caso d'uso:
 UC13 Oggetto non posizionato
 
@@ -633,20 +652,20 @@ Attore primario:
 Utente in ambiente 3D
 
 Descrizione:
-Quando l'utente cerca di posizionare un oggetto in una coordinata x,y,z non legittima, l'oggetto non viene posizionato
+Se l'utente cerca di posizionare un oggetto in una coordinata x,y,z non legittima, l'oggetto non viene posizionato
 
 Precondizioni:
 -L'oggetto si trova in una coordinata x,y,z non valida.
--l'oggetto è in fase di spostamento
+-l'oggetto è in fase di spostamento.
 
 Postcondizioni:
--L'oggetto è in fase di spostamento
+-L'oggetto è in fase di spostamento.
 -L'oggetto non è stato posizionato.
 
 Scenario principale:
--L'utente cerca di posizionare un oggetto in una coordinata non legale.
+-nessuna azione richiesta (le pre implicano le post)
 
-================================================================== 14
+================================================================== 14 (Facoltativo)
 Caso d'uso:
 UC14 Torcia
 
@@ -655,16 +674,16 @@ Utente in ambiente 3D
 
 Descrizione:
 L'utente può utilizzare una torcia per illuminare parte dell'ambiente
-Di fronte a lui
+di fronte a lui. La torcia si può trovare in due stati, accesa o spenta.
 
 Precondizioni:
--La torcia è spenta
+-La torcia si trova in uno stato iniziale
 
 Postcondizioni:
--La torcia è accesa
+-La torcia si trova in uno stato finale
 
 Scenario principale:
--L'utente utilizza la torcia per illuminare zone scarsamente visibili
+-L'utente cambia lo stato della torcia.
 
 
 
