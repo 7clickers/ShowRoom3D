@@ -69,13 +69,14 @@ Non sarà possibile effettuare il merge finchè tutti i commenti di revisione no
 \end{itemize}
 Per i commit relativi alle Pull Requests seguire le regole descritte nella sottosezione Commits per i branch protetti.
 
-
-
 \subsubsection{Milestone\textsubscript{g}}
-Ogni milestone corrisponde ad un aggiornamento di un macroargomento o la creazione di file molto importanti, come ad esempio: norme di progetto, piano di progetto, PoC. Ogni issue inerente a dei determinati macroargomenti verranno associate ad una milestone\textsubscript{g}. Verranno inoltre predisposte delle milestone\textsubscript{g} con una scadenza temporale a cui potranno essere associate le issue. La scadenza delle milestone\textsubscript{g} è impostata in base al carico di lavoro da svolgere o alla rilevanza del file da produrre o aggiornare.\\ 
-I verbali non verranno associati ad alcuna milestone in quanto non rilevanti ai fini di avanzamento di documenti con ben più importanza.
-
-
+Una milestone indica un traguardo intermedio significativo per il progetto.
+Ad essa possono venire assegnate delle issues per verificarne il raggiungimento.
+Ogni milestone ha una scadenza che viene discussa e fissata da tutto il gruppo.
+Oltre alle 2 milestone + 1 milestone falcoltativa fissate dal committente il gruppo ne creerá ulteriori per scandire piú nel dettaglio i passi che ci porteranno 
+ad ottenere i risultati prefissati.
+Una delle milestone create dal gruppo durante il completamento della tecnology baseline relativa alla prima milestone imposta dal committente (Requirements and Tecnology Baseline)
+riguarda l'implementazione di un PoC (Proof of concept).
 
 \subsubsection{Projects Board\textsubscript{g}}
 Vengono utilizzate due project board per tracciare le issues della repo.
@@ -122,15 +123,32 @@ Esempio di work flow issues:
 		Il responsabile creerá un branch per approvare le issues con approvazione immediata aprirá una pull request per integrare nel branch di destinazione l'approvazione.
 		\item I file relativi alla pull request richiedono l'approvazione prima di una consegna.
 		Il responsabile archivia la pull request e ne crea una issue con il nome dei file da approvare nella project board dedicata alle approvazioni.
+		NB:Se nella project board Approvazioni é giá presente un'issue di approvazione per il file da approvare non viene creata una nuova issue di approvazione ma si tiene la precedente.
 		L'issue segue il work flow della project board approvazioni.
 	\end{enumerate}
 \end{enumerate}
 \subsubsection{Issue Tracking System\textsubscript{g}}
 Il gruppo utilizza l'issue tracking system\textsubscript{g} di Github\textsubscript{g} per tenere traccia delle issue\textsubscript{g}. 
 Le issues\textsubscript{g} verranno determinate dal responsabile, ma la loro assegnazione verrà effettuata dai membri del gruppo, in base alla priorità delle issues\textsubscript{g}, i loro ruoli e alle loro disponibilità temporali.\\
-Nel caso un membro del gruppo dovesse rendersi conto che l'issue\textsubscript{g} che sta svolgendo potrebbe essere suddiviso in ulteriori issue\textsubscript{g}, dovrà rivolgersi al responsabile, che è l'unico che può aggiungere, modificare o eliminare le issue\textsubscript{g}.\\
-Ogni issue\textsubscript{g} ha almeno una label associata per specificarne lo scopo, inoltre il gruppo ha aggiunto le seguenti label:
+Per marchiare le issues secondo criteri di interesse (come ambito o prioritá) vengono utilizzate le labels.
+LABELS:
 \begin{itemize}
-	\item \textbf{approvable}: indica una issue\textsubscript{g} che dopo esser stata verificata\textsubscript{g}, deve anche essere approvata\textsubscript{g} dal responsabile per andare in fase di release\textsubscript{g}
-	\item \textbf{label di priorità (alta/media/bassa)}:descrivono quanto è urgente il completamento dell'issue\textsubscript{g} 
+	\item Da approvare: indica una issue o pull request che necessita di approvazione
+	\item Da verificare: indica una issue o pull request che necessita di verifica
+	\item Documentazione: indica una issue o pull request riguardante la documentazione
+	\item P=Bassa: indica una issue o pull request a prioritá bassa (scadenza lontana o non limita il lavoro altrui)
+	\item P=Media: indica una issue o pull request a prioritá media (scadenza di almeno due settimane o non limita il lavoro altrui)
+	\item P=Alta indica una issue o pull request a prioritá alta (scadenza breve o limita il lavoro altrui)
+	\item Presentazione: indica una issue riguardante la redazione di una presentazione in classe o al proponente
 \end{itemize}
+
+Nel caso un membro del gruppo dovesse rendersi conto che l'issue\textsubscript{g} che sta svolgendo potrebbe essere suddiviso in ulteriori issue\textsubscript{g}, dovrà rivolgersi al responsabile, che è l'unico che può aggiungere, modificare o eliminare le issue\textsubscript{g}.\\
+Per raggruppare piú issue si marca ciascuna con la label di raggruppamento.
+Il nome di una label di raggruppamento viene preceduto da una G maiuscola (che sta per gruppo) seguito dal nome dell'attivitá da svolgere. esempio: "G Piano di progetto"
+indica un gruppo di labels relative al documento "Piano di progetto".
+Al completamento di tutte le issues di un gruppo si potrá scegliere se eliminare la label o tenerla per raggruppare issues future dello stesso gruppo.
+
+UTILIZZO DELLE CHECKBOX:
+Una issue potrebbe non essere necessariamente scomposta in piú issue anche se comprende lo svolgimento di piccole attivitá.
+In questo caso si é scelto di indicare le attivitá che compongono tale issue associandone un commento contenente delle checkboxs.
+Al completamento di un'attivitá si spunta la checkbox corrispondente in modo da far sapere al gruppo lo stato di avanzamento di quella issue.
