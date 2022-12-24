@@ -16,6 +16,9 @@ Da inserire Norme di Progetto ultima versione ...
 	\item Materiale didattico Ingegneria del Software - T08 Qualità di prodotto: \url{https://www.math.unipd.it/~tullio/IS-1/2022/Dispense/T08.pdf}
 	\item Materiale didattico Ingegneria del Software - T09 Qualità di processo: \url{https://www.math.unipd.it/~tullio/IS-1/2022/Dispense/T09.pdf}
 	\item Indice di Gulpease: \url{https://it.wikipedia.org/wiki/Indice_Gulpease}
+	\item Complessità ciclomatica: \url{https://it.wikipedia.org/wiki/Complessità_ciclomatica}
+	\item Code coverage: \url{https://en.wikipedia.org/wiki/Code_coverage}
+	\item Line of Code: \url{https://en.wikipedia.org/wiki/Source_lines_of_code}	
 	\item Da inserire futuri riferimenti...
 \end{itemize}
 
@@ -29,7 +32,7 @@ Da completare...
 Da completare...
 
 \section{Qualità del prodotto}
-Il gruppo ha deciso di utilizzare lo standard \textbf{ISO/IEC 9126} selezionando le qualità necessarie per l'intero ciclo di vita del progetto traendo delle metriche per il mantenimento di queste qualità
+Il gruppo ha deciso di utilizzare lo standard \textbf{ISO/IEC 9126} selezionando le qualità necessarie per l'intero ciclo di vita del progetto selezionando delle metriche per il mantenimento di queste qualità
 
 \pagebreak
 
@@ -47,14 +50,14 @@ Il gruppo ha deciso di utilizzare lo standard \textbf{ISO/IEC 9126} selezionando
 	\endfirsthead	
 	\endhead
 	
-	Comprensione dei testi & I documenti prodotti devono essere leggibili e comprensibili a lettori con licenza media. & ??\tabularnewline	
+	Comprensione dei testi & I documenti prodotti devono essere leggibili e comprensibili a lettori con licenza media. & MPD01\tabularnewline	
 \end{longtable}
 
 \noindent\textbf{Software}
 \begin{longtable}{ 
-		>{\centering}M{0.20\textwidth} 
+		>{\centering}M{0.15	\textwidth} 
 		>{\centering}M{0.50\textwidth}
-		>{\centering}M{0.17\textwidth} 
+		>{\centering}M{0.23\textwidth} 
 		}
 	\rowcolorhead
 	\headertitle{Obiettivo} &
@@ -63,10 +66,74 @@ Il gruppo ha deciso di utilizzare lo standard \textbf{ISO/IEC 9126} selezionando
 	\endfirsthead	
 	\endhead
 	
-	?? & ?? & ??\tabularnewline
-	?? & ?? & ??\tabularnewline
-	?? & ?? & ??\tabularnewline
+	Funzionalità & Garantire con accuratezza e conformità le funzionalità poste nel documento di Analisi dei Requisiti & MPD02\tabularnewline
+	Affidabilità & Capacità del prodotto di svolgere le funzionalità implementate & MPD03\tabularnewline
+	Efficienza & Mantenere una velocità di esecuzione del prodotto relativamente alle risorse utilizzate & MPD04\tabularnewline
+	Usabilità & Capacità del prodotto di essere utilizzato dall'utente & MPD05, MPD06\tabularnewline
+	Manutenibilità & Capacità di modificare il prodotto nel tempo & MPD07, MPD08, MPD09\tabularnewline
+	Portabilità & Capacità di funzionare in diversi ambienti di esecuzione & MPD10\tabularnewline
 \end{longtable}
 
 \subsection{Metriche utilizzate}
-Da completare...
+\textbf{MPD01 - Indice di Gulpease:}\\
+Indice di leggibilità di un testo tarato sulla lingua italiana.
+\begin{equation}
+89+\frac{300*(\text{numero delle frasi})-10*(\text{numero delle lettere})}{\text{numero delle parole}}
+\end{equation}\\
+\textit{Valore minimo}:$$ \geq 50 $$ 
+\textit{Valore ottimo}:$$ \geq 80 $$\\
+
+\noindent\textbf{MPD02 - Percentuale requisiti soddisfatti}\\
+Per questa metrica si fa riferimento al documento di \textit{Analisi dei Requisiti}.\\
+\textit{Valore minimo}: 100\% dei requisiti obbligatori\\
+\textit{Valore ottimo}: 100\% di tutti i requisiti\\
+
+\noindent\textbf{MPD03 - Densità di fallimenti durante l'esecuzione}\\
+Si intende la percentuale di failure o di esecuzioni non andate a buon fine di determinate azioni.\\
+\textit{Valore minimo}: 20\%\\
+\textit{Valore ottimo}: 10\%\\
+
+\noindent\textbf{MPD04 - Tempo medio di risposta}\\
+Metrica inerente alla velocità di risposta del prodotto in relazione delle risorse a disposizione.\\
+\textit{Valore minimo}: 4 secondi\\
+\textit{Valore ottimo}: 2 secondi\\
+
+\noindent\textbf{MPD05 - Complessità ciclomatica}\\
+Metrica utilizzata per misurare la complessità di un programma. Calcolata sul grafo dei cammini linearmente indipendenti percorsi dal software ed i nodi presenti, cioè i punti decisionali del programma.\\
+\begin{equation}
+v(G) = e - n + 2p
+\end{equation}\\
+dove:
+\begin{itemize}
+	\item \textit{v(G)} = complessità ciclomatica del grafo G
+	\item \textit{e} = il numero di archi nel grafo
+	\item \textit{n} = il numero di nodi nel grafo
+	\item \textit{p} = il numero di componenti connesse
+\end{itemize}
+\textit{Valore minimo}:$$ \leq 10 $$\\
+\textit{Valore ottimo}:$$ \leq 4 $$\\
+
+\noindent\textbf{MPD06 - Facilità di apprendimento}\\
+Misura l'intuibilità e la facilità di utilizzo del programma.\\
+\textit{Valore minimo}: 5 minuti\\
+\textit{Valore ottimo}: 2 minuti\\
+
+\noindent\textbf{MPD07 - Line of Code(LOC)}\\
+Questa metrica misura il numero di linee di codice di un modulo escluso i commenti e le linee vuote.\\
+\textit{Valore minimo}: ??\\
+\textit{Valore ottimo}: ??\\
+
+\noindent\textbf{MPD08 - Densità dei commenti}\\
+Misura la percentuale delle righe di commento sul totale delle righe di codice presenti in un modulo.\\
+\textit{Valore minimo}: 20\%\\
+\textit{Valore ottimo}: 10\%\\
+
+\noindent\textbf{MPD09 - Code Coverage}\\
+Viene definita come la percentuale di codice attraversato dai test rispetto al totale del code base.\\
+\textit{Valore minimo}: $$ \geq 70\% $$\\
+\textit{Valore ottimo}: $$ \geq 100\% $$\\
+
+\noindent\textbf{MPD10 - Browser Supportati}\\
+Si calcola una percentuale dei browser supportati dal prodotto software.\\	
+\textit{Valore minimo}: 80\%\\
+\textit{Valore ottimo}: 100\%\\
