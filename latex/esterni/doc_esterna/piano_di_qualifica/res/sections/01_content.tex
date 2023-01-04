@@ -19,25 +19,92 @@ Da inserire Norme di Progetto ultima versione ...
 	\item Complessità ciclomatica: \url{https://it.wikipedia.org/wiki/Complessità_ciclomatica}
 	\item Code coverage: \url{https://en.wikipedia.org/wiki/Code_coverage}
 	\item Line of Code: \url{https://en.wikipedia.org/wiki/Source_lines_of_code}	
+	\item Lo standard ISO/IEC 12207:1995 : \url{https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf}
 	\item Da inserire futuri riferimenti...
 \end{itemize}
 
 \section{Qualità del processo}
-Da completare...
+Per mantenere la qualità dei processi il gruppo ha deciso di utilizzare lo standard \textbf{ISO/IEC 12207:1995} scegliendo i processi più adatti al nostro progetto, adeguandoli e semplificandoli in base alle necessità del progetto.
 
 \subsection{Obiettivi di qualità del processo}
-Da completare...
+\textbf{Processi primari}
+\begin{longtable}{ 
+		>{\centering}M{0.20\textwidth} 
+		>{\centering}M{0.50\textwidth}
+		>{\centering}M{0.17\textwidth} 
+		}
+	\rowcolorhead
+	\headertitle{Processo} &
+	\centering \headertitle{Descrizione} &	
+	\headertitle{Metriche} 
+	\endfirsthead
+	\endhead
+	
+	Supply & Processo dedito alla determinazione delle procedure e delle risorse necessarie per gestire e garantire il progetto. & MPC01, MPC02, MPC03, MP04, MPC05, MPC06, MPC07, MPC08, MPC09\tabularnewline
+	Development & Processo contenente le attività relative alle sviluppo del progetto & MPC10\tabularnewline	
+\end{longtable}
+
+\noindent\textbf{Processi di supporto}
+\begin{longtable}{ 
+		>{\centering}M{0.20\textwidth} 
+		>{\centering}M{0.50\textwidth}
+		>{\centering}M{0.17\textwidth} 
+		}
+	\rowcolorhead
+	\headertitle{Processo} &
+	\centering \headertitle{Descrizione} &	
+	\headertitle{Metriche} 
+	\endfirsthead
+	\endhead
+	
+	Documentation & Processo dedicato al controllo dei documenti prodotti. I documenti prodotti devono essere leggibili e comprensibili a lettori con licenza media. & MPC11\tabularnewline
+	Quality Assurance & Processo che garantisce la conformità dei processi e dei prodotti ai requisiti specificati e ai loro piani & MPC12\tabularnewline
+	Verification & Processo che determina se le condizioni o i requisiti di un prodotto sono soddisfatti. Questo processo include analisi,revisione e test & MPC13\tabularnewline	
+\end{longtable}
+
+\noindent\textbf{Processi organizzativi}
+\begin{longtable}{ 
+		>{\centering}M{0.20\textwidth} 
+		>{\centering}M{0.50\textwidth}
+		>{\centering}M{0.17\textwidth} 
+		}
+	\rowcolorhead
+	\headertitle{Processo} &
+	\centering \headertitle{Descrizione} &	
+	\headertitle{Metriche} 
+	\endfirsthead
+	\endhead
+	
+	Management & Processo che organizza,monitora e controlla le prestazioni di un processo & MPC14\tabularnewline	
+\end{longtable}
 
 \subsection{Metriche utilizzate}
-Da completare...
+\begin{longtable}{
+		>{\centering}M{0.20\textwidth}
+		>{\centering}M{0.20\textwidth}	 
+		>{\centering}M{0.17\textwidth}
+		>{\centering}M{0.17\textwidth} 
+		}
+	\rowcolorhead
+	\headertitle{ID} &
+	\centering \headertitle{Metrica} &	
+	\headertitle{Valore minimo} &
+	\headertitle{Valore ottimo} 
+	\endfirsthead	
+	\endhead
+
+MPC10 & Defect Density & ?? & ?? \tabularnewline
+MPC11 & Indice di Gulpease &  $$ \geq 50 $$ & $$ \geq 80 $$\tabularnewline
+MPC12 & Metriche soddisfatte & $$ \geq 90\% $$ & 100\% \tabularnewline
+MPC13 & Code Coverage & $$ \geq 70\% $$  & $$ \geq 90-100\% $$\tabularnewline
+MPC14 & Rischi non previsti & 10 & 5 \tabularnewline
+\end{longtable}
 
 \section{Qualità del prodotto}
-Il gruppo ha deciso di utilizzare lo standard \textbf{ISO/IEC 9126} selezionando le qualità necessarie per l'intero ciclo di vita del progetto selezionando delle metriche per il mantenimento di queste qualità
-
-\pagebreak
+Il gruppo ha deciso di utilizzare lo standard \textbf{ISO/IEC 9126} selezionando le qualità necessarie per l'intero ciclo di vita del progetto selezionando delle metriche per il loro mantenimento.
 
 \subsection{Obiettivi di qualità del prodotto}
-\textbf{Documenti}
+\noindent\textbf{Software}
 \begin{longtable}{ 
 		>{\centering}M{0.20\textwidth} 
 		>{\centering}M{0.50\textwidth}
@@ -50,43 +117,28 @@ Il gruppo ha deciso di utilizzare lo standard \textbf{ISO/IEC 9126} selezionando
 	\endfirsthead	
 	\endhead
 	
-	Comprensione dei testi & I documenti prodotti devono essere leggibili e comprensibili a lettori con licenza media. & MPD01\tabularnewline	
-\end{longtable}
-
-\noindent\textbf{Software}
-\begin{longtable}{ 
-		>{\centering}M{0.15	\textwidth} 
-		>{\centering}M{0.50\textwidth}
-		>{\centering}M{0.23\textwidth} 
-		}
-	\rowcolorhead
-	\headertitle{Obiettivo} &
-	\centering \headertitle{Descrizione} &	
-	\headertitle{Metriche} 
-	\endfirsthead	
-	\endhead
-	
-	Funzionalità & Garantire con accuratezza e conformità le funzionalità poste nel documento di Analisi dei Requisiti & MPD02\tabularnewline
+	Funzionalità & Garantire con accuratezza e conformità le funzionalità poste nel documento di Analisi dei Requisiti & MPD01, MPD02\tabularnewline
 	Affidabilità & Capacità del prodotto di svolgere le funzionalità implementate & MPD03\tabularnewline
 	Efficienza & Mantenere una velocità di esecuzione del prodotto relativamente alle risorse utilizzate & MPD04\tabularnewline
-	Usabilità & Capacità del prodotto di essere utilizzato dall'utente & MPD05, MPD06\tabularnewline
-	Manutenibilità & Capacità di modificare il prodotto nel tempo & MPD07, MPD08, MPD09\tabularnewline
-	Portabilità & Capacità di funzionare in diversi ambienti di esecuzione & MPD10\tabularnewline
+	Usabilità & Capacità del prodotto di essere utilizzato dall'utente & MPD05\tabularnewline
+	Manutenibilità & Capacità di modificare il prodotto nel tempo & MPD06, MPD07, MPD08\tabularnewline
+	Portabilità & Capacità di funzionare in diversi ambienti di esecuzione & MPD09\tabularnewline
 \end{longtable}
 
 \subsection{Metriche utilizzate}
-\textbf{MPD01 - Indice di Gulpease:}\\
-Indice di leggibilità di un testo tarato sulla lingua italiana.
-\begin{equation}
-89+\frac{300*(\text{numero delle frasi})-10*(\text{numero delle lettere})}{\text{numero delle parole}}
-\end{equation}\\
-\textit{Valore minimo}:$$ \geq 50 $$ 
-\textit{Valore ottimo}:$$ \geq 80 $$\\
 
-\noindent\textbf{MPD02 - Percentuale requisiti soddisfatti}\\
+\noindent\textbf{MPD01 - Percentuale requisiti soddisfatti}\\
 Per questa metrica si fa riferimento al documento di \textit{Analisi dei Requisiti}.\\
 \textit{Valore minimo}: 100\% dei requisiti obbligatori\\
 \textit{Valore ottimo}: 100\% di tutti i requisiti\\
+
+\noindent\textbf{MPD02 - Requirements Stability Index (RSI)}\\
+Metrica utilizzata per tenere traccia dei cambiamenti fatti sui requisiti preposti.\\
+\begin{equation}
+1-\frac{\text{Number of changed + Number of deleted + Number of added}}{\text{Total number of initial requirements}}*100
+\end{equation}\\
+\textit{Valore minimo}: 70\%\\
+\textit{Valore ottimo}: 100\%\\
 
 \noindent\textbf{MPD03 - Densità di fallimenti durante l'esecuzione}\\
 Si intende la percentuale di failure o di esecuzioni non andate a buon fine di determinate azioni.\\
@@ -98,7 +150,12 @@ Metrica inerente alla velocità di risposta del prodotto in relazione delle riso
 \textit{Valore minimo}: 4 secondi\\
 \textit{Valore ottimo}: 2 secondi\\
 
-\noindent\textbf{MPD05 - Complessità ciclomatica}\\
+\noindent\textbf{MPD05 - Facilità di apprendimento}\\
+Misura l'intuibilità e la facilità di utilizzo del programma.\\
+\textit{Valore minimo}: 5 minuti\\
+\textit{Valore ottimo}: 2 minuti\\
+
+\noindent\textbf{MPD06 - Complessità ciclomatica}\\
 Metrica utilizzata per misurare la complessità di un programma. Calcolata sul grafo dei cammini linearmente indipendenti percorsi dal software ed i nodi presenti, cioè i punti decisionali del programma.\\
 \begin{equation}
 v(G) = e - n + 2p
@@ -113,11 +170,6 @@ dove:
 \textit{Valore minimo}:$$ \leq 10 $$\\
 \textit{Valore ottimo}:$$ \leq 4 $$\\
 
-\noindent\textbf{MPD06 - Facilità di apprendimento}\\
-Misura l'intuibilità e la facilità di utilizzo del programma.\\
-\textit{Valore minimo}: 5 minuti\\
-\textit{Valore ottimo}: 2 minuti\\
-
 \noindent\textbf{MPD07 - Line of Code(LOC)}\\
 Questa metrica misura il numero di linee di codice di un modulo escluso i commenti e le linee vuote.\\
 \textit{Valore minimo}: ??\\
@@ -128,12 +180,7 @@ Misura la percentuale delle righe di commento sul totale delle righe di codice p
 \textit{Valore minimo}: 20\%\\
 \textit{Valore ottimo}: 10\%\\
 
-\noindent\textbf{MPD09 - Code Coverage}\\
-Viene definita come la percentuale di codice attraversato dai test rispetto al totale del code base.\\
-\textit{Valore minimo}: $$ \geq 70\% $$\\
-\textit{Valore ottimo}: $$ \geq 100\% $$\\
-
-\noindent\textbf{MPD10 - Browser Supportati}\\
+\noindent\textbf{MPD09 - Browser Supportati}\\
 Si calcola una percentuale dei browser supportati dal prodotto software.\\	
 \textit{Valore minimo}: 80\%\\
 \textit{Valore ottimo}: 100\%\\
