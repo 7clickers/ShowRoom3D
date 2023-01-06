@@ -1,6 +1,7 @@
 \documentclass[a4paper]{article}
 \usepackage[normalem]{ulem}
 \usepackage{eurosym}
+\usepackage[font=small,labelfont=bf]{caption}
 
 % impostazioni generali
 \input{../../../template/package.tex}
@@ -11,7 +12,6 @@
 \makeindex
 
 \begin{document}
-\counterwithin{table}{section}
 
 % Prima pagina
 \input{../../../template/titlepage.tex}
@@ -25,6 +25,8 @@
 {
     \hypersetup{linkcolor=black}
     \tableofcontents
+    \listoffigures %elenco figure
+    \listoftables  %elenco tabelle
 }
 \pagebreak
 
@@ -32,9 +34,8 @@
 % Informazioni generali
 \input{res/sections/01_Analisi_dei_rischi.tex}
 \pagebreak
-
-% Contenuto
+\input{res/sections/02_pianificazione.tex}
+\pagebreak
 \input{res/sections/03_Preventivo.tex}
 \pagebreak
-
 \end{document}
