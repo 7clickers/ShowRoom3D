@@ -8,7 +8,7 @@ Il capitolato su cui noi Seven Clickers lavoriamo nasce da una proposta dell'azi
 
 \subsection{Riferimenti}
 \subsubsection{Riferimenti normativi}
-Da inserire Norme di Progetto ultima versione ...
+Per i dettagli completi sulle metriche si fa riferimento all'ultima versione delle \textit{Norme di Progetto}.
 
 \subsubsection{Riferimenti informativi}
 \begin{itemize}
@@ -20,7 +20,9 @@ Da inserire Norme di Progetto ultima versione ...
 	\item Code coverage: \url{https://en.wikipedia.org/wiki/Code_coverage}
 	\item Line of Code: \url{https://en.wikipedia.org/wiki/Source_lines_of_code}	
 	\item Lo standard ISO/IEC 12207:1995 : \url{https://www.math.unipd.it/~tullio/IS-1/2009/Approfondimenti/ISO_12207-1995.pdf}
-	\item Da inserire futuri riferimenti...
+	\item Riferimento per alcune metriche di processo: \url{https://it.wikipedia.org/wiki/Metriche_di_progetto}
+	\item Requirements Stability Index (RSI): \url{https://shiyamtj.wordpress.com/2018/09/26/requirement-stability-index/}
+	\item Defect Density: \url{https://www.softwaretestinghelp.com/defect-density/}
 \end{itemize}
 
 \section{Qualità del processo}
@@ -40,8 +42,8 @@ Per mantenere la qualità dei processi il gruppo ha deciso di utilizzare lo stan
 	\endfirsthead
 	\endhead
 	
-	Supply & Processo dedito alla determinazione delle procedure e delle risorse necessarie per gestire e garantire il progetto. & MPC01, MPC02, MPC03, MP04, MPC05, MPC06, MPC07, MPC08, MPC09\tabularnewline
-	Development & Processo contenente le attività relative alle sviluppo del progetto & MPC10\tabularnewline	
+	Supply & Processo dedito alla determinazione delle procedure e delle risorse necessarie per gestire e garantire il progetto. & MPC01, MPC02, MPC03, MP04, MPC05, MPC06, MPC07, MPC08\tabularnewline
+	Development & Processo contenente le attività relative alle sviluppo del progetto & MPC09\tabularnewline	
 \end{longtable}
 
 \noindent\textbf{Processi di supporto}
@@ -57,9 +59,9 @@ Per mantenere la qualità dei processi il gruppo ha deciso di utilizzare lo stan
 	\endfirsthead
 	\endhead
 	
-	Documentation & Processo dedicato al controllo dei documenti prodotti. I documenti prodotti devono essere leggibili e comprensibili a lettori con licenza media. & MPC11\tabularnewline
-	Quality Assurance & Processo che garantisce la conformità dei processi e dei prodotti ai requisiti specificati e ai loro piani & MPC12\tabularnewline
-	Verification & Processo che determina se le condizioni o i requisiti di un prodotto sono soddisfatti. Questo processo include analisi,revisione e test & MPC13\tabularnewline	
+	Documentation & Processo dedicato al controllo dei documenti prodotti. I documenti prodotti devono essere leggibili e comprensibili a lettori con licenza media. & MPC10\tabularnewline
+	Quality Assurance & Processo che garantisce la conformità dei processi e dei prodotti ai requisiti specificati e ai loro piani & MPC11\tabularnewline
+	Verification & Processo che determina se le condizioni o i requisiti di un prodotto sono soddisfatti. Questo processo include analisi,revisione e test & MPC12\tabularnewline	
 \end{longtable}
 
 \noindent\textbf{Processi organizzativi}
@@ -75,15 +77,15 @@ Per mantenere la qualità dei processi il gruppo ha deciso di utilizzare lo stan
 	\endfirsthead
 	\endhead
 	
-	Management & Processo che organizza,monitora e controlla le prestazioni di un processo & MPC14\tabularnewline	
+	Management & Processo che organizza,monitora e controlla le prestazioni di un processo & MPC13\tabularnewline	
 \end{longtable}
 
 \subsection{Metriche utilizzate}
 \begin{longtable}{
-		>{\centering}M{0.20\textwidth}
-		>{\centering}M{0.20\textwidth}	 
 		>{\centering}M{0.17\textwidth}
-		>{\centering}M{0.17\textwidth} 
+		>{\centering}M{0.20\textwidth}	 
+		>{\centering}M{0.23\textwidth}
+		>{\centering}M{0.24\textwidth} 
 		}
 	\rowcolorhead
 	\headertitle{ID} &
@@ -92,12 +94,19 @@ Per mantenere la qualità dei processi il gruppo ha deciso di utilizzare lo stan
 	\headertitle{Valore ottimo} 
 	\endfirsthead	
 	\endhead
-
-MPC10 & Defect Density & ?? & ?? \tabularnewline
-MPC11 & Indice di Gulpease &  $$ \geq 50 $$ & $$ \geq 80 $$\tabularnewline
-MPC12 & Metriche soddisfatte & $$ \geq 90\% $$ & 100\% \tabularnewline
-MPC13 & Code Coverage & $$ \geq 70\% $$  & $$ \geq 90-100\% $$\tabularnewline
-MPC14 & Rischi non previsti & 10 & 5 \tabularnewline
+MPC01 & Planned Value (PV) & $$ \geq 0 $$ & $$ \leq \text{Budget at Completion} $$ \tabularnewline
+MPC02 & Actual Cost (AC) & $$ \geq 0 $$ & $$ \leq \text{EAC} $$\tabularnewline
+MPC03 & Earned Value (EV) & $$ \geq 0 $$ & $$ \leq \text{EAC} $$ \tabularnewline
+MPC04 & Estimated at Completion (EAC) & preventivo -5\% $$ \leq \text{EAC} $$ preventivo +5\% $$ \geq \text{EAC} $$   & Costo preventivato \tabularnewline
+MPC05 & Estimated to Complete (ETC) & $$ \geq 0 $$ & $$ \leq \text{EAC} $$ \tabularnewline
+MPC06 & Cost Variance (CV) & ?? &  $$ \leq 0\% $$ \tabularnewline
+MPC07 & Schedule Variance (SV) & $$ \geq -15\% $$ & $$ \leq 0\% $$ \tabularnewline
+MPC08 & Budget Variance (BV) & $$ \geq -10\% $$ & $$ \leq 0\% $$ \tabularnewline
+MPC09 & Defect Density & ?? & ?? \tabularnewline
+MPC10 & Indice di Gulpease &  $$ \geq 50 $$ & $$ \geq 80 $$\tabularnewline
+MPC11 & Metriche soddisfatte & $$ \geq 90\% $$ & 100\% \tabularnewline
+MPC12 & Code Coverage & $$ \geq 70\% $$  & $$ \geq 90-100\% $$\tabularnewline
+MPC13 & Rischi non previsti & 10 & 5 \tabularnewline
 \end{longtable}
 
 \section{Qualità del prodotto}
@@ -126,61 +135,27 @@ Il gruppo ha deciso di utilizzare lo standard \textbf{ISO/IEC 9126} selezionando
 \end{longtable}
 
 \subsection{Metriche utilizzate}
+\begin{longtable}{
+		>{\centering}M{0.17\textwidth}
+		>{\centering}M{0.20\textwidth}	 
+		>{\centering}M{0.23\textwidth}
+		>{\centering}M{0.24\textwidth} 
+		}
+	\rowcolorhead
+	\headertitle{ID} &
+	\centering \headertitle{Metrica} &	
+	\headertitle{Valore minimo} &
+	\headertitle{Valore ottimo} 
+	\endfirsthead	
+	\endhead
+MPD01 & Percentuale requisiti soddisfatti & 100\% requisiti obbligatori & 100\% tutti requisiti \tabularnewline
+MPD02 & Requirements Stability Index (RSI) & 70\% & 100\%\tabularnewline
+MPD03 & Densità fallimenti durante l'esecuzione & 20\% & 10\% \tabularnewline
+MPD04 & Tempo medio di risposta & 4 secondi & 2 secondi \tabularnewline
+MPD05 & Facilità di apprendimento & 5 minuti & 2 minuti \tabularnewline
+MPD06 & Complessità ciclomatica & $$ \leq 10 $$ &  $$ \leq 4 $$ \tabularnewline
+MPD07 & Line of Code & ?? & ?? \tabularnewline
+MPD08 & Densità dei commenti & 20\% & 10\% \tabularnewline
+MPD09 & Browser Supportati & 80\% & 100\% \tabularnewline
+\end{longtable}
 
-\noindent\textbf{MPD01 - Percentuale requisiti soddisfatti}\\
-Per questa metrica si fa riferimento al documento di \textit{Analisi dei Requisiti}.\\
-\textit{Valore minimo}: 100\% dei requisiti obbligatori\\
-\textit{Valore ottimo}: 100\% di tutti i requisiti\\
-
-\noindent\textbf{MPD02 - Requirements Stability Index (RSI)}\\
-Metrica utilizzata per tenere traccia dei cambiamenti fatti sui requisiti preposti.\\
-\begin{equation}
-1-\frac{\text{Number of changed + Number of deleted + Number of added}}{\text{Total number of initial requirements}}*100
-\end{equation}\\
-\textit{Valore minimo}: 70\%\\
-\textit{Valore ottimo}: 100\%\\
-
-\noindent\textbf{MPD03 - Densità di fallimenti durante l'esecuzione}\\
-Si intende la percentuale di failure o di esecuzioni non andate a buon fine di determinate azioni.\\
-\textit{Valore minimo}: 20\%\\
-\textit{Valore ottimo}: 10\%\\
-
-\noindent\textbf{MPD04 - Tempo medio di risposta}\\
-Metrica inerente alla velocità di risposta del prodotto in relazione delle risorse a disposizione.\\
-\textit{Valore minimo}: 4 secondi\\
-\textit{Valore ottimo}: 2 secondi\\
-
-\noindent\textbf{MPD05 - Facilità di apprendimento}\\
-Misura l'intuibilità e la facilità di utilizzo del programma.\\
-\textit{Valore minimo}: 5 minuti\\
-\textit{Valore ottimo}: 2 minuti\\
-
-\noindent\textbf{MPD06 - Complessità ciclomatica}\\
-Metrica utilizzata per misurare la complessità di un programma. Calcolata sul grafo dei cammini linearmente indipendenti percorsi dal software ed i nodi presenti, cioè i punti decisionali del programma.\\
-\begin{equation}
-v(G) = e - n + 2p
-\end{equation}\\
-dove:
-\begin{itemize}
-	\item \textit{v(G)} = complessità ciclomatica del grafo G
-	\item \textit{e} = il numero di archi nel grafo
-	\item \textit{n} = il numero di nodi nel grafo
-	\item \textit{p} = il numero di componenti connesse
-\end{itemize}
-\textit{Valore minimo}:$$ \leq 10 $$\\
-\textit{Valore ottimo}:$$ \leq 4 $$\\
-
-\noindent\textbf{MPD07 - Line of Code(LOC)}\\
-Questa metrica misura il numero di linee di codice di un modulo escluso i commenti e le linee vuote.\\
-\textit{Valore minimo}: ??\\
-\textit{Valore ottimo}: ??\\
-
-\noindent\textbf{MPD08 - Densità dei commenti}\\
-Misura la percentuale delle righe di commento sul totale delle righe di codice presenti in un modulo.\\
-\textit{Valore minimo}: 20\%\\
-\textit{Valore ottimo}: 10\%\\
-
-\noindent\textbf{MPD09 - Browser Supportati}\\
-Si calcola una percentuale dei browser supportati dal prodotto software.\\	
-\textit{Valore minimo}: 80\%\\
-\textit{Valore ottimo}: 100\%\\
