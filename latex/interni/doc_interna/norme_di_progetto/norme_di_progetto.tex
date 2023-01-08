@@ -9,6 +9,12 @@
 
 \makeindex
 
+%comando per far andare a capo i paragrafi
+\makeatletter
+\renewcommand\paragraph{
+\@startsection {paragraph}{4}{0mm}{-\baselineskip}{.5\baselineskip}{\normalfont \normalsize \bfseries }}
+\makeatother
+
 \begin{document}
 \counterwithin{table}{section}
 
