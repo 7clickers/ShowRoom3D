@@ -43,3 +43,11 @@ loader.load('source/glb/sea_map_nocolor.glb', (gltf) => {
 			helper.visible = value;
 		});
 });
+loader.load('source/glb/corallo_leggero.glb', function (gtlf) {
+	const model = gtlf.scene;
+
+	scene.add(model);
+	model.position.set(0, 1, -10);
+}, undefined, function (error) {
+	console.error(error);
+});

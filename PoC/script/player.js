@@ -1,7 +1,24 @@
 import * as THREE from 'three';
 import { Capsule } from 'three/addons/math/Capsule.js';
-import { camera } from './showroom_poc.js';
+import { camera, scene } from './showroom_poc.js';
 import { worldOctree } from './world.js';
+
+const spotLight = new THREE.SpotLight(0xFFC3EE, 1, 0, Math.PI / 8);
+spotLight.position.set(0, 12, -10);
+
+const geometry = new THREE.RingGeometry(2.5, 3, 32);
+const material = new THREE.MeshBasicMaterial({ color: 0xffff00, side: THREE.DoubleSide });
+const ring = new THREE.Mesh(geometry, material);
+
+ring.position.x = 0;
+ring.position.y = 0.7;
+ring.position.z = -10;
+ring.rotateX(Math.PI / 2);
+
+var y = document.getElementById("info2");
+var flag = false;
+
+document.getElementById("corallo").onclick = function () { Teleport(0, 2, -6.5) };
 
 //PLAYER
 const GRAVITY = 30;
@@ -15,39 +32,58 @@ let mouseTime = 0;
 
 const keyStates = {};
 
-export function MovementListeners(){
-    document.addEventListener('keydown', (event) => {
 
-        keyStates[event.code] = true;
-    
-    });
-    
-    document.addEventListener('keyup', (event) => {
-    
-        keyStates[event.code] = false;
-    
-    });
-    
-    container.addEventListener('mousedown', () => {
-    
-        document.body.requestPointerLock();
-    
-        mouseTime = performance.now();
-    
-    });
-    
-    
-    //movimento camera
-    document.body.addEventListener('mousemove', (event) => {
-    
-        if (document.pointerLockElement === document.body) {
-    
-            camera.rotation.y -= event.movementX / 500;
-            camera.rotation.x -= event.movementY / 500;
-    
-        }
-    
-    });
+export function Teleport(x, y, z) {
+	playerCollider.start.set(x, y - 0.65, z);
+	playerCollider.end.set(x, y, z);
+	playerCollider.radius = 0.35;
+	camera.position.copy(playerCollider.end);
+	camera.rotation.set(0, 0, 0);
+}
+
+function showInfo() {
+	var x = document.getElementById("corallo");
+	if (x.style.display === "block") {
+		x.style.display = "none";
+	} else {
+		x.style.display = "block";
+	}
+	flag = false;
+}
+
+export function MovementListeners() {
+	document.addEventListener('keydown', (event) => {
+
+		keyStates[event.code] = true;
+
+	});
+
+	document.addEventListener('keyup', (event) => {
+
+		keyStates[event.code] = false;
+
+	});
+
+	container.addEventListener('mousedown', () => {
+
+		document.body.requestPointerLock();
+
+		mouseTime = performance.now();
+
+	});
+
+
+	//movimento camera
+	document.body.addEventListener('mousemove', (event) => {
+
+		if (document.pointerLockElement === document.body) {
+
+			camera.rotation.y -= event.movementX / 500;
+			camera.rotation.x -= event.movementY / 500;
+
+		}
+
+	});
 }
 
 
@@ -157,7 +193,28 @@ export function controls(deltaTime) {
 		}
 
 	}
+	if (keyStates['KeyT']) {
+		Teleport(0, 1, 0);
+	}
+	//-6,7,7
+	if (-5 < camera.position.x && -5 < camera.position.z + 10 && 5 > camera.position.x && 5 > camera.position.z + 10) {
+		scene.add(ring);
+		spotLight.target = ring;
+		scene.add(spotLight);
+		y.style.display = "block";
 
+		if (keyStates['KeyE'] && flag == false) {
+			flag = true;
+			setTimeout(showInfo, 200);
+
+		}
+
+	}
+	else {
+		scene.remove(spotLight);
+		scene.remove(ring);
+		y.style.display = "none";
+	}
 }
 
 export function teleportPlayerIfOob() {

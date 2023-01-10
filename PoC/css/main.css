@@ -37,6 +37,43 @@ button {
 	z-index: 1; /* TODO Solve this in HTML */
 }
 
+#info2 {
+	display: none;
+	position: absolute;
+	bottom: 25%;
+	width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+	text-align: center;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	pointer-events: none;
+	z-index: 1; /* TODO Solve this in HTML */
+}
+
+#carrello {
+	position: absolute;
+	top: 10%;
+	left: 40%;
+	width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+	text-align: center;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	pointer-events: none;
+	z-index: 1; /* TODO Solve this in HTML */
+}
+
+#corallo{
+	display: none;
+}
+
+
 a, button, input, select {
 	pointer-events: auto;
 }
