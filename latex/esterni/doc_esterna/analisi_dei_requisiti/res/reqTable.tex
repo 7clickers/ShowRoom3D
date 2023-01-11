@@ -1,0 +1,25 @@
+\newcommand{\reqTable}[1]{
+	 
+
+\renewcommand{\arraystretch}{1.5}
+\rowcolors{2}{pari}{dispari}
+\begin{longtable}{ 
+		>{\centering}M{0.2\textwidth} 
+		>{\centering}M{0.45\textwidth} 
+		>{\centering}M{0.2\textwidth}
+		>{\centering}M{0.15\textwidth}
+		 }
+	\rowcolorhead
+	\headertitle{Requisito} &
+	\headertitle{Descrizione} &
+	\headertitle{Classificazione} &	
+	\headertitle{Fonte}
+	\endfirsthead	
+	\endhead
+	
+	#1
+
+\end{longtable}
+\vspace{0.2em}
+
+}
