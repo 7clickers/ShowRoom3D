@@ -1,8 +1,28 @@
-import subprocess, os,re
+import re
 
 # indicare il path del file target
 pathTarget='./latex/nuovo.txt'
+fileTarget=''
+listaNomiDocumenti=["ciao","come"]
 
+with open(pathTarget,'r') as file:
+    fileTarget=file.read()
+print(fileTarget)
+# pulizia file:rimuove tutti i comandi tex inseriti da questo script nel documento target
+fileTarget=fileTarget.replace('\\textsuperscript{g}',"")
+
+for d in listaNomiDocumenti:
+
+    listaMatchesDocumenti=re.findall("\\textit\{ciao\}",fileTarget,re.IGNORECASE)
+
+    setNomi=set()
+    for nome in listaMatchesDocumenti:
+        setNomi.add(nome)
+    for doc in setNomi:
+        fileTarget=fileTarget.replace(doc,d) 
+        print("sono qua")
+
+# AGGIUNTA PEDICI SULLE PAROLE DI GLOSSARIO ========================
 contenuto=''
 lett=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
 for l in lett:
@@ -20,10 +40,6 @@ while sottoSezioni:
     listaTermini.insert(0,parola.group(0))
 # listaTermini é una lista che contiene tutti i termini del glossario
 
-fileTarget=''
-with open(pathTarget,'r') as file:
-    fileTarget=file.read()
-
 setIS=set()
 for t in listaTermini:
     listaMatches=re.findall(t,fileTarget,re.IGNORECASE)
@@ -35,9 +51,24 @@ for t in listaTermini:
 # per ogni termine
 for tIS in setIS:
     tPedice=tIS+'\\textsuperscript{g}'
-    fileTarget=fileTarget.replace(tPedice,tIS)
     fileTarget=fileTarget.replace(tIS,tIS+'\\textsuperscript{g}')
 # fileTarget contiene i pedici sui termini desiderati
 
+# SCRITTURA DEI NOMI DEI DOCUMENTI NEL FORMATO CORRETTO ========================
+
+listaMatchesDocumenti=[]
+indice=0
+for d in listaNomiDocumenti:
+    listaMatchesDocumenti=re.findall(d,fileTarget,re.IGNORECASE)
+    setNomi=set()
+    for nome in listaMatchesDocumenti:
+        setNomi.add(nome)
+    for doc in setNomi:
+        formatoCorrettoDocumento="\\textit{"+listaNomiDocumenti[indice]+"}"
+        fileTarget=fileTarget.replace(doc,formatoCorrettoDocumento) 
+        indice+=1
+
 with open(pathTarget,'w') as file:
     file.write(fileTarget)
+
+    
