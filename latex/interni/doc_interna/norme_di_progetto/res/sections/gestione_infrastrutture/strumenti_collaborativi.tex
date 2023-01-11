@@ -1,4 +1,4 @@
-\subsection{GitHub\textsubscript{g}}
+\subsubsection{GitHub\textsubscript{g}}
 Servizio di hosting per progetti software che implementa uno strumento di controllo versione distribuito Git\textsubscript{g}.
 Oltre alla copia in remoto del repository\textsubscript{g} di progetto ogni componente del gruppo ha una propria copia in locale.\\
 Per ottenere una copia del repository\textsubscript{g} ogni componente ha scaricato lo strumento Git\textsubscript{g} ed eseguendo il 
@@ -6,10 +6,10 @@ comando 'git clone' da git\textsubscript{g} bash viene creata una cartella colle
 Non sono state imposte modalità specifiche sull'interazione con il repository\textsubscript{g} remoto in modo da non sconvolgere le abitudini di lavoro di 
 ciascun componente.\\
 I componenti del gruppo abituati ad interagire con GitHub\textsubscript{g} da interfaccia grafica possono continuare a farne uso.
-\subsubsection{Repository\textsubscript{g}}
+\paragraph{Repository\textsubscript{g}}
 Il repository\textsubscript{g} si può trovare all'indirizzo \textbf{\textit{https://github.com/7clickers/ShowRoom3D}} ed è pubblico. 
 I collaboratori sono i componenti del gruppo SevenClickers che utilizzano il proprio account GitHub\textsubscript{g} personale per collaborare al progetto.
-\subsubsection{Branching}
+\paragraph{Branching}
 \textbf{Branches protetti}:
     \begin{itemize} 
         \item main: contiene le versioni di release\textsubscript{g} del software
@@ -24,7 +24,7 @@ in quanto ciascun componente sviluppa su un solo branch alla volta salvo casi ec
 Un branch\textsubscript{g} libero avrà il nome del documento che si sviluppa su quel branch\textsubscript{g}, oppure della feature\textsubscript{g} che va ad implementare.\\
 Non appena i/il file nel branch sono stati verificati ed il merge è stato fatto, il branch libero verrà eliminato.
 I branch di approvazione saranno chiamati con la sintassi appr\_nomefile1\_nomefile2\_nomefile3.... a seconda dei file che verranno approvati durante il ciclo di vita del branch.
-\subsubsection{Commits}
+\paragraph{Commits}
 È preferibile che ogni commit abbia una singola responsabilità per cambiamento.\\
 I commits non possono essere effettuati direttamente sui branch protetti ma per integrare delle aggiunte o modifiche sarà necessario aprire una Pull Request.
 All'approvazione di una Pull Request tutti i commit relativi al merge verranno raggruppati in un unico commit che rispetti la struttura sintattica descritta in seguito.
@@ -54,7 +54,7 @@ in modo che possano essere compresi anche dagli altri collaboratori.
 
 
 
-\subsubsection{Pull Requests}
+\paragraph{Pull Requests}
 Per effettuare un merge su un branch protetto si deve aprire da GitHub\textsubscript{g} una Pull Request.
 La Pull Request permette di verificare il lavoro svolto prima di integrarlo con il branch desiderato.\\
 Alla creazione di una Pull Request bisogna associare:
@@ -69,7 +69,7 @@ Non sarà possibile effettuare il merge finchè tutti i commenti di revisione no
 \end{itemize}
 Per i commit relativi alle Pull Requests seguire le regole descritte nella sottosezione Commits per i branch protetti.
 
-\subsubsection{Milestone\textsubscript{g}}
+\paragraph{Milestone\textsubscript{g}}
 Una milestone indica un traguardo intermedio significativo per il progetto.
 Ad essa possono venire assegnate delle issues per verificarne il raggiungimento.
 Ogni milestone ha una scadenza che viene discussa e fissata da tutto il gruppo.
@@ -78,7 +78,7 @@ ad ottenere i risultati prefissati.
 Una delle milestone create dal gruppo durante il completamento della tecnology baseline relativa alla prima milestone imposta dal committente (Requirements and Tecnology Baseline)
 riguarda l'implementazione di un PoC (Proof of concept).
 
-\subsubsection{Projects Board\textsubscript{g}}
+\paragraph{Projects Board\textsubscript{g}}
 Vengono utilizzate due project board per tracciare le issues della repo.
 Una project board principale utilizzata da tutti i membri del gruppo e una project board per le approvazioni utilizzata solo dal responsabile di progetto per approvare i file che richiedono l'approvazione prima di una consegna.
 
@@ -128,7 +128,7 @@ Esempio di work flow issues:
 		L'issue segue il work flow della project board approvazioni.
 	\end{enumerate}
 \end{enumerate}
-\subsubsection{Issue Tracking System\textsubscript{g}}
+\paragraph{Issue Tracking System\textsubscript{g}}
 Il gruppo utilizza l'issue tracking system\textsubscript{g} di Github\textsubscript{g} per tenere traccia delle issue\textsubscript{g}. 
 Le issues\textsubscript{g} verranno determinate dal responsabile, ma la loro assegnazione verrà effettuata dai membri del gruppo, in base alla priorità delle issues\textsubscript{g}, i loro ruoli e alle loro disponibilità temporali.\\
 Per marchiare le issues secondo criteri di interesse (come ambito o prioritá) vengono utilizzate le labels.
