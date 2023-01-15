@@ -6,11 +6,15 @@ Le decorazioni vengono così esposte e visualizzate in un modo molto più autent
 
 \subsection{Descrizione generale}
 Per rendere il documento il più esauriente possibile ma allo stesso tempo non troppo prolisso, abbiamo schematizzato ogni caso d'uso evidenziando:  precondizioni, postcondizioni, scenario principale in cui tale azione avrà luogo, una breve descrizione ed eventuali estensioni.\newline
-In alcuni casi è stata anche inserita un'immagine dello schema UML per fornire una spiegazione visiva che può aiutare nel comprendere più a fondo il nostro lavoro.
+In alcuni casi è stata anche inserita un'immagine dello schema UML per fornire una spiegazione visiva che può aiutare nel comprendere più a fondo il nostro lavoro.\newline
+Da notare, nelle immagini dello schema UML sono stati rappresentati in azzurro i casi d'uso facoltativi.
 
 \subsection{Attori}
-Data l'ampiezza e struttura ridotta del software, non abbiamo ritenuto necessario specificare per ogni singolo caso d'uso qual sia l'attore che può compiere tale azione. \newline
-Infatti l'attore che interagisce col nostro software è uno solo, noi lo abbiamo denominato "Utente in ambiente 3D". 
+Data l'ampiezza e struttura ridotta del software, l'attore che interagisce col nostro software è uno solo, denominato "Utente in ambiente 3D". 
+
+\subsubsection{Utente in ambiente 3D}
+Si tratta dell'utente protagonista di tutti i casi d'uso del nostro prodotto, chiamato tale dato che il software fornisce un immersione completa all'interno dello scenario 3D. \newline
+L'utente non verrai mai reindirizzato a una normale pagina web statica, poiché ne risentirebbe la user experience. 
 
 \section{Casi d'uso}
 
@@ -25,6 +29,10 @@ Infatti l'attore che interagisce col nostro software è uno solo, noi lo abbiamo
 
 \begin{itemize}
 	
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
 		\item Vengono rimossi uno o più oggetti.
@@ -53,6 +61,10 @@ Infatti l'attore che interagisce col nostro software è uno solo, noi lo abbiamo
 
 \begin{itemize}
 	
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
 		\item Viene rimosso un singolo oggetto dal carrello.
@@ -79,9 +91,13 @@ Infatti l'attore che interagisce col nostro software è uno solo, noi lo abbiamo
 \subsubsection{UC 1.2 - Svuotamento totale carrello}
 \begin{itemize}
 	
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
-		\item Svuotamento totale carrello prevede la rimozione di tutti gli oggetti presenti nel carrello.
+		\item Prevede la rimozione di tutti gli oggetti presenti nel carrello con un singolo comando.
 	\end{itemize}
 	
 	\item Precondizioni:
@@ -102,6 +118,8 @@ Infatti l'attore che interagisce col nostro software è uno solo, noi lo abbiamo
 	
 \end{itemize}
 
+\pagebreak
+
 \subsection{UC 2 - Visualizzazione contenuto del carrello}
 
 \begin{figure}[H]
@@ -113,6 +131,10 @@ Infatti l'attore che interagisce col nostro software è uno solo, noi lo abbiamo
 
 \begin{itemize}
 	
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
 		\item Permette di visualizzare il contenuto del carrello.
@@ -146,9 +168,13 @@ Infatti l'attore che interagisce col nostro software è uno solo, noi lo abbiamo
 
 \begin{itemize}
 	
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
-		\item Prevede la visualizzazione degli oggetti che sono stati inseriti dall'utente in precedenza nel carrello, oltre alle rispettive caratteristiche.
+		\item L'utente può visualizzare la lista degli oggetti presenti nel carrello.
 	\end{itemize}
 	
 	\item Precondizioni:
@@ -180,6 +206,10 @@ Infatti l'attore che interagisce col nostro software è uno solo, noi lo abbiamo
 
 \begin{itemize}
 	
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
 		\item Prevede la visualizzazione la visualizzazione di un oggetto all'interno della lista oggetti del carrello.
@@ -206,6 +236,10 @@ Infatti l'attore che interagisce col nostro software è uno solo, noi lo abbiamo
 \subparagraph{UC 2.1.1.1 - Visualizzazione icona}
 \begin{itemize}
 	
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
 		\item Prevede la visualizzazione di un'icona associata all'oggetto a cui fa riferimento, l'icona è un'anteprima miniaturizzata dell'oggetto a cui fa riferimento.
@@ -232,6 +266,10 @@ Infatti l'attore che interagisce col nostro software è uno solo, noi lo abbiamo
 \subparagraph{UC 2.1.1.2 - Visualizzazione nome}
 \begin{itemize}
 	
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
 		\item Prevede la visualizzazione del nome dell'oggetto, il nome dell'oggetto è un identificativo che permette di distinguere oggetti diversi tra loro.
@@ -258,6 +296,10 @@ Infatti l'attore che interagisce col nostro software è uno solo, noi lo abbiamo
 \subparagraph{UC 2.1.1.3 - Visualizzazione costo}
 \begin{itemize}
 	
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
 		\item Prevede la visualizzazione del costo dell'oggetto.
@@ -284,6 +326,10 @@ Infatti l'attore che interagisce col nostro software è uno solo, noi lo abbiamo
 \subparagraph{UC 2.1.1.4 - Visualizzazione quantità}
 \begin{itemize}
 	
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
 		\item Prevede la visualizzazione del numero di oggetti identici all'oggetto (compreso) presenti all'interno del carrello.
@@ -307,9 +353,43 @@ Infatti l'attore che interagisce col nostro software è uno solo, noi lo abbiamo
 	
 \end{itemize}
 
+\subparagraph{UC 2.1.1.5 - Visualizzazione caratteristiche fisiche}
+\begin{itemize}
+	
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
+	\item Descrizione:
+	\begin{itemize}
+		\item Prevede la visualizzazione delle caratteristiche fisiche dell'oggetto.
+	\end{itemize}
+	
+	\item Precondizioni:
+	\begin{itemize}
+		\item L'oggetto è visibile nella lista oggetti del carrello.
+	\end{itemize}
+	
+	\item Postcondizioni:
+	\begin{itemize}
+		\item L'oggetto è visibile nella lista oggetti del carrello;
+		\item Le caratteristiche fisiche dell'oggetto sono visibili.
+	\end{itemize}
+	
+	\item Scenario principale:
+	\begin{itemize}
+		\item Nessuna azione richiesta.
+	\end{itemize}
+	
+\end{itemize}
+
 \subsubsection{UC 2.2 - Visualizzazione costo totale oggetti}
 \begin{itemize}
 	
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
 		\item Prevede la visualizzazione della somma di tutti i costi degli oggetti presenti all'interno del carrello.
@@ -333,9 +413,15 @@ Infatti l'attore che interagisce col nostro software è uno solo, noi lo abbiamo
 	
 \end{itemize}
 
+\pagebreak
+
 \subsection{UC 3 - Aggiungere un oggetto al carrello}
 \begin{itemize}
 
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
 		\item Aggiungere un oggetto al carrello significa aggiungere alla lista degli oggetti presenti nel carrello l'oggetto desiderato e visualizzare un messaggio di oggetto aggiunto al carrello con successo.
@@ -361,6 +447,8 @@ Infatti l'attore che interagisce col nostro software è uno solo, noi lo abbiamo
 	
 \end{itemize}
 
+\pagebreak
+
 \subsection{UC 4 - Compiere azioni di movimento}
 
 \begin{figure}[H]
@@ -372,6 +460,10 @@ Infatti l'attore che interagisce col nostro software è uno solo, noi lo abbiamo
 
 \begin{itemize}
 
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
 		\item Compiere azioni di movimento significa interagire con il sistema per esplorare l'ambiente 3D.
@@ -409,6 +501,10 @@ della sua visuale.
 
 \begin{itemize}
 
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
 		\item Compiere azioni di movimenti direzionali significa interagire con il sistema per spostarsi nello spazio offerto dall'ambiente 3D.
@@ -437,6 +533,10 @@ della sua visuale.
 \paragraph{UC 4.1.1 - Compiere movimenti direzionali lungo l'asse X}
 \begin{itemize}
 
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
 		\item Caso d'uso autoesplicativo.
@@ -464,6 +564,10 @@ della sua visuale.
 \paragraph{UC 4.1.2 - Compiere movimenti direzionali lungo l'asse Y}
 \begin{itemize}
 
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
 		\item Caso d'uso autoesplicativo.
@@ -491,6 +595,10 @@ della sua visuale.
 \paragraph{UC 4.1.3 - Compiere movimenti direzionali lungo l'asse Z}
 \begin{itemize}
 
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
 		\item Caso d'uso autoesplicativo.
@@ -515,14 +623,18 @@ della sua visuale.
 	
 \end{itemize}
 
-\subsubsection{UC 4.2 - Compiere spostamenti camera}
+\subsubsection{UC 4.2 - Compiere rotazioni camera}
 \begin{itemize}
 
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
-		\item Compiere un'azione di spostamento camera permette all'utente di vedere l'ambiente che lo circonda variando
+		\item Compiere un'azione di rotazione camera permette all'utente di vedere l'ambiente che lo circonda variando
 la direzione della propria visuale.
-\newline Non ci sono vincoli alle direzioni in cui puo' variare lo spostamento della camera.
+\newline Non ci sono vincoli alle direzioni in cui può variare lo spostamento della camera.
 	\end{itemize}
 	
 	\item Precondizioni:
@@ -543,9 +655,15 @@ la direzione della propria visuale.
 	
 \end{itemize}
 
+\pagebreak
+
 \subsection{UC 5 - Modificare attributi oggetto}
 \begin{itemize}
 
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
 		\item Modificare attributi oggetto prevede la modifica degli attributi dell'oggetto che l'utente desidera modificare.
@@ -580,12 +698,18 @@ la direzione della propria visuale.
 	
 \end{itemize}
 
+\pagebreak
+
 \subsection{UC 6 - Visualizzazione messaggio oggetto non modificabile}
 \begin{itemize}
 
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
-		\item Visualizza messaggio oggetto non modificabile prevede la visualizzazione di un messaggio informativo di oggetto non modificabile.
+		\item Prevede la visualizzazione di un messaggio informativo di "oggetto non modificabile".
 \newline Un oggetto potrebbe non essere modificabile per la presenza di una sola configurazione per quell'oggetto.
 	\end{itemize}
 	
@@ -609,6 +733,8 @@ la direzione della propria visuale.
 	
 \end{itemize}
 
+\pagebreak
+
 \subsection{UC 7 - Visualizzazione contenuto lista oggetti}
 
 \begin{figure}[H]
@@ -620,6 +746,10 @@ la direzione della propria visuale.
 
 \begin{itemize}
 
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
 		\item Visualizza contenuto lista oggetti permette di visualizzare il contenuto della lista oggetti.
@@ -645,6 +775,10 @@ la direzione della propria visuale.
 \subsubsection{UC 7.1 - Visualizzazione oggetti stanza attuale}
 \begin{itemize}
 
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
 		\item Visualizza oggetti stanza attuale prevede la visualizzazione di una lista di oggetti contenente gli oggetti della stanza in
@@ -668,9 +802,15 @@ cui l'utente si trova.
 	
 \end{itemize}
 
+\pagebreak
+
 \subsection{UC 8 - Visualizzazione dettagli oggetto}
 \begin{itemize}
 
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
 		\item Visualizza dettagli oggetto prevede la visualizzazione dei dettagli di un oggetto.
@@ -693,6 +833,8 @@ cui l'utente si trova.
 	
 \end{itemize}
 
+\pagebreak
+
 \subsection{UC 9 - Riposizionamento}
 
 \begin{figure}[H]
@@ -704,6 +846,10 @@ cui l'utente si trova.
 
 \begin{itemize}
 
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
 		\item Riposizionamento permette all'utente di posizionarsi in punti prestabiliti all'interno dell'ambiente 3D.
@@ -729,6 +875,10 @@ cui l'utente si trova.
 \subsubsection{UC 9.1 - Riposizionamento vicino ad oggetto stanza attuale}
 \begin{itemize}
 
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
 		\item Riposizionamento vicino ad oggetto stanza attuale prevede il riposizionamento dell'utente vicino ad un oggetto
@@ -755,6 +905,10 @@ della stanza in cui si trova.
 \subsubsection{UC 9.2 - Riposizionamento in stanze}
 \begin{itemize}
 
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
 		\item Riposizionamento in stanze prevede il riposizionamento dell'utente in un punto prestabilito di una stanza da lui selezionata.
@@ -777,9 +931,15 @@ della stanza in cui si trova.
 	
 \end{itemize}
 
+\pagebreak
+
 \subsection{UC 10 - Riposizionamento non concesso}
 \begin{itemize}
 
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
 		\item Se l'utente si trova in prossimità del punto di destinazione, il riposizionamento non avviene.
@@ -804,9 +964,15 @@ della stanza in cui si trova.
 	
 \end{itemize}
 
+\pagebreak
+
 \subsection{UC 11 - Visualizzazione contenuto lista stanze}
 \begin{itemize}
 
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
 		\item Visualizzazione contenuto lista stanze permette di visualizzare il contenuto della lista stanze.
@@ -830,9 +996,15 @@ della stanza in cui si trova.
 	
 \end{itemize}
 
+\pagebreak
+
 \subsection{UC 12 - Spostamento oggetto}
 \begin{itemize}
 
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
 		\item Riposizionamento di un oggetto in un altro punto della stanza in cui ci si trova.
@@ -861,9 +1033,15 @@ della stanza in cui si trova.
 	
 \end{itemize}
 
+\pagebreak
+
 \subsection{UC 13 - Oggetto non posizionato}
 \begin{itemize}
 
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
 		\item Se l'utente cerca di posizionare un oggetto in una coordinata X, Y, Z non legittima, l'oggetto non viene posizionato.
@@ -888,9 +1066,15 @@ della stanza in cui si trova.
 	
 \end{itemize}
 
+\pagebreak
+
 \subsection{UC 14 - Torcia}
 \begin{itemize}
 
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
 		\item L'utente può utilizzare una torcia per illuminare parte dell'ambiente di fronte a lui. \newline La torcia si può trovare in due stati, accesa o spenta.
@@ -913,6 +1097,8 @@ della stanza in cui si trova.
 	
 \end{itemize}
 
+\pagebreak
+
 \section{Requisiti}
 
 \subsection{Introduzione}
@@ -925,7 +1111,7 @@ Il codice di ciascuno requisito è formato da:
 	\begin{itemize}
 		\item F: funzionale
 		\item Q: qualitativo
-		\item V: di vincolo
+		\item D: di dominio
 		\item P: prestazionale
 	\end{itemize}
 	\item Numero seriale
@@ -933,25 +1119,29 @@ Il codice di ciascuno requisito è formato da:
 
 \subsection{Requisiti funzionali}
 \reqTable{
-	\textbf{RF1.1} & L'utente deve poter rimuovere un oggetto dal carrello & Obbligatorio & UC1.1 \tabularnewline
-     \textbf{RF1.2} & L'utente deve poter rimuovere tutti gli oggetti dal carrello & Obbligatorio & UC1.2\tabularnewline
+	\textbf{RF1} & L'utente deve poter rimuovere uno o più oggetti dal carrello & Facoltativo & UC1 \tabularnewline
+	\textbf{RF1.1} & L'utente deve poter rimuovere un oggetto dal carrello & Facoltativo & UC1.1 \tabularnewline
+     \textbf{RF1.2} & L'utente deve poter rimuovere tutti gli oggetti dal carrello & Facoltativo & UC1.2\tabularnewline
      
      \textbf{RF2} & L'utente deve poter visualizzare il contenuto del carrello & Obbligatorio & UC2\tabularnewline
-     \textbf{RF2.1} & L'utente deve poter visualizzare gli oggetti presenti nel carrello singolarmente e le loro caratteristiche & Obbligatorio & UC2.1\tabularnewline
+     \textbf{RF2.1} & L'utente può visualizzare la lista degli oggetti presenti nel carrello & Obbligatorio & UC2.1\tabularnewline
      \textbf{RF2.2} & L'utente deve poter visualizzare il costo totale degli oggetti presenti nel carrello & Obbligatorio & UC2.2\tabularnewline
      
      \textbf{RF3} & L'utente deve poter aggiungere un oggetto al carrello & Obbligatorio & UC3\tabularnewline
      
      \textbf{RF4} & L'utente deve poter compiere azioni di movimento & Obbligatorio & UC4\tabularnewline
-     \textbf{RF4.1} & L'utente deve poter compiere movimenti direzionali su i tre assi X, Y, Z & Obbligatorio & UC4.1\tabularnewline
+     \textbf{RF4.1} & L'utente deve poter compiere movimenti direzionali & Obbligatorio & UC4.1\tabularnewline
+     \textbf{RF4.1.1} & L'utente deve poter compiere movimenti direzionali sull'asse X & Obbligatorio & UC4.1.1\tabularnewline
+     \textbf{RF4.1.2} & L'utente deve poter compiere movimenti direzionali sull'asse Y & Obbligatorio & UC4.1.2\tabularnewline
+     \textbf{RF4.1.3} & L'utente deve poter compiere movimenti direzionali sull'asse Z & Facoltativo & UC4.1.3\tabularnewline
      \textbf{RF4.2} & L'utente deve poter compiere spostamenti di camera & Obbligatorio & UC4.2\tabularnewline
      
      \textbf{RF15} & L'utente deve poter modificare gli attributi di un oggetto & Obbligatorio & UC5\tabularnewline
      
      \textbf{RF6} & L'utente deve essere notificato in caso un oggetto non fosse modificabile & Obbligatorio & UC6\tabularnewline
      
-     \textbf{RF7} & L'utente deve poter visualizzare il contenuto della lista oggetti & Obbligatorio & UC7\tabularnewline
-     \textbf{RF7.1} & L'utente deve poter visualizzare il contenuto della lista oggetti della stanza attuale & Obbligatorio & UC7.1\tabularnewline
+     \textbf{RF7} & L'utente deve poter visualizzare il contenuto della lista oggetti & Facoltativo & UC7\tabularnewline
+     \textbf{RF7.1} & L'utente deve poter visualizzare il contenuto della lista oggetti della stanza attuale & Facoltativo & UC7.1\tabularnewline
      
      \textbf{RF8} & L'utente deve poter visualizzare i dettagli di un oggetto & Obbligatorio & UC8\tabularnewline
      
@@ -978,12 +1168,12 @@ prestabilito di una stanza da lui selezionata & Facoltativo & UC9.2\tabularnewli
 	\textbf{RQ3} & Il software deve essere sviluppato fornendo una documentazione dettagliata delle varie funzionalità & Obbligatorio & Capitolato
 	\\}
 
-\subsection{Requisiti di vincolo}
+\subsection{Requisiti di dominio}
 \reqTable{
-	\textbf{RV1} & Il software deve essere compatibile con la versione più recente del browser Chrome & Obbligatorio & Decisione interna \tabularnewline
-	\textbf{RV2} & Il software deve essere compatibile con la versione più recente del browser Firefox & Obbligatorio & Decisione interna \tabularnewline
-	\textbf{RV3} & Il software deve essere compatibile con la versione più recente del browser Safari & Obbligatorio & Decisione interna \tabularnewline
-	\textbf{RV4} & Il software deve essere sviluppato utilizzando la libreria Three.js & Obbligatorio & Decisione interna
+	\textbf{RD1} & Il software deve essere compatibile con la versione più recente del browser Chrome & Obbligatorio & Decisione interna \tabularnewline
+	\textbf{RD2} & Il software deve essere compatibile con la versione più recente del browser Firefox & Obbligatorio & Decisione interna \tabularnewline
+	\textbf{RD3} & Il software deve essere compatibile con la versione più recente del browser Safari & Obbligatorio & Decisione interna \tabularnewline
+	\textbf{RD4} & Il software deve essere sviluppato utilizzando la libreria Three.js & Obbligatorio & Decisione interna
 	\\}
 
 \subsection{Requisiti prestazionali}
