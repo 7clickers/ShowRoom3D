@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import { Capsule } from 'three/addons/math/Capsule.js';
 import { camera, scene } from './showroom_poc.js';
 import { worldOctree } from './world.js';
+import { coralloOctree } from './world.js';
 
 const spotLight = new THREE.SpotLight(0xFFC3EE, 1, 0, Math.PI / 8);
 spotLight.position.set(0, 12, -10);
@@ -52,8 +53,15 @@ function showInfo() {
 }
 
 export function MovementListeners() {
-	document.addEventListener('keydown', (event) => {
 
+	window.addEventListener("keydown", function(e) { //previene i comportamenti di default del browser quando vengono premute le freccie direzionali
+		if(["ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
+			e.preventDefault();
+		}
+	}, false);
+
+	document.addEventListener('keydown', (event) => {
+		
 		keyStates[event.code] = true;
 
 	});
@@ -77,10 +85,9 @@ export function MovementListeners() {
 	document.body.addEventListener('mousemove', (event) => {
 
 		if (document.pointerLockElement === document.body) {
-
+			
 			camera.rotation.y -= event.movementX / 500;
 			camera.rotation.x -= event.movementY / 500;
-
 		}
 
 	});
@@ -90,20 +97,28 @@ export function MovementListeners() {
 export function playerCollisions() {
 
 	const result = worldOctree.capsuleIntersect(playerCollider);
-
+	const coralloInt = coralloOctree.capsuleIntersect(playerCollider);
+	
 	playerOnFloor = false;
 
-	if (result) {
+	if (coralloInt){
+		playerCollider.translate(coralloInt.normal.multiplyScalar(coralloInt.depth));
+	} 
+
+	if (result ) {
 
 		playerOnFloor = result.normal.y > 0;
+		
 
 		if (!playerOnFloor) {
 
 			playerVelocity.addScaledVector(result.normal, - result.normal.dot(playerVelocity));
+			
 
 		}
 
 		playerCollider.translate(result.normal.multiplyScalar(result.depth));
+		
 
 	}
 
@@ -160,25 +175,25 @@ export function controls(deltaTime) {
 	// gives a bit of air control
 	const speedDelta = deltaTime * (playerOnFloor ? 25 : 8);
 
-	if (keyStates['KeyW']) {
+	if (keyStates['KeyW'] || keyStates['ArrowUp']  ) {
 
 		playerVelocity.add(getForwardVector().multiplyScalar(speedDelta));
 
 	}
 
-	if (keyStates['KeyS']) {
+	if (keyStates['KeyS'] || keyStates['ArrowDown'] ) {
 
 		playerVelocity.add(getForwardVector().multiplyScalar(- speedDelta));
 
 	}
 
-	if (keyStates['KeyA']) {
+	if (keyStates['KeyA'] || keyStates['ArrowLeft'] ) {
 
 		playerVelocity.add(getSideVector().multiplyScalar(- speedDelta));
 
 	}
 
-	if (keyStates['KeyD']) {
+	if (keyStates['KeyD'] || keyStates['ArrowRight']) {
 
 		playerVelocity.add(getSideVector().multiplyScalar(speedDelta));
 

@@ -6,6 +6,7 @@ import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
 import { scene } from './showroom_poc.js';
 
 export const worldOctree = new Octree();
+export const coralloOctree = new Octree();
 
 const loader = new GLTFLoader().setPath('../');
 const texture = new THREE.TextureLoader().load('../source/texture/sand.jpg');
@@ -33,6 +34,7 @@ loader.load('source/glb/sea_map_nocolor.glb', (gltf) => {
 	});
 
 	const helper = new OctreeHelper(worldOctree);
+	
 	helper.visible = false;
 	scene.add(helper);
 
@@ -45,9 +47,9 @@ loader.load('source/glb/sea_map_nocolor.glb', (gltf) => {
 });
 loader.load('source/glb/corallo_leggero.glb', function (gtlf) {
 	const model = gtlf.scene;
-
 	scene.add(model);
 	model.position.set(0, 1, -10);
+	coralloOctree.fromGraphNode(model);
 }, undefined, function (error) {
 	console.error(error);
 });
