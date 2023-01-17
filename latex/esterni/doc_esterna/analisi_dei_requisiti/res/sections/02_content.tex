@@ -7,16 +7,11 @@ Le decorazioni vengono così esposte e visualizzate in un modo molto più autent
 \subsection{Descrizione generale}
 Per rendere il documento il più esauriente possibile ma allo stesso tempo non troppo prolisso, abbiamo schematizzato ogni caso d'uso evidenziando:  precondizioni, postcondizioni, scenario principale in cui tale azione avrà luogo, una breve descrizione ed eventuali estensioni.\newline
 In alcuni casi è stata anche inserita un'immagine dello schema UML per fornire una spiegazione visiva che può aiutare nel comprendere più a fondo il nostro lavoro.\newline
-Da notare, nelle immagini dello schema UML sono stati rappresentati in azzurro i casi d'uso facoltativi.
-
 \subsection{Attori}
-Data l'ampiezza e struttura ridotta del software, l'attore che interagisce col nostro software è uno solo, denominato "Utente in ambiente 3D". 
-
 \subsubsection{Utente in ambiente 3D}
-Si tratta dell'utente protagonista di tutti i casi d'uso del nostro prodotto, chiamato tale dato che il software fornisce un immersione completa all'interno dello scenario 3D. \newline
-L'utente non verrai mai reindirizzato a una normale pagina web statica, poiché ne risentirebbe la user experience. 
-
+Utente che ha accesso a tutte le funzionalità del prodotto, esplora l'ambiente 3D ed interagisce con i suoi elementi.
 \section{Casi d'uso}
+\textbf{ATTENZIONE:} negli schemi sottostanti i casi d'uso facoltativi sono rappresentati in azzurro.
 
 \subsection{UC 1 - Rimozione oggetti dal carrello}
 
@@ -97,7 +92,7 @@ L'utente non verrai mai reindirizzato a una normale pagina web statica, poiché 
 	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
-		\item Prevede la rimozione di tutti gli oggetti presenti nel carrello con un singolo comando.
+		\item Prevede la rimozione di tutti gli oggetti presenti nel carrello con un comando.
 	\end{itemize}
 	
 	\item Precondizioni:
@@ -362,7 +357,7 @@ L'utente non verrai mai reindirizzato a una normale pagina web statica, poiché 
 	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
-		\item Prevede la visualizzazione delle caratteristiche fisiche dell'oggetto.
+		\item Prevede la visualizzazione di tutte le caratteristiche fisiche dell'oggetto.
 	\end{itemize}
 	
 	\item Precondizioni:
@@ -1121,10 +1116,10 @@ Il codice di ciascuno requisito è formato da:
 \reqTable{
 	\textbf{RF1} & L'utente deve poter rimuovere uno o più oggetti dal carrello & Facoltativo & UC1 \tabularnewline
 	\textbf{RF1.1} & L'utente deve poter rimuovere un oggetto dal carrello & Facoltativo & UC1.1 \tabularnewline
-     \textbf{RF1.2} & L'utente deve poter rimuovere tutti gli oggetti dal carrello & Facoltativo & UC1.2\tabularnewline
+     \textbf{RF1.2} & L'utente deve poter rimuovere tutti gli oggetti dal carrello con un comando & Facoltativo & UC1.2\tabularnewline
      
      \textbf{RF2} & L'utente deve poter visualizzare il contenuto del carrello & Obbligatorio & UC2\tabularnewline
-     \textbf{RF2.1} & L'utente può visualizzare la lista degli oggetti presenti nel carrello & Obbligatorio & UC2.1\tabularnewline
+     \textbf{RF2.1} & L'utente deve poter visualizzare la lista degli oggetti presenti nel carrello & Obbligatorio & UC2.1\tabularnewline
      \textbf{RF2.2} & L'utente deve poter visualizzare il costo totale degli oggetti presenti nel carrello & Obbligatorio & UC2.2\tabularnewline
      
      \textbf{RF3} & L'utente deve poter aggiungere un oggetto al carrello & Obbligatorio & UC3\tabularnewline
@@ -1156,7 +1151,7 @@ prestabilito di una stanza da lui selezionata & Facoltativo & UC9.2\tabularnewli
 	
 	\textbf{RF12} & L'utente deve poter riposizionare un oggetto presente nella stanza attuale & Facoltativo & UC12\tabularnewline
 	
-	\textbf{RF13} & L'utente deve non poter riposizionare un oggetto in una coordinata non legittima & Facoltativo & UC13\tabularnewline
+	\textbf{RF13} & L'utente non deve poter riposizionare un oggetto in una coordinata non legittima & Facoltativo & UC13\tabularnewline
 	
 	\textbf{RF14} & L'utente deve poter utilizzare una torcia per illuminare l'ambiente circostante & Facoltativo & UC14
 \\}
@@ -1174,9 +1169,4 @@ prestabilito di una stanza da lui selezionata & Facoltativo & UC9.2\tabularnewli
 	\textbf{RD2} & Il software deve essere compatibile con la versione più recente del browser Firefox & Obbligatorio & Decisione interna \tabularnewline
 	\textbf{RD3} & Il software deve essere compatibile con la versione più recente del browser Safari & Obbligatorio & Decisione interna \tabularnewline
 	\textbf{RD4} & Il software deve essere sviluppato utilizzando la libreria Three.js & Obbligatorio & Decisione interna
-	\\}
-
-\subsection{Requisiti prestazionali}
-\reqTable{
-	\textbf{RP1} & Il software deve essere in grado di essere eseguito senza rallentamenti garantendo un esperienza immersiva & Obbligatorio & Decisione interna
 	\\}
