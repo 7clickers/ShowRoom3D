@@ -1,7 +1,7 @@
 import re
 
 # indicare il path del file target
-pathTarget='./latex/nuovo.txt'
+pathTarget='./latex/interni/doc_interna/norme_di_progetto/res/sections/documentazione/strumenti_per_la_stesura.tex'
 fileTarget=''
 listaNomiDocumenti=["Piano di Progetto","Norme di Progetto","Piano di Qualifica","Glossario"]
 
@@ -9,7 +9,7 @@ with open(pathTarget,'r') as file:
     fileTarget=file.read()
 
 # pulizia file:rimuove tutti i comandi tex inseriti da questo script nel documento target
-fileTarget=fileTarget.replace('\\textsuperscript{g}',"")
+fileTarget=fileTarget.replace('\\textsubscript{g}',"")
 
 for d in listaNomiDocumenti:
     listaMatchesDocumenti=re.findall("\\\\textit\{{1}"+d+"\}{1}",fileTarget,re.IGNORECASE)
@@ -48,8 +48,8 @@ for t in listaTermini:
 
 # per ogni termine
 for tIS in setIS:
-    tPedice=tIS+'\\textsuperscript{g}'
-    fileTarget=fileTarget.replace(tIS,tIS+'\\textsuperscript{g}')
+    tPedice=tIS+'\\textsubscript{g}'
+    fileTarget=fileTarget.replace(tIS,tIS+'\\textsubscript{g}')
 # POST:fileTarget contiene i pedici sui termini desiderati
 
 # SCRITTURA DEI NOMI DEI DOCUMENTI NEL FORMATO CORRETTO ========================
