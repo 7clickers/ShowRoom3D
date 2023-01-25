@@ -1,0 +1,25 @@
+\section{Motivo della Riunione}
+Discussione del documento dei casi d'uso e di altri dettagli riguardanti la requirment and technology baseline. Sono state poste le seguenti domande:
+
+\section{Si può usare notazione UML non standard per rappresentare casi d'uso facoltativi?}
+Risposta del docente: Si, non c'è problema affinche viene documentato e spiegato nel documento.
+
+\section{UC1 (rimozione oggetti dal carrello): la rimozione di un oggetto oppure di tutti gli oggetti contemporaneamente sono 2 sottocasi?}
+Risposta del docente: no, non sono due sottocasi, rappresentano 2 funzionalità differenti e quindi vengono identificati come 2 casi d'uso differenti.
+
+\section{Come suddividere UC2?}
+Risposta del docente: La suddivisione corrente va bene, tramite la lista posso sia guardare gli oggetti nel carrello, sia vedere il costo totale, quindi la loro rappresentazione come sottocasi d'uso è corretta. Attenzione, non sono stati trattati i sottocasi di UC2.1.
+
+\section{UC4 (compiere azioni di moviemento): movimento di camera e movimento direzionale sono funzionalità diverse?}
+Risposta del docente: Si, per quanto io le faccia a millesimi di secondo di distanza l'una dall'altra, mi offrono due funzioni distinte.
+
+\section{UC9 (riposizionamento): come descrivere le funzionalità di teletrsporto?}
+Risposta del docente: prima di tutto "riposizionamento" non è un nome molto chiaro per la funzione che si intende (cioè un teletrasporto), potrebbe benissimo intendere anche il movimento direzionale. Comunque i due sottocasi sono errati, perchè identificano due funzionalità con uno scopo completamente diverso per l'utente:
+\begin{itemize}
+	\item UC9.1 riposizionamento vicino ad un oggetto della stanza attuale;
+	\item UC9.2 riposizionamento in altre stanze.
+\end{itemize}
+Dalla discussione è anche stato notato che si potrebbe inserire il riposizionamento all'inizio della stanza corrente, funzionalità che è presente nel PoC, ma che non è stata inserita nell'analisi dei requisiti
+
+\section{È necessario l'utilizzo di un framework nonstante già venga utilizzata la libreria three.js?}
+Risposta del docente: Non è necessario, sta a voi valutare i pro e i contro dell'utilizzo di questo strumento, detto ciò se viene deciso di usare una tecnologia, questa deve essere presente nella technology baseline, in quanto serve per documentare il fatto che il gruppo ha testato e preso conoscenza degli strumenti che andrà ad usare per procedere nello sviluppo del capitolato. Inoltre tendenzialmente viene prima fatta una scelta del framework da usare e poi delle librerie, questo perchè il framework è una struttura ben più complessa che si usa come base di partenza.
