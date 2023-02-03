@@ -1,9 +1,10 @@
 import re
 
 # indicare il path del file target
-pathTarget='./latex/interni/doc_interna/norme_di_progetto/res/sections/documentazione/strumenti_per_la_stesura.tex'
+pathTarget='./latex/interni/doc_interna/norme_di_progetto/res/sections/verifica/verifica_documentazione.tex'
 fileTarget=''
-listaNomiDocumenti=["Piano di Progetto","Norme di Progetto","Piano di Qualifica","Glossario"]
+listaNomiDocumenti=["Piano di Progetto","Norme di Progetto","Piano di Qualifica","Glossario","Lettera di Presentazione",
+"Verbale","Studio di Fattibilitá","Diario di Bordo"]
 
 with open(pathTarget,'r') as file:
     fileTarget=file.read()
