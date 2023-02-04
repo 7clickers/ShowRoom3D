@@ -12,7 +12,6 @@
 \makeindex
 
 \begin{document}
-\counterwithin{table}{section}
 
 % Prima pagina
 \input{../../../template/titlepage.tex}
@@ -26,6 +25,8 @@
 {
     \hypersetup{linkcolor=black}
     \tableofcontents
+    \listoffigures %elenco figure
+    \listoftables  %elenco tabelle
 }
 \pagebreak
 
@@ -35,13 +36,6 @@
 \pagebreak
 \input{res/sections/02_pianificazione.tex}
 \pagebreak
-\input{res/sections/02_pianificazione_poc.tex}
-\pagebreak
-% Contenuto
 \input{res/sections/03_Preventivo.tex}
-\pagebreak
-\input{res/sections/04_preventivo_analisi_preliminare.tex}
-\pagebreak
-\input{res/sections/05_preventivo_poc.tex}
 \pagebreak
 \end{document}
