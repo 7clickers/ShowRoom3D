@@ -1,7 +1,7 @@
 import re
 
 # indicare il path del file target
-pathTarget='./latex/interni/doc_interna/norme_di_progetto/res/sections/verifica/verifica_documentazione.tex'
+pathTarget='./latex/interni/doc_interna/norme_di_progetto/res/sections/documentazione/documentazione_prodotta/piano_di_qualifica.tex'
 fileTarget=''
 listaNomiDocumenti=["Piano di Progetto","Norme di Progetto","Piano di Qualifica","Glossario","Lettera di Presentazione",
 "Verbale","Studio di Fattibilitá","Diario di Bordo"]
