@@ -3,9 +3,12 @@ body {
 	background-color: #000;
 	color: #fff;
 	font-family: Monospace;
-	font-size: 13px;
-	line-height: 24px;
+	font-size: 14px;
 	overscroll-behavior: none;
+}
+
+h1,h2,h3,h4,p{
+	margin: 0;
 }
 
 a {
@@ -19,7 +22,6 @@ a:hover {
 
 button {
 	cursor: pointer;
-	text-transform: uppercase;
 }
 
 #info {
@@ -38,11 +40,12 @@ button {
 }
 
 #info2 {
+	background-color: rgba(21, 21, 21, 0.25);
 	display: none;
 	position: absolute;
-	bottom: 25%;
+	bottom: 5%;
+	padding: 8px;
 	width: 100%;
-	padding: 10px;
 	box-sizing: border-box;
 	text-align: center;
 	-moz-user-select: none;
@@ -53,26 +56,148 @@ button {
 	z-index: 1; /* TODO Solve this in HTML */
 }
 
-#carrello {
+#cart-container {
 	position: absolute;
 	top: 10%;
-	left: 40%;
-	width: 100%;
-	padding: 10px;
+	right: 16px;
+	padding: 12px 16px;
+	min-width: 200px;
+	background-color: rgba(13, 13, 56, 0.8);
 	box-sizing: border-box;
 	text-align: center;
-	-moz-user-select: none;
-	-webkit-user-select: none;
-	-ms-user-select: none;
-	user-select: none;
-	pointer-events: none;
-	z-index: 1; /* TODO Solve this in HTML */
+	z-index: 10; /* TODO Solve this in HTML */
+	border-radius: 8px;
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+#cart-container__inner{
+	padding: 8px;
+	display: none;
+	flex-direction: column;
+	gap: 6px;
+}
+
+.cart-container__headline{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 8px;
+}
+
+#cart-container__total{
+	display: none;
+	flex-direction: row;
+	justify-content: space-between;
+	border-bottom: 2px solid rgba(255,255,255,0.25);
+}
+
+.cart-container__headline__title{
+	font-size: 18px;
+	font-weight: 500;
+	color: #FFF;
+}
+
+#cart-container .cart-icon{
+	height: 20px;
+	width: 20px;
+}
+
+.empty-cart-message{
+	text-align: left;
+	margin: 0;
+}
+
+.cart-item{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	align-items: center;
+	gap: 20px;
+	padding: 6px 12px;
+	border: 1.5px solid rgba(255,255,255,0.25);
+	border-radius: 9px;
+}
+
+
+.cart-item p{
+	margin: 0;
 }
 
 #corallo{
 	display: none;
 }
 
+#product-info{
+	display:none;
+	background-color: rgba(13, 13, 56, 0.8);
+	padding: 16px 32px;
+	min-width: 35%;
+	margin: auto;
+	position: absolute;
+	bottom: 10%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.product-info__close-btn::after{
+	font-size: 32px;
+	position: absolute;
+	right: 0px;
+	top: -56px;
+	content: "\00d7"; /* This will render the 'X' */
+	cursor: pointer;
+}
+
+.product-info__title{
+	color: rgb(255, 255, 255);
+	font-size: 22px;
+}
+
+.product-info__inner{
+	position: relative;
+	border-top: 1px solid rgba(255,255,255,0.25);
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
+	align-content: space-around;
+	color: rgb(255, 255, 255);
+	font-size: 16px;
+}
+
+.product-info__desc{
+	width: 100%;
+	margin: 8px 0;
+}
+
+.product-info__price{
+	width: 100%;
+	margin: 8px 0;
+}
+
+.product-info__add-btn{
+	margin: 16px auto 8px auto;
+	width: 33%;
+	background-color: #D9D9D9;
+	font-weight: medium;
+	padding: 8px 0px;
+	outline: none;
+	border:none;
+}
+
+.teleport-icon{
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+}
+
+.trash-icon{
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+}
 
 a, button, input, select {
 	pointer-events: auto;
@@ -80,17 +205,6 @@ a, button, input, select {
 
 .lil-gui {
 	z-index: 2 !important; /* TODO Solve this in HTML */
-}
-
-@media all and ( max-width: 640px ) {
-	.lil-gui.root { 
-		right: auto;
-		top: auto;
-		max-height: 50%;
-		max-width: 80%;
-		bottom: 0;
-		left: 0;
-	}
 }
 
 #overlay {
@@ -125,4 +239,16 @@ a, button, input, select {
 	background-color: #f00;
 	margin-top: 20px;
 	padding: 10px;
+}
+
+
+@media all and ( max-width: 640px ) {
+	.lil-gui.root { 
+		right: auto;
+		top: auto;
+		max-height: 50%;
+		max-width: 80%;
+		bottom: 0;
+		left: 0;
+	}
 }

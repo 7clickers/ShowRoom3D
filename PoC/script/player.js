@@ -1,56 +1,183 @@
 import * as THREE from 'three';
 import { Capsule } from 'three/addons/math/Capsule.js';
 import { camera, scene } from './showroom_poc.js';
-import { worldOctree } from './world.js';
-import { coralloOctree } from './world.js';
-
-const spotLight = new THREE.SpotLight(0xFFC3EE, 1, 0, Math.PI / 8);
-spotLight.position.set(0, 12, -10);
-
-const geometry = new THREE.RingGeometry(2.5, 3, 32);
-const material = new THREE.MeshBasicMaterial({ color: 0xffff00, side: THREE.DoubleSide });
-const ring = new THREE.Mesh(geometry, material);
-
-ring.position.x = 0;
-ring.position.y = 0.7;
-ring.position.z = -10;
-ring.rotateX(Math.PI / 2);
-
-var y = document.getElementById("info2");
-var flag = false;
-
-document.getElementById("corallo").onclick = function () { Teleport(0, 2, -6.5) };
+import { worldOctree, objectOctree } from './world.js';
 
 //PLAYER
-const GRAVITY = 30;
-const playerCollider = new Capsule(new THREE.Vector3(0, 0.35, 0), new THREE.Vector3(0, 1, 0), 0.35);
 
-const playerVelocity = new THREE.Vector3();
-const playerDirection = new THREE.Vector3();
-let playerOnFloor = false;
+export class Player {
+	constructor(){
+		this.playerCollider = new Capsule(new THREE.Vector3(0, 0.35, 0), new THREE.Vector3(0, 1, 0), 0.35);
+		this.playerVelocity = new THREE.Vector3();
+		this.playerDirection = new THREE.Vector3();
+		this.playerOnFloor = false;
+	}
+
+	Teleport(x, y, z) {
+		this.playerCollider.start.set(x, 0.35, z);
+		this.playerCollider.end.set(x, y, z);
+		this.playerCollider.radius = 0.35;
+		camera.position.copy(this.playerCollider.end);
+		camera.rotation.set(0, 0, 0);
+	}
+
+	playerCollisions() {
+
+		const result = worldOctree.capsuleIntersect(this.playerCollider);
+		const objectInt = objectOctree.capsuleIntersect(this.playerCollider);
+		
+		this.playerOnFloor = false;
+	
+		if (objectInt){
+			this.playerCollider.translate(objectInt.normal.multiplyScalar(objectInt.depth));
+		} 
+		
+		if (result ) {
+			
+			this.playerOnFloor = result.normal.y > 0;
+			
+			if (!this.playerOnFloor) {
+				this.playerVelocity.addScaledVector(result.normal, - result.normal.dot(this.playerVelocity));
+			}
+	
+			this.playerCollider.translate(result.normal.multiplyScalar(result.depth));
+		}
+	}
+
+	updatePlayer(deltaTime) {
+
+		let damping = Math.exp(- 4 * deltaTime) - 1;
+	
+		if (!this.playerOnFloor) {
+	
+			this.playerVelocity.y -= GRAVITY * deltaTime;
+	
+			// small air resistance
+			damping *= 0.1;
+	
+		}
+	
+		this.playerVelocity.addScaledVector(this.playerVelocity, damping);
+	
+		const deltaPosition = this.playerVelocity.clone().multiplyScalar(deltaTime);
+		this.playerCollider.translate(deltaPosition);
+	
+		this.playerCollisions();
+	
+		camera.position.copy(this.playerCollider.end);
+	
+	}
+
+	getForwardVector() {
+
+		camera.getWorldDirection(this.playerDirection);
+		this.playerDirection.y = 0;
+		this.playerDirection.normalize();
+	
+		return this.playerDirection;
+	
+	}
+	
+	getSideVector() {
+	
+		camera.getWorldDirection(this.playerDirection);
+		this.playerDirection.y = 0;
+		this.playerDirection.normalize();
+		this.playerDirection.cross(camera.up);
+	
+		return this.playerDirection;
+	
+	}
+
+	controls(deltaTime) {
+
+		//Input per il movimento
+		const speedDelta = deltaTime * (this.playerOnFloor ? 25 : 8);
+	
+		if (keyStates['KeyW'] || keyStates['ArrowUp']  ) {
+	
+			this.playerVelocity.add(this.getForwardVector().multiplyScalar(speedDelta));
+	
+		}
+	
+		if (keyStates['KeyS'] || keyStates['ArrowDown'] ) {
+	
+			this.playerVelocity.add(this.getForwardVector().multiplyScalar(- speedDelta));
+	
+		}
+	
+		if (keyStates['KeyA'] || keyStates['ArrowLeft'] ) {
+	
+			this.playerVelocity.add(this.getSideVector().multiplyScalar(- speedDelta));
+	
+		}
+	
+		if (keyStates['KeyD'] || keyStates['ArrowRight']) {
+	
+			this.playerVelocity.add(this.getSideVector().multiplyScalar(speedDelta));
+	
+		}
+	
+		if (this.playerOnFloor) {
+	
+			if (keyStates['Space']) {
+	
+				this.playerVelocity.y = 15;
+	
+			}
+	
+		}
+		if (keyStates['KeyT']) {
+			this.Teleport(0, 1, 0);
+		}
+	}
+
+	teleportPlayerIfOob() {
+		if (camera.position.y <= - 25) {
+	
+			this.playerCollider.start.set(0, 0.35, 0);
+			this.playerCollider.end.set(0, 1, 0);
+			this.playerCollider.radius = 0.35;
+			camera.position.copy(this.playerCollider.end);
+			camera.rotation.set(0, 0, 0);
+	
+		}
+	}
+
+}
+
+
+const GRAVITY = 30;
+// const playerCollider = new Capsule(new THREE.Vector3(0, 0.35, 0), new THREE.Vector3(0, 1, 0), 0.35);
+
+// const playerVelocity = new THREE.Vector3();
+// const playerDirection = new THREE.Vector3();
+// let playerOnFloor = false;
 let mouseTime = 0;
 
+// Create a vector that represents the mouse position
+export var mouse = new THREE.Vector2();
 
-const keyStates = {};
+document.addEventListener( 'mousemove', onMouseMove, false );
 
-
-export function Teleport(x, y, z) {
-	playerCollider.start.set(x, y - 0.65, z);
-	playerCollider.end.set(x, y, z);
-	playerCollider.radius = 0.35;
-	camera.position.copy(playerCollider.end);
-	camera.rotation.set(0, 0, 0);
+function onMouseMove( event ) {
+    // calculate mouse position in normalized device coordinates
+    // (-1 to +1) for both components
+    mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+    mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
 }
 
-function showInfo() {
-	var x = document.getElementById("corallo");
-	if (x.style.display === "block") {
-		x.style.display = "none";
-	} else {
-		x.style.display = "block";
-	}
-	flag = false;
-}
+
+export const keyStates = {};
+
+
+// function Teleport(x, y, z) {
+// 	playerCollider.start.set(x, y + 0.65, z);
+// 	playerCollider.end.set(x, y, z);
+// 	playerCollider.radius = 0.35;
+// 	camera.position.copy(playerCollider.end);
+// 	camera.rotation.set(0, 0, 0);
+// }
 
 export function MovementListeners() {
 
@@ -91,155 +218,140 @@ export function MovementListeners() {
 		}
 
 	});
+
+	
 }
 
 
-export function playerCollisions() {
+// export function playerCollisions() {
 
-	const result = worldOctree.capsuleIntersect(playerCollider);
-	const coralloInt = coralloOctree.capsuleIntersect(playerCollider);
+// 	const result = worldOctree.capsuleIntersect(playerCollider);
+// 	const coralloInt = coralloOctree.capsuleIntersect(playerCollider);
 	
-	playerOnFloor = false;
+// 	playerOnFloor = false;
 
-	if (coralloInt){
-		playerCollider.translate(coralloInt.normal.multiplyScalar(coralloInt.depth));
-	} 
+// 	if (coralloInt){
+// 		playerCollider.translate(coralloInt.normal.multiplyScalar(coralloInt.depth));
+// 	} 
 
-	if (result ) {
+// 	if (result ) {
 
-		playerOnFloor = result.normal.y > 0;
+// 		playerOnFloor = result.normal.y > 0;
 		
 
-		if (!playerOnFloor) {
+// 		if (!playerOnFloor) {
 
-			playerVelocity.addScaledVector(result.normal, - result.normal.dot(playerVelocity));
+// 			playerVelocity.addScaledVector(result.normal, - result.normal.dot(playerVelocity));
 			
 
-		}
+// 		}
 
-		playerCollider.translate(result.normal.multiplyScalar(result.depth));
+// 		playerCollider.translate(result.normal.multiplyScalar(result.depth));
 		
 
-	}
+// 	}
 
-}
+// }
 
-export function updatePlayer(deltaTime) {
+// export function updatePlayer(deltaTime) {
 
-	let damping = Math.exp(- 4 * deltaTime) - 1;
+// 	let damping = Math.exp(- 4 * deltaTime) - 1;
 
-	if (!playerOnFloor) {
+// 	if (!playerOnFloor) {
 
-		playerVelocity.y -= GRAVITY * deltaTime;
+// 		playerVelocity.y -= GRAVITY * deltaTime;
 
-		// small air resistance
-		damping *= 0.1;
+// 		// small air resistance
+// 		damping *= 0.1;
 
-	}
+// 	}
 
-	playerVelocity.addScaledVector(playerVelocity, damping);
+// 	playerVelocity.addScaledVector(playerVelocity, damping);
 
-	const deltaPosition = playerVelocity.clone().multiplyScalar(deltaTime);
-	playerCollider.translate(deltaPosition);
+// 	const deltaPosition = playerVelocity.clone().multiplyScalar(deltaTime);
+// 	playerCollider.translate(deltaPosition);
 
-	playerCollisions();
+// 	playerCollisions();
 
-	camera.position.copy(playerCollider.end);
+// 	camera.position.copy(playerCollider.end);
 
-}
+// }
 
 
-export function getForwardVector() {
+// export function getForwardVector() {
 
-	camera.getWorldDirection(playerDirection);
-	playerDirection.y = 0;
-	playerDirection.normalize();
+// 	camera.getWorldDirection(playerDirection);
+// 	playerDirection.y = 0;
+// 	playerDirection.normalize();
 
-	return playerDirection;
+// 	return playerDirection;
 
-}
+// }
 
-export function getSideVector() {
+// export function getSideVector() {
 
-	camera.getWorldDirection(playerDirection);
-	playerDirection.y = 0;
-	playerDirection.normalize();
-	playerDirection.cross(camera.up);
+// 	camera.getWorldDirection(playerDirection);
+// 	playerDirection.y = 0;
+// 	playerDirection.normalize();
+// 	playerDirection.cross(camera.up);
 
-	return playerDirection;
+// 	return playerDirection;
 
-}
+// }
 
-export function controls(deltaTime) {
+// export function controls(deltaTime) {
 
-	// gives a bit of air control
-	const speedDelta = deltaTime * (playerOnFloor ? 25 : 8);
+// 	//Input per il movimento
+// 	const speedDelta = deltaTime * (playerOnFloor ? 25 : 8);
 
-	if (keyStates['KeyW'] || keyStates['ArrowUp']  ) {
+// 	if (keyStates['KeyW'] || keyStates['ArrowUp']  ) {
 
-		playerVelocity.add(getForwardVector().multiplyScalar(speedDelta));
+// 		playerVelocity.add(getForwardVector().multiplyScalar(speedDelta));
 
-	}
+// 	}
 
-	if (keyStates['KeyS'] || keyStates['ArrowDown'] ) {
+// 	if (keyStates['KeyS'] || keyStates['ArrowDown'] ) {
 
-		playerVelocity.add(getForwardVector().multiplyScalar(- speedDelta));
+// 		playerVelocity.add(getForwardVector().multiplyScalar(- speedDelta));
 
-	}
+// 	}
 
-	if (keyStates['KeyA'] || keyStates['ArrowLeft'] ) {
+// 	if (keyStates['KeyA'] || keyStates['ArrowLeft'] ) {
 
-		playerVelocity.add(getSideVector().multiplyScalar(- speedDelta));
+// 		playerVelocity.add(getSideVector().multiplyScalar(- speedDelta));
 
-	}
+// 	}
 
-	if (keyStates['KeyD'] || keyStates['ArrowRight']) {
+// 	if (keyStates['KeyD'] || keyStates['ArrowRight']) {
 
-		playerVelocity.add(getSideVector().multiplyScalar(speedDelta));
+// 		playerVelocity.add(getSideVector().multiplyScalar(speedDelta));
 
-	}
+// 	}
 
-	if (playerOnFloor) {
+// 	if (playerOnFloor) {
 
-		if (keyStates['Space']) {
+// 		if (keyStates['Space']) {
 
-			playerVelocity.y = 15;
+// 			playerVelocity.y = 15;
 
-		}
+// 		}
 
-	}
-	if (keyStates['KeyT']) {
-		Teleport(0, 1, 0);
-	}
-	//-6,7,7
-	if (-5 < camera.position.x && -5 < camera.position.z + 10 && 5 > camera.position.x && 5 > camera.position.z + 10) {
-		scene.add(ring);
-		spotLight.target = ring;
-		scene.add(spotLight);
-		y.style.display = "block";
+// 	}
+// 	if (keyStates['KeyT']) {
+// 		Teleport(0, 1, 0);
+// 	}
+// }
+//Se l'utente esce dalla mappa
+// export function teleportPlayerIfOob() {
+// 	if (camera.position.y <= - 25) {
 
-		if (keyStates['KeyE'] && flag == false) {
-			flag = true;
-			setTimeout(showInfo, 200);
+// 		playerCollider.start.set(0, 0.35, 0);
+// 		playerCollider.end.set(0, 1, 0);
+// 		playerCollider.radius = 0.35;
+// 		camera.position.copy(playerCollider.end);
+// 		camera.rotation.set(0, 0, 0);
 
-		}
+// 	}
+// }
 
-	}
-	else {
-		scene.remove(spotLight);
-		scene.remove(ring);
-		y.style.display = "none";
-	}
-}
-
-export function teleportPlayerIfOob() {
-	if (camera.position.y <= - 25) {
-
-		playerCollider.start.set(0, 0.35, 0);
-		playerCollider.end.set(0, 1, 0);
-		playerCollider.radius = 0.35;
-		camera.position.copy(playerCollider.end);
-		camera.rotation.set(0, 0, 0);
-
-	}
-}
+export const player = new Player(); 

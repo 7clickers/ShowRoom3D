@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+	<title>Showroom3D - Seven Clickers PoC</title>
+	<meta charset=utf-8 />
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link type="text/css" rel="stylesheet" href="../css/main.css">
+</head>
+
+<body>
+	<div id="info">
+		Usa WASD oppure le freccie direzionali per muoverti, SPACE per saltare
+	</div>
+	<div id="info2"> Premi E per visualizzare i dettagli del prodotto.</div>
+	<div id="cart-container">
+		<div class="cart-container__headline">
+			<img class="cart-icon" src="../source/cart-icon.png" />
+			<h3 class="cart-container__headline__title">CARRELLO</h3>
+		</div>
+		<p class="empty-cart-message">Il carrello e' vuoto.</p>
+		<div id="cart-container__inner">
+		</div>
+		<div id="cart-container__total">
+			<p class="cart-container__total__text">Totale: </p>
+			<p class="cart-container__total__number"></p>
+		</div>
+	</div>
+	<div id="product-info">
+		<h3 class="product-info__title"></h3>
+		<div class="product-info__inner">
+			<div class="product-info__close-btn"></div>
+			<p class="product-info__desc"></p>
+			<p class="product-info__price"></p>
+			<button class="product-info__add-btn">Aggiungi nel carrello</button>
+		</div>
+	</div>
+	<div id="container"></div>
+
+	<script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+	<script type="importmap">
+			{
+				"imports": {
+					"three": "../node_modules/three/build/three.module.js",
+					"three/addons/": "../node_modules/three/examples/jsm/"
+				}
+			}
+     </script>
+	<script type="module" src="bundle.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</body>
+
+</html>

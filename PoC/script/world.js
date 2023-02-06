@@ -4,11 +4,12 @@ import { Octree } from 'three/addons/math/Octree.js';
 import { OctreeHelper } from 'three/addons/helpers/OctreeHelper.js';
 import { GUI } from 'three/addons/libs/lil-gui.module.min.js';
 import { scene } from './showroom_poc.js';
+import { products } from './products.js';
 
 export const worldOctree = new Octree();
-export const coralloOctree = new Octree();
+export const objectOctree = new Octree();
+export const loader = new GLTFLoader().setPath('../');
 
-const loader = new GLTFLoader().setPath('../');
 const texture = new THREE.TextureLoader().load('../source/texture/sand.jpg');
 texture.encoding = THREE.sRGBEncoding;
 
@@ -45,11 +46,27 @@ loader.load('source/glb/sea_map_nocolor.glb', (gltf) => {
 			helper.visible = value;
 		});
 });
-loader.load('source/glb/corallo_leggero.glb', function (gtlf) {
-	const model = gtlf.scene;
-	scene.add(model);
-	model.position.set(0, 1, -10);
-	coralloOctree.fromGraphNode(model);
-}, undefined, function (error) {
-	console.error(error);
-});
+
+// array vuoto per oggetti Three.js
+export var threeProducts = [];
+
+// Itera prodotti
+for (let key in products) {
+  // prodotto corrente
+  let product = products[key];
+  let x = product.x;
+  let y = product.y;
+  let z = product.z;
+
+  // Load the GLTF model using the loader
+  loader.load(product.path, function (gltf) {
+    let object = gltf.scene; 
+    scene.add(object);
+	
+  object.name = key; // imposta il key del prodotto come nome del oggetto
+  object.position.set(x, y, z);
+  objectOctree.fromGraphNode(object); 
+    // Aggiungi il prodtto all'array degli oggetti Threejs
+    threeProducts.push(object);
+  });
+}

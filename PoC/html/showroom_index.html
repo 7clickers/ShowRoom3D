@@ -10,10 +10,27 @@
 		<div id="info">
 			Usa WASD oppure le freccie direzionali per muoverti, SPACE per saltare
 		</div>
-		<div id="info2"> Premi E per mettere l'articolo nel carrello</div>
-		<div id="carrello"> carrello:
-			<div id="corallo"> 
-				<button> corallo</button>
+		<div id="info2"> Premi E per visualizzare i dettagli del prodotto.</div>
+		<div id="cart-container">
+			<div class="cart-container__headline">
+				<img class="cart-icon" src="../source/cart-icon.png"/>
+				<h3 class="cart-container__headline__title">CARRELLO</h3>	
+			</div>
+			<p class="empty-cart-message">Il carrello e' vuoto.</p>
+			<div id="cart-container__inner">
+			</div>
+			<div id="cart-container__total">
+				<p class="cart-container__total__text">Totale: </p>
+				<p class="cart-container__total__number"></p>
+			</div>
+		</div>
+		<div id="product-info">
+			<h3 class="product-info__title"></h3>
+			<div class="product-info__inner">
+				<div class="product-info__close-btn"></div>
+				<p class="product-info__desc"></p>
+				<p class="product-info__price"></p>
+				<button class="product-info__add-btn">Aggiungi nel carrello</button>
 			</div>
 		</div>
 		<div id="container"></div>
@@ -28,5 +45,6 @@
 			}
      </script>
 	<script type="module" src="../script/showroom_poc.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 	</body>
 </html>
