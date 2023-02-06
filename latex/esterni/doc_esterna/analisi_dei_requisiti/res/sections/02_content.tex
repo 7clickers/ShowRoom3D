@@ -7,52 +7,20 @@ Le decorazioni vengono così esposte e visualizzate in un modo molto più autent
 \subsection{Descrizione generale}
 Per rendere il documento il più esauriente possibile ma allo stesso tempo non troppo prolisso, abbiamo schematizzato ogni caso d'uso evidenziando:  precondizioni, postcondizioni, scenario principale in cui tale azione avrà luogo, una breve descrizione ed eventuali estensioni.\newline
 In alcuni casi è stata anche inserita un'immagine dello schema UML per fornire una spiegazione visiva che può aiutare nel comprendere più a fondo il nostro lavoro.\newline
+Da notare, nelle immagini dello schema UML sono stati rappresentati in azzurro i casi d'uso facoltativi.
+
 \subsection{Attori}
+Data l'ampiezza e struttura ridotta del software, l'attore che interagisce col nostro software è uno solo, denominato "Utente in ambiente 3D". 
+
 \subsubsection{Utente in ambiente 3D}
-Utente che ha accesso a tutte le funzionalità del prodotto, esplora l'ambiente 3D ed interagisce con i suoi elementi.
+Si tratta dell'utente protagonista di tutti i casi d'uso del nostro prodotto, chiamato tale dato che il software fornisce un immersione completa all'interno dello scenario 3D. \newline
+L'utente non verrai mai reindirizzato a una normale pagina web statica, poiché ne risentirebbe la user experience. 
+
+\pagebreak
+
 \section{Casi d'uso}
-\textbf{ATTENZIONE:} negli schemi sottostanti i casi d'uso facoltativi sono rappresentati in azzurro.
 
-\subsection{UC 1 - Rimozione oggetti dal carrello}
-
-\begin{figure}[H]
-  \renewcommand{\thefigure}{1}
-  \includegraphics[width=\linewidth]{./res/images/UC1.png}
-  \caption{UC 1 - Rimozione oggetti dal carrello}
-  \label{fig:UC 1}
-\end{figure}
-
-\begin{itemize}
-	
-	\item Attore primario: 
-	\begin{itemize}
-		\item Utente in ambiente 3D.
-	\end{itemize}
-	\item Descrizione:
-	\begin{itemize}
-		\item Vengono rimossi uno o più oggetti.
-	\end{itemize}
-	
-	\item Precondizioni:
-	\begin{itemize}
-		\item Il carrello contiene almeno un oggetto.
-	\end{itemize}
-	
-	\item Postcondizioni:
-	\begin{itemize}
-		\item Uno o più oggetti sono stati rimossi dal carrello;
-		\item Il carrello potrebbe essere vuoto.
-	\end{itemize}
-	
-	\item Scenario principale:
-	\begin{itemize}
-		\item L'utente interagisce con il sistema per effettuare la rimozione di uno o più oggetti dal carrello.
-	\end{itemize}
-	
-\end{itemize}
-
-
-\subsubsection{UC 1.1 - Rimozione oggetto singolo dal carrello}
+\subsection{UC 1 - Rimozione oggetto singolo dal carrello}
 
 \begin{itemize}
 	
@@ -72,8 +40,7 @@ Utente che ha accesso a tutte le funzionalità del prodotto, esplora l'ambiente 
 	
 	\item Postcondizioni:
 	\begin{itemize}
-		\item Un oggetto è stato rimosso dal carrello;
-		\item Il carrello potrebbe essere vuoto.
+		\item Un oggetto è stato rimosso dal carrello.
 	\end{itemize}
 	
 	\item Scenario principale:
@@ -83,7 +50,9 @@ Utente che ha accesso a tutte le funzionalità del prodotto, esplora l'ambiente 
 	
 \end{itemize}
 
-\subsubsection{UC 1.2 - Svuotamento totale carrello}
+\pagebreak
+
+\subsection{UC 2 - Svuotamento totale carrello}
 \begin{itemize}
 	
 	\item Attore primario: 
@@ -92,7 +61,7 @@ Utente che ha accesso a tutte le funzionalità del prodotto, esplora l'ambiente 
 	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
-		\item Prevede la rimozione di tutti gli oggetti presenti nel carrello con un comando.
+		\item Prevede la rimozione di tutti gli oggetti presenti nel carrello con un singolo comando.
 	\end{itemize}
 	
 	\item Precondizioni:
@@ -115,13 +84,13 @@ Utente che ha accesso a tutte le funzionalità del prodotto, esplora l'ambiente 
 
 \pagebreak
 
-\subsection{UC 2 - Visualizzazione contenuto del carrello}
+\subsection{UC 3 - Visualizzazione contenuto del carrello}
 
 \begin{figure}[H]
-  \renewcommand{\thefigure}{2}
-  \includegraphics[width=\linewidth]{./res/images/UC2.png}
-  \caption{UC 2 - Visualizzazione contenuto del carrello}
-  \label{fig:UC 2}
+  \renewcommand{\thefigure}{1}
+  \includegraphics[width=\linewidth]{./res/images/UC3.png}
+  \caption{UC 3 - Visualizzazione contenuto del carrello}
+  \label{fig:UC 3}
 \end{figure}
 
 \begin{itemize}
@@ -152,13 +121,13 @@ Utente che ha accesso a tutte le funzionalità del prodotto, esplora l'ambiente 
 	
 \end{itemize}
 
-\subsubsection{UC 2.1 - Visualizzazione oggetti presenti con relative caratteristiche e quantità}
+\subsubsection{UC 3.1 - Visualizzazione oggetti presenti con relative caratteristiche e quantità}
 
 \begin{figure}[H]
-  \renewcommand{\thefigure}{3}
-  \includegraphics[width=\linewidth]{./res/images/UC2.1.png}
-  \caption{UC 2.1 - Visualizzazione oggetti presenti con relative caratteristiche e quantità}
-  \label{fig:UC 2.1}
+  \renewcommand{\thefigure}{2}
+  \includegraphics[width=\linewidth]{./res/images/UC3.1.png}
+  \caption{UC 3.1 - Visualizzazione oggetti presenti con relative caratteristiche e quantità}
+  \label{fig:UC 3.1}
 \end{figure}
 
 \begin{itemize}
@@ -190,13 +159,13 @@ Utente che ha accesso a tutte le funzionalità del prodotto, esplora l'ambiente 
 	
 \end{itemize}
 
-\paragraph{UC 2.1.1 - Visualizzazione oggetto}
+\paragraph{UC 3.1.1 - Visualizzazione oggetto}
 
 \begin{figure}[H]
-  \renewcommand{\thefigure}{4}
-  \includegraphics[width=\linewidth]{./res/images/UC2.1.1.png}
-  \caption{UC 2.1.1 - Visualizzazione oggetto}
-  \label{fig:UC 2.1.1}
+  \renewcommand{\thefigure}{3}
+  \includegraphics[width=\linewidth]{./res/images/UC3.1.1.png}
+  \caption{UC 3.1.1 - Visualizzazione oggetto}
+  \label{fig:UC 3.1.1}
 \end{figure}
 
 \begin{itemize}
@@ -228,7 +197,7 @@ Utente che ha accesso a tutte le funzionalità del prodotto, esplora l'ambiente 
 	
 \end{itemize}
 
-\subparagraph{UC 2.1.1.1 - Visualizzazione icona}
+\subparagraph{UC 3.1.1.1 - Visualizzazione icona}
 \begin{itemize}
 	
 	\item Attore primario: 
@@ -258,7 +227,7 @@ Utente che ha accesso a tutte le funzionalità del prodotto, esplora l'ambiente 
 	
 \end{itemize}
 
-\subparagraph{UC 2.1.1.2 - Visualizzazione nome}
+\subparagraph{UC 3.1.1.2 - Visualizzazione nome}
 \begin{itemize}
 	
 	\item Attore primario: 
@@ -288,7 +257,7 @@ Utente che ha accesso a tutte le funzionalità del prodotto, esplora l'ambiente 
 	
 \end{itemize}
 
-\subparagraph{UC 2.1.1.3 - Visualizzazione costo}
+\subparagraph{UC 3.1.1.3 - Visualizzazione costo}
 \begin{itemize}
 	
 	\item Attore primario: 
@@ -318,7 +287,7 @@ Utente che ha accesso a tutte le funzionalità del prodotto, esplora l'ambiente 
 	
 \end{itemize}
 
-\subparagraph{UC 2.1.1.4 - Visualizzazione quantità}
+\subparagraph{UC 3.1.1.4 - Visualizzazione quantità}
 \begin{itemize}
 	
 	\item Attore primario: 
@@ -348,7 +317,7 @@ Utente che ha accesso a tutte le funzionalità del prodotto, esplora l'ambiente 
 	
 \end{itemize}
 
-\subparagraph{UC 2.1.1.5 - Visualizzazione caratteristiche fisiche}
+\subparagraph{UC 3.1.1.5 - Visualizzazione caratteristiche fisiche}
 \begin{itemize}
 	
 	\item Attore primario: 
@@ -357,7 +326,7 @@ Utente che ha accesso a tutte le funzionalità del prodotto, esplora l'ambiente 
 	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
-		\item Prevede la visualizzazione di tutte le caratteristiche fisiche dell'oggetto.
+		\item Prevede la visualizzazione delle caratteristiche fisiche dell'oggetto.
 	\end{itemize}
 	
 	\item Precondizioni:
@@ -378,7 +347,7 @@ Utente che ha accesso a tutte le funzionalità del prodotto, esplora l'ambiente 
 	
 \end{itemize}
 
-\subsubsection{UC 2.2 - Visualizzazione costo totale oggetti}
+\subsubsection{UC 3.2 - Visualizzazione costo totale oggetti}
 \begin{itemize}
 	
 	\item Attore primario: 
@@ -410,7 +379,7 @@ Utente che ha accesso a tutte le funzionalità del prodotto, esplora l'ambiente 
 
 \pagebreak
 
-\subsection{UC 3 - Aggiungere un oggetto al carrello}
+\subsection{UC 4 - Aggiungere un oggetto al carrello}
 \begin{itemize}
 
 	\item Attore primario: 
@@ -444,54 +413,13 @@ Utente che ha accesso a tutte le funzionalità del prodotto, esplora l'ambiente 
 
 \pagebreak
 
-\subsection{UC 4 - Compiere azioni di movimento}
+\subsection{UC 5 - Compiere movimenti direzionali}
 
 \begin{figure}[H]
-  \renewcommand{\thefigure}{5}
-  \includegraphics[width=\linewidth]{./res/images/UC4.png}
-  \caption{UC 4 - Compiere azioni di movimento}
-  \label{fig:UC 4}
-\end{figure}
-
-\begin{itemize}
-
-	\item Attore primario: 
-	\begin{itemize}
-		\item Utente in ambiente 3D.
-	\end{itemize}
-	\item Descrizione:
-	\begin{itemize}
-		\item Compiere azioni di movimento significa interagire con il sistema per esplorare l'ambiente 3D.
-\newline La posizione dell'utente all'interno dell'ambiente 3D comprende sia la sua posizione nello spazio che l'orientamento
-della sua visuale.
-	\end{itemize}
-	
-	\item Precondizioni:
-	\begin{itemize}
-		\item Le azioni di movimento richieste dall'utente devono essere abilitate;
-		\item Le azioni di movimento richieste dall'utente devono essere valide;
-		\item L'utente si trova in una posizione iniziale.
-	\end{itemize}
-	
-	\item Postcondizioni:
-	\begin{itemize}
-		\item L'utente si trova in una posizione diversa da quella iniziale.
-	\end{itemize}
-	
-	\item Scenario principale:
-	\begin{itemize}
-		\item L'utente interagisce con il sistema per compiere un'azione di movimento.
-	\end{itemize}
-	
-\end{itemize}
-
-\subsubsection{UC 4.1 - Compiere movimenti direzionali}
-
-\begin{figure}[H]
-  \renewcommand{\thefigure}{6}
-  \includegraphics[width=\linewidth]{./res/images/UC4.1.png}
-  \caption{UC 4.1 - Compiere movimenti direzionali}
-  \label{fig:UC 4.1}
+  \renewcommand{\thefigure}{4}
+  \includegraphics[width=\linewidth]{./res/images/UC5.png}
+  \caption{UC 5 - Compiere movimenti direzionali}
+  \label{fig:UC 5}
 \end{figure}
 
 \begin{itemize}
@@ -503,7 +431,6 @@ della sua visuale.
 	\item Descrizione:
 	\begin{itemize}
 		\item Compiere azioni di movimenti direzionali significa interagire con il sistema per spostarsi nello spazio offerto dall'ambiente 3D.
-\newline Attenzione: anche se dei movimenti direzionali non fossero offerti all'utente non e' detto che non si possa spostare in quella direzione,infatti,alcuni spostamenti direzionali potrebbero dipendere da vincoli imposti dall'ambiente 3D (esempio la presenza di un dislivello o la presenza di scale ecc...).
 	\end{itemize}
 	
 	\item Precondizioni:
@@ -525,7 +452,8 @@ della sua visuale.
 	
 \end{itemize}
 
-\paragraph{UC 4.1.1 - Compiere movimenti direzionali lungo l'asse X}
+
+\subsubsection{UC 5.1 - Compiere movimenti direzionali lungo l'asse X}
 \begin{itemize}
 
 	\item Attore primario: 
@@ -556,7 +484,7 @@ della sua visuale.
 	
 \end{itemize}
 
-\paragraph{UC 4.1.2 - Compiere movimenti direzionali lungo l'asse Y}
+\subsubsection{UC 5.2 - Compiere movimenti direzionali lungo l'asse Y}
 \begin{itemize}
 
 	\item Attore primario: 
@@ -587,7 +515,7 @@ della sua visuale.
 	
 \end{itemize}
 
-\paragraph{UC 4.1.3 - Compiere movimenti direzionali lungo l'asse Z}
+\subsubsection{UC 5.3 - Compiere movimenti direzionali lungo l'asse Z}
 \begin{itemize}
 
 	\item Attore primario: 
@@ -618,7 +546,9 @@ della sua visuale.
 	
 \end{itemize}
 
-\subsubsection{UC 4.2 - Compiere rotazioni camera}
+\pagebreak
+
+\subsection{UC 6 - Compiere rotazioni camera}
 \begin{itemize}
 
 	\item Attore primario: 
@@ -627,9 +557,7 @@ della sua visuale.
 	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
-		\item Compiere un'azione di rotazione camera permette all'utente di vedere l'ambiente che lo circonda variando
-la direzione della propria visuale.
-\newline Non ci sono vincoli alle direzioni in cui può variare lo spostamento della camera.
+		\item Compiere un'azione di spostamento camera permette all'utente di vedere l'ambiente che lo circonda variando la direzione della propria visuale.
 	\end{itemize}
 	
 	\item Precondizioni:
@@ -652,7 +580,7 @@ la direzione della propria visuale.
 
 \pagebreak
 
-\subsection{UC 5 - Modificare attributi oggetto}
+\subsection{UC 7 - Modificare attributi oggetto}
 \begin{itemize}
 
 	\item Attore primario: 
@@ -688,14 +616,14 @@ la direzione della propria visuale.
 	
 	\item Estensioni:
 	\begin{itemize}
-		\item UC 6 - Visualizzazione messaggio oggetto non modificabile.
+		\item UC 8 - Visualizzazione messaggio oggetto non modificabile.
 	\end{itemize}
 	
 \end{itemize}
 
 \pagebreak
 
-\subsection{UC 6 - Visualizzazione messaggio oggetto non modificabile}
+\subsection{UC 8 - Visualizzazione messaggio oggetto non modificabile}
 \begin{itemize}
 
 	\item Attore primario: 
@@ -730,13 +658,13 @@ la direzione della propria visuale.
 
 \pagebreak
 
-\subsection{UC 7 - Visualizzazione contenuto lista oggetti}
+\subsection{UC 9 - Visualizzazione contenuto lista oggetti}
 
 \begin{figure}[H]
-  \renewcommand{\thefigure}{7}
-  \includegraphics[width=\linewidth]{./res/images/UC7.png}
-  \caption{UC 7 - Visualizzazione contenuto lista oggetti}
-  \label{fig:UC 7}
+  \renewcommand{\thefigure}{5}
+  \includegraphics[width=\linewidth]{./res/images/UC9.png}
+  \caption{UC 9 - Visualizzazione contenuto lista oggetti}
+  \label{fig:UC 9}
 \end{figure}
 
 \begin{itemize}
@@ -767,7 +695,7 @@ la direzione della propria visuale.
 	
 \end{itemize}
 
-\subsubsection{UC 7.1 - Visualizzazione oggetti stanza attuale}
+\subsubsection{UC 9.1 - Visualizzazione oggetti stanza attuale}
 \begin{itemize}
 
 	\item Attore primario: 
@@ -799,7 +727,7 @@ cui l'utente si trova.
 
 \pagebreak
 
-\subsection{UC 8 - Visualizzazione dettagli oggetto}
+\subsection{UC 10 - Visualizzazione dettagli oggetto}
 \begin{itemize}
 
 	\item Attore primario: 
@@ -830,44 +758,7 @@ cui l'utente si trova.
 
 \pagebreak
 
-\subsection{UC 9 - Riposizionamento}
-
-\begin{figure}[H]
-  \renewcommand{\thefigure}{8}
-  \includegraphics[width=\linewidth]{./res/images/UC9.png}
-  \caption{UC 9 - Riposizionamento}
-  \label{fig:UC 9}
-\end{figure}
-
-\begin{itemize}
-
-	\item Attore primario: 
-	\begin{itemize}
-		\item Utente in ambiente 3D.
-	\end{itemize}
-	\item Descrizione:
-	\begin{itemize}
-		\item Riposizionamento permette all'utente di posizionarsi in punti prestabiliti all'interno dell'ambiente 3D.
-	\end{itemize}
-	
-	\item Precondizioni:
-	\begin{itemize}
-		\item L'utente si trova in un punto di partenza.
-	\end{itemize}
-	
-	\item Postcondizioni:
-	\begin{itemize}
-		\item L'utente si trova in un punto diverso da quello di partenza prestabilito dal sistema.
-	\end{itemize}
-	
-	\item Scenario principale:
-	\begin{itemize}
-		\item L'utente interagisce con il sistema per riposizionarsi in un punto diverso all'interno dell'ambiente 3D.
-	\end{itemize}
-	
-\end{itemize}
-
-\subsubsection{UC 9.1 - Riposizionamento vicino ad oggetto stanza attuale}
+\subsection{UC 11 - Riposizionamento vicino ad oggetto stanza attuale}
 \begin{itemize}
 
 	\item Attore primario: 
@@ -897,7 +788,9 @@ della stanza in cui si trova.
 	
 \end{itemize}
 
-\subsubsection{UC 9.2 - Riposizionamento in stanze}
+\pagebreak
+
+\subsection{UC 12 - Riposizionamento in stanze}
 \begin{itemize}
 
 	\item Attore primario: 
@@ -928,7 +821,7 @@ della stanza in cui si trova.
 
 \pagebreak
 
-\subsection{UC 10 - Riposizionamento non concesso}
+\subsection{UC 13 - Visualizzazione messaggio riposizionamento in stanza non avvenuto}
 \begin{itemize}
 
 	\item Attore primario: 
@@ -937,18 +830,19 @@ della stanza in cui si trova.
 	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
-		\item Se l'utente si trova in prossimità del punto di destinazione, il riposizionamento non avviene.
+		\item Viene visualizzato un messaggio informativo di riposizionamento in stanza non avvenuto, dopo che l'utente, posizionato ad
+una distanza dal punto iniziale della stanza inferiore a quella consentita per il compiersi dell'azione, tenta il ricollocamento in tale stanza.
 	\end{itemize}
 	
 	\item Precondizioni:
 	\begin{itemize}
-		\item L'utente si trova in prossimità del punto di destinazione;
+		\item L'utente si trova ad una distanza dal punto di riposizionamento della stanza da lui selezionata entro la quale non è consentito il ricollocamento;
 		\item L'utente interagisce con il comando di riposizionamento in quella destinazione.
 	\end{itemize}
 	
 	\item Postcondizioni:
 	\begin{itemize}
-		\item L'utente si trova in prossimità del punto di destinazione;
+		\item Viene visualizzato un messaggio informativo riposizionamento in stanza non avvenuto;
 		\item Il riposizionamento non è stato effettuato.
 	\end{itemize}
 	
@@ -961,7 +855,41 @@ della stanza in cui si trova.
 
 \pagebreak
 
-\subsection{UC 11 - Visualizzazione contenuto lista stanze}
+\subsection{UC 14 - Visualizzazione messaggio riposizionamento in prossimità dell'oggetto selezionato non avvenuto}
+\begin{itemize}
+
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
+	\item Descrizione:
+	\begin{itemize}
+		\item Viene visualizzato un messaggio informativo di riposizionamento in prossimità dell'oggetto non avvenuto, dopo che l'utente, posizionato ad
+una distanza dall'oggetto inferiore a quella consentita per il compiersi dell'azione, tenta il ricollocamento in tale oggetto.
+	\end{itemize}
+	
+	\item Precondizioni:
+	\begin{itemize}
+		\item L'utente si trova ad una distanza dall'oggetto da lui selezionato entro la quale non è consentito riposizionamento;
+		\item L'utente interagisce con il comando di riposizionamento selezionando l'oggetto che si trova ad una distanza entro la quale non è consentito il ricollocamento.
+	\end{itemize}
+	
+	\item Postcondizioni:
+	\begin{itemize}
+		\item Il riposizionamento non è avvenuto;
+		\item Viene visualizzato un messaggio informativo di riposizionamento in prossimità dell'oggetto non avvenuto.
+	\end{itemize}
+	
+	\item Scenario principale:
+	\begin{itemize}
+		\item Nessuna azione richiesta.
+	\end{itemize}
+	
+\end{itemize}
+
+\pagebreak
+
+\subsection{UC 15 - Visualizzazione contenuto lista stanze}
 \begin{itemize}
 
 	\item Attore primario: 
@@ -993,7 +921,7 @@ della stanza in cui si trova.
 
 \pagebreak
 
-\subsection{UC 12 - Spostamento oggetto}
+\subsection{UC 16 - Spostamento oggetto}
 \begin{itemize}
 
 	\item Attore primario: 
@@ -1030,7 +958,7 @@ della stanza in cui si trova.
 
 \pagebreak
 
-\subsection{UC 13 - Oggetto non posizionato}
+\subsection{UC 17 - Oggetto non posizionato}
 \begin{itemize}
 
 	\item Attore primario: 
@@ -1063,7 +991,7 @@ della stanza in cui si trova.
 
 \pagebreak
 
-\subsection{UC 14 - Torcia}
+\subsection{UC 18 - Torcia}
 \begin{itemize}
 
 	\item Attore primario: 
@@ -1114,46 +1042,46 @@ Il codice di ciascuno requisito è formato da:
 
 \subsection{Requisiti funzionali}
 \reqTable{
-	\textbf{RF1} & L'utente deve poter rimuovere uno o più oggetti dal carrello & Facoltativo & UC1 \tabularnewline
-	\textbf{RF1.1} & L'utente deve poter rimuovere un oggetto dal carrello & Facoltativo & UC1.1 \tabularnewline
-     \textbf{RF1.2} & L'utente deve poter rimuovere tutti gli oggetti dal carrello con un comando & Facoltativo & UC1.2\tabularnewline
+	\textbf{RF1} & L'utente deve poter rimuovere un oggetto dal carrello & Facoltativo & UC1 \tabularnewline
+     \textbf{RF2} & L'utente deve poter rimuovere tutti gli oggetti dal carrello & Facoltativo & UC2\tabularnewline
      
-     \textbf{RF2} & L'utente deve poter visualizzare il contenuto del carrello & Obbligatorio & UC2\tabularnewline
-     \textbf{RF2.1} & L'utente deve poter visualizzare la lista degli oggetti presenti nel carrello & Obbligatorio & UC2.1\tabularnewline
-     \textbf{RF2.2} & L'utente deve poter visualizzare il costo totale degli oggetti presenti nel carrello & Obbligatorio & UC2.2\tabularnewline
+     \textbf{RF3} & L'utente deve poter visualizzare il contenuto del carrello & Obbligatorio & UC2\tabularnewline
+     \textbf{RF3.1} & L'utente può visualizzare la lista degli oggetti presenti nel carrello & Obbligatorio & UC3.1\tabularnewline
+     \textbf{RF3.2} & L'utente deve poter visualizzare il costo totale degli oggetti presenti nel carrello & Obbligatorio & UC3.2\tabularnewline
      
-     \textbf{RF3} & L'utente deve poter aggiungere un oggetto al carrello & Obbligatorio & UC3\tabularnewline
+     \textbf{RF4} & L'utente deve poter aggiungere un oggetto al carrello & Obbligatorio & UC4\tabularnewline
      
-     \textbf{RF4} & L'utente deve poter compiere azioni di movimento & Obbligatorio & UC4\tabularnewline
-     \textbf{RF4.1} & L'utente deve poter compiere movimenti direzionali & Obbligatorio & UC4.1\tabularnewline
-     \textbf{RF4.1.1} & L'utente deve poter compiere movimenti direzionali sull'asse X & Obbligatorio & UC4.1.1\tabularnewline
-     \textbf{RF4.1.2} & L'utente deve poter compiere movimenti direzionali sull'asse Y & Obbligatorio & UC4.1.2\tabularnewline
-     \textbf{RF4.1.3} & L'utente deve poter compiere movimenti direzionali sull'asse Z & Facoltativo & UC4.1.3\tabularnewline
-     \textbf{RF4.2} & L'utente deve poter compiere spostamenti di camera & Obbligatorio & UC4.2\tabularnewline
+     \textbf{RF5} & L'utente deve poter compiere movimenti direzionali & Obbligatorio & UC5\tabularnewline
+     \textbf{RF5.1} & L'utente deve poter compiere movimenti direzionali sull'asse X & Obbligatorio & UC5.1\tabularnewline
+     \textbf{RF5.2} & L'utente deve poter compiere movimenti direzionali sull'asse Y & Obbligatorio & UC5.2\tabularnewline
+     \textbf{RF5.3} & L'utente deve poter compiere movimenti direzionali sull'asse Z & Facoltativo & UC5.3\tabularnewline
      
-     \textbf{RF15} & L'utente deve poter modificare gli attributi di un oggetto & Obbligatorio & UC5\tabularnewline
+     \textbf{RF6} & L'utente deve poter compiere spostamenti di camera & Obbligatorio & UC6\tabularnewline
      
-     \textbf{RF6} & L'utente deve essere notificato in caso un oggetto non fosse modificabile & Obbligatorio & UC6\tabularnewline
+     \textbf{RF7} & L'utente deve poter modificare gli attributi di un oggetto & Obbligatorio & UC7\tabularnewline
      
-     \textbf{RF7} & L'utente deve poter visualizzare il contenuto della lista oggetti & Facoltativo & UC7\tabularnewline
-     \textbf{RF7.1} & L'utente deve poter visualizzare il contenuto della lista oggetti della stanza attuale & Facoltativo & UC7.1\tabularnewline
+     \textbf{RF8} & L'utente deve essere notificato in caso un oggetto non fosse modificabile & Obbligatorio & UC8\tabularnewline
      
-     \textbf{RF8} & L'utente deve poter visualizzare i dettagli di un oggetto & Obbligatorio & UC8\tabularnewline
+     \textbf{RF9} & L'utente deve poter visualizzare il contenuto della lista oggetti & Facoltativo & UC9\tabularnewline
+     \textbf{RF9.1} & L'utente deve poter visualizzare il contenuto della lista oggetti della stanza attuale & Facoltativo & UC9.1\tabularnewline
      
-     \textbf{RF9} & L'utente deve poter riposizionarsi in una coordinata X, Y, Z & Facoltativo & UC9\tabularnewline
-     \textbf{RF9.1} & L'utente deve poter riposizionarsi vicino ad un oggetto presente nella stanza & Facoltativo & UC9.1\tabularnewline
-     \textbf{RF9.2} & L'utente deve poter riposizionarsi in un punto
-prestabilito di una stanza da lui selezionata & Facoltativo & UC9.2\tabularnewline
+     \textbf{RF10} & L'utente deve poter visualizzare i dettagli di un oggetto & Obbligatorio & UC8\tabularnewline
+     
+     \textbf{RF11} & L'utente deve poter riposizionarsi vicino ad un oggetto presente nella stanza attuale & Facoltativo & UC11\tabularnewline
+     
+     \textbf{RF12} & L'utente deve poter riposizionarsi una stanza da lui selezionata & Facoltativo & UC12\tabularnewline
 
-	\textbf{RF10} & L'utente deve essere notificato quando il riposizionamento non è concesso & Facoltativo & UC10\tabularnewline
+	\textbf{RF13} & L'utente deve essere notificato quando il riposizionamento in stanza non è concesso & Facoltativo & UC13\tabularnewline
 	
-	\textbf{RF11} & L'utente deve poter visualizzare il contenuto della lista stanze & Facoltativo & UC11\tabularnewline
+	\textbf{RF14} & L'utente deve essere notificato quando il riposizionamento in prossimità di un oggetto selezionato non è concesso & Facoltativo & UC14\tabularnewline 	
 	
-	\textbf{RF12} & L'utente deve poter riposizionare un oggetto presente nella stanza attuale & Facoltativo & UC12\tabularnewline
+	\textbf{RF15} & L'utente deve poter visualizzare il contenuto della lista stanze & Facoltativo & UC15\tabularnewline
 	
-	\textbf{RF13} & L'utente non deve poter riposizionare un oggetto in una coordinata non legittima & Facoltativo & UC13\tabularnewline
+	\textbf{RF16} & L'utente deve poter riposizionare un oggetto presente nella stanza attuale & Facoltativo & UC16\tabularnewline
 	
-	\textbf{RF14} & L'utente deve poter utilizzare una torcia per illuminare l'ambiente circostante & Facoltativo & UC14
+	\textbf{RF17} & L'utente non deve poter riposizionare un oggetto in una coordinata non legittima & Facoltativo & UC17\tabularnewline
+	
+	\textbf{RF18} & L'utente deve poter utilizzare una torcia per illuminare l'ambiente circostante & Facoltativo & UC18
 \\}
 
 \subsection{Requisiti qualitativi}
