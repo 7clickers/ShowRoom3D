@@ -1,8 +1,8 @@
 import re
 
 # indicare il path del file target
-pathTarget='./latex/nuovo.txt'
-fileTarget=''
+pathTarget='./latex/interni/verbali/verbale_interno_01-02-23/res/sections/02_content.tex'
+fileTarget='02_content.tex'
 listaNomiDocumenti=["Piano di Progetto","Norme di Progetto","Piano di Qualifica","Glossario"]
 
 with open(pathTarget,'r') as file:
