@@ -1,4 +1,8 @@
-import * as THREE from 'three';
+//import * as THREE from 'three';
+import {
+	TextureLoader,
+	sRGBEncoding,
+} from "../node_modules/three/build/three.module.js";
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { Octree } from 'three/addons/math/Octree.js';
 import { OctreeHelper } from 'three/addons/helpers/OctreeHelper.js';
@@ -10,8 +14,8 @@ export const worldOctree = new Octree();
 export const objectOctree = new Octree();
 export const loader = new GLTFLoader().setPath('../');
 
-const texture = new THREE.TextureLoader().load('../source/texture/sand.jpg');
-texture.encoding = THREE.sRGBEncoding;
+const texture = new TextureLoader().load('../source/texture/sand.jpg');
+texture.encoding = sRGBEncoding;
 
 //carica mappa
 loader.load('source/glb/sea_map_nocolor.glb', (gltf) => {

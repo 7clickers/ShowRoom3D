@@ -1,10 +1,14 @@
-import * as THREE from 'three';
+//import * as THREE from 'three';
+import {
+	DirectionalLight,
+    HemisphereLight,
+} from "../node_modules/three/build/three.module.js";
 import { Light } from 'three';
 
 export const Lights = [];
 
 //Directional light
-    const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+    const directionalLight = new DirectionalLight(0xffffff, 0.8);
     directionalLight.position.set(- 5, 25, - 1);
 
     /* castShadow costoso in termini di prestazioni */
@@ -24,7 +28,7 @@ export const Lights = [];
     Lights.push(directionalLight);
 
 /* luce generica senza ombre */
-    const fillLight1 = new THREE.HemisphereLight(0x4488bb, 0x002244, 0.5);
+    const fillLight1 = new HemisphereLight(0x4488bb, 0x002244, 0.5);
     fillLight1.position.set(2, 1, 1);
 
     Lights.push(fillLight1);

@@ -25,10 +25,20 @@ export const products = {
       title: 'Corallo 3',
       desc: 'Un corallo bello grande',
       price: 5.99,
-      path: 'source/glb/reed_coral.glb',
+      path: 'source/glb/purple_coral.glb',
       x: -4,
       y: 0.2,
       z: -24
+    },
+    4: {
+      id: 'corallo_3',
+      title: 'Corallo 3',
+      desc: 'Un corallo bello grande',
+      price: 5.99,
+      path: 'source/glb/purple_coral.glb',
+      x: -18,
+      y: 0.2,
+      z: -5
     },
   };
 

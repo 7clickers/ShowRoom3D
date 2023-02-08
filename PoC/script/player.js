@@ -1,4 +1,8 @@
-import * as THREE from 'three';
+//import * as THREE from 'three';
+import {
+	Vector3,
+	Vector2,	
+  } from "../node_modules/three/build/three.module.js";
 import { Capsule } from 'three/addons/math/Capsule.js';
 import { camera, scene } from './showroom_poc.js';
 import { worldOctree, objectOctree } from './world.js';
@@ -7,9 +11,9 @@ import { worldOctree, objectOctree } from './world.js';
 
 export class Player {
 	constructor(){
-		this.playerCollider = new Capsule(new THREE.Vector3(0, 0.35, 0), new THREE.Vector3(0, 1, 0), 0.35);
-		this.playerVelocity = new THREE.Vector3();
-		this.playerDirection = new THREE.Vector3();
+		this.playerCollider = new Capsule(new Vector3(0, 0.35, 0), new Vector3(0, 1, 0), 0.35);
+		this.playerVelocity = new Vector3();
+		this.playerDirection = new Vector3();
 		this.playerOnFloor = false;
 	}
 
@@ -156,7 +160,7 @@ const GRAVITY = 30;
 let mouseTime = 0;
 
 // Create a vector that represents the mouse position
-export var mouse = new THREE.Vector2();
+export var mouse = new Vector2();
 
 document.addEventListener( 'mousemove', onMouseMove, false );
 

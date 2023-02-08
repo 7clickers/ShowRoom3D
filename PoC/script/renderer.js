@@ -1,4 +1,12 @@
-import * as THREE from 'three';
+//import * as THREE from 'three';
+import {
+	WebGLRenderer,
+	Clock,
+	Vector3,
+	VSMShadowMap,
+	sRGBEncoding,
+	ACESFilmicToneMapping,
+  } from "../node_modules/three/build/three.module.js";
 import Stats from 'three/addons/libs/stats.module.js';
 import { scene, camera } from './showroom_poc.js';
 //import { controls, updatePlayer, teleportPlayerIfOob, mouse } from './player.js';
@@ -8,19 +16,19 @@ import { Raycasting, showInfo } from './raycasting.js';
 
 const STEPS_PER_FRAME = 5;
 
-const clock = new THREE.Clock();
+const clock = new Clock();
 
 export const stats = new Stats();
 stats.domElement.style.position = 'absolute';
 stats.domElement.style.top = '0px';
 
-export const renderer = new THREE.WebGLRenderer({ antialias: true });
+export const renderer = new WebGLRenderer({ antialias: true });
 renderer.setPixelRatio(window.devicePixelRatio);
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.shadowMap.enabled = true;
-renderer.shadowMap.type = THREE.VSMShadowMap;
-renderer.outputEncoding = THREE.sRGBEncoding;
-renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.shadowMap.type = VSMShadowMap;
+renderer.outputEncoding = sRGBEncoding;
+renderer.toneMapping = ACESFilmicToneMapping;
 
 export let renderId;
 export let renderPaused = false;
@@ -28,6 +36,7 @@ export let renderPaused = false;
 export function animate() {
 	const deltaTime = Math.min(0.05, clock.getDelta()) / STEPS_PER_FRAME;
 
+	
 	for (let i = 0; i < STEPS_PER_FRAME; i++) {
 
 		player.controls(deltaTime);
@@ -37,14 +46,15 @@ export function animate() {
 	
 	
 	Raycasting();
+	
 	renderer.render(scene, camera);
 
 	stats.update();
-
+	
 	renderId = requestAnimationFrame(animate);
-
+	
 	//COORDS
-	var vector = new THREE.Vector3();
+	var vector = new Vector3();
     vector.setFromMatrixPosition(camera.matrixWorld);
  	coords.innerHTML = 'x= ' + vector.x.toFixed(2) + '</br>y= ' + vector.y.toFixed(2) + '</br>z= ' + vector.z.toFixed(2);
 
