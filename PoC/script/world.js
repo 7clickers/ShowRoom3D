@@ -18,7 +18,7 @@ const texture = new TextureLoader().load('../source/texture/sand.jpg');
 texture.encoding = sRGBEncoding;
 
 //carica mappa
-loader.load('source/glb/sea_map_nocolor.glb', (gltf) => {
+loader.load('source/glb/fondale.glb', (gltf) => {
 
 	scene.add(gltf.scene);
 	worldOctree.fromGraphNode(gltf.scene);
