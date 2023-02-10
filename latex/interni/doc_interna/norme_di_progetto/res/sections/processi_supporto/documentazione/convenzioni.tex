@@ -30,9 +30,17 @@ Le immagini sono raccolte nella cartella “”, e sono inserite sempre con una 
 Le tabelle sono provviste di didascalia descrittiva posizionata sotto alla tabella. La tabella contenente il registro delle modifiche è l’unica che fa da eccezione a questa regola.
 
 \paragraph{\textit{Glossario}}
-All'interno del documento si possono trovare dei termini che possono risultare ambigui a seconda del contesto, o non conosciuti dagli utilizzatori.\\\
-Per ovviare ad errori di incomprensione che possono portare a problemi di vario genere e rallentamenti si è deciso di stilare un elenco di termini 
-di interesse accompagnati da una descrizione dettagliata del loro significato.\\
-I termini presenti all'interno del \textit{Glossario} vengono indicati con il pedice 'g' come nell'esempio seguente: termine\textsubscript{g}.
+All'interno della documentazione si possono trovare dei termini che possono risultare ambigui a seconda del contesto, o non conosciuti dagli utilizzatori.\\\
+Per ovviare ad incomprensioni si è deciso di stilare un elenco di termini di interesse accompagnati da una descrizione del loro significato.\\
+I termini presenti all'interno dei documenti che necessitano di una descrizione vengono indicati con il pedice 'g' come nell'esempio seguente: termine\textsubscript{g}.
+É quindi possibile consultare il \textit{Glossario} per reperire tale descrizione.
+\\
+Ogni componente del gruppo all'inserimento di un termine ritenuto ambiguo deve preoccuparsi di aggiornare il \textit{Glossario}.
+
+Per aggiornare il \textit{Glossario} si devono inserire i nuovi termini nel file .tex nella cartella corrispondente all'iniziale del termine situata al percorso
+\textbf{\textit{latex/esterni/doc\_esterna/Glossario/res/sections/alphabet/}}.
+É stato creato uno script che scansiona un documento di interesse per inserire in automatico il pedice sui termini contenuti nel \textit{Glossario}.
+
+Il componente del gruppo che inserisce all'interno del \textit{Glossario} un nuovo termine deve aggiungere nel file .tex il segnaposto \%parola\% dopo la subsection (senza spazi) che racchiude il termine per permetterne il riconoscimento da parte dello script.
+\\
 Il \textit{Glossario} ordina i termini in ordine alfabetico in modo da permetterne una facile e veloce ricerca.
-Ogni componente del gruppo all'inserimento di un termine ritenuto ambiguo deve preoccuparsi di aggiornare il \textit{Glossario} in modo da mantenerlo sempre aggiornato.
