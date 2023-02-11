@@ -1,60 +1,13 @@
 \subsubsection{Metriche}
 Per perseguire la qualità nel processo di Fornitura si è deciso di adottare le seguenti metriche:
-\paragraph{Planned Value (PV)}
-Costo pianificato per realizzare le attività di progetto pianificate al momento del calcolo.
-Per calcolare questa metrica si utilizzerà la formula:
-\begin{equation*}
-\text{PV}=\text{B}\textsubscript{tot}*\%\text{ lavoro pianificato}
-\end{equation*}
-\textit{Valore minimo:} $\ge 0$\\
-\textit{Valore ottimo:}	$\le \text{Budget at Completion\textsubscript{g}}$
-\paragraph{Actual Cost (AC)}
-Costo sostenuto al momento del calcolo.
-Per calcolare questa metrica si tiene conto di:
-\begin{equation*}
-\text{AC}=\text{Totale ore lavorative per incremento}*\text{costo orario}
-\end{equation*}
-\textit{Valore minimo:} $\ge 0$\\
-\textit{Valore ottimo:} $\le \text{EAC}$
-\paragraph{Estimated at Completion (EAC)}
-Un valore di revisione di costo stimato per la realizzazione del progetto alla data corrente.
-\begin{equation*}
-\text{EAC}=\text{AC}+\text{ETC}
-\end{equation*}
-\textit{Valore minimo:} 
-$\text{preventivo} -5\% \le \text{EAC}$ \textit{oppure} $\text{preventivo} +5\% \ge \text{EAC}$\\
-\textit{Valore ottimo:} Costo preventivato
-\paragraph{Earned Value (EV)}
-Indica il valore delle attività realizzate nel progetto fino al momento della misurazione.
-\begin{equation*}
-\text{EV}=\%\text{ lavoro pianificato}*\text{EAC}
-\end{equation*}
-\textit{Valore minimo:} $\ge 0$\\
-\textit{Valore ottimo:} $\le \text{EAC}$
-\paragraph{Estimated to Complete (ETC)}
-Metrica che produce un valore intero per indicare il numero di attività necessarie al completamento del progetto.\\
-\textit{Valore minimo:} $\ge 0$\\
-\textit{Valore ottimo:} $\le \text{EAC}$
-\paragraph{Cost Variance (CV)}
-Indica se il valore del costo attuale del progetto è maggiore, uguale o minore rispetto al costo effettivo.
-Questa metrica si misura tramite una semplice formula:
-\begin{equation*}
-\text{CV}=\text{EV}-\text{AC}
-\end{equation*}
-\textit{Valore minimo:} $\le -15\%$\\
-\textit{Valore ottimo:} $\ge 0\%$
-\paragraph{Schedule Variance (SV)}
-Valore utilizzato per analizzare se il progetto è in linea, in anticipo o in ritardo rispetto alla schedulazione delle attività di progetto pianificate nella baseline.
-\begin{equation*}
-\text{SV}=\text{EV}-\text{PV}
-\end{equation*}
-\textit{Valore minimo:} $\le -15\%$\\
-\textit{Valore ottimo:} $\ge 0\%$
-\paragraph{Budget Variance (BV)}
-Valore che indica se alla data corrente si è speso di più o di meno del budget iniziale.
-\begin{equation*}
-\text{BV}=\text{EV}-\text{AC}
-\end{equation*}
-\textit{Valore minimo:} $\le -10\%$\\
-\textit{Valore ottimo:} $\ge 0\%$
+\begin{itemize}
+    \item \textbf{MPC01: Planned Value (PV)};
+    \item \textbf{MPC02: Actual Cost (AC)};
+    \item \textbf{MPC03: Estimated at Completion (EAC)};
+    \item \textbf{MPC04: Earned Value (EV)};
+    \item \textbf{MPC05: Estimated to Complete (ETC)};
+    \item \textbf{MPC06: Cost Variance (CV)};
+    \item \textbf{MPC07: Schedule Variance (SV)};
+    \item \textbf{MPC08: Budget Variance (BV)}.
+\end{itemize}
 
