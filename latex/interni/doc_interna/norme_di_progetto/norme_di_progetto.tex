@@ -15,6 +15,8 @@
 \@startsection {paragraph}{4}{0mm}{-\baselineskip}{.5\baselineskip}{\normalfont \normalsize \bfseries }}
 \makeatother
 
+\newcommand*{\fullref}[1]{\hyperref[{#1}]{\ref*{#1} \nameref*{#1}}}
+
 \begin{document}
 \counterwithin{table}{section}
 
@@ -30,6 +32,7 @@
 {
     \hypersetup{linkcolor=black}
     \tableofcontents
+    \listoffigures %elenco figure
 }
 \pagebreak
 

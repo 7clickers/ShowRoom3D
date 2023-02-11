@@ -1,4 +1,5 @@
 \subsubsection{GitHub\textsubscript{g}}
+\label{GitHub} 
 Servizio di hosting per progetti software che implementa uno strumento di controllo versione distribuito Git\textsubscript{g}.
 Oltre alla copia in remoto del repository\textsubscript{g} di progetto ogni componente del gruppo ha una propria copia in locale.\\
 Per ottenere una copia del repository\textsubscript{g} ogni componente ha scaricato lo strumento Git\textsubscript{g} ed eseguendo il 
@@ -25,7 +26,9 @@ in quanto ciascun componente sviluppa su un solo branch alla volta salvo casi ec
 Un branch\textsubscript{g} libero avrà il nome del documento che si sviluppa su quel branch\textsubscript{g}, oppure della feature\textsubscript{g} che va ad implementare.\\
 Non appena i/il file nel branch sono stati verificati ed il merge è stato fatto, il branch libero verrà eliminato.
 I branch di approvazione saranno chiamati con la sintassi appr\_nomefile1\_nomefile2\_nomefile3.... a seconda dei file che verranno approvati durante il ciclo di vita del branch.
+
 \paragraph{Commits}
+\label{Commits}
 È preferibile che ogni commit abbia una singola responsabilità per cambiamento.\\
 I commits non possono essere effettuati direttamente sui branch protetti ma per integrare delle aggiunte o modifiche sarà necessario aprire una Pull Request.
 All'approvazione di una Pull Request tutti i commit relativi al merge verranno raggruppati in un unico commit che rispetti la struttura sintattica descritta in seguito.
@@ -57,6 +60,7 @@ in modo che possano essere compresi anche dagli altri collaboratori.
 
 
 \paragraph{Pull Requests}
+\label{Pull_Requests}
 Per effettuare un merge su un branch protetto si deve aprire da GitHub\textsubscript{g} una Pull Request.
 La Pull Request permette di verificare il lavoro svolto prima di integrarlo con il branch desiderato.\\
 Alla creazione di una Pull Request bisogna associare:
@@ -69,7 +73,7 @@ Non sarà possibile effettuare il merge finchè tutti i commenti di revisione no
 \item Gli assegnatari che hanno il compito di apportare le modifiche necessarie in fase di verifica;
 \item Le labels associate.
 \end{itemize}
-Per i commit relativi alle Pull Requests seguire le regole descritte nella sottosezione Commits per i branch protetti.
+Per i commit relativi alle Pull Requests seguire le regole descritte nella sezione \fullref{Commits} per i branch protetti.
 
 \paragraph{Milestone\textsubscript{g}}
 Una milestone indica un traguardo intermedio significativo per il progetto.
