@@ -62,6 +62,7 @@ button {
 	right: 16px;
 	padding: 12px 16px;
 	min-width: 200px;
+	max-height: 75%;
 	background-color: rgba(13, 13, 56, 0.8);
 	box-sizing: border-box;
 	text-align: center;
@@ -77,6 +78,8 @@ button {
 	display: none;
 	flex-direction: column;
 	gap: 6px;
+	max-height: 75%;
+	overflow-y: scroll;
 }
 
 .cart-container__headline{
@@ -145,8 +148,8 @@ button {
 .product-info__close-btn::after{
 	font-size: 32px;
 	position: absolute;
-	right: 0px;
-	top: -56px;
+	right: -16px;
+	top: -44px;
 	content: "\00d7"; /* This will render the 'X' */
 	cursor: pointer;
 }
