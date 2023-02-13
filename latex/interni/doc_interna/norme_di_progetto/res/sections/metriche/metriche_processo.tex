@@ -2,23 +2,23 @@
 In questa sezione sono descritte le metriche di qualità di processo che il gruppo intende adottare.
 
 \subsubsection{MPC01: Planned Value (PV)}
-Costo pianificato per realizzare le attività di progetto pianificate al momento del calcolo.
+Costo (in \euro) pianificato per realizzare le attività di progetto pianificate al momento del calcolo.
 Per calcolare questa metrica si utilizzerà la formula:
 \begin{equation*}
 \text{PV}=\text{B}\textsubscript{tot}*\%\text{ lavoro pianificato}
 \end{equation*}
-\textit{Valore minimo:} $\ge 0$\\
+\textit{Valore minimo:} $\ge 0$ \euro\\
 \textit{Valore ottimo:}	$\le \text{Budget at Completion\textsubscript{g}}$
 \subsubsection{MPC02: Actual Cost (AC)}
-Costo sostenuto al momento del calcolo.
+Costo (in \euro) sostenuto al momento del calcolo.
 Per calcolare questa metrica si tiene conto di:
 \begin{equation*}
 \text{AC}=\text{Totale ore lavorative per incremento}*\text{costo orario}
 \end{equation*}
-\textit{Valore minimo:} $\ge 0$\\
+\textit{Valore minimo:} $\ge 0$ \euro\\
 \textit{Valore ottimo:} $\le \text{EAC}$
 \subsubsection{MPC03: Estimated at Completion (EAC)}
-Un valore di revisione di costo stimato per la realizzazione del progetto alla data corrente.
+Un valore (in \euro) di revisione di costo stimato per la realizzazione del progetto alla data corrente.
 \begin{equation*}
 \text{EAC}=\text{AC}+\text{ETC}
 \end{equation*}
@@ -26,38 +26,37 @@ Un valore di revisione di costo stimato per la realizzazione del progetto alla d
 $\text{preventivo} -5\% \le \text{EAC}$ \textit{oppure} $\text{preventivo} +5\% \ge \text{EAC}$\\
 \textit{Valore ottimo:} Costo preventivato
 \subsubsection{MPC04: Earned Value (EV)}
-Indica il valore delle attività realizzate nel progetto fino al momento della misurazione.
+Indica il valore (in \euro) delle attività realizzate nel progetto fino al momento della misurazione.
 \begin{equation*}
 \text{EV}=\%\text{ lavoro pianificato}*\text{EAC}
 \end{equation*}
-\textit{Valore minimo:} $\ge 0$\\
+\textit{Valore minimo:} $\ge 0$ \euro\\
 \textit{Valore ottimo:} $\le \text{EAC}$
 \subsubsection{MPC05: Estimated to Complete (ETC)}
-Metrica che produce un valore intero per indicare il numero di attività necessarie al completamento del progetto.\\
-\textit{Valore minimo:} $\ge 0$\\
+Metrica che produce un valore (in \euro) per indicare il numero di attività necessarie al completamento del progetto.\\
+\textit{Valore minimo:} $\ge 0$ \euro\\
 \textit{Valore ottimo:} $\le \text{EAC}$
 \subsubsection{MPC06: Cost Variance (CV)}
-Indica se il valore del costo attuale del progetto è maggiore, uguale o minore rispetto al costo effettivo.
-Questa metrica si misura tramite una semplice formula:
+Valore (in \euro)che indica se il valore del costo attuale del progetto è maggiore, uguale o minore rispetto al costo effettivo. Se CV $\ge 0$ significa che si sta producendo con maggior efficienza risparmiando sul costo rispetto a quanto pianificato, viceversa se negativo.
 \begin{equation*}
 \text{CV}=\text{EV}-\text{AC}
 \end{equation*}
-\textit{Valore minimo:} $\le -15\%$\\
-\textit{Valore ottimo:} $\ge 0\%$
+\textit{Valore minimo:} CV = 0 \euro\\
+\textit{Valore ottimo:} CV $\ge 0$ \euro
 \subsubsection{MPC07: Schedule Variance (SV)}
-Valore utilizzato per analizzare se il progetto è in linea, in anticipo o in ritardo rispetto alla schedulazione delle attività di progetto pianificate nella baseline.
+Variazione percentuale utilizzata per analizzare se il progetto è in linea, in anticipo o in ritardo rispetto alla schedulazione delle attività di progetto pianificate nella baseline.
 \begin{equation*}
-\text{SV}=\text{EV}-\text{PV}
+\text{SV}=\frac{\text{EV}-\text{PV}}{\text{EV}}*100
 \end{equation*}
-\textit{Valore minimo:} $\le -15\%$\\
-\textit{Valore ottimo:} $\ge 0\%$
+\textit{Valore minimo:} $\ge -15\%$\\
+\textit{Valore ottimo:} 0\%
 \subsubsection{MPC08: Budget Variance (BV)}
-Valore che indica se alla data corrente si è speso di più o di meno del budget iniziale.
+Valore (in \euro) che indica se alla data corrente si è speso di più o di meno del budget iniziale. Un valore di BV $\ge 0$ significa che il progetto sta spendendo il proprio budget con minor velocità di quanto pianificato, viceversa se negativo.
 \begin{equation*}
-\text{BV}=\text{EV}-\text{AC}
+\text{BV}=\text{PV}-\text{AC}
 \end{equation*}
-\textit{Valore minimo:} $\le -10\%$\\
-\textit{Valore ottimo:} $\ge 0\%$
+\textit{Valore minimo:} BV = 0 \euro\\
+\textit{Valore ottimo:} BV $\ge 0 $ \euro
 
 \subsubsection{MPC09: Defect Density}
 Valore percentuale che tiene conto dei difetti per ogni modulo.
@@ -89,9 +88,9 @@ Questi sono i valori da noi ritenuti opportuni:\\
 \textit{Valore ottimo}: $ \ge 80 $\\
 
 \subsubsection{MPC11: Metriche soddisfatte}
-Viene calcolato questo indice tramite una percentuale per tenere conto delle metriche soddisfatte.\\
+Viene calcolato questo indice tramite una percentuale per tenere conto delle metriche soddisfatte. Una metrica si dice "soddisfatta" se raggiunge almeno il valore minimo imposto sul \textit{Piano di qualifica}.\\
 Questi sono i valori da noi ritenuti opportuni:\\\\
-\textit{Valore minimo:} $ \ge 90\% $\\
+\textit{Valore minimo:} $ \ge 80\% $\\
 \textit{Valore ottimo:} $ 100\% $\\
 
 \subsubsection{MPC12: Code coverage}
