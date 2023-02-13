@@ -25,7 +25,7 @@ export function UIClickListeners(){
       //Rimuovi prodotto dal carrello
       $("#cart-container").on("click", ".trash-icon", function() {
         let id = $(this).parent().attr("cart-item-id");
-        console.log(id);
+        //console.log(id);
         cart.removeItemById(id);
       });      
 }

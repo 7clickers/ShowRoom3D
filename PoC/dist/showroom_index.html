@@ -8,11 +8,18 @@
 	<link type="text/css" rel="stylesheet" href="../css/main.css">
 </head>
 
-<body>
-	<div id="info">
+
+<body  >
+	<div class="progress-bar-container">
+		<h2>Seven Clickers PoC</h2>
+		<label for="progress-bar">Loading...</label>
+		<progress id="progress-bar" value="0" max="100"></progress>
+	</div>	
+	<div id="content">
+	<div id="movement-info">
 		Usa WASD oppure le freccie direzionali per muoverti, SPACE per saltare
 	</div>
-	<div id="info2"> Premi E per visualizzare i dettagli del prodotto.</div>
+	<div id="product-selection-info"> Premi E per visualizzare i dettagli del prodotto.</div>
 	<div id="cart-container">
 		<div class="cart-container__headline">
 			<img class="cart-icon" src="../source/cart-icon.png" />
@@ -36,6 +43,7 @@
 		</div>
 	</div>
 	<div id="container"></div>
+	
 
 	<script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
 	<script type="importmap">
@@ -47,7 +55,10 @@
 			}
      </script>
 	<script type="module" src="bundle.js"></script>
+	
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+</div>
 </body>
 
 </html>

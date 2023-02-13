@@ -6,9 +6,9 @@ export const products = {
       desc: 'Un corallo bello grande',
       price: 15.99,
       path: 'source/glb/coral_piece.glb',
-      x: 0,
+      x: -2,
       y: 0.2,
-      z: -10
+      z: 3
     },
     2: {
       id: 'corallo_2',
@@ -16,7 +16,7 @@ export const products = {
       desc: 'Un corallo bello grande',
       price: 9.99,
       path: 'source/glb/purple_coral.glb',
-      x: -10,
+      x: 12,
       y: 0.2,
       z: -10
     },
@@ -26,16 +26,16 @@ export const products = {
       desc: 'Un corallo bello grande',
       price: 5.99,
       path: 'source/glb/purple_coral.glb',
-      x: -4,
+      x: -12,
       y: 0.2,
-      z: -24
+      z: -13
     },
     4: {
       id: 'corallo_3',
       title: 'Corallo 3',
       desc: 'Un corallo bello grande',
       price: 5.99,
-      path: 'source/glb/purple_coral.glb',
+      path: 'source/glb/coral_piece.glb',
       x: -18,
       y: 0.2,
       z: -5

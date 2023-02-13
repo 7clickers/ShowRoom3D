@@ -9,10 +9,21 @@ module.exports = {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
     },
-    module: { rules: [] },
+    module: { rules: [
+        {
+            test: /\.css/i,
+            use: ['style-loader','css-loader'],
+            
+        }
+    ] },
     plugins: [],
     devServer: {
         static: './',
-        open: true
-    }
+        open: {
+            app: {
+                name: 'Google Chrome'
+            }
+        }
+    },
+    devtool: "source-map"
 }

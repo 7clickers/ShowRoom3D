@@ -1,4 +1,3 @@
-//import * as THREE from 'three';
 import {
 	WebGLRenderer,
 	Clock,
@@ -9,10 +8,9 @@ import {
   } from "../node_modules/three/build/three.module.js";
 import Stats from 'three/addons/libs/stats.module.js';
 import { scene, camera } from './showroom_poc.js';
-//import { controls, updatePlayer, teleportPlayerIfOob, mouse } from './player.js';
 import { player } from './player.js';
 import { coords } from './showroom_poc.js';
-import { Raycasting, showInfo } from './raycasting.js';
+import { Raycasting} from './raycasting.js';
 
 const STEPS_PER_FRAME = 5;
 
@@ -33,36 +31,31 @@ renderer.toneMapping = ACESFilmicToneMapping;
 export let renderId;
 export let renderPaused = false;
 
-export function animate() {
-	const deltaTime = Math.min(0.05, clock.getDelta()) / STEPS_PER_FRAME;
 
+
+export function animate() {
+	
+	const deltaTime = Math.min(0.05, clock.getDelta()) / STEPS_PER_FRAME;
 	
 	for (let i = 0; i < STEPS_PER_FRAME; i++) {
-
 		player.controls(deltaTime);
 		player.updatePlayer(deltaTime);
 		player.teleportPlayerIfOob();
 	}
-	
-	
 	Raycasting();
-	
 	renderer.render(scene, camera);
-
 	stats.update();
-	
 	renderId = requestAnimationFrame(animate);
 	
 	//COORDS
 	var vector = new Vector3();
     vector.setFromMatrixPosition(camera.matrixWorld);
  	coords.innerHTML = 'x= ' + vector.x.toFixed(2) + '</br>y= ' + vector.y.toFixed(2) + '</br>z= ' + vector.z.toFixed(2);
-
 }
 
 export function pauseRender(id) {
 	cancelAnimationFrame(id);
-	pausedPaused = true;
+	renderPaused = true;
 }
 
 export function resumeRender() {

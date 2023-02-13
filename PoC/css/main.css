@@ -23,11 +23,11 @@
 
 body {
 	margin: 0;
-	background-color: #000;
+	background-color: #56a1c7;
 	color: #fff;
 	font-family: Monospace;
 	font-size: 14px;
-	overflow: hidden;
+	overscroll-behavior: none;
 }
 
 h1,h2,h3,h4,p{
@@ -47,7 +47,7 @@ button {
 	cursor: pointer;
 }
 
-#info {
+#movement-info {
 	position: absolute;
 	top: 0px;
 	width: 100%;
@@ -62,7 +62,7 @@ button {
 	z-index: 1; /* TODO Solve this in HTML */
 }
 
-#info2 {
+#product-selection-info {
 	background-color: rgba(21, 21, 21, 0.25);
 	display: none;
 	position: absolute;
@@ -76,7 +76,8 @@ button {
 	-ms-user-select: none;
 	user-select: none;
 	pointer-events: none;
-	z-index: 1; /* TODO Solve this in HTML */
+	z-index: 1;
+	/* TODO Solve this in HTML */
 }
 
 #cart-container {
@@ -102,7 +103,7 @@ button {
 	flex-direction: column;
 	gap: 6px;
 	max-height: 75%;
-	overflow-y: scroll;
+ 	overflow-y: scroll;
 }
 
 .cart-container__headline{
@@ -277,4 +278,34 @@ a, button, input, select {
 		bottom: 0;
 		left: 0;
 	}
+}
+
+.progress-bar-container {
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%, 50%);
+	width: 100%; 
+	height: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}	
+
+#progress-bar {
+	width: 30%;
+	margin-top: 0.5%;
+	height: 10%;
+}
+
+.progress-bar-container label {
+	color: white;
+	font-size: 2rem;
+}
+
+.progress-bar-container h2 {
+	color: white;
+	text-align: center;
+	font-size: 3rem;
+	margin-bottom: 3%;
 }

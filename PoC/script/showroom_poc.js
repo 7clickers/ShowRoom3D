@@ -1,4 +1,4 @@
-//import * as THREE from 'three';
+import '../css/main.css';
 import {
 	PerspectiveCamera,
 	Scene,
@@ -16,8 +16,20 @@ import { MovementListeners} from './player.js';
 import { animate, renderer, onWindowResize, stats } from './renderer.js';
 import { UIClickListeners } from "./UI_listeners.js";
 
+
 export const scene = new Scene();
 export const camera = new PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 1000);
+
+//COORDINATES
+export var coords = document.createElement('div');
+
+//raycaster
+export const raycaster = new Raycaster();
+//export var movementInfo = document.getElementById('movement-info');
+
+export const interactionBar = document.getElementById('product-selection-info');
+export const infoTab = document.getElementById('product-info');
+export const cartContainer = document.getElementById('cart-container');
 
 scene.background = new Color(0x56a1c7);
 scene.fog = new Fog(0x88ccee, 0, 50);
@@ -29,8 +41,7 @@ Lights.forEach(function(light) {
     scene.add(light);
 });
 
-//COORDINATES
-export var coords = document.createElement('div');
+
 coords.style.position = 'absolute';
 coords.style.color = 'white';
 coords.style.top = '56px';
@@ -51,9 +62,8 @@ MovementListeners();
 // cambia aspect ratio on resize della finestra 
 window.addEventListener('resize', onWindowResize);
 
-//RAYCASTER
-export var raycaster = new Raycaster();
-export var y = document.getElementById("info2");
+
+
 
 const geometry = new RingGeometry(1.75, 2, 32);
 const material = new MeshBasicMaterial({ color: 0xffff00, side: DoubleSide });
@@ -65,11 +75,11 @@ ring.visible = true;
 export var ProductSpotLight = new SpotLight(0xFFC3EE, 0.5, 0, Math.PI / 8);
 scene.add(ProductSpotLight);
 
-export var interactionBar = document.getElementById("info2");
-export var infoTab = document.getElementById('product-info');
-export var cartContainer = document.getElementById('cart-container');
-
 UIClickListeners();
 animate();
 
+// if (window.attachEvent) {window.attachEvent('onload', animate);}
+// else if (window.addEventListener) {window.addEventListener('load', animate, false);}
+// else {document.addEventListener('load', animate, false);}
 
+ 
