@@ -1,6 +1,7 @@
 \documentclass[a4paper]{article}
 \usepackage[normalem]{ulem}
 \usepackage{graphicx}
+\usepackage[font=small,labelfont=bf]{caption}
 \input{res/reqTable.tex}
 
 % impostazioni generali
@@ -12,7 +13,6 @@
 \makeindex
 
 \begin{document}
-\counterwithin{table}{section}
 
 % Prima pagina
 \input{../../../template/titlepage.tex}
@@ -26,6 +26,7 @@
 {
     \hypersetup{linkcolor=black}
     \tableofcontents
+    \listoffigures
 }
 \pagebreak
 
