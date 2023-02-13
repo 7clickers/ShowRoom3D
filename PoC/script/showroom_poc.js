@@ -14,8 +14,7 @@ import {
 import { Lights } from './lights.js';
 import { MovementListeners} from './player.js';
 import { animate, renderer, onWindowResize, stats } from './renderer.js';
-import { cart, products} from './products.js';
-
+import { UIClickListeners } from "./UI_listeners.js";
 
 export const scene = new Scene();
 export const camera = new PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 1000);
@@ -52,10 +51,9 @@ MovementListeners();
 // cambia aspect ratio on resize della finestra 
 window.addEventListener('resize', onWindowResize);
 
-//raycaster
+//RAYCASTER
 export var raycaster = new Raycaster();
 export var y = document.getElementById("info2");
-
 
 const geometry = new RingGeometry(1.75, 2, 32);
 const material = new MeshBasicMaterial({ color: 0xffff00, side: DoubleSide });
@@ -71,30 +69,7 @@ export var interactionBar = document.getElementById("info2");
 export var infoTab = document.getElementById('product-info');
 export var cartContainer = document.getElementById('cart-container');
 
-$('.product-info__close-btn').click(function() {
-  infoTab.style.display = 'none';
-  document.body.requestPointerLock();
-});
-
-$('.product-info__add-btn').click(function(){
-  let key = $(this).attr('data');
-  cart.addItem(products[key]);
-});
-
-$("#cart-container").on("click", ".teleport-icon", function() {
-  let x = $(this).parent().attr("x");
-  let y = $(this).parent().attr("y");
-  let z = $(this).parent().attr("z");
-  //Teleport(x,y,z);
-});
-
-$("#cart-container").on("click", ".trash-icon", function() {
-  //let key = $(this).parent().attr("name");
-  let id = $(this).parent().attr("cart-item-id");
-  console.log(id);
-  cart.removeItemById(id);
-});
-
+UIClickListeners();
 animate();
 
 
