@@ -121,7 +121,7 @@ L'utente non verrai mai reindirizzato a una normale pagina web statica, poiché 
 	
 \end{itemize}
 
-\subsubsection{UC 3.1 - Visualizzazione oggetti presenti con relative caratteristiche e quantità}
+\subsubsection{UC 3.1 - Visualizzazione oggetti presenti}
 
 \begin{figure}[H]
   \renewcommand{\thefigure}{2}
@@ -197,37 +197,7 @@ L'utente non verrai mai reindirizzato a una normale pagina web statica, poiché 
 	
 \end{itemize}
 
-\subparagraph{UC 3.1.1.1 - Visualizzazione icona}
-\begin{itemize}
-	
-	\item Attore primario: 
-	\begin{itemize}
-		\item Utente in ambiente 3D.
-	\end{itemize}
-	\item Descrizione:
-	\begin{itemize}
-		\item Prevede la visualizzazione di un'icona associata all'oggetto a cui fa riferimento, l'icona è un'anteprima miniaturizzata dell'oggetto a cui fa riferimento.
-	\end{itemize}
-	
-	\item Precondizioni:
-	\begin{itemize}
-		\item L'oggetto è visibile nella lista oggetti del carrello.
-	\end{itemize}
-	
-	\item Postcondizioni:
-	\begin{itemize}
-		\item L'oggetto è visibile nella lista oggetti del carrello;
-		\item L'icona associata all'oggetto è visibile.
-	\end{itemize}
-	
-	\item Scenario principale:
-	\begin{itemize}
-		\item Nessuna azione richiesta.
-	\end{itemize}
-	
-\end{itemize}
-
-\subparagraph{UC 3.1.1.2 - Visualizzazione nome}
+\subparagraph{UC 3.1.1.1 - Visualizzazione nome}
 \begin{itemize}
 	
 	\item Attore primario: 
@@ -257,7 +227,7 @@ L'utente non verrai mai reindirizzato a una normale pagina web statica, poiché 
 	
 \end{itemize}
 
-\subparagraph{UC 3.1.1.3 - Visualizzazione costo}
+\subparagraph{UC 3.1.1.2 - Visualizzazione costo}
 \begin{itemize}
 	
 	\item Attore primario: 
@@ -287,7 +257,7 @@ L'utente non verrai mai reindirizzato a una normale pagina web statica, poiché 
 	
 \end{itemize}
 
-\subparagraph{UC 3.1.1.4 - Visualizzazione quantità}
+\subparagraph{UC 3.1.1.3 - Visualizzazione quantità}
 \begin{itemize}
 	
 	\item Attore primario: 
@@ -308,36 +278,6 @@ L'utente non verrai mai reindirizzato a una normale pagina web statica, poiché 
 	\begin{itemize}
 		\item L'oggetto è visibile nella lista oggetti del carrello;
 		\item La quantità di oggetti identici all'oggetto (compreso) è visibile.
-	\end{itemize}
-	
-	\item Scenario principale:
-	\begin{itemize}
-		\item Nessuna azione richiesta.
-	\end{itemize}
-	
-\end{itemize}
-
-\subparagraph{UC 3.1.1.5 - Visualizzazione caratteristiche fisiche}
-\begin{itemize}
-	
-	\item Attore primario: 
-	\begin{itemize}
-		\item Utente in ambiente 3D.
-	\end{itemize}
-	\item Descrizione:
-	\begin{itemize}
-		\item Prevede la visualizzazione delle caratteristiche fisiche dell'oggetto.
-	\end{itemize}
-	
-	\item Precondizioni:
-	\begin{itemize}
-		\item L'oggetto è visibile nella lista oggetti del carrello.
-	\end{itemize}
-	
-	\item Postcondizioni:
-	\begin{itemize}
-		\item L'oggetto è visibile nella lista oggetti del carrello;
-		\item Le caratteristiche fisiche dell'oggetto sono visibili.
 	\end{itemize}
 	
 	\item Scenario principale:
@@ -1016,6 +956,104 @@ una distanza dall'oggetto inferiore a quella consentita per il compiersi dell'az
 	\item Scenario principale:
 	\begin{itemize}
 		\item L'utente cambia lo stato della torcia.
+	\end{itemize}
+	
+\end{itemize}
+
+\pagebreak
+
+\subsection{UC 19- Visualizzazione dettagli oggetto nel carrello}
+
+\begin{figure}[H]
+  \renewcommand{\thefigure}{6}
+  \includegraphics[width=\linewidth]{./res/images/UC19.png}
+  \caption{UC 19 - Visualizzazione dettagli oggetto nel carrello}
+  \label{fig:UC 19}
+\end{figure}
+
+\begin{itemize}
+	
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
+	\item Descrizione:
+	\begin{itemize}
+		\item Selezionando un oggetto nel carrello, l'utente può visualizzarne i dettagli.
+	\end{itemize}
+	
+	\item Precondizioni:
+	\begin{itemize}
+		\item L'oggetto è visibile nella lista oggetti del carrello.
+	\end{itemize}
+	
+	\item Postcondizioni:
+	\begin{itemize}
+		\item Vengono visualizzati a schermo i dettagli dell'oggetto.
+	\end{itemize}
+	
+	\item Scenario principale:
+	\begin{itemize}
+		\item L'utente in ambiente 3D seleziona un oggetto dalla lista.
+	\end{itemize}
+	
+\end{itemize}
+
+\subsubsection{UC 19.1 - Visualizzazione icona}
+\begin{itemize}
+	
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
+	\item Descrizione:
+	\begin{itemize}
+		\item Prevede la visualizzazione di un'icona associata all'oggetto a cui fa riferimento, l'icona è un'anteprima miniaturizzata dell'oggetto a cui fa riferimento.
+	\end{itemize}
+	
+	\item Precondizioni:
+	\begin{itemize}
+		\item L'oggetto è stato selezionato dal carrello.
+	\end{itemize}
+	
+	\item Postcondizioni:
+	\begin{itemize}
+		\item L'icona associata all'oggetto è visibile.
+	\end{itemize}
+	
+	\item Scenario principale:
+	\begin{itemize}
+		\item Nessuna azione richiesta.
+	\end{itemize}
+	
+\end{itemize}
+
+
+\subsubsection{UC 19.2 - Visualizzazione caratteristiche fisiche}
+\begin{itemize}
+	
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
+	\item Descrizione:
+	\begin{itemize}
+		\item Prevede la visualizzazione delle caratteristiche fisiche dell'oggetto, le caratteristiche fisiche dipendono dall'oggetto.
+	\end{itemize}
+	
+	\item Precondizioni:
+	\begin{itemize}
+		\item L'oggetto è stato selezionato dal carrello.
+	\end{itemize}
+	
+	\item Postcondizioni:
+	\begin{itemize}
+		\item Le caratteristiche fisiche dell'oggetto sono visibili.
+	\end{itemize}
+	
+	\item Scenario principale:
+	\begin{itemize}
+		\item Nessuna azione richiesta.
 	\end{itemize}
 	
 \end{itemize}
