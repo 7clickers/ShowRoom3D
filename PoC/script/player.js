@@ -4,7 +4,7 @@ import {
 	Vector2,	
   } from "../node_modules/three/build/three.module.js";
 import { Capsule } from 'three/addons/math/Capsule.js';
-import { camera, scene } from './showroom_poc.js';
+import { camera } from './showroom_poc.js';
 import { worldOctree, objectOctree } from './world.js';
 
 //PLAYER
@@ -120,6 +120,10 @@ export class Player {
 	
 			this.playerVelocity.add(this.getSideVector().multiplyScalar(speedDelta));
 	
+		}
+		if (keyStates['KeyT']) {
+	
+			this.Teleport(0,0,0);
 		}
 	
 		if (this.playerOnFloor) {
