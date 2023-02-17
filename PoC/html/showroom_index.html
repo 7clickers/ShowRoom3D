@@ -6,11 +6,16 @@
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<link type="text/css" rel="stylesheet" href="../css/main.css">
 	</head>
-	<body>
+	<body >
+		<div class="progress-bar-container">
+			<label for="progress-bar">Loading...</label>
+			<progress id="progress-bar" value="0" max="100"></progress>
+		</div>		
+
 		<div id="info">
 			Usa WASD oppure le freccie direzionali per muoverti, SPACE per saltare
 		</div>
-		<div id="info2"> Premi E per visualizzare i dettagli del prodotto.</div>
+		<div id="product-selection-info"> Premi E per visualizzare i dettagli del prodotto.</div>
 		<div id="cart-container">
 			<div class="cart-container__headline">
 				<img class="cart-icon" src="../source/cart-icon.png"/>
@@ -44,7 +49,12 @@
 				}
 			}
      </script>
-	<script type="module" src="../script/showroom_poc.js"></script>
+	 
+		<script type="module" src="bundle.js"></script>
+		
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+	
 	</body>
+	
 </html>
