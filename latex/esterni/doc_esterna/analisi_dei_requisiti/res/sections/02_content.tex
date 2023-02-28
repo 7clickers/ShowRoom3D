@@ -7,7 +7,6 @@ Le decorazioni vengono così esposte e visualizzate in un modo molto più autent
 \subsection{Descrizione generale}
 Per rendere il documento il più esauriente possibile ma allo stesso tempo non troppo prolisso, abbiamo schematizzato ogni caso d'uso evidenziando:  precondizioni, postcondizioni, scenario principale in cui tale azione avrà luogo, una breve descrizione ed eventuali estensioni.\newline
 In alcuni casi è stata anche inserita un'immagine dello schema UML per fornire una spiegazione visiva che può aiutare nel comprendere più a fondo il nostro lavoro.\newline
-Da notare, nelle immagini dello schema UML sono stati rappresentati in azzurro i casi d'uso facoltativi.
 
 \subsection{Glossario}
 In questo documento sono state segnate con il pedice "g" tutte le parole che, secondo noi, necessitano di una spiegazione ulteriore per evitare eventuali ambiguità o incomprensioni. La spiegazione di questi termini la si può trovare nel documento di \textit{Glossario}.
@@ -23,13 +22,56 @@ L'utente non verrà mai reindirizzato a una normale pagina web statica, poiché 
 
 \section{Casi d'uso}
 
-\subsection{UC1 - Visualizzazione contenuto del carrello}
+\subsection{UC1 - Aggiungere un oggetto al carrello}
 
 \begin{figure}[H]
   \renewcommand{\thefigure}{1}
   \includegraphics[width=\linewidth]{./res/images/UC1.png}
-  \caption{UC1 - Visualizzazione contenuto del carrello}
+  \caption{UC1 - Aggiungere un oggetto al carrello}
   \label{fig:UC 1}
+\end{figure}
+
+\begin{itemize}
+
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
+	\item Descrizione:
+	\begin{itemize}
+		\item Aggiungere un oggetto al carrello significa aggiungere alla lista degli oggetti presenti nel carrello l'oggetto desiderato e visualizzare un messaggio di oggetto aggiunto al carrello con successo.
+\newline L'oggetto all'interno dell'ambiente continua ad esistere anche dopo la sua aggiunta al carrello.
+\newline Per inserire una quantità maggiore di una unità di un medesimo oggetto basta aggiungerlo più volte.
+	\end{itemize}
+	
+	\item Precondizioni:
+	\begin{itemize}
+		\item L'oggetto da aggiungere al carrello si trova all'interno dell'ambiente 3D.
+	\end{itemize}
+	
+	\item Postcondizioni:
+	\begin{itemize}
+		\item L'oggetto aggiunto al carrello si trova all'interno dell'ambiente 3D;
+		\item L'oggetto è presente all'interno del carrello.
+	\end{itemize}
+	
+	\item Scenario principale:
+	\begin{itemize}
+		\item L'utente interagisce con l'oggetto da aggiungere all'interno del carrello;
+		\item L'utente seleziona il comando aggiungi oggetto al carrello.
+	\end{itemize}
+	
+\end{itemize}
+
+\pagebreak
+
+\subsection{UC2 - Visualizzazione contenuto del carrello}
+
+\begin{figure}[H]
+  \renewcommand{\thefigure}{2}
+  \includegraphics[width=\linewidth]{./res/images/UC2.png}
+  \caption{UC2 - Visualizzazione contenuto del carrello}
+  \label{fig:UC 2}
 \end{figure}
 
 \begin{itemize}
@@ -60,13 +102,13 @@ L'utente non verrà mai reindirizzato a una normale pagina web statica, poiché 
 	
 \end{itemize}
 
-\subsubsection{UC1.1 - Visualizzazione lista oggetti presenti}
+\subsubsection{UC2.1 - Visualizzazione lista oggetti presenti}
 
 \begin{figure}[H]
-  \renewcommand{\thefigure}{2}
-  \includegraphics[width=\linewidth]{./res/images/UC1.1.png}
-  \caption{UC1.1 - Visualizzazione lista oggetti presenti}
-  \label{fig:UC 1.1}
+  \renewcommand{\thefigure}{3}
+  \includegraphics[width=\linewidth]{./res/images/UC2.1.png}
+  \caption{UC2.1 - Visualizzazione lista oggetti presenti}
+  \label{fig:UC 2.1}
 \end{figure}
 
 \begin{itemize}
@@ -98,13 +140,13 @@ L'utente non verrà mai reindirizzato a una normale pagina web statica, poiché 
 	
 \end{itemize}
 
-\paragraph{UC1.1.1 - Visualizzazione oggetto}
+\paragraph{UC2.1.1 - Visualizzazione oggetto}
 
 \begin{figure}[H]
-  \renewcommand{\thefigure}{3}
-  \includegraphics[width=\linewidth]{./res/images/UC1.1.1.png}
-  \caption{UC1.1.1 - Visualizzazione oggetto}
-  \label{fig:UC 1.1.1}
+  \renewcommand{\thefigure}{4}
+  \includegraphics[width=\linewidth]{./res/images/UC2.1.1.png}
+  \caption{UC2.1.1 - Visualizzazione oggetto}
+  \label{fig:UC 2.1.1}
 \end{figure}
 
 \begin{itemize}
@@ -136,7 +178,7 @@ L'utente non verrà mai reindirizzato a una normale pagina web statica, poiché 
 	
 \end{itemize}
 
-\subparagraph{UC1.1.1.1 - Visualizzazione nome}
+\subparagraph{UC2.1.1.1 - Visualizzazione nome}
 \begin{itemize}
 	
 	\item Attore primario: 
@@ -166,7 +208,7 @@ L'utente non verrà mai reindirizzato a una normale pagina web statica, poiché 
 	
 \end{itemize}
 
-\subparagraph{UC1.1.1.2 - Visualizzazione costo}
+\subparagraph{UC2.1.1.2 - Visualizzazione costo}
 \begin{itemize}
 	
 	\item Attore primario: 
@@ -196,7 +238,7 @@ L'utente non verrà mai reindirizzato a una normale pagina web statica, poiché 
 	
 \end{itemize}
 
-\subparagraph{UC1.1.1.3 - Visualizzazione quantità}
+\subparagraph{UC2.1.1.3 - Visualizzazione quantità}
 \begin{itemize}
 	
 	\item Attore primario: 
@@ -226,7 +268,7 @@ L'utente non verrà mai reindirizzato a una normale pagina web statica, poiché 
 	
 \end{itemize}
 
-\subsubsection{UC1.2 - Visualizzazione costo totale oggetti}
+\subsubsection{UC2.2 - Visualizzazione costo totale oggetti}
 
 \begin{itemize}
 	
@@ -260,13 +302,13 @@ L'utente non verrà mai reindirizzato a una normale pagina web statica, poiché 
 
 \pagebreak
 
-\subsection{UC2 - Svuotamento totale carrello}
+\subsection{UC3 - Svuotamento totale carrello}
 
 \begin{figure}[H]
-  \renewcommand{\thefigure}{3}
-  \includegraphics[width=\linewidth]{./res/images/UC2.png}
-  \caption{UC2 - Svuotamento totale carrello}
-  \label{fig:UC 2}
+  \renewcommand{\thefigure}{5}
+  \includegraphics[width=\linewidth]{./res/images/UC3-4.png}
+  \caption{UC3 - Svuotamento totale carrello}
+  \label{fig:UC 3}
 \end{figure}
 
 \begin{itemize}
@@ -299,7 +341,7 @@ L'utente non verrà mai reindirizzato a una normale pagina web statica, poiché 
 \end{itemize}
 
 \pagebreak
-\subsection{UC3 - Rimozione oggetto singolo dal carrello}
+\subsection{UC4 - Rimozione oggetto singolo dal carrello}
 
 \begin{itemize}
 	
@@ -331,44 +373,10 @@ L'utente non verrà mai reindirizzato a una normale pagina web statica, poiché 
 
 \pagebreak
 
-\subsection{UC4 - Aggiungere un oggetto al carrello}
-\begin{itemize}
-
-	\item Attore primario: 
-	\begin{itemize}
-		\item Utente in ambiente 3D.
-	\end{itemize}
-	\item Descrizione:
-	\begin{itemize}
-		\item Aggiungere un oggetto al carrello significa aggiungere alla lista degli oggetti presenti nel carrello l'oggetto desiderato e visualizzare un messaggio di oggetto aggiunto al carrello con successo.
-\newline L'oggetto all'interno dell'ambiente continua ad esistere anche dopo la sua aggiunta al carrello.
-	\end{itemize}
-	
-	\item Precondizioni:
-	\begin{itemize}
-		\item L'oggetto da aggiungere al carrello si trova all'interno dell'ambiente 3D.
-	\end{itemize}
-	
-	\item Postcondizioni:
-	\begin{itemize}
-		\item L'oggetto aggiunto al carrello si trova all'interno dell'ambiente 3D;
-		\item L'oggetto è presente all'interno del carrello.
-	\end{itemize}
-	
-	\item Scenario principale:
-	\begin{itemize}
-		\item L'utente interagisce con l'oggetto da aggiungere all'interno del carrello;
-		\item L'utente seleziona il comando aggiungi oggetto al carrello.
-	\end{itemize}
-	
-\end{itemize}
-
-\pagebreak
-
 \subsection{UC5 - Compiere movimenti direzionali}
 
 \begin{figure}[H]
-  \renewcommand{\thefigure}{4}
+  \renewcommand{\thefigure}{6}
   \includegraphics[width=\linewidth]{./res/images/UC5.png}
   \caption{UC5 - Compiere movimenti direzionali}
   \label{fig:UC 5}
@@ -445,7 +453,7 @@ L'utente non verrà mai reindirizzato a una normale pagina web statica, poiché 
 	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
-		\item L'attore si sposta in orizziontale.
+		\item L'attore si sposta in orizzontale.
 	\end{itemize}
 	
 	\item Precondizioni:
@@ -501,6 +509,14 @@ L'utente non verrà mai reindirizzato a una normale pagina web statica, poiché 
 \pagebreak
 
 \subsection{UC6 - Compiere rotazioni camera}
+
+\begin{figure}[H]
+  \renewcommand{\thefigure}{7}
+  \includegraphics[width=\linewidth]{./res/images/UC6.png}
+  \caption{UC6 - Compiere rotazioni camera}
+  \label{fig:UC 6}
+\end{figure}
+
 \begin{itemize}
 
 	\item Attore primario: 
@@ -530,9 +546,7 @@ L'utente non verrà mai reindirizzato a una normale pagina web statica, poiché 
 	
 \end{itemize}
 
-\pagebreak
-
-\subsection{UC7 - Modificare attributi oggetto}
+\subsubsection{UC6.1 - Compiere rotazioni camera lungo l'asse X}
 \begin{itemize}
 
 	\item Attore primario: 
@@ -541,8 +555,125 @@ L'utente non verrà mai reindirizzato a una normale pagina web statica, poiché 
 	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
-		\item Modificare attributi oggetto prevede la modifica degli attributi dell'oggetto che l'utente desidera modificare.
-\newline A seconda dell'oggetto da modificare, gli attributi modificabili potrebbero essere diversi oppure non modificabili.
+		\item L'attore compie un'azione di rotazione della camera lungo l'asse X.
+	\end{itemize}
+	
+	\item Precondizioni:
+	\begin{itemize}
+		\item L'azione di rotazione della camera lungo l'asse X deve essere abilitata;
+		\item La visuale dell'utente è direzionata verso un punto iniziale.
+	\end{itemize}
+	
+	\item Postcondizioni:
+	\begin{itemize}
+		\item La visuale dell'utente è direzionata verso un punto nell'asse X diverso rispetto a quello iniziale.
+	\end{itemize}
+	
+	\item Scenario principale:
+	\begin{itemize}
+		\item L'utente interagisce con il sistema per compiere un'azione di rotazione della camera lungo l'asse X.
+	\end{itemize}
+	
+\end{itemize}
+
+\subsubsection{UC6.2 - Compiere rotazioni camera lungo l'asse Y}
+\begin{itemize}
+
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
+	\item Descrizione:
+	\begin{itemize}
+		\item L'attore compie un'azione di rotazione della camera lungo l'asse Y.
+	\end{itemize}
+	
+	\item Precondizioni:
+	\begin{itemize}
+		\item L'azione di rotazione della camera lungo l'asse Y deve essere abilitata;
+		\item La visuale dell'utente è direzionata verso un punto iniziale.
+	\end{itemize}
+	
+	\item Postcondizioni:
+	\begin{itemize}
+		\item La visuale dell'utente è direzionata verso un punto nell'asse Y diverso rispetto a quello iniziale.
+	\end{itemize}
+	
+	\item Scenario principale:
+	\begin{itemize}
+		\item L'utente interagisce con il sistema per compiere un'azione di rotazione della camera lungo l'asse Y.
+	\end{itemize}
+	
+\end{itemize}
+
+\pagebreak
+
+\subsection{UC7 - Visualizzazione attributi modificabili dell'oggetto}
+
+\begin{figure}[H]
+  \renewcommand{\thefigure}{8}
+  \includegraphics[width=\linewidth]{./res/images/UC7.png}
+  \caption{UC7 - Visualizzazione attributi modificabili dell'oggetto}
+  \label{fig:UC 7}
+\end{figure}
+
+\begin{itemize}
+
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
+	\item Descrizione:
+	\begin{itemize}
+		\item Visualizzazione attributi modificabili dell'oggetto prevede la visualizzazione della lista degli attributi modificabili dell'oggetto che l'utente può modificare.
+\newline A seconda dell'oggetto da modificare, gli attributi identificati modificabili potrebbero non esserlo.
+	\end{itemize}
+	
+	\item Precondizioni:
+	\begin{itemize}
+		\item L'oggetto da modificare si trova all'interno dell'ambiente 3D.
+	\end{itemize}
+	
+	\item Postcondizioni:
+	\begin{itemize}
+		\item L'oggetto da modificare si trova all'interno dell'ambiente 3D;
+		\item L'oggetto assume le caratteristiche visive dovute alle modifiche.
+	\end{itemize}
+	
+	\item Scenario principale:
+	\begin{itemize}
+		\item L'utente interagisce con l'oggetto da modificare;
+		\item L'utente seleziona il comando modifica oggetto;
+		\item L'utente apporta seleziona un attributo da modificare;
+		\item L'utente conferma le modifiche.
+	\end{itemize}
+	
+	\item Estensioni:
+	\begin{itemize}
+		\item UC8 Visualizzazione messaggio oggetto non modificabile.
+	\end{itemize}
+	
+\end{itemize}
+
+\subsubsection{UC7.1 - Visualizzazione singolo attributo modificabile dell'oggetto}
+
+\begin{figure}[H]
+  \renewcommand{\thefigure}{9}
+  \includegraphics[width=\linewidth]{./res/images/UC7.1.png}
+  \caption{UC7.1 - Visualizzazione singolo attributo modificabile dell'oggetto}
+  \label{fig:UC 7.1}
+\end{figure}
+
+\begin{itemize}
+
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
+	\item Descrizione:
+	\begin{itemize}
+		\item Visualizzazione attributi modificabili dell'oggetto prevede la visualizzazione della lista degli attributi modificabili dell'oggetto che l'utente può modificare.
+\newline A seconda dell'oggetto da modificare alcuni attributi potrebbero essere non modificabili. In tal caso l'attributo sarà visibile ma non modificabile dall'utente.
 	\end{itemize}
 	
 	\item Precondizioni:
@@ -554,7 +685,7 @@ L'utente non verrà mai reindirizzato a una normale pagina web statica, poiché 
 	\begin{itemize}
 		\item L'oggetto modificato si trova all'interno dell'ambiente 3D;
 		\item L'oggetto è stato modificato;
-		\item L'oggetto assume le caratteristiche visive dovute alle. modifiche
+		\item L'oggetto assume le caratteristiche visive dovute alle modifiche.
 	\end{itemize}
 	
 	\item Scenario principale:
@@ -565,14 +696,183 @@ L'utente non verrà mai reindirizzato a una normale pagina web statica, poiché 
 		\item L'utente conferma le modifiche.
 	\end{itemize}
 	
-	\item Estensioni:
+\end{itemize}
+
+\paragraph{UC7.1.1 - Modifica colore}
+\begin{itemize}
+
+	\item Attore primario: 
 	\begin{itemize}
-		\item UC8 Visualizzazione messaggio oggetto non modificabile.
+		\item Utente in ambiente 3D.
+	\end{itemize}
+	\item Descrizione:
+	\begin{itemize}
+		\item Modifica colore permette all'utente di modificare il colore dell'oggetto con cui sta interagendo.
+	\end{itemize}
+	
+	\item Precondizioni:
+	\begin{itemize}
+		\item L'oggetto da modificare si trova all'interno dell'ambiente 3D;
+		\item L'oggetto da modificare è visibile.
+	\end{itemize}
+	
+	\item Postcondizioni:
+	\begin{itemize}
+		\item L'oggetto modificato si trova all'interno dell'ambiente 3D;
+		\item L'oggetto ha cambiato colore;
+	\end{itemize}
+	
+	\item Scenario principale:
+	\begin{itemize}
+		\item L'utente interagisce con l'oggetto da modificare;
+		\item L'utente seleziona il colore tra quelli disponibili;
+		\item L'utente apporta le modifiche desiderate;
 	\end{itemize}
 	
 \end{itemize}
 
-\pagebreak
+\paragraph{UC7.1.2 - Modifica larghezza}
+\begin{itemize}
+
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
+	\item Descrizione:
+	\begin{itemize}
+		\item Modifica larghezza permette all'utente di modificare la larghezza dell'oggetto con cui sta interagendo.
+	\end{itemize}
+	
+	\item Precondizioni:
+	\begin{itemize}
+		\item L'oggetto da modificare si trova all'interno dell'ambiente 3D;
+		\item L'oggetto da modificare è visibile.
+	\end{itemize}
+	
+	\item Postcondizioni:
+	\begin{itemize}
+		\item L'oggetto modificato si trova all'interno dell'ambiente 3D;
+		\item L'oggetto ha cambiato la sua larghezza;
+	\end{itemize}
+	
+	\item Scenario principale:
+	\begin{itemize}
+		\item L'utente interagisce con l'oggetto da modificare;
+		\item L'utente inserisce una larghezza ammissibile;
+		\item L'utente apporta le modifiche desiderate;
+	\end{itemize}
+	
+	\item Estensioni:
+	\begin{itemize}
+		\item UC7.2 Visualizzazione messaggio larghezza non ammissibile.
+	\end{itemize}
+	
+\end{itemize}
+
+
+\paragraph{UC7.1.3 - Modifica altezza}
+\begin{itemize}
+
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
+	\item Descrizione:
+	\begin{itemize}
+		\item Modifica altezza permette all'utente di modificare l'altezza dell'oggetto con cui sta interagendo.
+	\end{itemize}
+	
+	\item Precondizioni:
+	\begin{itemize}
+		\item L'oggetto da modificare si trova all'interno dell'ambiente 3D;
+		\item L'oggetto da modificare è visibile.
+	\end{itemize}
+	
+	\item Postcondizioni:
+	\begin{itemize}
+		\item L'oggetto modificato si trova all'interno dell'ambiente 3D;
+		\item L'oggetto ha cambiato la sua altezza;
+	\end{itemize}
+	
+	\item Scenario principale:
+	\begin{itemize}
+		\item L'utente interagisce con l'oggetto da modificare;
+		\item L'utente inserisce un'altezza ammissibile;
+		\item L'utente apporta le modifiche desiderate;
+	\end{itemize}
+	
+	\item Estensioni:
+	\begin{itemize}
+		\item UC7.3 Visualizzazione messaggio altezza non ammissibile.
+	\end{itemize}
+	
+\end{itemize}
+
+\subsubsection{UC7.2 - Visualizzazione messaggio larghezza non ammissibile}
+\begin{itemize}
+
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
+	\item Descrizione:
+	\begin{itemize}
+		\item Prevede la visualizzazione di un messaggio informativo di "larghezza non ammissibile".
+\newline Il messaggio compare non appena l'utente inserisce una larghezza non ammissibile.
+	\end{itemize}
+	
+	\item Precondizioni:
+	\begin{itemize}
+		\item L'oggetto da modificare si trova all'interno dell'ambiente 3D;
+		\item L'oggetto desiderato non può assumere la larghezza inserita.
+	\end{itemize}
+	
+	\item Postcondizioni:
+	\begin{itemize}
+		\item L'oggetto non è stato modificato;
+		\item L'oggetto mantiene le sue caratteristiche visive.
+	\end{itemize}
+	
+	\item Scenario principale:
+	\begin{itemize}
+		\item L'utente interagisce con l'oggetto da modificare;
+		\item L'utente inserisce una nuova larghezza dell'oggetto con cui sta interagendo.
+	\end{itemize}
+	
+\end{itemize}
+
+\subsubsection{UC7.3 - Visualizzazione messaggio altezza non ammissibile}
+\begin{itemize}
+
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
+	\item Descrizione:
+	\begin{itemize}
+		\item Prevede la visualizzazione di un messaggio informativo di "altezza non ammissibile".
+\newline Il messaggio compare non appena l'utente inserisce un'altezza non ammissibile.
+	\end{itemize}
+	
+	\item Precondizioni:
+	\begin{itemize}
+		\item L'oggetto da modificare si trova all'interno dell'ambiente 3D;
+		\item L'oggetto desiderato non può assumere l'altezza inserita.
+	\end{itemize}
+	
+	\item Postcondizioni:
+	\begin{itemize}
+		\item L'oggetto non è stato modificato;
+		\item L'oggetto mantiene le sue caratteristiche visive.
+	\end{itemize}
+	
+	\item Scenario principale:
+	\begin{itemize}
+		\item L'utente interagisce con l'oggetto da modificare;
+		\item L'utente inserisce una nuova altezza dell'oggetto con cui sta interagendo.
+	\end{itemize}
+	
+\end{itemize}
 
 \subsection{UC8 - Visualizzazione messaggio oggetto non modificabile}
 \begin{itemize}
@@ -612,7 +912,7 @@ L'utente non verrà mai reindirizzato a una normale pagina web statica, poiché 
 \subsection{UC9 - Visualizzazione lista oggetti della stanza attuale}
 
 \begin{figure}[H]
-  \renewcommand{\thefigure}{5}
+  \renewcommand{\thefigure}{10}
   \includegraphics[width=\linewidth]{./res/images/UC9.png}
   \caption{UC9 - Visualizzazione lista oggetti della stanza attuale}
   \label{fig:UC 9}
@@ -650,7 +950,7 @@ L'utente non verrà mai reindirizzato a una normale pagina web statica, poiché 
 \subsubsection{UC9.1 - Visualizzazione oggetto nella lista}
 
 \begin{figure}[H]
-  \renewcommand{\thefigure}{6}
+  \renewcommand{\thefigure}{11}
   \includegraphics[width=\linewidth]{./res/images/UC9.1.png}
   \caption{UC9.1 - Visualizzazione oggetto nella lista}
   \label{fig:UC 9.1}
@@ -719,7 +1019,7 @@ L'utente non verrà mai reindirizzato a una normale pagina web statica, poiché 
 \subsection{UC10 - Visualizzazione dettagli oggetto}
 
 \begin{figure}[H]
-  \renewcommand{\thefigure}{7}
+  \renewcommand{\thefigure}{12}
   \includegraphics[width=\linewidth]{./res/images/UC10.png}
   \caption{UC10 - Visualizzazione dettagli oggetto}
   \label{fig:UC 10}
@@ -783,7 +1083,15 @@ L'utente non verrà mai reindirizzato a una normale pagina web statica, poiché 
 \end{itemize}
 
 
-\subsubsection{UC10.2 - Visualizzazione caratteristiche}
+\subsubsection{UC10.2 - Visualizzazione lista caratteristiche oggetto}
+
+\begin{figure}[H]
+  \renewcommand{\thefigure}{13}
+  \includegraphics[width=\linewidth]{./res/images/UC10.2.png}
+  \caption{UC10.2 - Visualizzazione lista caratteristiche oggetto}
+  \label{fig:UC 10.2}
+\end{figure}
+
 \begin{itemize}
 	
 	\item Attore primario: 
@@ -812,7 +1120,201 @@ L'utente non verrà mai reindirizzato a una normale pagina web statica, poiché 
 	
 \end{itemize}
 
+\paragraph{UC10.2.1 - Visualizzazione caratteristica oggetto}
+
+\begin{figure}[H]
+  \renewcommand{\thefigure}{14}
+  \includegraphics[width=\linewidth]{./res/images/UC10.2.1.png}
+  \caption{UC10.2.1 - Visualizzazione caratteristica oggetto}
+  \label{fig:UC 10.2.1}
+\end{figure}
+
+\begin{itemize}
+
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
+	\item Descrizione:
+	\begin{itemize}
+		\item L'utente può vedere la caratteristica dell'oggetto.
+	\end{itemize}
+	
+	\item Precondizioni:
+	\begin{itemize}
+		\item L'oggetto selezionato è visualizzato.
+	\end{itemize}
+	
+	\item Postcondizioni:
+	\begin{itemize}
+		\item Il contenuto della lista delle caratteristiche è visibile.
+	\end{itemize}
+	
+	\item Scenario principale:
+	\begin{itemize}
+		\item Nessuna azione richiesta.
+	\end{itemize}
+	
+\end{itemize}
+
+\subparagraph{UC10.2.1.1 - Visualizzazione caratteristica peso}
+\begin{itemize}
+
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
+	\item Descrizione:
+	\begin{itemize}
+		\item L'utente può vedere la caratteristica peso dell'oggetto.
+	\end{itemize}
+	
+	\item Precondizioni:
+	\begin{itemize}
+		\item Il contenuto della lista caratteristiche è visibile.
+	\end{itemize}
+	
+	\item Postcondizioni:
+	\begin{itemize}
+		\item Il contenuto della lista caratteristiche è visibile;
+		\item L'oggetto è visibile nella lista.
+	\end{itemize}
+	
+	\item Scenario principale:
+	\begin{itemize}
+		\item Nessuna azione richiesta.
+	\end{itemize}
+	
+\end{itemize}
+
+\subparagraph{UC10.2.1.2 - Visualizzazione caratteristica colore}
+\begin{itemize}
+
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
+	\item Descrizione:
+	\begin{itemize}
+		\item L'utente può vedere la caratteristica il colore dell'oggetto.
+	\end{itemize}
+	
+	\item Precondizioni:
+	\begin{itemize}
+		\item Il contenuto della lista caratteristiche è visibile.
+	\end{itemize}
+	
+	\item Postcondizioni:
+	\begin{itemize}
+		\item Il contenuto della lista caratteristiche è visibile;
+		\item L'oggetto è visibile nella lista.
+	\end{itemize}
+	
+	\item Scenario principale:
+	\begin{itemize}
+		\item Nessuna azione richiesta.
+	\end{itemize}
+	
+\end{itemize}
+
+\subparagraph{UC10.2.1.3 - Visualizzazione caratteristica larghezza}
+\begin{itemize}
+
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
+	\item Descrizione:
+	\begin{itemize}
+		\item L'utente può vedere la caratteristica larghezza dell'oggetto.
+	\end{itemize}
+	
+	\item Precondizioni:
+	\begin{itemize}
+		\item Il contenuto della lista caratteristiche è visibile.
+	\end{itemize}
+	
+	\item Postcondizioni:
+	\begin{itemize}
+		\item Il contenuto della lista caratteristiche è visibile;
+		\item L'oggetto è visibile nella lista.
+	\end{itemize}
+	
+	\item Scenario principale:
+	\begin{itemize}
+		\item Nessuna azione richiesta.
+	\end{itemize}
+	
+\end{itemize}
+
+\subparagraph{UC10.2.1.4 - Visualizzazione caratteristica altezza}
+\begin{itemize}
+
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
+	\item Descrizione:
+	\begin{itemize}
+		\item L'utente può vedere la caratteristica altezza dell'oggetto.
+	\end{itemize}
+	
+	\item Precondizioni:
+	\begin{itemize}
+		\item Il contenuto della lista caratteristiche è visibile.
+	\end{itemize}
+	
+	\item Postcondizioni:
+	\begin{itemize}
+		\item Il contenuto della lista caratteristiche è visibile;
+		\item L'oggetto è visibile nella lista.
+	\end{itemize}
+	
+	\item Scenario principale:
+	\begin{itemize}
+		\item Nessuna azione richiesta.
+	\end{itemize}
+	
+\end{itemize}
+
+\subparagraph{UC10.2.1.5 - Visualizzazione caratteristica tipo}
+\begin{itemize}
+
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
+	\item Descrizione:
+	\begin{itemize}
+		\item L'utente può vedere la caratteristica tipo dell'oggetto.
+	\end{itemize}
+	
+	\item Precondizioni:
+	\begin{itemize}
+		\item Il contenuto della lista caratteristiche è visibile.
+	\end{itemize}
+	
+	\item Postcondizioni:
+	\begin{itemize}
+		\item Il contenuto della lista caratteristiche è visibile;
+		\item L'oggetto è visibile nella lista.
+	\end{itemize}
+	
+	\item Scenario principale:
+	\begin{itemize}
+		\item Nessuna azione richiesta.
+	\end{itemize}
+	
+\end{itemize}
+
 \pagebreak
+
+\begin{figure}[H]
+  \renewcommand{\thefigure}{15}
+  \includegraphics[width=\linewidth]{./res/images/UC11-14.png}
+  \caption{UC11 - Riposizionamento vicino ad oggetto stanza attuale}
+  \label{fig:UC 11 e UC14}
+\end{figure}
 
 \subsection{UC11 - Riposizionamento vicino ad oggetto stanza attuale}
 \begin{itemize}
@@ -850,6 +1352,13 @@ della stanza in cui si trova.
 \end{itemize}
 
 \pagebreak
+
+\begin{figure}[H]
+  \renewcommand{\thefigure}{16}
+  \includegraphics[width=\linewidth]{./res/images/UC12-13.png}
+  \caption{UC12 - Riposizionamento in stanze}
+  \label{fig:UC 12 e UC13}
+\end{figure}
 
 \subsection{UC12 - Riposizionamento in stanze}
 \begin{itemize}
@@ -956,6 +1465,14 @@ una distanza dall'oggetto inferiore a quella consentita per il compiersi dell'az
 \pagebreak
 
 \subsection{UC15 - Visualizzazione lista stanze}
+
+\begin{figure}[H]
+  \renewcommand{\thefigure}{17}
+  \includegraphics[width=\linewidth]{./res/images/UC15.png}
+  \caption{UC15 - Visualizzazione lista stanze}
+  \label{fig:UC 15}
+\end{figure}
+
 \begin{itemize}
 
 	\item Attore primario: 
@@ -984,7 +1501,116 @@ una distanza dall'oggetto inferiore a quella consentita per il compiersi dell'az
 	
 \end{itemize}
 
+\subsubsection{UC15.1 - Visualizzazione stanza}
+
+\begin{figure}[H]
+  \renewcommand{\thefigure}{18}
+  \includegraphics[width=\linewidth]{./res/images/UC15.1.png}
+  \caption{UC15.1 - Visualizzazione stanza}
+  \label{fig:UC 15.1}
+\end{figure}
+
+\begin{itemize}
+
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
+	\item Descrizione:
+	\begin{itemize}
+		\item L'utente visualizza le caratteristiche di una stanza.
+	\end{itemize}
+	
+	\item Precondizioni:
+	\begin{itemize}
+		\item Il contenuto della lista è nascosto.
+	\end{itemize}
+	
+	\item Postcondizioni:
+	\begin{itemize}
+		\item Il contenuto della lista è visibile.
+	\end{itemize}
+	
+	\item Scenario principale:
+	\begin{itemize}
+		\item L'utente interagisce con il sistema per rendere il contenuto della lista visibile.
+	\end{itemize}
+	
+\end{itemize}
+
+\paragraph{UC15.1.1 - Visualizzazione nome stanza}
+
+\begin{itemize}
+
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
+	\item Descrizione:
+	\begin{itemize}
+		\item L'utente visualizza le caratteristiche di una stanza.
+		\newline L'utente visualizza il nome della stanza.
+	\end{itemize}
+	
+	\item Precondizioni:
+	\begin{itemize}
+		\item Il contenuto della lista è visibile.
+	\end{itemize}
+	
+	\item Postcondizioni:
+	\begin{itemize}
+		\item Il contenuto della lista è visibile;
+		\item La stanza è visibile nella lista delle stanze.
+	\end{itemize}
+	
+	\item Scenario principale:
+	\begin{itemize}
+		\item Nessuna azione richiesta.
+	\end{itemize}
+	
+\end{itemize}
+
+
+\paragraph{UC15.1.2 - Visualizzazione tipologia oggetti stanza}
+
+\begin{itemize}
+
+	\item Attore primario: 
+	\begin{itemize}
+		\item Utente in ambiente 3D.
+	\end{itemize}
+	\item Descrizione:
+	\begin{itemize}
+		\item L'utente visualizza le caratteristiche di una stanza.
+		\newline L'utente visualizza la tipologia di oggetti nella stanza.
+	\end{itemize}
+	
+	\item Precondizioni:
+	\begin{itemize}
+		\item Il contenuto della lista è visibile.
+	\end{itemize}
+	
+	\item Postcondizioni:
+	\begin{itemize}
+		\item Il contenuto della lista è visibile;
+		\item La stanza è visibile nella lista delle stanze.
+	\end{itemize}
+	
+	\item Scenario principale:
+	\begin{itemize}
+		\item Nessuna azione richiesta.
+	\end{itemize}
+	
+\end{itemize}
+
 \pagebreak
+
+\begin{figure}[H]
+  \renewcommand{\thefigure}{19}
+  \includegraphics[width=\linewidth]{./res/images/UC16-17.png}
+  \caption{UC16 - Spostamento oggetto}
+  \label{fig:UC 16 e 17}
+\end{figure}
 
 \subsection{UC16 - Spostamento oggetto}
 \begin{itemize}
@@ -1056,7 +1682,7 @@ una distanza dall'oggetto inferiore a quella consentita per il compiersi dell'az
 
 \pagebreak
 
-\subsection{UC18 - Torcia}
+\subsection{UC18 - Illuminazione oggetto tramite torcia}
 \begin{itemize}
 
 	\item Attore primario: 
@@ -1108,23 +1734,25 @@ Il codice di ciascuno requisito è formato da:
 
 \subsection{Requisiti funzionali}
 \reqTable{
-	\textbf{RF1} & L'utente deve poter rimuovere un oggetto dal carrello & Facoltativo & UC1 \tabularnewline
-     \textbf{RF2} & L'utente deve poter rimuovere tutti gli oggetti dal carrello & Facoltativo & UC2\tabularnewline
-     
-     \textbf{RF3} & L'utente deve poter visualizzare il contenuto del carrello & Obbligatorio & UC2\tabularnewline
-     \textbf{RF3.1} & L'utente può visualizzare la lista degli oggetti presenti nel carrello & Obbligatorio & UC3.1\tabularnewline
-     \textbf{RF3.2} & L'utente deve poter visualizzare il costo totale degli oggetti presenti nel carrello & Obbligatorio & UC3.2\tabularnewline
-     
-     \textbf{RF4} & L'utente deve poter aggiungere un oggetto al carrello & Obbligatorio & UC4\tabularnewline
-     
+	\textbf{RF1} & L'utente deve poter aggiungere un oggetto al carrello & Obbligatorio & UC1\tabularnewline
+	\textbf{RF2} & L'utente deve poter visualizzare il contenuto del carrello & Obbligatorio & UC2\tabularnewline
+	\text{RF19} & L'utente deve poter visualizzare un messaggio che indichi se il carrello è vuoto & Facoltativo & UC2 \tabularnewline
+     \textbf{RF2.1} & L'utente può visualizzare la lista degli oggetti presenti nel carrello & Obbligatorio & UC2.1\tabularnewline
+     \textbf{RF2.2} & L'utente deve poter visualizzare il costo totale degli oggetti presenti nel carrello & Obbligatorio & UC2.2\tabularnewline
+     \textbf{RF3} & L'utente deve poter rimuovere tutti gli oggetti dal carrello & Facoltativo & UC3\tabularnewline
+	\textbf{RF4} & L'utente deve poter rimuovere un oggetto dal carrello & Facoltativo & UC4 \tabularnewline
      \textbf{RF5} & L'utente deve poter compiere movimenti direzionali & Obbligatorio & UC5\tabularnewline
      \textbf{RF5.1} & L'utente deve poter compiere movimenti direzionali sull'asse X & Obbligatorio & UC5.1\tabularnewline
      \textbf{RF5.2} & L'utente deve poter compiere movimenti direzionali sull'asse Y & Obbligatorio & UC5.2\tabularnewline
      \textbf{RF5.3} & L'utente deve poter compiere movimenti direzionali sull'asse Z & Facoltativo & UC5.3\tabularnewline
      
      \textbf{RF6} & L'utente deve poter compiere spostamenti di camera & Obbligatorio & UC6\tabularnewline
-     
+     \textbf{RF6.1} & L'utente deve poter compiere spostamenti di camera lungo l'asse X & Obbligatorio & UC6.1\tabularnewline
+     \textbf{RF6.2} & L'utente deve poter compiere spostamenti di camera lungo l'asse Y & Obbligatorio &  UC6.2\tabularnewline
      \textbf{RF7} & L'utente deve poter modificare gli attributi di un oggetto & Obbligatorio & UC7\tabularnewline
+     \textbf{RF7.1} & L'utente deve poter modificare l'attributo di un oggetto & Obbligatorio & UC7.1\tabularnewline
+     \textbf{RF7.2} & L'utente deve essere notificato in caso inserisse una larghezza non ammissibile & Obbligatorio & UC7.2\tabularnewline
+     \textbf{RF7.3} & L'utente deve essere notificato in caso inserisse un'altezza non ammissibile & Obbligatorio & UC7.3\tabularnewline
      
      \textbf{RF8} & L'utente deve essere notificato in caso un oggetto non fosse modificabile & Obbligatorio & UC8\tabularnewline
      
@@ -1137,36 +1765,169 @@ Il codice di ciascuno requisito è formato da:
 
      \textbf{RF11} & L'utente deve poter riposizionarsi vicino ad un oggetto presente nella stanza attuale & Facoltativo & UC11\tabularnewline
      
-     \textbf{RF12} & L'utente deve poter riposizionarsi una stanza da lui selezionata & Facoltativo & UC12\tabularnewline
+     \textbf{RF12} & L'utente deve poter riposizionarsi in una stanza da lui selezionata & Facoltativo & UC12\tabularnewline
 
 	\textbf{RF13} & L'utente deve essere notificato quando il riposizionamento in stanza non è concesso & Facoltativo & UC13\tabularnewline
 	
 	\textbf{RF14} & L'utente deve essere notificato quando il riposizionamento in prossimità di un oggetto selezionato non è concesso & Facoltativo & UC14\tabularnewline 	
 	
 	\textbf{RF15} & L'utente deve poter visualizzare la lista delle stanze & Facoltativo & UC15\tabularnewline
+	\textbf{RF15.1} & L'utente deve poter visualizzare una stanza dalla lista & Facoltativo & UC15.1\tabularnewline
 	
 	\textbf{RF16} & L'utente deve poter riposizionare un oggetto presente nella stanza attuale & Facoltativo & UC16\tabularnewline
 	
 	\textbf{RF17} & L'utente non deve poter riposizionare un oggetto in una coordinata non legittima & Facoltativo & UC17\tabularnewline
 	
 	\textbf{RF18} & L'utente deve poter utilizzare una torcia per illuminare l'ambiente circostante & Facoltativo & UC18\tabularnewline
+	\textbf{RF20} & L'utente deve poter visualizzare un oggetto con diverse illuminazioni & Obbligatorio & UC18\tabularnewline
 	\addlinespace 
-	\captionline\caption{Requisiti funzionali}\\
-}
+	\captionline\caption{Requisiti funzionali}\\}
 
 \subsection{Requisiti qualitativi}
 \reqTable{
 	\textbf{RQ1} & Il software deve essere sviluppato seguendo le metriche e il modello di qualità descritti nel documento "Norme di Progetto" & Obbligatorio & Decisione interna \tabularnewline
 	\textbf{RQ2} & Il software deve essere sviluppato pubblicando il codice sorgente sul repository Github\textsubscript{g} dedicato & Obbligatorio & Decisione interna \tabularnewline
 	\textbf{RQ3} & Il software deve essere sviluppato fornendo una documentazione dettagliata delle varie funzionalità & Obbligatorio & Capitolato\tabularnewline
+	\textbf{RQ4} & Deve essere fornito un manuale per l’utilizzo& Obbligatorio & Capitolato\tabularnewline
+	\textbf{RQ5} & Deve essere fornito un manuale per la manutenzione e l’estensione dell’applicazione& Obbligatorio & Capitolato\tabularnewline	
 	\addlinespace 
 	\captionline\caption{Requisiti qualitativi}\\}
 
 \subsection{Requisiti di dominio}
 \reqTable{
-	\textbf{RD1} & Il software deve essere compatibile con la versione più recente del browser Chrome & Obbligatorio & Decisione interna \tabularnewline
-	\textbf{RD2} & Il software deve essere compatibile con la versione più recente del browser Firefox & Obbligatorio & Decisione interna \tabularnewline
-	\textbf{RD3} & Il software deve essere compatibile con la versione più recente del browser Safari & Obbligatorio & Decisione interna \tabularnewline
-	\textbf{RD4} & Il software deve essere sviluppato utilizzando la libreria Three.js & Obbligatorio & Decisione interna\tabularnewline
+	\textbf{RD1} & Il software deve essere compatibile dalla versione 110 del browser Chrome & Obbligatorio & Decisione interna \tabularnewline
+	\textbf{RD2} & Il software deve essere compatibile dalla versione 109 del browser Firefox & Obbligatorio & Decisione interna \tabularnewline
+	\textbf{RD3} & Il software deve essere compatibile dalla versione 16 del browser Safari & Obbligatorio & Decisione interna \tabularnewline
+	\textbf{RD4} & Il software deve essere compatibile dalla versione 95 del browser Opera & Obbligatorio & Decisione interna \tabularnewline
+	\textbf{RD5} & Il software deve essere compatibile dalla versione 110 del browser Microsoft Edge & Obbligatorio & Decisione interna \tabularnewline
+	\textbf{RD6} & Il software deve essere sviluppato utilizzando la libreria Three.js & Obbligatorio & Decisione interna\tabularnewline
 	\addlinespace 
 	\captionline\caption{Requisiti di dominio}\\}
+
+\subsection{Tracciamento}
+\subsubsection{Fonte - Requisiti}
+\begin{longtable}{ 
+		>{\centering}M{0.50\textwidth} 
+		>{\centering}M{0.55\textwidth}
+		}
+	\rowcolorhead
+	\headertitle{Fonte} &
+	\centering \headertitle{Requisito} 
+	\endfirsthead	
+	\endhead
+	
+	Capitolato & RQ3 \\ RQ4 \ RQ5 \tabularnewline
+	Decisione interna & RQ1 \\ RQ2 \\ RD1 \\ RD2 \\ RD3 \\ RD4 \\RD5 \\RD6\tabularnewline
+	UC1 & RF1\tabularnewline
+	UC2 & RF2 \\ RF19 \tabularnewline
+	UC2.1 & RF2.1\tabularnewline
+	UC2.2 & RF2.2\tabularnewline 
+	UC3 & RF3\tabularnewline
+	UC4 & RF4 \tabularnewline
+	UC5 & RF5 \tabularnewline
+	UC5.1 & RF5.1 \tabularnewline
+	UC5.2 & RF5.2 \tabularnewline
+	UC5.3 & RF5.3 \tabularnewline
+	UC6 & RF6 \tabularnewline
+	UC6.1 & RF6.1\tabularnewline
+	UC6.2 & RF6.2\tabularnewline
+	UC7 & RF7 \tabularnewline
+	UC7.2 & RF7.2\tabularnewline
+	UC7.3 & RF7.3\tabularnewline
+	UC8 & RF8 \tabularnewline
+	UC9 & RF9 \tabularnewline
+	UC9.1 & RF9.1 \tabularnewline
+	UC10 & RF10 \tabularnewline
+	UC10.1 & RF10.1 \tabularnewline
+	UC10.2 & RF10.2 \tabularnewline
+	UC11 & RF11 \tabularnewline
+	UC12 & RF12 \tabularnewline
+	UC13 & RF13 \tabularnewline
+	UC14 & RF14 \tabularnewline
+	UC15 & RF15 \tabularnewline
+	UC15.1 & RF15.1\tabularnewline
+	UC16 & RF16 \tabularnewline
+	UC17 & RF17 \tabularnewline
+	UC18 & RF18 \\ RF20 \tabularnewline
+
+\end{longtable}
+
+\subsubsection{Requisiti - Fonti}
+\begin{longtable}{ 
+		>{\centering}M{0.50\textwidth} 
+		>{\centering}M{0.55\textwidth}
+		}
+	\rowcolorhead
+	\headertitle{Requisito} &
+	\centering \headertitle{Fonte} 
+	\endfirsthead	
+	\endhead
+	
+	RF1 & UC1\tabularnewline
+	RF2 & UC2\tabularnewline
+	RF2.1 & UC2.1\tabularnewline
+	RF2.2 & UC2.2\tabularnewline
+	RF3 & UC2\tabularnewline
+	RF4 & UC4\tabularnewline
+	RF5 & UC5\tabularnewline
+	RF5.1 & UC5.1\tabularnewline
+	RF5.2 & UC5.2\tabularnewline
+	RF5.3 & UC5.3\tabularnewline
+	RF6 & UC6\tabularnewline
+	RF6.1 & UC6.1\tabularnewline
+	RF6.2 & UC6.2\tabularnewline
+	RF7 & UC7\tabularnewline
+	RF7.1 & UC7.1\tabularnewline
+	RF7.2 & UC7.2\tabularnewline
+	RF7.3 & UC7.3\tabularnewline
+	RF8 & UC8\tabularnewline
+	RF9 & UC9\tabularnewline
+	RF9.1 & UC9.1\tabularnewline
+	RF10 & UC10\tabularnewline
+	RF10.1 & UC10.1\tabularnewline
+	RF10.2 & UC10.2\tabularnewline
+	RF11 & UC11\tabularnewline
+	RF12 & UC12\tabularnewline
+	RF13 & UC13\tabularnewline
+	RF14 & UC14\tabularnewline
+	RF15 & UC15\tabularnewline
+	RF15.1 & UC15.1\tabularnewline
+	RF16 & UC16\tabularnewline
+	RF17 & UC17\tabularnewline
+	RF18 & UC18\tabularnewline
+	RF19 & UC2 \tabularnewline
+	RF20 & UC18\tabularnewline
+	RQ1 & Decisione interna\tabularnewline
+	RQ2 & Decisione interna\tabularnewline
+	RQ3 & Capitolato\tabularnewline
+	RQ4 & Capitolato\tabularnewline
+	RQ5 & Capitolato\tabularnewline
+	RD1 & Decisione interna\tabularnewline
+	RD2 & Decisione interna\tabularnewline
+	RD3 & Decisione interna\tabularnewline
+	RD4 & Decisione interna\tabularnewline
+	RD5 & Decisione interna\tabularnewline
+	RD6 & Decisione interna\tabularnewline
+	
+\end{longtable}
+
+\subsubsection{Riepilogo Requisiti}
+\begin{longtable}{ 
+		>{\centering}M{0.25\textwidth} 
+		>{\centering}M{0.25\textwidth}
+		>{\centering}M{0.25\textwidth}
+		>{\centering}M{0.245\textwidth}
+		}
+	\rowcolorhead
+	\headertitle{Tipologia} &
+	\centering \headertitle{Obbligatorio} &
+	\centering \headertitle{Facoltativo} &
+	\centering \headertitle{Totale}  
+	\endfirsthead	
+	\endhead
+	
+	Funzionale & 19 & 15& 34\tabularnewline
+	Qualitativi & 5 & 0 & 5\tabularnewline
+	Dominio & 6 & 0& 6\tabularnewline
+	\rowcolorhead \textcolor{white}{\textbf{Tutti requisiti}} & \textcolor{white}{\textbf{30}} & \textcolor{white}{\textbf{15}} & \textcolor{white}{\textbf{45}}
+\end{longtable}
