@@ -798,7 +798,7 @@ L'utente non verrà mai reindirizzato a una normale pagina web statica, poiché 
 \begin{figure}[H]
   \renewcommand{\thefigure}{13}
   \includegraphics[width=\linewidth]{./res/images/UC10.png}
-  \caption{UC10 - Visualizzazione dettagli oggetto e relativi sottocasi d'uso}
+  \caption{UC10 - Visualizzazione dettagli oggetto}
   \label{fig:UC 10}
 \end{figure}
 
@@ -829,6 +829,13 @@ L'utente non verrà mai reindirizzato a una normale pagina web statica, poiché 
 	\end{itemize}
 	
 \end{itemize}
+
+\begin{figure}[H]
+  \renewcommand{\thefigure}{13}
+  \includegraphics[width=\linewidth]{./res/images/UC10-sottocasi.png}
+  \caption{UC10 - Visualizzazione dettagli oggetto}
+  \label{fig:UC 10}
+\end{figure}
 
 \subsubsection{UC10.1 - Visualizzazione immagine}
 \begin{itemize}
@@ -1408,7 +1415,7 @@ Il codice di ciascuno requisito è formato da:
 \reqTable{
 	\textbf{RF1} & L'utente deve poter aggiungere un oggetto al carrello & Obbligatorio & UC1\tabularnewline
 	\textbf{RF2} & L'utente deve poter visualizzare il contenuto del carrello & Obbligatorio & UC2\tabularnewline
-	\text{RF19} & L'utente deve poter visualizzare un messaggio che indichi se il carrello è vuoto & Facoltativo & UC2 \tabularnewline
+	\textbf{RF19} & L'utente deve poter visualizzare un messaggio che indichi se il carrello è vuoto & Facoltativo & UC2 \tabularnewline
      \textbf{RF2.1} & L'utente può visualizzare la lista degli oggetti presenti nel carrello & Obbligatorio & UC2.1\tabularnewline
      \textbf{RF2.2} & L'utente deve poter visualizzare il costo totale degli oggetti presenti nel carrello & Obbligatorio & UC2.2\tabularnewline
      \textbf{RF3} & L'utente deve poter rimuovere tutti gli oggetti dal carrello & Facoltativo & UC3\tabularnewline
@@ -1421,19 +1428,14 @@ Il codice di ciascuno requisito è formato da:
      \textbf{RF6} & L'utente deve poter compiere spostamenti di camera & Obbligatorio & UC6\tabularnewline
      \textbf{RF6.1} & L'utente deve poter compiere spostamenti di camera lungo l'asse X & Obbligatorio & UC6.1\tabularnewline
      \textbf{RF6.2} & L'utente deve poter compiere spostamenti di camera lungo l'asse Y & Obbligatorio &  UC6.2\tabularnewline
-     \textbf{RF7} & L'utente deve poter modificare gli attributi di un oggetto & Obbligatorio & UC7\tabularnewline
-     \textbf{RF7.1} & L'utente deve poter modificare l'attributo di un oggetto & Obbligatorio & UC7.1\tabularnewline
-     \textbf{RF7.2} & L'utente deve essere notificato in caso inserisse una larghezza non ammissibile & Obbligatorio & UC7.2\tabularnewline
-     \textbf{RF7.3} & L'utente deve essere notificato in caso inserisse un'altezza non ammissibile & Obbligatorio & UC7.3\tabularnewline
+     \textbf{RF7} & L'utente deve poter modificare la combinazione di colori di un oggetto & Obbligatorio & UC7\tabularnewline
      
      \textbf{RF8} & L'utente deve essere notificato in caso un oggetto non fosse modificabile & Obbligatorio & UC8\tabularnewline
      
      \textbf{RF9} & L'utente deve poter visualizzare la lista oggetti della stanza attuale & Facoltativo & UC9\tabularnewline
      \textbf{RF9.1} & L'utente deve poter visualizzare un oggetto nella lista oggetti della stanza attuale & Facoltativo & UC9.1\tabularnewline
      
-     \textbf{RF10} & L'utente deve poter visualizzare i dettagli di un oggetto selezionato & Obbligatorio & UC10\tabularnewline
-	 \textbf{RF10.1} & L'utente deve poter visualizzare l'icona di un oggetto selezionato & Obbligatorio & UC10.1\tabularnewline
-     \textbf{RF10.2} & L'utente deve poter visualizzare le caratteristiche di un oggetto selezionato & Obbligatorio & UC10.2\tabularnewline
+     \textbf{RF10} & L'utente deve poter visualizzare i dettagli di un oggetto selezionato & Obbligatorio & UC10 \\UC10.1\\UC10.2\\UC10.3\\UC10.4\\UC10.5\tabularnewline
 
      \textbf{RF11} & L'utente deve poter riposizionarsi vicino ad un oggetto presente nella stanza attuale & Facoltativo & UC11\tabularnewline
      
@@ -1450,7 +1452,7 @@ Il codice di ciascuno requisito è formato da:
 	
 	\textbf{RF17} & L'utente non deve poter riposizionare un oggetto in una coordinata non legittima & Facoltativo & UC17\tabularnewline
 	
-	\textbf{RF18} & L'utente deve poter utilizzare una torcia per illuminare l'ambiente circostante & Facoltativo & UC18\tabularnewline
+	\textbf{RF18} & L'utente deve poter illuminare l'ambiente davanti a lui & Facoltativo & UC18\tabularnewline
 	\textbf{RF20} & L'utente deve poter visualizzare un oggetto con diverse illuminazioni & Obbligatorio & UC18\tabularnewline
 	\addlinespace 
 	\captionline\caption{Requisiti funzionali}\\}
@@ -1504,14 +1506,15 @@ Il codice di ciascuno requisito è formato da:
 	UC6.1 & RF6.1\tabularnewline
 	UC6.2 & RF6.2\tabularnewline
 	UC7 & RF7 \tabularnewline
-	UC7.2 & RF7.2\tabularnewline
-	UC7.3 & RF7.3\tabularnewline
 	UC8 & RF8 \tabularnewline
 	UC9 & RF9 \tabularnewline
 	UC9.1 & RF9.1 \tabularnewline
 	UC10 & RF10 \tabularnewline
-	UC10.1 & RF10.1 \tabularnewline
-	UC10.2 & RF10.2 \tabularnewline
+	UC10.1 & RF10 \tabularnewline
+	UC10.2 & RF10 \tabularnewline
+	UC10.3 & RF10 \tabularnewline
+	UC10.4 & RF10 \tabularnewline
+	UC10.5 & RF10 \tabularnewline
 	UC11 & RF11 \tabularnewline
 	UC12 & RF12 \tabularnewline
 	UC13 & RF13 \tabularnewline
@@ -1549,15 +1552,10 @@ Il codice di ciascuno requisito è formato da:
 	RF6.1 & UC6.1\tabularnewline
 	RF6.2 & UC6.2\tabularnewline
 	RF7 & UC7\tabularnewline
-	RF7.1 & UC7.1\tabularnewline
-	RF7.2 & UC7.2\tabularnewline
-	RF7.3 & UC7.3\tabularnewline
 	RF8 & UC8\tabularnewline
 	RF9 & UC9\tabularnewline
 	RF9.1 & UC9.1\tabularnewline
-	RF10 & UC10\tabularnewline
-	RF10.1 & UC10.1\tabularnewline
-	RF10.2 & UC10.2\tabularnewline
+	RF10 & UC10 \\UC10.1\\UC10.2\\UC10.3\\UC10.4\\UC10.5\tabularnewline
 	RF11 & UC11\tabularnewline
 	RF12 & UC12\tabularnewline
 	RF13 & UC13\tabularnewline
@@ -1598,8 +1596,8 @@ Il codice di ciascuno requisito è formato da:
 	\endfirsthead	
 	\endhead
 	
-	Funzionale & 19 & 15& 34\tabularnewline
+	Funzionale & 15 & 15& 30\tabularnewline
 	Qualitativi & 5 & 0 & 5\tabularnewline
 	Dominio & 6 & 0& 6\tabularnewline
-	\rowcolorhead \textcolor{white}{\textbf{Tutti requisiti}} & \textcolor{white}{\textbf{30}} & \textcolor{white}{\textbf{15}} & \textcolor{white}{\textbf{45}}
+	\rowcolorhead \textcolor{white}{\textbf{Tutti requisiti}} & \textcolor{white}{\textbf{26}} & \textcolor{white}{\textbf{15}} & \textcolor{white}{\textbf{45}}
 \end{longtable}
