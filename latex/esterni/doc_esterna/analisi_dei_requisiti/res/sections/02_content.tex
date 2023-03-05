@@ -66,9 +66,9 @@ L'utente non verrà mai reindirizzato a una normale pagina web statica, poiché 
 	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
-		\item Aggiungere un oggetto al carrello significa aggiungere alla lista degli oggetti presenti nel carrello l'oggetto desiderato e visualizzare un messaggio di oggetto aggiunto al carrello con successo.
+		\item Aggiungere un oggetto al carrello significa aggiungere alla lista degli oggetti presenti nel carrello l'oggetto desiderato.
 \newline L'oggetto all'interno dell'ambiente continua ad esistere anche dopo la sua aggiunta al carrello.
-\newline Per inserire una quantità maggiore di una unità di un medesimo oggetto basta aggiungerlo più volte.
+\newline Per inserire una quantità maggiore di una unità di un medesimo oggetto l'utente può aggiungerlo più volte.
 	\end{itemize}
 	
 	\item Precondizioni:
@@ -1286,7 +1286,7 @@ una distanza dall'oggetto inferiore a quella consentita per il compiersi dell'az
 	\end{itemize}
 	\item Descrizione:
 	\begin{itemize}
-		\item L'utente visualizza la tipologia di oggetti nella stanza.
+		\item L'utente visualizza la tipologia di oggetti legati all'ambientazione marina che ci sono nella stanza.
 	\end{itemize}
 	
 	\item Precondizioni:
@@ -1411,6 +1411,7 @@ una distanza dall'oggetto inferiore a quella consentita per il compiersi dell'az
 	\item Scenario principale:
 	\begin{itemize}
 		\item L'utente interagisce col sistema per illuminare ciò che si trova di fronte a lui.
+		\item L'utente seleziona il comando torcia.
 	\end{itemize}
 	
 \end{itemize}
@@ -1648,20 +1649,6 @@ Il codice di ciascuno requisito è formato da:
 	Funzionale & 18 & 18 & 36\tabularnewline
 	Qualitativi & 5 & 0 & 5\tabularnewline
 	Dominio & 6 & 0& 6\tabularnewline
-	\rowcolorhead \textcolor{white}{\textbf{Tutti requisiti}} & \textcolor{white}{\textbf{29}} & \textcolor{white}{\textbf{18}} & \textcolor{white}{\textbf{51}}
+	\rowcolorhead \textcolor{white}{\textbf{Tutti requisiti}} & \textcolor{white}{\textbf{29}} & \textcolor{white}{\textbf{18}} & \textcolor{white}{\textbf{51}}\tabularnewline
+\captionline\caption{Riepilogo Requisiti}\\
 \end{longtable}
-\subsection{Altre richieste del proponente}
-In questa sezione vengono raccolti i vincoli implementativi richiesti dal proponente che non forniscono
-funzionalità aggiuntive per l'utente ma descrivono il modo in cui l'ambiente 3D dovrà essere implementato.
-I punti di interesse sono:
-\begin{itemize}
-	\item \textbf{Delimitatori stanze:} le stanze devono essere delimitate da delle pareti lasciando comunque uno o 
-	più punti d'accesso tra una stanza e l'altra;
-	\item \textbf{Identificatori per l'oggetto con cui si sta interagendo:} l'oggetto con il quale si sta interagendo
-	deve apparire illuminato da una luce proveniente dall'alto e alla base deve essere
-	visibile un cerchio che lo circonda;
-	\item \textbf{Non persistenza del carrello:} il carrello al termine della sessione utente dovrà svuotarsi completamente
-	per ripresentarsi completamente vuoto al prossimo accesso;
-	\item \textbf{Collisioni con gli oggetti:} l'utente non deve poter entrare con la propria visuale all'interno degli oggetti
-	attraversandoli.
-\end{itemize}
