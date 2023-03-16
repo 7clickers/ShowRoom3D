@@ -1,0 +1,69 @@
+\documentclass[a4paper]{article}
+\usepackage[normalem]{ulem}
+
+% impostazioni generali
+\input{../../../template/package.tex}
+
+% dati relativi alla prima pagina
+\input{config/titlepage_input.tex} % editare questo
+
+\makeindex
+
+%comando per far andare a capo i paragrafi
+\makeatletter
+\renewcommand\paragraph{
+\@startsection {paragraph}{4}{0mm}{-\baselineskip}{.5\baselineskip}{\normalfont \normalsize \bfseries }}
+\makeatother
+
+\begin{document}
+\counterwithin{table}{section}
+
+% Prima pagina
+\input{../../../template/titlepage.tex}
+
+% Diario delle modifiche
+\input{../../../template/changelog.tex}
+\input{config/changelog_input.tex} % editare questo
+\pagebreak
+
+% Indice
+{
+    \hypersetup{linkcolor=black}
+    \tableofcontents
+}
+\pagebreak
+
+% Contenuto
+\section{Introduzione}
+\subsection{Scopo del documento}
+Lo scopo del documento è quello di stabilire le regole che ogni componente del gruppo SevenClickers
+deve rispettare per mantenere un ambiente di lavoro che mira a massimizzare
+l'economicità dei processi durante il ciclo di vita del prodotto ShowRoom3D.\\
+Le norme verranno inserite in modo incrementale per regolamentare le attività di progetto imminenti rimandando quelle meno urgenti a quando 
+se ne presenterà la necessità.\\
+Inoltre tali norme potranno subire modifiche nel tempo in modo da garantire un miglioramento continuo della qualità del lavoro svolto.
+Il responsabile di progetto ha il compito di comunicare l'aggiunta di una nuova norma o la modifica di una già esistente a tutti i componenti
+del gruppo e di assicurarsi che siano comprese a pieno.
+\subsection{Scopo del prodotto}
+Il prodotto in questione nasce dalla necessità dell'azienda SanMarco Informatica di fornire una soluzione agli sprechi
+derivati dall'adozione di uno ShowRoom tradizionale proponendo uno ShowRoom3D che sia 
+ugualmente o ancora più immersivo.
+\pagebreak
+\section{Processi Primari}
+\pagebreak
+\section{Processi di Supporto}
+\input{res/sections/documentazione/documentazione_main.tex}
+\pagebreak
+\input{res/sections/verifica/verifica_main.tex}
+\pagebreak
+\section{Processi Organizzativi}
+\input{res/sections/gestione_organizzativa/gestione_organizzativa_main.tex}
+\pagebreak
+\input{res/sections/gestione_infrastrutture/gestione_infrastrutture_main.tex}
+\pagebreak
+\input{res/sections/isoiec_9126/isoiec_9126_main.tex}
+\pagebreak
+\input{res/sections/isoiec_12207_1995/isoiec_12207_1995_main.tex}
+\pagebreak
+
+\end{document}

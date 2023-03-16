@@ -21,20 +21,19 @@
 \input{config/changelog_input.tex} % editare questo
 \pagebreak
 
+
+% indice
+\renewcommand{\contentsname}{Indice}
+ \hypersetup{linkcolor=black}
+\tableofcontents
+\pagebreak
+\setcounter{tocdepth}{2} %l'indice basta quello alfabetico
+\setcounter{secnumdepth}{0}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{1}} % per nascondere i subsubsection dall'indice
 % Indice
-{
-    \hypersetup{linkcolor=black}
-    \tableofcontents
-}
-\pagebreak
 
-% sezioni comuni
-% Informazioni generali
-\input{res/sections/01_Analisi_dei_rischi.tex}
 \pagebreak
+\input{res/sections/01_alphabetical_order.tex}
 
-% Contenuto
-\input{res/sections/03_Preventivo.tex}
-\pagebreak
 
 \end{document}
