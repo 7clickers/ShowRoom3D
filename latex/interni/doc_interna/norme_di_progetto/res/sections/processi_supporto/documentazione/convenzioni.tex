@@ -1,0 +1,46 @@
+\subsubsection{Convenzioni}
+Le convenzioni di seguito riportate vengono applicate a tutti i documenti.
+Esse rendono i documenti stilati omogenei tra loro contribuendo a rendere il progetto professionale.
+
+\paragraph{Date}
+Le date devono rispettare il seguente formato: \textbf{dd-mm-yyyy}
+All'interno delle tabelle il formato deve essere il seguente: \textbf{dd-mm-yy}
+\paragraph{Nomi di persona}
+All'interno dei documenti i nomi di persona rispetteranno l'ordine nome seguito dal cognome della persona menzionata.
+
+\paragraph{Elenchi puntati}
+Gli elenchi puntati devono rispettare le seguenti regole:
+\begin{itemize} 
+    \item Ogni elemento dell'elenco deve iniziare con la lettera maiuscola;
+    \item Ogni elemento dell'elenco deve terminare con ";" ad eccezione dell'ultimo elemento
+    che deve terminare con "."; 
+    \item Dopo i due punti la frase deve iniziare con la lettera minuscola.
+\end{itemize}
+
+\paragraph{Stile del testo}
+\begin{itemize} 
+    \item \textbf{Grassetto}: stile utilizzato per i titoli delle sezioni e per i primi termini degli elenchi puntati;
+    \item \textbf{Corsivo}: viene utilizzato per citare il nome dei documenti, ad esempio \textit{Piano di Progetto}. 
+\end{itemize}
+
+\paragraph{Immagini}
+Le immagini sono raccolte nella cartella “”, e sono inserite sempre con una didascalia descrittiva posizionata sotto l’immagine.
+
+\paragraph{Tabelle} 
+Le tabelle sono provviste di didascalia descrittiva posizionata sotto alla tabella. La tabella contenente il registro delle modifiche è l’unica che fa da eccezione a questa regola.
+
+\paragraph{\textit{Glossario}}
+All'interno della documentazione si possono trovare dei termini che possono risultare ambigui a seconda del contesto, o non conosciuti dagli utilizzatori.\\\
+Per ovviare ad incomprensioni si è deciso di stilare un elenco di termini di interesse accompagnati da una descrizione del loro significato.\\
+I termini presenti all'interno dei documenti che necessitano di una descrizione vengono indicati con il pedice 'g' come nell'esempio seguente: termine\textsubscript{g}.
+É quindi possibile consultare il \textit{Glossario} per reperire tale descrizione.
+\\
+Ogni componente del gruppo all'inserimento di un termine ritenuto ambiguo deve preoccuparsi di aggiornare il \textit{Glossario}.
+
+Per aggiornare il \textit{Glossario} si devono inserire i nuovi termini nel file .tex nella cartella corrispondente all'iniziale del termine situata al percorso
+\textbf{\textit{latex/esterni/doc\_esterna/Glossario/res/sections/alphabet/}}.
+É stato creato uno script che scansiona un documento di interesse per inserire in automatico il pedice sui termini contenuti nel \textit{Glossario}.
+
+Il componente del gruppo che inserisce all'interno del \textit{Glossario} un nuovo termine deve aggiungere nel file .tex il segnaposto \%parola\% dopo la subsection (senza spazi) che racchiude il termine per permetterne il riconoscimento da parte dello script.
+\\
+Il \textit{Glossario} ordina i termini in ordine alfabetico in modo da permetterne una facile e veloce ricerca.
