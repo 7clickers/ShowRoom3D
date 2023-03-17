@@ -9,3 +9,5 @@
 *.fls
 *.ilg
 *.ind
+*.lof
+*.lot
