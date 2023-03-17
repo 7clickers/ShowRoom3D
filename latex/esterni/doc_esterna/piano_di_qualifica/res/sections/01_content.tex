@@ -105,7 +105,7 @@ MPC05 & Estimated to Complete (ETC) & $ \ge 0 $ \euro & $ \le \text{EAC} $ \tabu
 MPC06 & Cost Variance (CV) & $ \ge 0$ \euro &  0 \euro \tabularnewline
 MPC07 & Schedule Variance (SV) & $ \ge -15\% $ & $ 0\% $ \tabularnewline
 MPC08 & Budget Variance (BV) & $ \ge 0 $ \euro & 0 \euro \tabularnewline
-MPC09 & Defect Density & $\le 5\%$ & $\le 2,5\%$ \tabularnewline
+MPC09 & Requirements Stability Index (RSI) & 70\% & 100\%\tabularnewline
 MPC10 & Indice di Gulpease &  $ \ge 50 $ & $ \ge 80 $\tabularnewline
 MPC11 & Metriche soddisfatte & $ \ge 80\% $ & 100\% \tabularnewline
 MPC12 & Code Coverage & $ \ge 70\% $  & $ \ge 90-100\% $\tabularnewline
@@ -130,12 +130,12 @@ Nelle seguenti tabelle vengono identificati gli obiettivi di qualità, una loro 
 	\endfirsthead	
 	\endhead
 	
-	Funzionalità & Garantire con accuratezza e conformità le funzionalità poste nel documento di \textit{Analisi dei Requisiti} & MPD01, MPD02\tabularnewline
-	Affidabilità & Capacità del prodotto di svolgere le funzionalità implementate & MPD03\tabularnewline
-	Efficienza & Mantenere una velocità di esecuzione del prodotto relativamente alle risorse utilizzate & MPD04,MPD05\tabularnewline
-	Usabilità & Capacità del prodotto di essere utilizzato dall'utente & MPD06\tabularnewline
-	Manutenibilità & Capacità di modificare il prodotto nel tempo & MPD07, MPD08\tabularnewline
-	Portabilità & Capacità di funzionare in diversi ambienti di esecuzione & MPD09\tabularnewline
+	Funzionalità & Garantire con accuratezza e conformità le funzionalità poste nel documento di \textit{Analisi dei Requisiti} & MPD01\tabularnewline
+	Affidabilità & Capacità del prodotto di svolgere le funzionalità implementate & MPD02\tabularnewline
+	Efficienza & Mantenere una velocità di esecuzione del prodotto relativamente alle risorse utilizzate & MPD03,MPD04\tabularnewline
+	Usabilità & Capacità del prodotto di essere utilizzato dall'utente & MPD05\tabularnewline
+	Manutenibilità & Capacità di modificare il prodotto nel tempo & MPD06, MPD07\tabularnewline
+	Portabilità & Capacità di funzionare in diversi ambienti di esecuzione & MPD08\tabularnewline
 \end{longtable}
 
 \subsection{Metriche utilizzate}
@@ -153,14 +153,13 @@ Nelle seguenti tabelle vengono identificati gli obiettivi di qualità, una loro 
 	\endfirsthead	
 	\endhead
 MPD01 & Percentuale requisiti soddisfatti & 100\% requisiti obbligatori & 100\% tutti requisiti \tabularnewline
-MPD02 & Requirements Stability Index (RSI) & 70\% & 100\%\tabularnewline
-MPD03 & Densità fallimenti durante l'esecuzione & 20\% & 10\% \tabularnewline
-MPD04 & Tempo medio di risposta & 4 secondi & 2 secondi \tabularnewline
-MPD05 & Tempo di caricamento & 15 secondi & 10 secondi \tabularnewline
-MPD06 & Facilità di apprendimento & 5 minuti & 2 minuti \tabularnewline
-MPD07 & Complessità ciclomatica & $ \le 10 $ &  $ \le 4 $ \tabularnewline
-MPD08 & Densità dei commenti & 20\% & 10\% \tabularnewline
-MPD09 & Browser Supportati & 80\% & 100\% \tabularnewline
+MPD02 & Densità fallimenti durante l'esecuzione & 20\% & 10\% \tabularnewline
+MPD03 & Tempo medio di risposta & 4 secondi & 2 secondi \tabularnewline
+MPD04 & Tempo di caricamento & 15 secondi & 10 secondi \tabularnewline
+MPD05 & Facilità di apprendimento & 5 minuti & 2 minuti \tabularnewline
+MPD06 & Complessità ciclomatica & $ \le 10 $ &  $ \le 4 $ \tabularnewline
+MPD07 & Densità dei commenti & 20\% & 10\% \tabularnewline
+MPD08 & Browser Supportati & 80\% & 100\% \tabularnewline
 \end{longtable}
 
 \section{Specifica dei Test}

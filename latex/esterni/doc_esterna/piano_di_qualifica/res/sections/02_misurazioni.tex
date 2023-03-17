@@ -2,8 +2,7 @@
 \subsection{Metriche di qualità di processo}
 In questa sezione vengono riportati i risultati dell'attività di verifica effettuata relativa alla qualità del processo.
 Per calcolare le seguenti misure abbiamo utilizzato le formule e le nozioni scritte nel documento di \textit{Norme di Progetto} e i dati redatti nel documento di \textit{Piano di Progetto}.\\
-Metriche come la Defect Density e Code Coverage non sono state calcolate in quanto non rilevanti nello sviluppo del PoC. La metrica di Code Coverage verrà eseguita successivamente in seguito a test nel codice del progetto effettuati in contemporanea alla Defect Density per identificare eventuali defezioni nei moduli.\\
-\noindent Nella seguente tabella sono presenti le metriche riguardanti costi e produttività:
+La metrica di Code Coverage non è stata calcolata nello sviluppo del PoC. La metrica verrà eseguita successivamente in seguito ai Test nel codice del progetto.\\
 \begin{longtable}{ 
 		>{\centering}M{0.45\textwidth} 
 		>{\centering}M{0.17\textwidth}
@@ -24,7 +23,7 @@ Metriche come la Defect Density e Code Coverage non sono state calcolate in quan
 	Cost Variance& 200 \euro & Superato\tabularnewline
 	Schedule Variance & -2,06\% & Superato\tabularnewline
 	Budget Variance & 383,75 \euro & Superato\tabularnewline
-	Defect Density & - & Non testato\tabularnewline
+	Requirement Stability Index& 100\% & Superato\tabularnewline
 	Metriche soddisfatte & 80,95\% & Superato\tabularnewline
 	Code coverage & - & Non testato\tabularnewline
 	Rischi non previsti & 0 & Superato\tabularnewline
@@ -87,6 +86,7 @@ Per calcolare i seguenti valori non sono stati considerati: i changelog, la pagi
 
 \subsection{Metriche di qualità del prodotto}
 In questa sezione vengono riportati i risultati dell'attività di verifica effettuata relativa alla qualità del prodotto, nel contesto del PoC.
+La metrica di Percentuale di requisiti soddisfatti non è stata testata in quanto non siamo ancora nella fase di Codifica.
 
 \begin{longtable}{ 
 		>{\centering}M{0.45\textwidth} 
@@ -100,14 +100,34 @@ In questa sezione vengono riportati i risultati dell'attività di verifica effet
 	\endfirsthead	
 	\endhead
 	Percentuale di requisiti soddisfatti& - & Non testato\tabularnewline
-	Requirement Stability Index& 100\% & Superato\tabularnewline
 	Densità di fallimenti durante l'esecuzione& 0\% & Superato\tabularnewline
 	Tempo medio di risposta & minore di 1s & Superato\tabularnewline
 	Tempo di caricamento& 7 secondi & Superato\tabularnewline
 	Facilità di apprendimento& 90 secondi & Superato\tabularnewline
-	Complessità ciclomatica& - & Non testata\tabularnewline
 	Densità dei commenti & 15,93\% & Superato\tabularnewline
 	Browser supportati & 100\% & Superato\tabularnewline
+\end{longtable}
+I moduli utilizzati per il PoC, di cui è stato rilevante calcolare la Complessità Ciclomatica, sono:
+\begin{longtable}{ 
+		>{\centering}M{0.40\textwidth} 
+		>{\centering}M{0.15\textwidth}
+		>{\centering}M{0.20\textwidth}
+		}
+	\rowcolorhead
+	\headertitle{Modulo} &
+	\headertitle{Valore} &
+	\headertitle{Esito} 	
+	\endfirsthead	
+	\endhead
+	Player.js & 2 & Superato\tabularnewline
+	Light.js & 1 & Superato\tabularnewline
+	Product.js & 1 & Superato\tabularnewline
+	Raycasting.js & 6 & Superato\tabularnewline
+	Renderer.js & 2 & Superato\tabularnewline
+	Showroom\_poc.js & 1 & Superato\tabularnewline
+	Source\_loader.js & 2 & Superato\tabularnewline
+	UI\_listeners.js & 1 & Superato\tabularnewline
+	
 \end{longtable}
 
 Il PoC è stato testato sui seguenti browser:
