@@ -1,5 +1,6 @@
 \documentclass[a4paper]{article}
 \usepackage[normalem]{ulem}
+\usepackage[font=small,labelfont=bf]{caption}
 
 % impostazioni generali
 \input{../../../template/package.tex}
@@ -14,6 +15,8 @@
 \renewcommand\paragraph{
 \@startsection {paragraph}{4}{0mm}{-\baselineskip}{.5\baselineskip}{\normalfont \normalsize \bfseries }}
 \makeatother
+
+\newcommand*{\fullref}[1]{\hyperref[{#1}]{\ref*{#1} \nameref*{#1}}}
 
 \begin{document}
 \counterwithin{table}{section}
@@ -30,40 +33,37 @@
 {
     \hypersetup{linkcolor=black}
     \tableofcontents
+    \listoffigures %elenco figure
 }
 \pagebreak
 
 % Contenuto
 \section{Introduzione}
 \subsection{Scopo del documento}
-Lo scopo del documento è quello di stabilire le regole che ogni componente del gruppo SevenClickers
-deve rispettare per mantenere un ambiente di lavoro che mira a massimizzare
-l'economicità dei processi durante il ciclo di vita del prodotto ShowRoom3D.\\
-Le norme verranno inserite in modo incrementale per regolamentare le attività di progetto imminenti rimandando quelle meno urgenti a quando 
-se ne presenterà la necessità.\\
-Inoltre tali norme potranno subire modifiche nel tempo in modo da garantire un miglioramento continuo della qualità del lavoro svolto.
-Il responsabile di progetto ha il compito di comunicare l'aggiunta di una nuova norma o la modifica di una già esistente a tutti i componenti
-del gruppo e di assicurarsi che siano comprese a pieno.
+\textit{Norme di Progetto} è il documento che definisce le regole e gli standard che devono essere seguiti durante il ciclo di vita del prodotto.
 \subsection{Scopo del prodotto}
 Il prodotto in questione nasce dalla necessità dell'azienda SanMarco Informatica di fornire una soluzione agli sprechi
-derivati dall'adozione di uno ShowRoom tradizionale proponendo uno ShowRoom3D che sia 
-ugualmente o ancora più immersivo.
-\pagebreak
+derivati dall'adozione di uno ShowRoom tradizionale proponendo uno ShowRoom3D che sia ugualmente o ancora più immersivo.
 \section{Processi Primari}
+I processi primari devono essere seguiti durante il ciclo di vita del software.
+Nel nostro il ciclo di vita del software non comprende l'installazione e la manutenzione ma termina con lo sviluppo.
+Il progetto in questione è da considerarsi un progetto didattico.
+\input{res/sections/processi_primari/processi_primari_main.tex}
 \pagebreak
 \section{Processi di Supporto}
-\input{res/sections/documentazione/documentazione_main.tex}
-\pagebreak
-\input{res/sections/verifica/verifica_main.tex}
+I processi di supporto supportano quelli primari in modo da renderli più efficienti ed efficaci.
+\input{res/sections/processi_supporto/processi_supporto_main.tex}
 \pagebreak
 \section{Processi Organizzativi}
-\input{res/sections/gestione_organizzativa/gestione_organizzativa_main.tex}
-\pagebreak
-\input{res/sections/gestione_infrastrutture/gestione_infrastrutture_main.tex}
+I processi organizzativi mirano a gestire i processi e il loro miglioramento, l'organizzazione degli strumenti 
+di supporto e la gestione del personale.
+\input{res/sections/processi_organizzativi/processi_organizzativi_main.tex}
 \pagebreak
 \input{res/sections/isoiec_9126/isoiec_9126_main.tex}
 \pagebreak
 \input{res/sections/isoiec_12207_1995/isoiec_12207_1995_main.tex}
+\pagebreak
+\input{res/sections/metriche/metriche_main.tex}
 \pagebreak
 
 \end{document}
