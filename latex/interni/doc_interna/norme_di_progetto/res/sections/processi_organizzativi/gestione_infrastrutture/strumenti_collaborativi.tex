@@ -11,21 +11,26 @@ I componenti del gruppo abituati ad interagire con GitHub\textsubscript{g} da in
 Il repository\textsubscript{g} si può trovare all'indirizzo \textbf{\textit{https://github.com/7clickers/ShowRoom3D}} ed è pubblico. 
 I collaboratori sono i componenti del gruppo SevenClickers che utilizzano il proprio account GitHub\textsubscript{g} personale per collaborare al progetto.
 \paragraph{Branching}
-\textbf{Branches protetti}:
+I branch si dividono in: 
+\begin{itemize}
+	\item \textbf{Branches protetti}:
     \begin{itemize} 
         \item \textbf{main}: contiene le versioni di release\textsubscript{g} del software;
-        \item \textbf{documentation}: contiene i template latex\textsubscript{g} e rispettivi pdf della documentazione.
+        \item \textbf{documentation}: contiene i template latex\textsubscript{g} e rispettivi pdf della documentazione. I documenti presenti 
+		in documentation sono stati approvati dal responsabile o almeno verificati dai verificatori.
     \end{itemize}
-\textit{documentation}: 
-i documenti presenti in documentation sono stati approvati dal responsabile o almeno verificati dai verificatori.\\
-Per integrare delle modifiche da un branch protetto ad uno libero si utilizza un branch d’appoggio creato in locale partendo dall'ultimo commit di documentation e facendone il merge con il branch che necessita delle integrazioni. In seguito il branch di appoggio verrà eliminato.\\
-
-\noindent \textbf{Branches liberi}:
-vengono utilizzati per creare nuove funzionalità e gli sviluppatori possono effettuare i commit senza l'approvazione degli altri componenti del gruppo
-in quanto ciascun componente sviluppa su un solo branch alla volta salvo casi eccezionali.
-Un branch\textsubscript{g} libero avrà il nome del documento che si sviluppa su quel branch\textsubscript{g}, oppure della feature\textsubscript{g} che va ad implementare.\\
-Non appena i/il file nel branch sono stati verificati ed il merge è stato fatto, il branch libero verrà eliminato.
-I branch di approvazione saranno chiamati con la sintassi appr\_nomefile1\_nomefile2\_nomefile3.... a seconda dei file che verranno approvati durante il ciclo di vita del branch.
+	\item \textbf{Branches liberi}: viene creato un branch\textsubscript{g} libero per ogni documento che si sta modificando. Il nome del branch deve essere:
+	\begin{itemize}	
+		\item Uguale al nome del documento;
+		\item Scritto tutto in minuscolo;
+		\item Gli spazi tra le parole devono essere sostituiti con il trattino basso.
+	\end{itemize}
+	
+	In ogni branch\textsubscript{g} libero possono lavorare uno o più componenti del gruppo, a condizione che ognuno lavori su parti diverse 
+	del documento a cui fa riferimento il branch\textsubscript{g}. Ad ogni componente che lavora sul branch\textsubscript{g}  
+	viene assegnata una issue da risolvere. Una volta che tutte le issue relative al branch\textsubscript{g} sono state risolte ed è avvenuta 
+	la verifica, si fa il merge e il branch\textsubscript{g} viene eliminato.
+\end{itemize}
 
 \paragraph{Commits}
 \label{Commits}
@@ -143,9 +148,9 @@ Per marchiare le issues secondo criteri di interesse (come ambito o prioritá) v
 	\item \textbf{Da approvare}: indica una issue o pull request che necessita di approvazione;
 	\item \textbf{Da verificare}: indica una issue o pull request che necessita di verifica;
 	\item \textbf{Documentazione}: indica una issue o pull request riguardante la documentazione;
-	\item \textbf{P=Bassa}: indica una issue o pull request a priorità bassa (scadenza lontana o non limita il lavoro altrui);
-	\item \textbf{P=Media}: indica una issue o pull request a priorità media (scadenza di almeno due settimane o non limita il lavoro altrui);
-	\item \textbf{P=Alta}: indica una issue o pull request a priorità alta (scadenza breve o limita il lavoro altrui);
+	\item \textbf{P=Bassa}: indica una issue o pull request a priorità bassa, con una scadenza di massimo 15 giorni;
+	\item \textbf{P=Media}: indica una issue o pull request a priorità media, con una scadenza di massimo 7 giorni;
+	\item \textbf{P=Alta}: indica una issue o pull request a priorità alta, con una scadenza di massimo 3 giorni;
 	\item \textbf{Presentazione}: indica una issue riguardante la redazione di una presentazione in classe o al proponente.
 \end{itemize}
 
