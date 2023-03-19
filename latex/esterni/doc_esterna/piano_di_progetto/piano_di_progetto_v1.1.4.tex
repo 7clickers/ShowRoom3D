@@ -11,6 +11,11 @@
 
 \makeindex
 
+\makeatletter
+\renewcommand\paragraph{
+\@startsection {paragraph}{4}{0mm}{-\baselineskip}{.5\baselineskip}{\normalfont \normalsize \bfseries }}
+\makeatother
+
 \begin{document}
 
 % Prima pagina
@@ -34,8 +39,14 @@
 % Informazioni generali
 \input{res/sections/01_Analisi_dei_rischi.tex}
 \pagebreak
-\input{res/sections/02_pianificazione.tex}
+\input{res/sections/02_modello_di_sviluppo.tex}
 \pagebreak
-\input{res/sections/03_Preventivo.tex}
+\input{res/sections/03_pianificazione.tex}
+\pagebreak
+\input{res/sections/04_Preventivo.tex}
+\pagebreak
+\input{res/sections/05_consuntivo.tex}
+\pagebreak
+\input{res/sections/06_attualizzazione_rischi.tex}
 \pagebreak
 \end{document}
