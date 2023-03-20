@@ -1,0 +1,5 @@
+testo con ZOOm\textsuperscript{g} le parole da sostituire con quelle presenti nel glossario ad esempio ZooM\textsuperscript{g}
+oppure un'altra parola ZOOm\textsuperscript{g} potrebbe essere zoom\textsuperscript{g} approvazione oppure GIT\textsuperscript{g} GIT\textsuperscript{g} GIT\textsuperscript{g}
+
+
+git\textsuperscript{g} GIT\textsuperscript{g} giT\textsuperscript{g}
