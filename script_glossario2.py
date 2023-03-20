@@ -82,7 +82,7 @@ def formattaNomiDocumenti(testo,nomiDocumenti):
 # ================================================== MAIN =======================================================
 # inserire in pathTarget il path del file che si vuole scansionare con lo script (usare / per separare le directory
 # e NON servono caratteri di escape per i caratteri speciali)
-pathTarget='./latex/interni/doc_interna/studio_di_fattibilita/res/sections/02_content.tex'
+pathTarget='./latex/interni/doc_interna/norme_di_progetto/res/sections/processi_organizzativi/gestione_infrastrutture/strumenti_collaborativi.tex'
 
 nomiDocumenti=['Piano di Progetto','Norme di Progetto','Piano di Qualifica','Glossario','Lettera di Presentazione',
                 'Verbale','Studio di Fattibilità','Diario di Bordo']

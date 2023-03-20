@@ -1,15 +1,15 @@
-\subsubsection{GitHub\textsubscript{g}}
-\label{GitHub} 
+\subsubsection{Github\textsubscript{g}}
+\label{Github}
 Servizio di hosting per progetti software che implementa uno strumento di controllo versione distribuito Git\textsubscript{g}.
 Oltre alla copia in remoto del repository\textsubscript{g} di progetto ogni componente del gruppo ha una propria copia in locale.\\
 Per ottenere una copia del repository\textsubscript{g} ogni componente ha scaricato lo strumento Git\textsubscript{g} ed eseguendo il 
-comando 'git clone' da git\textsubscript{g} bash viene creata una cartella collegata alla repository\textsubscript{g} di progetto.\\
+comando 'git\textsubscript{g} clone' da git\textsubscript{g} bash viene creata una cartella collegata alla repository\textsubscript{g} di progetto.\\
 Non sono state imposte modalità specifiche sull'interazione con il repository\textsubscript{g} remoto in modo da non sconvolgere le abitudini di lavoro di 
 ciascun componente.\\
-I componenti del gruppo abituati ad interagire con GitHub\textsubscript{g} da interfaccia grafica possono continuare a farne uso.
+I componenti del gruppo abituati ad interagire con Github\textsubscript{g} da interfaccia grafica possono continuare a farne uso.
 \paragraph{Repository\textsubscript{g}}
 Il repository\textsubscript{g} si può trovare all'indirizzo \textbf{\textit{https://github.com/7clickers/ShowRoom3D}} ed è pubblico. 
-I collaboratori sono i componenti del gruppo SevenClickers che utilizzano il proprio account GitHub\textsubscript{g} personale per collaborare al progetto.
+I collaboratori sono i componenti del gruppo SevenClickers che utilizzano il proprio account Github\textsubscript{g} personale per collaborare al progetto.
 \paragraph{Branching}
 I branch si dividono in: 
 \begin{itemize}
@@ -19,24 +19,24 @@ I branch si dividono in:
         \item \textbf{documentation}: contiene i template latex\textsubscript{g} e rispettivi pdf della documentazione. I documenti presenti 
 		in documentation sono stati approvati dal responsabile o almeno verificati dai verificatori.
     \end{itemize}
-	\item \textbf{Branches liberi}: viene creato un branch\textsubscript{g} libero per ogni documento che si sta modificando. Il nome del branch deve essere:
+	\item \textbf{Branches liberi}: viene creato un branch libero per ogni documento che si sta modificando. Il nome del branch deve essere:
 	\begin{itemize}	
 		\item Uguale al nome del documento;
 		\item Scritto tutto in minuscolo;
 		\item Gli spazi tra le parole devono essere sostituiti con il trattino basso.
 	\end{itemize}
 	
-	In ogni branch\textsubscript{g} libero possono lavorare uno o più componenti del gruppo, a condizione che ognuno lavori su parti diverse 
-	del documento a cui fa riferimento il branch\textsubscript{g}. Ad ogni componente che lavora sul branch\textsubscript{g}  
-	viene assegnata una issue da risolvere. Una volta che tutte le issue relative al branch\textsubscript{g} sono state risolte ed è avvenuta 
-	la verifica, si fa il merge e il branch\textsubscript{g} viene eliminato.
+	In ogni branch libero possono lavorare uno o più componenti del gruppo, a condizione che ognuno lavori su parti diverse 
+	del documento a cui fa riferimento il branch. Ad ogni componente che lavora sul branch  
+	viene assegnata una issue\textsubscript{g} da risolvere. Una volta che tutte le issue\textsubscript{g} relative al branch sono state risolte ed è avvenuta 
+	la verifica\textsubscript{g}, si fa il merge e il branch viene eliminato.
 \end{itemize}
 
 \paragraph{Commits}
 \label{Commits}
 È preferibile che ogni commit abbia una singola responsabilità per cambiamento.\\
 I commits non possono essere effettuati direttamente sui branch protetti ma per integrare delle aggiunte o modifiche sarà necessario aprire una Pull Request.
-All'approvazione di una Pull Request tutti i commit relativi al merge verranno raggruppati in un unico commit che rispetti la struttura sintattica descritta in seguito.
+All'approvazione\textsubscript{g} di una Pull Request tutti i commit relativi al merge verranno raggruppati in un unico commit che rispetti la struttura sintattica descritta in seguito.
 
 I commit dovranno essere accompagnati da una descrizione solo se ritenuta indispensabile alla comprensione del commit stesso.
 
@@ -53,7 +53,7 @@ dove:\\\\
 	\item \textbf{test}: qualsiasi cosa legata ai test;
 	\item \textbf{docs}: qualsiasi cosa legata alla documentazione.
 	\end{itemize}
-\item \textbf{n\_issue}: indica il numero della issue a cui fa riferimento il commit (se non fa riferimento a nessuna issue viene omesso);
+\item \textbf{n\_issue}: indica il numero della issue\textsubscript{g} a cui fa riferimento il commit (se non fa riferimento a nessuna issue\textsubscript{g} viene omesso);
 \item \textbf{testo}: indica con quale branch è stato effettuato il merge e deve rispettare la forma: merge from $<$nome branch da integrare$>$ to $<$nome branch corrente$>$;
 \item \textbf{descrizione}: se aggiunta ad un commit deve rispondere alle domande WHAT?, WHY?, HOW? ovvero
 cosa è cambiato, perché sono stati fatti i cambiamenti,in che modo sono stati fatti i cambiamenti.\\
@@ -66,107 +66,107 @@ in modo che possano essere compresi anche dagli altri collaboratori.
 
 \paragraph{Pull Requests}
 \label{Pull_Requests}
-Per effettuare un merge su un branch protetto si deve aprire da GitHub\textsubscript{g} una Pull Request.
+Per effettuare un merge su un branch protetto si deve aprire da Github\textsubscript{g} una Pull Request.
 La Pull Request permette di verificare il lavoro svolto prima di integrarlo con il branch desiderato.\\
 Alla creazione di una Pull Request bisogna associare:
 \begin{itemize}
-\item I verificatori in carica hanno il compito di trovare eventuali errori o mancanze e fornire un feedback riguardante il contenuto direttamente su GitHub\textsubscript{g} richiedendo
+\item I verificatori in carica hanno il compito di trovare eventuali errori o mancanze e fornire un feedback riguardante il contenuto direttamente su Github\textsubscript{g} richiedendo
 una review con un review comment sulla parte specifica da revisionare o con un commento generico.\\
 Non sarà possibile effettuare il merge finchè tutti i commenti di revisione non saranno stati risolti e la Pull Request approvata da due verificatori;
-\item L’issue associata nell’opzione “Development” che verrà chiusa alla risoluzione della Pull Request;
+\item L’issue\textsubscript{g} associata nell’opzione “Development” che verrà chiusa alla risoluzione della Pull Request;
 \item La Projects Board di cui fa parte;
-\item Gli assegnatari che hanno il compito di apportare le modifiche necessarie in fase di verifica;
+\item Gli assegnatari che hanno il compito di apportare le modifiche necessarie in fase di verifica\textsubscript{g};
 \item Le labels associate.
 \end{itemize}
 Per i commit relativi alle Pull Requests seguire le regole descritte nella sezione \fullref{Commits} per i branch protetti.
 
 \paragraph{Milestone\textsubscript{g}}
-Una milestone indica un traguardo intermedio significativo per il progetto.
-Ad essa possono venire assegnate delle issues per verificarne il raggiungimento.
-Ogni milestone ha una scadenza che viene discussa e fissata da tutto il gruppo.
-Oltre alle 2 milestone + 1 milestone falcoltativa fissate dal committente il gruppo ne creerá ulteriori per scandire piú nel dettaglio i passi che ci porteranno 
+Una milestone\textsubscript{g} indica un traguardo intermedio significativo per il progetto.
+Ad essa possono venire assegnate delle issues\textsubscript{g} per verificarne il raggiungimento.
+Ogni milestone\textsubscript{g} ha una scadenza che viene discussa e fissata da tutto il gruppo.
+Oltre alle 2 milestone\textsubscript{g} + 1 milestone\textsubscript{g} falcoltativa fissate dal committente\textsubscript{g} il gruppo ne creerá ulteriori per scandire piú nel dettaglio i passi che ci porteranno 
 ad ottenere i risultati prefissati.
-Una delle milestone create dal gruppo durante il completamento della tecnology baseline relativa alla prima milestone imposta dal committente (Requirements and Tecnology Baseline)
-riguarda l'implementazione di un PoC (Proof of concept).
+Una delle milestone\textsubscript{g} create dal gruppo durante il completamento della tecnology baseline relativa alla prima milestone\textsubscript{g} imposta dal committente\textsubscript{g} (Requirements and Tecnology Baseline)
+riguarda l'implementazione di un Poc\textsubscript{g} (Proof of concept\textsubscript{g}).
 
-\paragraph{Projects Board\textsubscript{g}}
-Vengono utilizzate due project board per tracciare le issues della repo.
-Una project board principale utilizzata da tutti i membri del gruppo e una project board per le approvazioni utilizzata solo dal responsabile di progetto per approvare i file che richiedono l'approvazione prima di una consegna.
+\paragraph{Projects Board}
+Vengono utilizzate due project board\textsubscript{g} per tracciare le issues\textsubscript{g} della repo.
+Una project board\textsubscript{g} principale utilizzata da tutti i membri del gruppo e una project board\textsubscript{g} per le approvazioni\textsubscript{g} utilizzata solo dal responsabile di progetto per approvare\textsubscript{g} i file che richiedono l'approvazione\textsubscript{g} prima di una consegna.
 
 \begin{itemize}
-	\item La projectboard\textsubscript{g} principale è suddivisa in queste sezioni:
+	\item La projectboard principale è suddivisa in queste sezioni:
 	\begin{itemize}
 		\item \textbf{Todo}: issue\textsubscript{g} che non sono ancora state iniziate o che non sono ancora state assegnate;
 		\item \textbf{In Progress}: issue\textsubscript{g} che sono state assegnate e a cui almeno un membro a cui è stata assegnata ha iniziato a lavorarci;
-		\item \textbf{Pull Request}: issue\textsubscript{g} che è in fase di integrazione e necessita della verifica dei verificatori. Corrisponde all'inizio di una pull request;
+		\item \textbf{Pull Request}: issue\textsubscript{g} che è in fase di integrazione e necessita della verifica\textsubscript{g} dei verificatori. Corrisponde all'inizio di una pull request;
 		\item \textbf{Done}: issue\textsubscript{g} che sono state chiuse e che sono state verificate (se necessitano di verifica\textsubscript{g});
-		\item \textbf{Approved}: issue\textsubscript{g} con label "Da Approvare" che hanno ottenuto l'approvazione\textsubscript{g} del responsabile subito dopo la verifica;
-		Per tutte le issues che richiedono un'approvazione solo al momento della consegna è stata creata la project board dedicata alle approvazioni.
+		\item \textbf{Approved}: issue\textsubscript{g} con label "Da Approvare\textsubscript{g}" che hanno ottenuto l'approvazione\textsubscript{g} del responsabile subito dopo la verifica\textsubscript{g};
+		Per tutte le issues\textsubscript{g} che richiedono un'approvazione\textsubscript{g} solo al momento della consegna è stata creata la project board\textsubscript{g} dedicata alle approvazioni\textsubscript{g}.
 	\end{itemize}
-	Inoltre nella project board principale vengono registrate delle issue che non richiedono verifica, approvazione o neanche integrazione, con lo scopo di monitorare meglio il lavoro di ogni membro del team.\\
-Queste issue verranno chiuse e archiviate manualmente una volta che avranno terminato la loro utilità, un esempio può essere la seguente issue:\\
-\textbf{diario di bordo 21-11-22}; questa issue non necessità verifica, approvazione o integrazione perchè non è di interesse caricare il file nella repo, però è utile tracciare lo svolgimento della issue.
+	Inoltre nella project board\textsubscript{g} principale vengono registrate delle issue\textsubscript{g} che non richiedono verifica\textsubscript{g}, approvazione\textsubscript{g} o neanche integrazione, con lo scopo di monitorare meglio il lavoro di ogni membro del team.\\
+Queste issue\textsubscript{g} verranno chiuse e archiviate manualmente una volta che avranno terminato la loro utilità, un esempio può essere la seguente issue\textsubscript{g}:\\
+\textbf{\textit{Diario di Bordo} 21-11-22}; questa issue\textsubscript{g} non necessità verifica\textsubscript{g}, approvazione\textsubscript{g} o integrazione perchè non è di interesse caricare il file nella repo, però è utile tracciare lo svolgimento della issue\textsubscript{g}.
 
-	\item La projectboard\textsubscript{g} riservata alle approvazioni è suddivisa in queste sezioni:
+	\item La projectboard riservata alle approvazioni\textsubscript{g} è suddivisa in queste sezioni:
 	\begin{itemize}
 		\item \textbf{Todo}: issue\textsubscript{g} che non sono ancora state iniziate dal responsabile;
 		\item \textbf{In Progress}: issue\textsubscript{g}  che sono state prese in carico per essere approvate dal responsabile;
-		\item \textbf{Pull Request}: issue\textsubscript{g} che è in fase di integrazione e necessita della verifica dei verificatori. Corrisponde all'inizio di una pull request;
+		\item \textbf{Pull Request}: issue\textsubscript{g} che è in fase di integrazione e necessita della verifica\textsubscript{g} dei verificatori. Corrisponde all'inizio di una pull request;
 		in questo caso i verificatori dovranno solo controllare che l'intestazione e il registro delle modifiche siano stati compilati correttamente dal responsabile di progetto in quanto tutto il resto del contenuto è già stato verificato in precedenza;
 		\item \textbf{Approved}: issue\textsubscript{g} che sono state approvate dal responsabile.
 	\end{itemize}
 \end{itemize}
-Le issue che si trovano nella project board approvazioni sono state create come continuazione ad issues che hanno in precedenza attraversato il work flow della project board principale fino allo stato "Done".
-In questo modo il Responsabile di progetto dovrà approvare solamente file che si trovano nei branches protetti.
-Vengono ricreate in questa project board per  mantenerne la tracciabilità e permetterne una più facile reperibilità futura per l'approvazione.
-Questo permette anche di pulire la project board principale da tutte quelle issues che rimarrebbero inattive per molto tempo.
+Le issue\textsubscript{g} che si trovano nella project board\textsubscript{g} approvazioni\textsubscript{g} sono state create come continuazione ad issues\textsubscript{g} che hanno in precedenza attraversato il work flow della project board\textsubscript{g} principale fino allo stato "Done".
+In questo modo il Responsabile di progetto dovrà approvare\textsubscript{g} solamente file che si trovano nei branches protetti.
+Vengono ricreate in questa project board\textsubscript{g} per  mantenerne la tracciabilità e permetterne una più facile reperibilità futura per l'approvazione\textsubscript{g}.
+Questo permette anche di pulire la project board\textsubscript{g} principale da tutte quelle issues\textsubscript{g} che rimarrebbero inattive per molto tempo.
 \\\\
-Esempio di work flow issues:
+Esempio di work flow issues\textsubscript{g}:
 \begin{enumerate}
-	\item Viene creata l'issue ed inserita all'interno della sezione "To Do" della project board principale;
-	\item Quando viene presa in carico l'issue viene spostata nella sezione "In Progress" fino al suo completamento;
-	\item L'incaricato alla risoluzione dell'issue apre una pull request a cui assegna l'issue in modo che  venga chiusa in automatico al momento dell'integrazione con il branch di destinazione;
+	\item Viene creata l'issue\textsubscript{g} ed inserita all'interno della sezione "To Do" della project board\textsubscript{g} principale;
+	\item Quando viene presa in carico l'issue\textsubscript{g} viene spostata nella sezione "In Progress" fino al suo completamento;
+	\item L'incaricato alla risoluzione dell'issue\textsubscript{g} apre una pull request a cui assegna l'issue\textsubscript{g} in modo che  venga chiusa in automatico al momento dell'integrazione con il branch di destinazione;
 	\item Vengono fatte le verifiche opportune dai verificatori e le conseguenti modifiche prima di accettare la pull request;
-	\item Dopo l'accettazione la pull request viene postata insieme alle issues associate nella colonna "Done";
+	\item Dopo l'accettazione la pull request viene postata insieme alle issues\textsubscript{g} associate nella colonna "Done";
 	\item A questo punto si possono presentare due casi: 
 	\begin{enumerate}
-		\item I file relativi alla pull request richiedono approvazione immediata.
-		Viene archiviata la pull request (e le issue associate) e creata una issue a cui viene aggiunta la label "Da approvare" con il nome del file da approvare.
-		Il responsabile creerà un branch per approvare le issues con approvazione immediata aprirà una pull request per integrare nel branch di destinazione l'approvazione;
-		\item I file relativi alla pull request richiedono l'approvazione prima di una consegna.
-		Il responsabile archivia la pull request e ne crea una issue con il nome dei file da approvare nella project board dedicata alle approvazioni.
-		NB: se nella project board Approvazioni è già presente un'issue di approvazione per il file da approvare non viene creata una nuova issue di approvazione ma si tiene la precedente.
-		L'issue segue il work flow della project board approvazioni.
+		\item I file relativi alla pull request richiedono approvazione\textsubscript{g} immediata.
+		Viene archiviata la pull request (e le issue\textsubscript{g} associate) e creata una issue\textsubscript{g} a cui viene aggiunta la label "Da approvare\textsubscript{g}" con il nome del file da approvare\textsubscript{g}.
+		Il responsabile creerà un branch per approvare\textsubscript{g} le issues\textsubscript{g} con approvazione\textsubscript{g} immediata aprirà una pull request per integrare nel branch di destinazione l'approvazione\textsubscript{g};
+		\item I file relativi alla pull request richiedono l'approvazione\textsubscript{g} prima di una consegna.
+		Il responsabile archivia la pull request e ne crea una issue\textsubscript{g} con il nome dei file da approvare\textsubscript{g} nella project board\textsubscript{g} dedicata alle approvazioni\textsubscript{g}.
+		NB: se nella project board\textsubscript{g} Approvazioni\textsubscript{g} è già presente un'issue\textsubscript{g} di approvazione\textsubscript{g} per il file da approvare\textsubscript{g} non viene creata una nuova issue\textsubscript{g} di approvazione\textsubscript{g} ma si tiene la precedente.
+		L'issue\textsubscript{g} segue il work flow della project board\textsubscript{g} approvazioni\textsubscript{g}.
 	\end{enumerate}
 \end{enumerate}
-\paragraph{Issue Tracking System\textsubscript{g}}
-Il gruppo utilizza l'issue tracking system\textsubscript{g} di Github\textsubscript{g} per tenere traccia delle issue\textsubscript{g}. 
+\paragraph{Issue\textsubscript{g} Tracking System}
+Il gruppo utilizza l'issue\textsubscript{g} tracking system di Github\textsubscript{g} per tenere traccia delle issue\textsubscript{g}. 
 Le issues\textsubscript{g} verranno determinate dal responsabile, ma la loro assegnazione verrà effettuata dai membri del gruppo, in base alla priorità delle issues\textsubscript{g}, i loro ruoli e alle loro disponibilità temporali.\\
-Per marchiare le issues secondo criteri di interesse (come ambito o prioritá) vengono utilizzate le labels.
+Per marchiare le issues\textsubscript{g} secondo criteri di interesse (come ambito o prioritá) vengono utilizzate le labels.
 \\\\\textbf{Labels:}
 \begin{itemize}
-	\item \textbf{Da approvare}: indica una issue o pull request che necessita di approvazione;
-	\item \textbf{Da verificare}: indica una issue o pull request che necessita di verifica;
-	\item \textbf{Documentazione}: indica una issue o pull request riguardante la documentazione;
-	\item \textbf{P=Bassa}: indica una issue o pull request a priorità bassa, con una scadenza di massimo 15 giorni;
-	\item \textbf{P=Media}: indica una issue o pull request a priorità media, con una scadenza di massimo 7 giorni;
-	\item \textbf{P=Alta}: indica una issue o pull request a priorità alta, con una scadenza di massimo 3 giorni;
-	\item \textbf{Presentazione}: indica una issue riguardante la redazione di una presentazione in classe o al proponente.
+	\item \textbf{Da approvare\textsubscript{g}}: indica una issue\textsubscript{g} o pull request che necessita di approvazione\textsubscript{g};
+	\item \textbf{Da verificare}: indica una issue\textsubscript{g} o pull request che necessita di verifica\textsubscript{g};
+	\item \textbf{Documentazione}: indica una issue\textsubscript{g} o pull request riguardante la documentazione;
+	\item \textbf{P=Bassa}: indica una issue\textsubscript{g} o pull request a priorità bassa, con una scadenza di massimo 15 giorni;
+	\item \textbf{P=Media}: indica una issue\textsubscript{g} o pull request a priorità media, con una scadenza di massimo 7 giorni;
+	\item \textbf{P=Alta}: indica una issue\textsubscript{g} o pull request a priorità alta, con una scadenza di massimo 3 giorni;
+	\item \textbf{Presentazione}: indica una issue\textsubscript{g} riguardante la redazione di una presentazione in classe o al proponente\textsubscript{g}.
 \end{itemize}
 
 Nel caso un membro del gruppo dovesse rendersi conto che l'issue\textsubscript{g} che sta svolgendo potrebbe essere suddiviso in ulteriori issue\textsubscript{g}, dovrà rivolgersi al responsabile, che è l'unico che può aggiungere, modificare o eliminare le issue\textsubscript{g}.\\
-Per raggruppare più issue si marca ciascuna con la label di raggruppamento.
-Il nome di una label di raggruppamento viene preceduto da una G maiuscola (che sta per gruppo) seguito dal nome dell'attività da svolgere. esempio: "G Piano di progetto"
-Al completamento di tutte le issues di un gruppo si potrà scegliere se eliminare la label o tenerla per raggruppare issues future dello stesso gruppo.
+Per raggruppare più issue\textsubscript{g} si marca ciascuna con la label di raggruppamento.
+Il nome di una label di raggruppamento viene preceduto da una G maiuscola (che sta per gruppo) seguito dal nome dell'attività da svolgere. esempio: "G \textit{Piano di Progetto}"
+Al completamento di tutte le issues\textsubscript{g} di un gruppo si potrà scegliere se eliminare la label o tenerla per raggruppare issues\textsubscript{g} future dello stesso gruppo.
 indica un gruppo di labels relative al documento \textit{Piano di Progetto}.
 \\\\
 \textbf{Utilizzo delle checkbox:}
 \\\\
-Una issue può essere suddivisa in più attività tramite delle checkbox in base alla grandezza o
+Una issue\textsubscript{g} può essere suddivisa in più attività tramite delle checkbox in base alla grandezza o
 alla necessità di suddividere il lavoro. Al completamento di un'attività si spunta la checkbox
-corrispondente in modo da avvisare il gruppo sullo stato di avanzamento di quella issue.
+corrispondente in modo da avvisare il gruppo sullo stato di avanzamento di quella issue\textsubscript{g}.
 
-\subsubsection{Discord}
+\subsubsection{Discord\textsubscript{g}}
 Strumento utilizzato per la comunicazione tra i componenti del gruppo. Sono creati diversi canali con diverse funzioni:
 \begin{itemize}
 	\item \textbf{Testuali}: si condividono informazioni in formato testuale;
@@ -174,4 +174,4 @@ Strumento utilizzato per la comunicazione tra i componenti del gruppo. Sono crea
 	\item \textbf{Risorse}: si condivide materiale da consultazione (ed esempio documenti, link, ecc...). 
 \end{itemize}
 I canali sono creati secondo le necessità del periodo, in accordo con tutti i componenti del gruppo.
-Su Discord è anche possibile controllare in ogni momento quale ruolo è assegnato ad ogni membro del gruppo.
+Su Discord\textsubscript{g} è anche possibile controllare in ogni momento quale ruolo è assegnato ad ogni membro del gruppo.
