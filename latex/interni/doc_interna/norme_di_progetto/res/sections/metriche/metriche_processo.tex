@@ -5,16 +5,26 @@ In questa sezione sono descritte le metriche di qualità di processo che il grup
 Costo (in \euro) pianificato per realizzare le attività di progetto pianificate al momento del calcolo.
 Per calcolare questa metrica si utilizzerà la formula:
 \begin{equation*}
-\text{PV}=\text{B}\textsubscript{tot}*\%\text{ lavoro pianificato}
+\text{PV}=\text{B}\textsubscript{tot} * \%\text{ lavoro pianificato}
 \end{equation*}
+\noindent Per eseguire il calcolo:
+ \begin{itemize}
+ \item la \% di lavoro pianificato viene calcolata dividendo le ore pianificate per le ore pianificate totali;
+\item B\textsubscript{tot} indica il budget totale preventivato.
+ \end{itemize}
 \textit{Valore minimo:} $\ge 0$ \euro\\
 \textit{Valore ottimo:}	$\le \text{Budget at Completion\textsubscript{g}}$
 \subsubsection{MPC02: Actual Cost (AC)}
 Costo (in \euro) sostenuto al momento del calcolo.
 Per calcolare questa metrica si tiene conto di:
 \begin{equation*}
-\text{AC}=\text{Totale ore lavorative per incremento}*\text{costo orario}
+\text{AC}=\sum (\text{Totale ore lavorative per incremento}*\text{costo orario})
 \end{equation*}
+\noindent Per eseguire il calcolo:
+ \begin{itemize}
+ \item il costo orario è un costo fisso per ruolo ad ora;
+ \item Totale ore lavorative per incremento va a contare per incremento le ore effettive di lavoro per ruolo.
+ \end{itemize}
 \textit{Valore minimo:} $\ge 0$ \euro\\
 \textit{Valore ottimo:} $\le \text{EAC}$
 \subsubsection{MPC03: Estimated at Completion (EAC)}
@@ -23,17 +33,29 @@ Un valore (in \euro) di revisione di costo stimato per la realizzazione del prog
 \text{EAC}=\text{AC}+\text{ETC}
 \end{equation*}
 \textit{Valore minimo:} 
-$\text{preventivo} -5\% \le \text{EAC}$ \textit{oppure} $\text{preventivo} +5\% \ge \text{EAC}$\\
+$ \text{EAC} \le \text{preventivo} -8\% $ \textit{oppure} $ \text{EAC} \ge \text{preventivo} +5\% $\\
 \textit{Valore ottimo:} Costo preventivato
 \subsubsection{MPC04: Earned Value (EV)}
 Indica il valore (in \euro) delle attività realizzate nel progetto fino al momento della misurazione.
 \begin{equation*}
-\text{EV}=\%\text{ lavoro pianificato}*\text{EAC}
+\text{EV}=\text{B\textsubscript{tot} * \%\text{ lavoro effettivo}}
 \end{equation*}
+\noindent Per eseguire il calcolo:
+ \begin{itemize}
+ \item la \% lavoro effettivo è calcolata dividendo le ore effettive per le ore totali preventivate.
+ \item B\textsubscript{tot} indica il budget totale preventivato.
+ \end{itemize}
 \textit{Valore minimo:} $\ge 0$ \euro\\
 \textit{Valore ottimo:} $\le \text{EAC}$
 \subsubsection{MPC05: Estimated to Complete (ETC)}
 Metrica che produce un valore (in \euro) per indicare il numero di attività necessarie al completamento del progetto.\\
+\begin{equation*}
+ \text{ETC}=B\textsubscript{tot}-\text{EV}
+ \end{equation*}
+ \noindent Per eseguire il calcolo:
+ \begin{itemize}
+ \item B\textsubscript{tot} indica il budget totale preventivato.
+ \end{itemize}
 \textit{Valore minimo:} $\ge 0$ \euro\\
 \textit{Valore ottimo:} $\le \text{EAC}$
 \subsubsection{MPC06: Cost Variance (CV)}
@@ -58,18 +80,14 @@ Valore (in \euro) che indica se alla data corrente si è speso di più o di meno
 \textit{Valore minimo:} BV = 0 \euro\\
 \textit{Valore ottimo:} BV $\ge 0 $ \euro
 
-\subsubsection{MPC09: Defect Density}
-Valore percentuale che tiene conto dei difetti per ogni modulo.
-Si calcola tramite la seguente formula:\\
+\subsubsection{MPC09: Requirements Stability Index (RSI)}
+ Indice che traccia la variazione dei requisiti nell'arco del progetto.\\
+ Si calcola tramite la seguente formula:
 \begin{equation*}
-\text{Defect Density}=\frac{\text{numero totale dei difetti}}{\text{grandezza del modulo in LOC}}*100
+\text{RSI}=1-\frac{\text{numero requisiti cambiati}+\text{numero requisiti eliminati}+\text{numero requisiti aggiunti}}{\text{numero totale dei requisiti iniziali}}*100
 \end{equation*}
-dove:
-\begin{itemize}
-\item \textit{LOC} = acronimo di Line of Code, linee di codice sorgente in un modulo.
-\end{itemize}
-\textit{Valore minimo:} $\le 5\%$\\
-\textit{Valore ottimo:} $\le 2,5\%$
+\textit{Valore minimo:} $70\%$\\
+ \textit{Valore ottimo:} $100\%$
 
 \subsubsection{MPC10: Indice di Gulpease}
 Si tratta dell'indice di leggibilità di un testo tarato sulla lingua italiana.
