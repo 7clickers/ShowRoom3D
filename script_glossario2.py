@@ -58,11 +58,7 @@ def aggiungiPediciGlossario(testo):
             testo=re.sub(r'\b'+termineLowered+r'\b', nuova_stringa, testo)
             lista_match.discard(termineLowered)
         for match in lista_match:
-            if match[0].isupper():
-                termine=termine.capitalize()
-            else:
-                termine=termine.lower() 
-            nuova_stringa=termine+r'\\textsubscript{g}'
+            nuova_stringa=match+r'\\textsubscript{g}'
             testo=re.sub(r'\b'+match+r'\b', nuova_stringa, testo)         
     return testo
 
@@ -82,7 +78,7 @@ def formattaNomiDocumenti(testo,nomiDocumenti):
 # ================================================== MAIN =======================================================
 # inserire in pathTarget il path del file che si vuole scansionare con lo script (usare / per separare le directory
 # e NON servono caratteri di escape per i caratteri speciali)
-pathTarget='./latex/esterni/doc_esterna/RTB_lettera_di_presentazione/lettera_di_presentazione.tex'
+pathTarget='./latex/esterni/doc_esterna/piano_di_progetto/res/sections/03_pianificazione.tex'
 
 nomiDocumenti=['Piano di Progetto','Norme di Progetto','Piano di Qualifica','Glossario','Lettera di Presentazione',
                 'Verbale','Studio di Fattibilità','Diario di Bordo','Analisi dei Requisiti']
