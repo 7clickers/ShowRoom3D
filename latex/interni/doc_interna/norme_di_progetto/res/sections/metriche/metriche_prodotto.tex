@@ -5,17 +5,10 @@ In questa sezione sono descritte le metriche di qualità di prodotto che il grup
 Valore percentuale che serve per indicare i requisiti soddisfatti.\\
 \textit{Valore minimo:} $100\% \text{ dei requisiti obbligatori}$\\
 \textit{Valore ottimo:} $100\% \text{ di tutti i requisiti}$
-\subsubsection{MPD02: Requirements Stability Index (RSI)}
-Indice che traccia la variazione dei requisiti nell'arco del progetto.\\
-Si calcola tramite la seguente formula:
-\begin{equation*}
-\text{RSI}=1-\frac{\text{numero requisiti cambiati}+\text{numero requisiti eliminati}+\text{numero requisiti aggiunti}}{\text{numero totale dei requisiti iniziali}}*100
-\end{equation*}
-\textit{Valore minimo:} $70\%$\\
-\textit{Valore ottimo:} $100\%$
 
 \subsubsection{MPD02: Densità di fallimenti durante l'esecuzione}
-Si intende la percentuale di failure o di esecuzioni non andate a buon fine di determinate azioni.
+Si intende la percentuale di failure\textsubscript{g} o di esecuzioni non andate a buon fine di determinate azioni.
+Le eventuali esecuzioni fallite o failure\textsubscript{g} sono state segnate dai Programmatori con cui hanno poi calcolato il valore della metrica.
 \begin{equation*}
 \text{Densità di fallimenti}=\frac{\text{numero test eseguiti sul programma falliti}}{\text{numero totale di test eseguiti}}*100
 \end{equation*}
@@ -62,6 +55,7 @@ Misura la percentuale delle righe di commento sul totale delle righe di codice p
 
 \subsubsection{MPD08: Browser supportati}
 Valore percentuale dei browser supportati dal prodotto software.\\
+Da associare a questa metrica è doveroso inserire la versione del browser da cui è stato testato il prodotto.
 \begin{equation*}
 \text{Browser supportati}=\frac{\text{browser in cui il prodotto funziona}}{\text{browser testati}}*100
 \end{equation*}	
