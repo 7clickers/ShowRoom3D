@@ -85,7 +85,7 @@ nomiDocumenti=['Piano di Progetto','Norme di Progetto','Piano di Qualifica','Glo
 
 # directory di partenza
 directory = './latex'
-pathGlossario='./latex\esterni\doc_esterna\glossario'
+pathGlossario='./latex/esterni/doc_esterna/glossario'
 
 # ciclo attraverso tutte le cartelle e sottocartelle
 for root, dirs, files in os.walk(directory):
