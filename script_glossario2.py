@@ -1,3 +1,4 @@
+import os
 import re
 
 # funzione che elimina i comandi \textsubscript{g} da tutti i termini di glossario presenti all'interno del testo
@@ -58,11 +59,7 @@ def aggiungiPediciGlossario(testo):
             testo=re.sub(r'\b'+termineLowered+r'\b', nuova_stringa, testo)
             lista_match.discard(termineLowered)
         for match in lista_match:
-            if match[0].isupper():
-                termine=termine.capitalize()
-            else:
-                termine=termine.lower() 
-            nuova_stringa=termine+r'\\textsubscript{g}'
+            nuova_stringa=match+r'\\textsubscript{g}'
             testo=re.sub(r'\b'+match+r'\b', nuova_stringa, testo)         
     return testo
 
@@ -82,21 +79,31 @@ def formattaNomiDocumenti(testo,nomiDocumenti):
 # ================================================== MAIN =======================================================
 # inserire in pathTarget il path del file che si vuole scansionare con lo script (usare / per separare le directory
 # e NON servono caratteri di escape per i caratteri speciali)
-pathTarget='./latex/esterni/doc_esterna/RTB_lettera_di_presentazione/lettera_di_presentazione.tex'
 
 nomiDocumenti=['Piano di Progetto','Norme di Progetto','Piano di Qualifica','Glossario','Lettera di Presentazione',
                 'Verbale','Studio di Fattibilità','Diario di Bordo','Analisi dei Requisiti']
 
-fileTarget=''
-# lettura da file
-with open(pathTarget,'r') as file:
-    fileTarget=file.read()
+# directory di partenza
+directory = './latex'
+pathGlossario='./latex/esterni/doc_esterna/glossario'
 
-fileTarget=pulisciTerminiGlossario(fileTarget)
-fileTarget=pulisciNomiDocumenti(fileTarget,nomiDocumenti)
-fileTarget=aggiungiPediciGlossario(fileTarget)
-fileTarget=formattaNomiDocumenti(fileTarget,nomiDocumenti)
-
-# scrittura su file
-with open(pathTarget,'w') as file:
-    file.write(fileTarget)
+# ciclo attraverso tutte le cartelle e sottocartelle
+for root, dirs, files in os.walk(directory):
+    if not root.startswith(pathGlossario):
+        print(root)
+        for file in files:
+            # controlla se il file ha estensione .tex
+            if file.endswith('.tex'):
+                # apri il file in modalità scrittura
+                with open(os.path.join(root, file), 'r+') as f:
+                    # leggo il contenuto del file
+                    fileTarget=f.read()
+                    # Riporta il cursore all'inizio del file
+                    f.seek(0)
+                    # scrivi il contenuto del file
+                    fileTarget=pulisciTerminiGlossario(fileTarget)
+                    fileTarget=pulisciNomiDocumenti(fileTarget,nomiDocumenti)
+                    fileTarget=aggiungiPediciGlossario(fileTarget)
+                    fileTarget=formattaNomiDocumenti(fileTarget,nomiDocumenti)
+                    # print(f.name)
+                    f.write(fileTarget)
