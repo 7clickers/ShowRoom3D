@@ -1,0 +1,27 @@
+\subsection{Gestione della configurazione}
+\subsubsection{Scopo}
+La gestione della configurazione è un processo che mira a gestire e controllare i cambiamenti apportati a un prodotto software o a un sistema durante il suo ciclo di vita. 
+La gestione della configurazione per la documentazione descrive come vengono identificate, controllate, tracciate e gestite le versioni di un documento.
+\subsubsection{Descrizione}
+In questa sezione sono riportate tutte le norme relative alla configurazione degli strumenti utilizzati per il tracciamento e l’organizzazione dei documenti e del codice.
+\subsubsection{Versionamento}
+Il numero di versione permette di capire lo stato in cui si trova un documento.
+Un documento può trovarsi nei seguenti stati:
+\begin{itemize} 
+    \item \textbf{Approvato}: il documento è verificato ed approvato dal responsabile;
+    \item \textbf{Verificato}: il documento risulta verificato ma non ancora visionato dal responsabile;
+    \item \textbf{In Sviluppo}: sono presenti delle modifiche che non sono state verificate.
+\end{itemize}
+Il numero di versione ha il formato \textbf{X.Y.Z} dove:
+\begin{itemize} 
+    \item \textbf{X}: indica una versione approvata dal responsabile, la numerazione parte da 0
+    e la prima versione approvata è la 1.0.0;
+    \item \textbf{Y}: indica una versione verificata dal verificatore, la numerazione inizia da 0 e si azzera ad ogni incremento di X. La prima versione
+    verificata è la 0.1.0;
+    \item \textbf{Z}: indica una versione in fase di modifica da parte dei redattori che ne incrementano il numero ad ogni modifica,
+    la numerazione parte da 1 e si azzera ad ogni incremento di X o Y. La prima versione modificata è la 0.0.1.
+\end{itemize}
+
+\paragraph{Sistemi software utilizzati}
+Per il versionamento il gruppo ha deciso di utilizzare un repository GitHub, un servizio di hosting per progetti software che implementa uno strumento di controllo versione distribuito Git.
+Per informazioni più approfondite sulla struttura e la gestione del repository si veda sezione \fullref{GitHub}.

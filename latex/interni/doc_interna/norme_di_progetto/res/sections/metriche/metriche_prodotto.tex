@@ -1,0 +1,63 @@
+\subsection{Metriche per la qualità di prodotto}
+In questa sezione sono descritte le metriche di qualità di prodotto che il gruppo intende adottare.
+
+\subsubsection{MPD01: Percentuale requisiti soddisfatti}
+Valore percentuale che serve per indicare i requisiti soddisfatti.\\
+\textit{Valore minimo:} $100\% \text{ dei requisiti obbligatori}$\\
+\textit{Valore ottimo:} $100\% \text{ di tutti i requisiti}$
+
+\subsubsection{MPD02: Densità di fallimenti durante l'esecuzione}
+Si intende la percentuale di failure\textsubscript{g} o di esecuzioni non andate a buon fine di determinate azioni.
+ Le eventuali esecuzioni fallite o failure\textsubscript{g} sono state segnate dai Programmatori con cui hanno poi calcolato il valore della metrica.
+\begin{equation*}
+\text{Densità di fallimenti}=\frac{\text{numero test eseguiti sul programma falliti}}{\text{numero totale di test eseguiti}}*100
+\end{equation*}
+\textit{Valore minimo:} $20\%$\\
+\textit{Valore ottimo:} $10\%$
+
+\subsubsection{MPD03: Tempo medio di risposta}
+Tempo medio impiegato dal software per rispondere a una richiesta utente o svolgere un’attività di sistema.
+\textit{Valore minimo}: 4 secondi\\
+\textit{Valore ottimo}: 2 secondi\\
+
+\subsubsection{MPD04: Tempo di caricamento}
+Tempo medio di attesa per il caricamento del sito.\\
+\textit{Valore minimo}: 15 secondi\\
+\textit{Valore ottimo}: 10 secondi\\
+
+\subsubsection{MPD05: Facilità di apprendimento}
+Misura l'intuibilità e la facilità di utilizzo del programma.\\
+\textit{Valore minimo}: 5 minuti\\
+\textit{Valore ottimo}: 2 minuti\\
+
+\subsubsection{MPD06: Complessità ciclomatica}
+Metrica utilizzata per misurare la complessità di un programma. Calcolata sul grafo dei cammini linearmente indipendenti percorsi dal software ed i nodi presenti, cioè i punti decisionali del programma.\\
+\begin{equation*}
+v(G) = e - n + 2p
+\end{equation*}
+dove:
+\begin{itemize}
+	\item \textit{v(G)} = complessità ciclomatica del grafo G
+	\item \textit{e} = il numero di archi nel grafo
+	\item \textit{n} = il numero di nodi nel grafo
+	\item \textit{p} = il numero di componenti connesse
+\end{itemize}
+\textit{Valore minimo}: $ \le 10 $\\
+\textit{Valore ottimo}: $ \le 4 $\\
+
+\subsubsection{MPD07: Densità dei commenti}
+Misura la percentuale delle righe di commento sul totale delle righe di codice presenti in un modulo.\\
+\begin{equation*}
+\text{Densità dei commenti}=\frac{\text{numero righe di commento}}{\text{numero righe di codice}}*100
+\end{equation*}
+\textit{Valore minimo}: 20\%\\
+\textit{Valore ottimo}: 10\%\\
+
+\subsubsection{MPD08: Browser supportati}
+Valore percentuale dei browser supportati dal prodotto software.\\
+Da associare a questa metrica è doveroso inserire la versione del browser da cui è stato testato il prodotto.
+\begin{equation*}
+\text{Browser supportati}=\frac{\text{browser in cui il prodotto funziona}}{\text{browser testati}}*100
+\end{equation*}	
+\textit{Valore minimo}: 80\%\\
+\textit{Valore ottimo}: 100\%\\
