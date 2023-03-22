@@ -1,6 +1,8 @@
 \documentclass[a4paper]{article}
 \usepackage[normalem]{ulem}
-\usepackage{eurosym}
+\usepackage{graphicx}
+\usepackage[font=small,labelfont=bf]{caption}
+\input{res/reqTable.tex}
 
 % impostazioni generali
 \input{../../../template/package.tex}
@@ -11,7 +13,6 @@
 \makeindex
 
 \begin{document}
-\counterwithin{table}{section}
 
 % Prima pagina
 \input{../../../template/titlepage.tex}
@@ -21,19 +22,16 @@
 \input{config/changelog_input.tex} % editare questo
 \pagebreak
 
-
-% indice
-\renewcommand{\contentsname}{Indice}
- \hypersetup{linkcolor=black}
-\tableofcontents
-\pagebreak
-\setcounter{tocdepth}{2} %l'indice basta quello alfabetico
-\setcounter{secnumdepth}{0}
-\addtocontents{toc}{\protect\setcounter{tocdepth}{1}} % per nascondere i subsubsection dall'indice
 % Indice
-
+{
+    \hypersetup{linkcolor=black}
+    \tableofcontents
+    \listoffigures
+    \listoftables
+}
 \pagebreak
-\input{res/sections/01_alphabetical_order.tex}
 
+% Contenuto
+\input{res/sections/02_content.tex}
 
 \end{document}
