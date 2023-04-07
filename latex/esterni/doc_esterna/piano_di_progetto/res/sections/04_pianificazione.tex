@@ -119,31 +119,90 @@ Questo periodo inizia subito dopo la revisione di Requirements and Technology Ba
 \end{center}
 \subsubsection{Attività}
 \begin{itemize}
-\item \textbf{\textit{Aggiornamenti correttivi ai documenti}:} vengono effettuate modifiche correttive ai documenti che necessitano di un aggiornamento o di una revisione;
-\item \textbf{\textit{Codifica}:} i programmatori creano il codice del prodotto basato sulle attività individuate all'inizio dello Sprint\textsubscript{g}, partendo dalla base del periodo precedente e aggiungendo nuove funzionalità per ottenere una versione funzionante del prodotto;
-\item \textbf{\textit{Product Baseline\textsubscript{g}}:} quest'attività introduce la baseline architetturale del prodotto attraverso i diagrammi delle classi e di sequenza, dimostrando la coerenza con quanto presentato durante l'attività di Technology Baseline;  
-\item \textbf{\textit{Test}:} i programmatori creano test di unità e di integrazione per i componenti sviluppati durante questo periodo;
-\item \textit{Manuale Utente} e \textit{Manuale Sviluppatore} in relazione alle funzionalità implementate. Questi documenti forniscono istruzioni sull'uso del sistema per gli utenti coinvolti.
+\item \textbf{Documentazione:} vengono effettuate modifiche correttive ai documenti che necessitano di un aggiornamento o di una revisione;
+\item \textbf{Codifica:} i programmatori creano il codice del prodotto basato sulle attività individuate all'inizio dello Sprint\textsubscript{g}, partendo dalla base del periodo precedente e aggiungendo nuove funzionalità per ottenere una versione funzionante del prodotto;
+\item \textbf{Product Baseline\textsubscript{g}:} quest'attività introduce la baseline architetturale del prodotto attraverso i diagrammi delle classi e di sequenza, dimostrando la coerenza con quanto presentato durante l'attività di Technology Baseline;  
+\item \textbf{Test:} i programmatori creano test di unità e di integrazione per i componenti sviluppati durante questo periodo;
+\item \textbf{Manuali:} vengono redatti il \textit{Manuale Utente} e \textit{Manuale Sviluppatore}, in relazione alle funzionalità implementate. Questi documenti forniscono istruzioni sull'uso del sistema per gli utenti coinvolti.
 \end{itemize}
+
+\subsubsection{Backlog}
+In questa sezione è riportata la tabella del backlog, così strutturata:
+\begin{itemize}
+    \item \textbf{Task:} il nome della task;
+    \item \textbf{Descrizione:} una breve descrizione della task;
+    \item \textbf{Data inizio:} la data in cui si pianifica di iniziare la task, oppure viene indicato con "-" che la task in 
+    questione è ricorrente;
+    \item \textbf{Attività:} l'attività a cui fa riferimento la task. Le attività possono essere: PB, (Product Baseline), Doc (Documentazione), Test o Manuali.
+\end{itemize}
+\begin{longtable}{ 
+	>{\centering}M{0.23\textwidth} 
+	>{\centering}M{0.44\textwidth}
+	>{\centering}M{0.13\textwidth}
+	>{\centering}M{0.10\textwidth}
+	}
+	\rowcolorhead
+	\centering 
+	\headertitle{Task} &	
+	\headertitle{Descrizione} &
+	\headertitle{Data inizio} &
+	\headertitle{Attività}
+	\endfirsthead	
+	\endhead
+	
+	Apprendimento librerie & Si studiano individualmente le librerie scelte & 29-03-2023 & PB \tabularnewline
+	Individuazione pattern architetturali & Si individuano dei pattern architetturali adeguati & 29-03-2023 & PB \tabularnewline
+	Diagramma delle classi & Viene prodotto il diagramma delle classi & 07-04-2023 & PB \tabularnewline
+	Diagramma di sequenza & Viene prodotto il diagramma di sequenza & 10-04-2023 & PB \tabularnewline
+	Correzione Piano di Qualifica & Viene sistemato il Piano di Qualifica in base alle correzioni nella RTB & 29-03-2023 & Doc \tabularnewline
+	Aggiornamento grafici Piano di Qualifica & Vengono calcolati i valori delle metriche e aggiornati i grafici & 05-04-2023 & Doc \tabularnewline
+	Modello di sviluppo nel Piano di Progetto & Viene cambiato il modello di sviluppo, passando al modello agile & 29-03-2023 & Doc \tabularnewline
+	Pianificazione sprint nel Piano di Progetto & Viene pianificato lo sprint successivo & - & Doc \tabularnewline
+	Preventivo dello sprint nel Piano di Progetto & Viene calcolato il preventivo per lo sprint successivo & - & Doc \tabularnewline
+	Consuntivo dello sprint nel Piano di Progetto & Viene calcolato il consuntivo per lo sprint concluso & - & Doc \tabularnewline
+	Diario di Bordo & Viene scritto il Diario di Bordo & - & Doc \tabularnewline
+	Verbale & Viene redatto il verbale al termine di ogni riunione & - & Doc \tabularnewline
+	Correzione Norme di Progetto & Vengono sistemate le Norme di Progetto in base alle correzioni nella RTB & 29-03-2023 & Doc \tabularnewline
+	Aggiornamento Norme di Progetto & Vengono aggiunte le norme sulla codifica & 12-04-2023 & Doc \tabularnewline
+	Specifica Tecnica & Viene scritto il documento \textit{Specifica Tecnica} & 14-04-2023 & Doc \tabularnewline
+	Manuale Utente & Viene scritto il documento \textit{Manuale Utente} & 21-04-2023 & Manuali \tabularnewline
+	Manuale Sviluppatore & Viene scritto il documento \textit{Manuale Sviluppatore} & 21-04-2023 & Manuali \tabularnewline
+	Test di unità & Vengono scritti i test di unità & - & Test \tabularnewline
+	Test di integrità & Vengono scritti i test di integrità & - & Test \tabularnewline
+	Test di sistema & Vengono scritti i test di sistema & - & Test \tabularnewline
+	Test di accettazione & Vengono scritti i test di accettazione & - & Test \tabularnewline
+	\captionline \caption{Backlog: Progettazione di dettaglio e codifica dei requisiti}
+\end{longtable}
 
 \subsubsection{Sprint 1}
 \begin{center}
 \textbf{periodo:} dal 29-03-2023 al 05-04-2023\\
 \end{center}
-Gli obiettivi che il gruppo si propone per questo sprint sono:
-\begin{itemize}
-\item Correzione della documentazione in base alle segnalazioni dei committenti;
-\item Identificazione di nuove opportunità o sfide emerse nel corso del ciclo precedente;
-\item Progettazione in UML\textsubscript{g} di un pattern architetturale adeguato;
-\item Apprendimento librerie necessarie per codificare il pattern scelto.
-\end{itemize}
+In questo sprint in gruppo si concentra sulla correzione dei documenti dopo le segnalazioni dei committenti alla revisione di avanzamento RTB.
+Si inizia anche ad individuare dei pattern architetturali adeguati e a studiare le librerie di interesse. Le task assegnate per questo sprint sono:
+\begin{longtable}{ 
+	>{\centering}M{0.30\textwidth} 
+	>{\centering}M{0.10\textwidth}
+	}
+	\rowcolorhead
+	\centering 
+	\headertitle{Task} &	
+	\headertitle{Priorità}
+	\endfirsthead	
+	\endhead
+	
+	Apprendimento librerie & Media \tabularnewline
+	Individuazione pattern architetturali & Media \tabularnewline
+	Correzione Piano di Qualifica & Bassa \tabularnewline
+	Modello di sviluppo nel Piano di Progetto & Alta \tabularnewline
+	Pianificazione sprint nel Piano di Progetto & Alta \tabularnewline
+	Preventivo dello sprint nel Piano di Progetto & Alta \tabularnewline
+	Diario di Bordo & Bassa \tabularnewline
+	Verbale & Bassa \tabularnewline
+	Correzione Norme di Progetto & Media \tabularnewline
+	\captionline \caption{Task assegnate nello sprint 1}
+\end{longtable}
 
-Le attività svolte sono:
-\begin{itemize}
-\item \textbf{\textit{Modifiche incrementali e correttive ai documenti}:} In questo periodo vengono apportate
-delle modifiche correttive ai documenti che necessitano di una revisione;
-\item \textbf{\textit{Codifica}:} In questo periodo viene concluso l'apprendimento delle nuove librerie introdotte.
-\end{itemize}
 
 \begin{figure}[H]
     \centering
