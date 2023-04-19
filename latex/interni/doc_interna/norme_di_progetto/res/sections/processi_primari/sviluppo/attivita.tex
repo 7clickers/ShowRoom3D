@@ -98,6 +98,52 @@ La codifica dovrà rispettare delle norme per motivi legati alla leggibilità, m
 		\item \textbf{File}: dovranno avere un nome che inizia per lettera maiuscola che ne specifichi il contenuto.
 	\end{itemize}
 	
+	\paragraph{Norme linguaggi adottati} 
+ 	In questo paragrafo andremo a definire le norme che il gruppo ha deciso di adottare per ogni specifico linguaggio utilizzato nel progetto.
+	\subparagraph*{HTML} è oggi utilizzato per creazione della struttura logica di una pagina web,abbiamo 	 deciso di adottare le seguenti semplici normative:
+	\begin{itemize}
+	\item Utilizzare tag lowercase;
+	\item Chiudere tutti i tag;
+	\item Utilizzare attributi dei tag in lowercase;
+	\item Utilizzare le virgolette per i valori degli attributi.
+	\end{itemize}	
+	
+	\subparagraph*{CSS} linguaggio che gestisce il design e la presentazione delle pagine web. \\
+	Il gruppo ha concordato le seguenti normative:
+	\begin{itemize}
+	\item Un solo selettore per linea in set di regole con più selettori;
+	\item Un singolo spazio prima della parentesi graffa di apertura di un set di regole;
+	\item Una dichiarazione per linea di un blocco dichiarazioni;
+	\item  Un livello di rientro per ogni dichiarazione;
+	\item Un singolo spazio dopo i due-punti di una dichiarazione;
+	\item Includete sempre un “punto e virgola” alla fine dell'ultima dichiarazione in un blocco dichiarazione;
+	\item Mettete la parentesi graffa di chiusura di un set di regole, nella stessa colonna del primo carattere del set di regole;
+	\item Separate ogni set di regole con una linea vuota.
+	\end{itemize}
+	
+	\subparagraph*{TypeScript} È un linguaggio di programmazione open source sviluppato da Microsoft.
+Si tratta di un’estensione di Javascript che basa le sue caratteristiche su ECMAScript 6. \\
+Come stile di codifica di Typescript si è deciso di adottare le normative in questo link:
+\begin{center}
+\href{https://github.com/roblarsen/idiomatic-typescript}{idiomatic-typescript(19-04-2023)}.
+\end{center}
+
+\paragraph{Norme React.js}
+	Il gruppo ha concordato le seguenti normative:
+	\begin{itemize}
+	\item Il nome del componente deve essere uguale al nome del modulo con la prima lettera maiuscola;
+	\item Scrittura di informazioni dentro ad un tag;
+		\begin{itemize}
+			\item Se l’informazione può essere contenuta in una linea di codice allora si mantiene sulla stessa ;		linea
+			\item Se l’informazione è più lunga di una linea di codice allora bisogna indentare le informazioni.
+		\end{itemize}
+		\item Utilizzare sempre camelCase per i nomi delle prop;
+		\item Utilizzare i doppi apici tranne che per i valori nelle informazioni di stile;
+		\item Utilizzare una self-close se i tag non hanno figli;
+		\item Utilizzare className per assegnare classi CSS agli elementi;
+		\item Non comprimere troppo il codice ma utilizzare degli whitespace adeguati.
+	\end{itemize}
+	
 	\paragraph{Strumenti di sviluppo}
 	Di seguito riportiamo gli strumenti utilizzati durante il processo di sviluppo:
 		\begin{itemize}
@@ -107,7 +153,6 @@ La codifica dovrà rispettare delle norme per motivi legati alla leggibilità, m
 			\item \textbf{Redux}: è una architettura per scrivere applicazioni web basate su 					React,  fornisce un modo semplice per centralizzare lo stato e la logica di 		un'applicazione web;
 			\item \textbf{React three fiber}: è un React renderer per three.js , permette di costruire componenti riutilizzabili e indipendenti;
 		\end{itemize}
-			
 	
 	\paragraph{Ambiente di lavoro}
 		Di seguito riportiamo gli strumenti che hanno definito il nostro ambiente di lavoro durante il processo di sviluppo.
