@@ -90,11 +90,11 @@ Una delle milestone\textsubscript{g} create dal gruppo durante il completamento 
 riguarda l'implementazione di un PoC\textsubscript{g} (Proof of concept\textsubscript{g}).
 
 \paragraph{Projects Board}
-Vengono utilizzate due project board\textsubscript{g} per tracciare le issues\textsubscript{g} della repo.
-Una project board\textsubscript{g} principale utilizzata da tutti i membri del gruppo e una project board\textsubscript{g} per le approvazioni\textsubscript{g} utilizzata solo dal responsabile di progetto per approvare\textsubscript{g} i file che richiedono l'approvazione\textsubscript{g} prima di una consegna.
+Vengono utilizzate molteplici project board\textsubscript{g} per tracciare le issues\textsubscript{g} della repo.
+Una project board\textsubscript{g} che funge da backlog del progetto e altre che corrispondono agli sprint.
 
 \begin{itemize}
-	\item La projectboard principale è suddivisa in queste sezioni:
+	\item Le project board degli sprint sono suddivise in queste sezioni:
 	\begin{itemize}
 		\item \textbf{Todo}: issue\textsubscript{g} che non sono ancora state iniziate o che non sono ancora state assegnate;
 		\item \textbf{In Progress}: issue\textsubscript{g} che sono state assegnate e a cui almeno un membro a cui è stata assegnata ha iniziato a lavorarci;
@@ -103,41 +103,17 @@ Una project board\textsubscript{g} principale utilizzata da tutti i membri del g
 		\item \textbf{Approved}: issue\textsubscript{g} con label "Da Approvare\textsubscript{g}" che hanno ottenuto l'approvazione\textsubscript{g} del responsabile subito dopo la verifica\textsubscript{g};
 		Per tutte le issues\textsubscript{g} che richiedono un'approvazione\textsubscript{g} solo al momento della consegna è stata creata la project board\textsubscript{g} dedicata alle approvazioni\textsubscript{g}.
 	\end{itemize}
-	Inoltre nella project board\textsubscript{g} principale vengono registrate delle issue\textsubscript{g} che non richiedono verifica\textsubscript{g}, approvazione\textsubscript{g} o neanche integrazione, con lo scopo di monitorare meglio il lavoro di ogni membro del team.\\
+	Inoltre nelle project board\textsubscript{g} degli sprint vengono registrate delle issue\textsubscript{g} che non richiedono verifica\textsubscript{g}, approvazione\textsubscript{g} o neanche integrazione, con lo scopo di monitorare meglio il lavoro di ogni membro del team.\\
 Queste issue\textsubscript{g} verranno chiuse e archiviate manualmente una volta che avranno terminato la loro utilità, un esempio può essere la seguente issue\textsubscript{g}:\\
 \textbf{\textit{Diario di Bordo} 21-11-22}; questa issue\textsubscript{g} non necessità verifica\textsubscript{g}, approvazione\textsubscript{g} o integrazione perchè non è di interesse caricare il file nella repo, però è utile tracciare lo svolgimento della issue\textsubscript{g}.
-
-	\item La projectboard riservata alle approvazioni\textsubscript{g} è suddivisa in queste sezioni:
-	\begin{itemize}
-		\item \textbf{Todo}: issue\textsubscript{g} che non sono ancora state iniziate dal responsabile;
-		\item \textbf{In Progress}: issue\textsubscript{g}  che sono state prese in carico per essere approvate dal responsabile;
-		\item \textbf{Pull Request}: issue\textsubscript{g} che è in fase di integrazione e necessita della verifica\textsubscript{g} dei verificatori. Corrisponde all'inizio di una pull request;
-		in questo caso i verificatori dovranno solo controllare che l'intestazione e il registro delle modifiche siano stati compilati correttamente dal responsabile di progetto in quanto tutto il resto del contenuto è già stato verificato in precedenza;
-		\item \textbf{Approved}: issue\textsubscript{g} che sono state approvate dal responsabile.
-	\end{itemize}
-\end{itemize}
-Le issue\textsubscript{g} che si trovano nella project board\textsubscript{g} approvazioni\textsubscript{g} sono state create come continuazione ad issues\textsubscript{g} che hanno in precedenza attraversato il work flow della project board\textsubscript{g} principale fino allo stato "Done".
-In questo modo il Responsabile di progetto dovrà approvare\textsubscript{g} solamente file che si trovano nei branches protetti.
-Vengono ricreate in questa project board\textsubscript{g} per  mantenerne la tracciabilità e permetterne una più facile reperibilità futura per l'approvazione\textsubscript{g}.
-Questo permette anche di pulire la project board\textsubscript{g} principale da tutte quelle issues\textsubscript{g} che rimarrebbero inattive per molto tempo.
 \\\\
 Esempio di work flow issues\textsubscript{g}:
 \begin{enumerate}
-	\item Viene creata l'issue\textsubscript{g} ed inserita all'interno della sezione "To Do" della project board\textsubscript{g} principale;
+	\item Viene creata l'issue\textsubscript{g} ed inserita all'interno della sezione "To Do" della project board\textsubscript{g} dello sprint;
 	\item Quando viene presa in carico l'issue\textsubscript{g} viene spostata nella sezione "In Progress" fino al suo completamento;
 	\item L'incaricato alla risoluzione dell'issue\textsubscript{g} apre una pull request a cui assegna l'issue\textsubscript{g} in modo che  venga chiusa in automatico al momento dell'integrazione con il branch di destinazione;
 	\item Vengono fatte le verifiche opportune dai verificatori e le conseguenti modifiche prima di accettare la pull request;
 	\item Dopo l'accettazione la pull request viene postata insieme alle issues\textsubscript{g} associate nella colonna "Done";
-	\item A questo punto si possono presentare due casi: 
-	\begin{enumerate}
-		\item I file relativi alla pull request richiedono approvazione\textsubscript{g} immediata.
-		Viene archiviata la pull request (e le issue\textsubscript{g} associate) e creata una issue\textsubscript{g} a cui viene aggiunta la label "Da approvare\textsubscript{g}" con il nome del file da approvare\textsubscript{g}.
-		Il responsabile creerà un branch per approvare\textsubscript{g} le issues\textsubscript{g} con approvazione\textsubscript{g} immediata aprirà una pull request per integrare nel branch di destinazione l'approvazione\textsubscript{g};
-		\item I file relativi alla pull request richiedono l'approvazione\textsubscript{g} prima di una consegna.
-		Il responsabile archivia la pull request e ne crea una issue\textsubscript{g} con il nome dei file da approvare\textsubscript{g} nella project board\textsubscript{g} dedicata alle approvazioni\textsubscript{g}.
-		NB: se nella project board\textsubscript{g} Approvazioni\textsubscript{g} è già presente un'issue\textsubscript{g} di approvazione\textsubscript{g} per il file da approvare\textsubscript{g} non viene creata una nuova issue\textsubscript{g} di approvazione\textsubscript{g} ma si tiene la precedente.
-		L'issue\textsubscript{g} segue il work flow della project board\textsubscript{g} approvazioni\textsubscript{g}.
-	\end{enumerate}
 \end{enumerate}
 \paragraph{Issue\textsubscript{g} Tracking System}
 Il gruppo utilizza l'issue\textsubscript{g} tracking system di Github\textsubscript{g} per tenere traccia delle issue\textsubscript{g}. 
