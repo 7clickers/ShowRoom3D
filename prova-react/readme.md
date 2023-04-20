@@ -367,6 +367,14 @@ useEffect(() => {
 }, [keysToListen, getKeys]);
 ```
 
+In sintesi, il movimento in prima persona viene gestito principalmente dal componente **_Player_** che utilizza il custom hook **_useKeyboardInput_** per ottenere lo stato dei tasti premuti. Il componente **_Player_** calcola la direzione del movimento basandosi sui tasti premuti e applica la rotazione della camera al vettore di direzione. Questo permette di ottenere un movimento fluido e in prima persona.
+
+La velocità del personaggio viene aggiornata in base alla direzione calcolata e alla costante di velocità (SPEED). Il salto viene gestito controllando se la barra spaziatrice è premuta e se il personaggio è a terra (velocità verticale molto vicina a zero), in tal caso viene applicata la potenza di salto (JUMP_POWER) alla velocità verticale del personaggio.
+
+Infine, la posizione della camera viene sincronizzata con la posizione del personaggio per garantire che la visuale rimanga in prima persona durante il movimento e il salto.
+
+Questo approccio permette di avere un sistema di movimento in prima persona fluido e reattivo, dando agli utenti un'esperienza immersiva all'interno dell'app. Separando la logica del movimento nel componente **_Player_** e la gestione dell'input della tastiera nel custom hook **_useKeyboardInput_**, il codice risulta più organizzato e modulare, rendendo più semplice la manutenzione e l'aggiunta di nuove funzionalità.
+
 # React Hooks
 
 In questa sezione vengono spiegati i vari hook usati che fanno parte delle varie librerie.
