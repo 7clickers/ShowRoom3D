@@ -81,7 +81,7 @@ La documentazione da mostrare:
 
 \subsubsection{Codifica}
 L’attività di codifica è assegnata ai programmatori. Seguendo quanto indicato nel diagramma delle classi, l'obbiettivo è quello di implementare ciò che è stato precedentemente progettato.
-La codifica dovrà rispettare delle norme per motivi legati alla leggibilità, manutenzione verifica e validazione del codice.
+La codifica dovrà rispettare delle norme per motivi legati alla leggibilità, manutenzione, verifica e validazione del codice.
 \paragraph{Stile di codifica}
 	\begin{itemize}
 		\item \textbf{Indentazione}: I blocchi di codice innestati dovranno avere un’indentazione di quattro spazi;
@@ -144,6 +144,39 @@ Come stile di codifica di Typescript si è deciso di adottare le normative in qu
 		\item Non comprimere troppo il codice ma utilizzare degli whitespace adeguati.
 	\end{itemize}
 	
+	\paragraph{Organizzazione Codice}
+	Il codice deve essere organizzato secondo la struttura chiama \textit{Feature Folders} raccomandata dalle linee guida di Redux.\\
+	In seguito riportiamo la struttura che il gruppo ha deciso di utilizzare per il progetto:
+	\begin{itemize}
+		\item \textbf{\textbackslash public}
+			\begin{itemize}
+				\item \textbf{index.html} 
+			\end{itemize}
+		\item \textbf{\textbackslash src} 
+			\begin{itemize}
+				\item \textbf{index.tsx} Punto di entrata che effettua il render dei vari componenti React
+				\item 	\textbf{\textbackslash app}
+					\begin{itemize}
+						\item \textbf{store.ts} store setup
+						\item \textbf{App.tsx} root dei componenti React
+					\end{itemize}
+				\item \textbf{\textbackslash common} contiene componenti generici e utility
+			 	\item \textbf{\textbackslash features} contiene tutte le Feature folders
+			 	\begin{itemize}
+			 		\item \textbf{\textbackslash feature} Singola feature
+			 		\begin{itemize}
+			 			\item \textbf{featureSlice.ts} contiene la logica del reducer e le azioni associate
+			 			\item \textbf{Feature.tsx} componente React
+			 		\end{itemize}
+			  \end{itemize}
+			  \item \textbf{\textbackslash assets}
+					\begin{itemize}
+						\item \textbf{\textbackslash models} cartella contenete i vari modelli da utilizzare nel applicativo
+						\item \textbf{\textbackslash img} cartella contenete icone ed immagini
+					\end{itemize}
+			\end{itemize}
+\end{itemize}				
+	
 	\paragraph{Strumenti di sviluppo}
 	Di seguito riportiamo gli strumenti utilizzati durante il processo di sviluppo:
 		\begin{itemize}
@@ -153,11 +186,27 @@ Come stile di codifica di Typescript si è deciso di adottare le normative in qu
 			\item \textbf{Redux}: è una architettura per scrivere applicazioni web basate su 					React,  fornisce un modo semplice per centralizzare lo stato e la logica di 		un'applicazione web;
 			\item \textbf{React three fiber}: è un React renderer per three.js , permette di costruire componenti riutilizzabili e indipendenti;
 		\end{itemize}
-	
+		
 	\paragraph{Ambiente di lavoro}
 		Di seguito riportiamo gli strumenti che hanno definito il nostro ambiente di lavoro durante il processo di sviluppo.
 		\begin{itemize}
 			\item \textbf{Visual Studio Code}: Code editor scelto per sviluppare tutto il codice presente nel nostro progetto. Compatibile con Windows, MacOS e Linux;
 		\end{itemize}
 		
-		
+	\paragraph{Configurazione Ambiente di lavoro}
+	La configurazione dell'ambiente di lavoro viene fatta da un componente del gruppo, che carica la cartella di lavoro configurata nel repo.  Successivamente gli altri componenti devono eseguire le seguenti istruzioni per mettersi in condizioni di lavorare.
+	Per prima cosa ogni componente del gruppo deve installare Node.js e NPM attraverso package manager oppure al seguente link: 
+	\begin{center}
+\href{https://nodejs.org/en/download}{DownloadNode.js}
+\end{center}
+Facendo riferimento alla \textit{v18.16.0} o successive.  Per verificare che l'installazione sia andata a buon fine aprire il terminale ed utilizzare il comando \textit{node -v} e \textit{npm -v}. \\
+Successivamente si deve entrare nella cartella di lavoro ottenuta dalla repo, aprire il terminale e utlizzare il comando \textbf{npm install} che installa tutte le dipendenze di progetto.
+
+
+	 
+	
+	
+	
+	
+	
+			
