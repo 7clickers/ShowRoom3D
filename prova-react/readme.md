@@ -67,7 +67,7 @@ Il progetto è strutturato nei seguenti file e componenti:
 
 ## 1. main.jsx
 
-Il punto di ingresso dell'applicazione. In questo file, viene inizializzato il Redux store, e viene effettuato il rendering dell'intera applicazione utilizzando il componente <App> all'interno di un <Provider> di Redux.
+Il punto di ingresso dell'applicazione. In questo file, viene inizializzato il Redux store, e viene effettuato il rendering dell'intera applicazione utilizzando il componente **_App_** all'interno di un **_Provider_** di Redux.
 
 ```javascript
 import { Provider } from "react-redux";
@@ -89,7 +89,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
 ## 2. App.jsx
 
-Il componente principale dell'applicazione. In questo file viene utilizzato il componente <Canvas> per creare un ambiente 3D e viene inserito il componente <Scene>.
+Il componente principale dell'applicazione. In questo file viene utilizzato il componente **_Canvas_** per creare un ambiente 3D e viene inserito il componente **_Scene_**.
 
 ```javascript
 import React from "react";
@@ -109,7 +109,7 @@ export default function App() {
 
 ## 3. Scene.jsx
 
-Il componente che gestisce l'intera scena 3D. In questo file vengono configurati i componenti <Physics> per l'aggiunta delle leggi fisiche, <PointerLockControls> per il controllo della telecamera e il componente <Lights> per le luci, oltre ai componenti personalizzati <Player> e <Map>.
+Il componente che gestisce l'intera scena 3D. In questo file vengono configurati i componenti **_Physics_** per l'aggiunta delle leggi fisiche, **_PointerLockControls_** per il controllo della telecamera e il componente **_Lights_** per le luci, oltre ai componenti personalizzati **_Player_** e **_Map_**.
 
 ```javascript
 import React, { useEffect, useRef, useState } from "react";
@@ -179,11 +179,11 @@ Il custom hook useKeyboardInput si occupa di gestire gli input della tastiera pe
 
 ## 5. Map.jsx
 
-Il componente che rappresenta il terreno dell'ambiente 3D. In questo file viene creato un componente <mesh> con una geometria a piano e un materiale Phong per le ombre. Viene anche configurato il componente <usePlane> di react-three-cannon per aggiungere una collisione al terreno.
+Il componente che rappresenta il terreno dell'ambiente 3D. In questo file viene creato un componente **_mesh_** con una geometria a piano e un materiale Phong per le ombre. Viene anche configurato il componente **_usePlane_** di react-three-cannon per aggiungere una collisione al terreno.
 
 ## 6. Lights.jsx
 
-Il componente responsabile per l'aggiunta di luci alla scena. In questo file, vengono creati diversi tipi di luci, come <directionalLight>, <pointLight> e <ambientLight>, per creare un'illuminazione adeguata nella scena.
+Il componente responsabile per l'aggiunta di luci alla scena. In questo file, vengono creati diversi tipi di luci, come **_directionalLight_**, **_pointLight_** e **_ambientLight_**, per creare un'illuminazione adeguata nella scena.
 
 ## 7. Store.js (al momento non attivo)
 
