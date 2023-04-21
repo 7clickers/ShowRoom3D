@@ -65,11 +65,6 @@ Il progetto è strutturato nei seguenti file e componenti:
 
 ### |--- reducers
 
-Scene.jsx
-Player.jsx
-Map.jsx
-movementKeyboardInput.js
-
 ## 1. main.jsx
 
 Il punto di ingresso dell'applicazione. In questo file, viene inizializzato il Redux store, e viene effettuato il rendering dell'intera applicazione utilizzando il componente <App> all'interno di un <Provider> di Redux.
