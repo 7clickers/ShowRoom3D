@@ -114,27 +114,25 @@ Il componente che gestisce l'intera scena 3D. In questo file vengono configurati
 ```javascript
 import React, { useEffect, useRef, useState } from "react";
 
-// Physics
+// Fisica
 import { Physics } from "@react-three/cannon";
 
 // Three
 import { useThree } from "@react-three/fiber";
 import { PointerLockControls } from "@react-three/drei";
 
+// Componenti personalizzati
 import Player from "./Player.jsx";
 import Map from "./Map.jsx";
 import Lights from "./Lights.jsx";
 
 export const Scene = () => {
+  // Ottieni oggetti camera e gl da useThree
   const { camera, gl } = useThree();
+  // Creare un useRef per controllare il puntatore
   const controls = useRef();
-  const [position, setPosition] = useState({ x: 0, y: 0, z: 0 });
 
-  useEffect(() => {
-    camera.layers.enable(0);
-    camera.layers.enable(1);
-  }, [camera]);
-
+  // Imposta il puntatore al blocco quando l'utente fa clic sul documento
   useEffect(() => {
     const handleFocus = () => {
       controls.current.lock();
@@ -148,20 +146,20 @@ export const Scene = () => {
 
   return (
     <>
-      {/** Pointer lock */}
+      {/** Blocco del puntatore */}
       <PointerLockControls ref={controls} args={[camera, gl.domElement]} />
-      {/** Lighting */}
+      {/** Illuminazione */}
       <Lights />
-      {/** Physic objects */}
+      {/** Oggetti fisici */}
       <Physics
-        gravity={[0, -9.81, 0]}
-        tolerance={0}
-        iterations={50}
-        broadphase={"SAP"}
+        gravity={[0, -9.81, 0]} // gravità
+        tolerance={0} // tolleranza
+        iterations={50} // iterazioni
+        broadphase={"SAP"} // algoritmo di fase ampia
       >
-        {/** Player */}
-        <Player position={[-5, 0, -5]} args={[0.5]} />
-        {/** Plane */}
+        {/** Giocatore */}
+        <Player position={[-10, 0, -5]} args={[0.5]} />
+        {/** Piano */}
         <Map />
       </Physics>
     </>
