@@ -7,7 +7,7 @@ I test servono per assicurare un certo comportamento delle componenti oppure del
 		\item \textit{Act}: si svolge l'effettiva componente da testare;
 		\item \textit{Arrange}: si verifica che i risultati ottenuti nella fase di Act corrispondano ai risultati attesi.
 	\end{itemize}
-    \item \textit{Test di iintegrazione}: è il tipo di test che verifica che i moduli già testati singolarmente si comportino correttamente anche quando interagiscono tra di loro;
+    \item \textit{Test di integrazione}: è il tipo di test che verifica che i moduli già testati singolarmente si comportino correttamente anche quando interagiscono tra di loro;
     \item \textit{Test di regressione}: è il tipo di test che verifica che dopo l'aggiunta di una nuova feature il codice complessivo non perda di qualità, ovvero che le componenti già integrate continuino a comportarsi nel modo atteso;
     \item \textit{Test di sistema}:  è il tipo di test che verifica l'intero comportamento del sistema. In particolare controlla che i requisiti necessari vengano soddisfatti;
     \item \textit{Test di accettazione}:  è il tipo di test che verifica che l'applicazione nel suo complesso soddisfi pienamente i requisiti dal punto di vista strettamente funzionale. Viene effettuato alla fine dello sviluppo dell'applicazione, quando ha già superato tutti gli altri test, e ne precede il rilascio.
@@ -26,3 +26,12 @@ Dove il codice identificativo è un numero univoco e il tipo può essere:
 	\item \textbf{S}: test di sistema;
 	\item \textbf{A}: test di accettazione.
 \end{itemize}
+
+\paragraph{Continuous Integration}
+I test verranno svolti secondo il workflow della CI (Continuous Integration) che prevede che venga effettuata la build del codice ogni volta che viene eseguito un commit nella repository, durante la quale avviene anche l'esecuzione automatica di tutti i test implementati.\\
+Nel caso in cui la build dovesse fallire sarà necessario trovare la causa del fallimento con la massima priorità e in caso non fosse possibile identificarla in poco tempo è necessario ripristinare la repository all'ultimo commit nel quale la build aveva avuto successo.\\
+Per evitare quindi di perdere grosse porzioni di lavoro, è buona prassi svolgere commit frequenti, di portata non eccessiva.
+La buona implementazione di questa pratica garantisce che il codice all'interno della repository sia sempre funzionante
+
+\paragraph{Strumenti}
+Per l'implementazione del workflow CI vengono usate le Action messe a disposizione di GitHub, configurabili tramite un file .yml oppure .yaml.
