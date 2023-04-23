@@ -1,12 +1,21 @@
 # Table of Contents
 
 - [Introduzione](#introduzione)
+
 - [Installazione](#installazione)
+
 - [File system](#organizzazione-file)
+
 - [Spiegazioni](#spiegazioni)
+
   - [Movimento](#movimento)
+
     - [Player](#player.jsx)
+
     - [movementKeyboardInput](#movementKeyboardInput.js)
+
+  - [Mappa](#mappa)
+
 - [React Hooks](#react-hooks)
 
 # Introduzione
@@ -18,15 +27,21 @@ Questo progetto è una semplice applicazione di esempio basata su React e Three.
 Per eseguire il progetto localmente, seguire questi passaggi:
 
 1. Clona il repository nella tua macchina locale.
+
 2. Esegui npm install per installare tutte le dipendenze necessarie.
+
 3. Esegui npm start dev per avviare il server di sviluppo
 
 ```bash
+
 npm install
+
 ```
 
 ```bash
-npm run dev
+
+npm run  dev
+
 ```
 
 # Organizzazione file
@@ -59,6 +74,8 @@ Il progetto è strutturato nei seguenti file e componenti:
 
 ### |--- models
 
+### |--- map
+
 ### redux
 
 ### |--- actions
@@ -71,11 +88,15 @@ Il punto di ingresso dell'applicazione. In questo file, viene inizializzato il R
 
 ```javascript
 import { Provider } from "react-redux";
+
 import { Store } from "./Store";
 
 import React from "react";
+
 import ReactDOM from "react-dom/client";
+
 import App from "./App";
+
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -93,7 +114,9 @@ Il componente principale dell'applicazione. In questo file viene utilizzato il c
 
 ```javascript
 import React from "react";
+
 import { Canvas } from "@react-three/fiber";
+
 import { Scene } from "./components/Scene";
 
 export default function App() {
@@ -115,28 +138,39 @@ Il componente che gestisce l'intera scena 3D. In questo file vengono configurati
 import React, { useEffect, useRef, useState } from "react";
 
 // Fisica
+
 import { Physics } from "@react-three/cannon";
 
 // Three
+
 import { useThree } from "@react-three/fiber";
+
 import { PointerLockControls } from "@react-three/drei";
 
 // Componenti personalizzati
+
 import Player from "./Player.jsx";
+
 import Map from "./Map.jsx";
+
 import Lights from "./Lights.jsx";
 
 export const Scene = () => {
   // Ottieni oggetti camera e gl da useThree
+
   const { camera, gl } = useThree();
+
   // Creare un useRef per controllare il puntatore
+
   const controls = useRef();
 
   // Imposta il puntatore al blocco quando l'utente fa clic sul documento
+
   useEffect(() => {
     const handleFocus = () => {
       controls.current.lock();
     };
+
     document.addEventListener("click", handleFocus);
 
     return () => {
@@ -147,10 +181,15 @@ export const Scene = () => {
   return (
     <>
       {/** Blocco del puntatore */}
+
       <PointerLockControls ref={controls} args={[camera, gl.domElement]} />
+
       {/** Illuminazione */}
+
       <Lights />
+
       {/** Oggetti fisici */}
+
       <Physics
         gravity={[0, -9.81, 0]} // gravità
         tolerance={0} // tolleranza
@@ -158,8 +197,11 @@ export const Scene = () => {
         broadphase={"SAP"} // algoritmo di fase ampia
       >
         {/** Giocatore */}
+
         <Player position={[-10, 0, -5]} args={[0.5]} />
+
         {/** Piano */}
+
         <Map />
       </Physics>
     </>
@@ -225,7 +267,9 @@ Vengono inizializzati i vettori per la direzione del movimento (direction), il m
 
 ```javascript
 const direction = new THREE.Vector3();
+
 const frontVector = new THREE.Vector3();
+
 const sideVector = new THREE.Vector3();
 ```
 
@@ -235,6 +279,7 @@ Viene creato un [**_useRef_**](#useref) per memorizzare la velocità e l'acceler
 
 ```javascript
 const velocity = useRef(new THREE.Vector3());
+
 const speed = useRef(new THREE.Vector3());
 ```
 
@@ -244,6 +289,7 @@ Vengono definite costanti per la velocità di movimento (SPEED) e la potenza di 
 
 ```javascript
 const SPEED = 5;
+
 const JUMP_POWER = 4;
 ```
 
@@ -254,7 +300,9 @@ Viene utilizzato il hook [**_useSphere_**](#usesphere) di @react-three/cannon pe
 ```javascript
 const [ref, api] = useSphere((index) => ({
   mass: 1,
+
   type: "Dynamic",
+
   position: props.position,
 }));
 ```
@@ -269,6 +317,7 @@ useEffect(
     api.velocity.subscribe(
       (v) => (velocity.current = new THREE.Vector3().fromArray(v))
     ),
+
   []
 );
 ```
@@ -278,40 +327,61 @@ useEffect(
 La funzione [**_useFrame_**](#useframe) viene utilizzata per aggiornare il movimento del personaggio, calcolare la velocità e sincronizzare la posizione della camera ad ogni frame.
 
 - Aggiorna frontVector in base ai tasti "w" e "s".
+
 - Aggiorna sideVector in base ai tasti "a" e "d".
+
 - Calcola il vettore di direzione per il movimento.
+
 - Applica la rotazione della camera al vettore di direzione.
+
 - Imposta la velocità del giocatore in base alla direzione calcolata.
+
 - Gestisce il salto quando viene premuta la barra spaziatrice e il personaggio è a terra.
+
 - Sincronizza la posizione della camera con la posizione del personaggio.
 
 ```javascript
 useFrame(() => {
   // Aggiorna frontVector in base ai tasti "w" e "s"
+
   frontVector.set(0, 0, Number(keysPressed["s"]) - Number(keysPressed["w"]));
+
   // Aggiorna sideVector in base ai tasti "a" e "d"
+
   sideVector.set(Number(keysPressed["a"]) - Number(keysPressed["d"]), 0, 0);
 
   // Calcola il vettore di direzione per il movimento
+
   direction
+
     .subVectors(frontVector, sideVector)
+
     .normalize()
+
     .multiplyScalar(SPEED)
+
     .applyEuler(camera.rotation);
 
   // Copia i valori di velocità correnti in speed.current
+
   speed.current.fromArray(velocity.current.toArray());
+
   // Aggiorna la velocità del giocatore in base alla direzione calcolata
+
   api.velocity.set(direction.x, speed.current.y, direction.z);
 
   // Se la barra spaziatrice è premuta e il giocatore è a terra, applica la potenza di salto
+
   if (keysPressed[" "] && Math.abs(speed.current.y) < 0.05) {
     api.velocity.set(speed.current.x, JUMP_POWER, speed.current.z);
   }
 
   // Ottieni la posizione del giocatore e aggiorna la posizione della camera
+
   const worldPos = new THREE.Vector3();
+
   ref.current.getWorldPosition(worldPos);
+
   camera.position.copy(worldPos);
 });
 ```
@@ -334,27 +404,35 @@ Utilizzando [**_useEffect_**](#useeffect), si aggiungono gli event listener per 
 useEffect(() => {
   const handleKeyDown = (e) => {
     const lowerKey = e.key.toLowerCase();
+
     if (getKeys().lowerCaseArray.includes(lowerKey)) {
       setPressedKeys((keysPressed) => ({ ...keysPressed, [lowerKey]: true }));
     }
   };
+
   const handleKeyUp = (e) => {
     const lowerKey = e.key.toLowerCase();
+
     if (getKeys().lowerCaseArray.includes(lowerKey)) {
       setPressedKeys((keysPressed) => ({
         ...keysPressed,
+
         [lowerKey]: false,
       }));
     }
   };
 
   // Aggiungi event listener per "keydown" e "keyup"
+
   document.addEventListener("keydown", handleKeyDown);
+
   document.addEventListener("keyup", handleKeyUp);
 
   // Rimuovi event listener quando il componente si smonta
+
   return () => {
     document.removeEventListener("keydown", handleKeyDown);
+
     document.removeEventListener("keyup", handleKeyUp);
   };
 }, [keysToListen, getKeys]);
@@ -367,6 +445,58 @@ La velocità del personaggio viene aggiornata in base alla direzione calcolata e
 Infine, la posizione della camera viene sincronizzata con la posizione del personaggio per garantire che la visuale rimanga in prima persona durante il movimento e il salto.
 
 Questo approccio permette di avere un sistema di movimento in prima persona fluido e reattivo, dando agli utenti un'esperienza immersiva all'interno dell'app. Separando la logica del movimento nel componente **_Player_** e la gestione dell'input della tastiera nel custom hook **_useKeyboardInput_**, il codice risulta più organizzato e modulare, rendendo più semplice la manutenzione e l'aggiunta di nuove funzionalità.
+
+## Mappa
+
+### createHeightfieldMatrix
+
+La funzione è responsabile della creazione di una matrice di altezze a partire da un'immagine di input. Questa matrice verrà poi utilizzata dall'heightfield per generare il terreno 3D.
+
+1. Se il contesto (context) del canvas non è stato creato correttamente, viene generato un errore indicando che l'heightfield non può essere creato.
+
+2. Viene estratta la larghezza e l'altezza dell'immagine di input. Successivamente, si calcolano la nuova larghezza e altezza dell'immagine, moltiplicando i valori originali per il fattore di scala (scaleFactor).
+
+3. Viene inizializzata la matrice e una riga temporanea per costruire la matrice delle altezze.
+
+4. Si impostano la larghezza e l'altezza del canvas secondo i valori calcolati (newWidth e newHeight) e si disegna l'immagine ridimensionata sul canvas.
+
+5. Si ottengono i dati dell'immagine ridimensionata utilizzando il metodo getImageData del contesto del canvas.
+
+6. Si scorrono tutti i pixel dell'immagine ridimensionata, e per ogni pixel, si calcola il valore di altezza corrispondente. Questo valore viene ottenuto moltiplicando il valore rosso del pixel per un fattore di scala (in questo caso, 3) e dividendo il risultato per 255. Il valore di altezza viene quindi normalizzato e arrotondato a due cifre decimali e diviso per 4.
+
+7. I valori di altezza calcolati vengono inseriti nella riga temporanea e, una volta completata una riga, questa viene copiata nella matrice delle altezze.
+
+8. Alla fine, viene pulito il canvas e viene restituita la matrice delle altezze creata.
+
+In sintesi, la funzione createHeightfieldMatrix crea una matrice delle altezze basata sull'immagine di input, ridimensiona l'immagine secondo il fattore di scala e calcola i valori di altezza per ogni pixel dell'immagine ridimensionata. Questa matrice verrà poi utilizzata per generare il terreno 3D nell'heightfield.
+
+### heights
+
+questa variabile memorizza la matrice delle altezze creata dalla funzione `createHeightfieldMatrix`. L'hook [**useMemo**](#usememo) viene utilizzato per memorizzare il risultato della funzione e assicurarsi che venga ricreato solo quando `displacementMap` viene aggiornata.
+
+### elementSize
+
+questa variabile memorizza la dimensione degli elementi dell'heightfield. Anche in questo caso viene utilizzato l'hook [**useMemo**](#usememo) per memorizzare il valore e ricrearlo solo quando `displacementMap` viene aggiornata. In questo caso, il valore è fisso (0.5) e non dipende direttamente da `displacementMap`, ma l'hook `useMemo` viene utilizzato per mantenere la coerenza con la definizione di `heights`.
+
+### useHeightfield
+
+questo hook viene utilizzato per creare l'heightfield e posizionarlo correttamente nella scena 3D. Prende come argomenti un oggetto con le seguenti proprietà:
+
+#### ref
+
+il riferimento all'oggetto heightfield.
+
+### args
+
+un array contenente la matrice delle altezze (`heights`) e un oggetto con la proprietà `elementSize`.
+
+### position
+
+la posizione dell'heightfield nella scena 3D, che corrisponde al centro della mappa (`mapCenter`).
+
+### rotation
+
+la rotazione dell'heightfield nella scena 3D. In questo caso, viene ruotato di -π/2 radianti sull'asse X e di -π radianti sull'asse Z.
 
 # React Hooks
 
@@ -389,6 +519,15 @@ Questo hook crea un oggetto di riferimento mutabile che può essere utilizzato p
 ### useCallback
 
 Questo hook consente di memorizzare una funzione in modo che non venga ricreato ad ogni renderizzazione del componente. Viene utilizzato quando si ha bisogno di passare una funzione come prop a un componente figlio, in modo che il componente figlio non debba essere re-renderizzato ad ogni modifica della funzione. La funzione memorizzata viene creata solo una volta, al momento del rendering iniziale del componente. Il hook restituisce una funzione che può essere passata come prop a un componente figlio.
+
+### useMemo
+
+permette di memorizzare un valore calcolato e di ricrearlo solo quando una delle dipendenze specificate cambia. È particolarmente utile quando si lavora con valori computazionalmente costosi o oggetti complessi che non dovrebbero essere ricreati ad ogni render del componente.
+
+`useMemo` prende due argomenti:
+
+1.  Una funzione di calcolo che restituisce il valore memorizzato. Questa funzione viene eseguita la prima volta che il componente viene renderizzato, e successivamente solo quando una delle dipendenze cambia.
+2.  Un array di dipendenze, che elenca le variabili su cui il valore memorizzato dipende. Quando una di queste variabili cambia, la funzione di calcolo viene rieseguita per ricreare il valore memorizzato.
 
 ## @react-three/fiber
 

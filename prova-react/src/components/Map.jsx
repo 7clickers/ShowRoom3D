@@ -14,12 +14,6 @@ const context = canvas.getContext('2d');
 if (context) context.imageSmoothingEnabled = false;
 const scaleFactor = 0.1;
 
-/**
- * Returns matrix data to be passed to heightfield.
- * set elementSize as `size` / matrix[0].length (image width)
- * and rotate heightfield to match (rotation.x = -Math.PI/2)
- */
-
 function createHeightfieldMatrix(image) {
   if (!context) {
     throw new Error('Heightfield could not be created');
@@ -52,7 +46,6 @@ function createHeightfieldMatrix(image) {
 
 const Map = () => {
 
-  const meshRef = useRef();
   const heightfieldRef = useRef();
 
   // Load textures
@@ -90,7 +83,7 @@ const Map = () => {
   const material = new MeshStandardMaterial({
     map: colorMap,
     displacementMap: displacementMap,
-    // displacementScale: 20,
+    displacementScale: 1,
     normalMap: normalMap,
     aoMap: ambientOcclusionMap,
     roughnessMap: roughnessMap,
@@ -99,7 +92,7 @@ const Map = () => {
 
   return (
     <>
-      <mesh ref={meshRef} material={material} rotation={[-Math.PI / 2, 0, 0]} position={[0,-0.25,0]}>
+      <mesh material={material} rotation={[-Math.PI / 2, 0, 0]} position={[0,-0.25,0]}>
         <planeBufferGeometry args={[mapWidth, mapHeight, mapWidth - 1, mapHeight - 1]} />
       </mesh>
     </>
