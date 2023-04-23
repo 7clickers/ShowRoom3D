@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 
 // Fisica
-import { Physics } from "@react-three/cannon";
+import { Physics, Debug } from "@react-three/cannon";
 
 // Three
 import { useThree } from "@react-three/fiber";
@@ -11,6 +11,8 @@ import { PointerLockControls } from "@react-three/drei";
 import Player from "./Player.jsx";
 import Map from "./Map.jsx";
 import Lights from "./Lights.jsx";
+import Cubes from "./Cubes.jsx";
+import Skybox from "./Skybox.jsx";
 
 export const Scene = () => {
   // Ottieni oggetti camera e gl da useThree
@@ -35,6 +37,7 @@ export const Scene = () => {
       {/** Blocco del puntatore */}
       <PointerLockControls ref={controls} args={[camera, gl.domElement]} />
       {/** Illuminazione */}
+      <Skybox />
       <Lights />
       {/** Oggetti fisici */}
       <Physics
@@ -43,10 +46,11 @@ export const Scene = () => {
         iterations={50} // iterazioni
         broadphase={"SAP"} // algoritmo di fase ampia
       >
-        {/** Giocatore */}
-        <Player position={[-10, 0, -5]} args={[0.5]}/>
-        {/** Piano */}
-        <Map />
+          {/** Giocatore */}
+          <Player position={[0, 5, 0]} args={[0.5]}/>
+          {/** Mappa */}
+          <Map />
+          <Cubes />
       </Physics>
     </>
   );
