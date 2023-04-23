@@ -219,7 +219,7 @@ Il custom hook useKeyboardInput si occupa di gestire gli input della tastiera pe
 
 ## 5. Map.jsx
 
-Il componente che rappresenta il terreno dell'ambiente 3D. In questo file viene creato un componente **_mesh_** con una geometria a piano e un materiale Phong per le ombre. Viene anche configurato il componente **_usePlane_** di react-three-cannon per aggiungere una collisione al terreno.
+Componente che si occupa della creazione e della visualizzazione di una mappa 3D basata su un'immagine di terreno.
 
 ## 6. Lights.jsx
 
