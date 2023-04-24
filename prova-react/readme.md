@@ -1,7 +1,14 @@
 # Da fare
 - [ ] Organizzare meglio il file system, aggiungere componenti UI
-- [ ] Caricare modello di prova
-- [ ]  Sistemare il collider del terreno
+- [ ] UI/UX design (in figma?):
+	- [ ] UX: creare i User Flow
+	- [ ] trovare delle reference e fare bozze per l'UI
+	- [ ] disegnare l'UI
+- [ ] Modelli
+	- [ ] caricare modelli di prova
+	- [ ] cambiare il colore o la texture del modello
+	- [ ] capire come comprimere e ottimizzare i modelli
+- [ ] Sistemare il collider del terreno
 - [ ] (forse) aggiungere uno skybox al posto del cielo caricato con Sky
 - [ ] Implementare il pattern redux con il componente Player
 	- [ ] creare lo Store
