@@ -11,8 +11,9 @@ import { PointerLockControls } from "@react-three/drei";
 import Player from "./Player.jsx";
 import Map from "./Map.jsx";
 import Lights from "./Lights.jsx";
-import Cubes from "./Cubes.jsx";
 import Skybox from "./Skybox.jsx";
+import Models from "./Models.jsx";
+import BeachBall from "./Models/BeachBall.jsx";
 
 export const Scene = () => {
   // Ottieni oggetti camera e gl da useThree
@@ -46,11 +47,12 @@ export const Scene = () => {
         iterations={50} // iterazioni
         broadphase={"SAP"} // algoritmo di fase ampia
       >
-          {/** Giocatore */}
-          <Player position={[0, 5, 0]} args={[0.5]}/>
-          {/** Mappa */}
-          <Map />
-          <Cubes />
+        {/** Giocatore */}
+        <Player position={[0, 5, 0]} args={[0.5]}/>
+        {/** Mappa */}
+        <Map />
+        <Models />
+        <BeachBall/>
       </Physics>
     </>
   );
