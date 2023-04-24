@@ -1,3 +1,14 @@
+# Da fare
+- [ ] Organizzare meglio il file system, aggiungere componenti UI
+- [ ] Caricare modello di prova
+- [ ]  Sistemare il collider del terreno
+- [ ] (forse) aggiungere uno skybox al posto del cielo caricato con Sky
+- [ ] Implementare il pattern redux con il componente Player
+	- [ ] creare lo Store
+	- [ ] creare reducer
+	- [ ] creare azioni 
+
+
 # Table of Contents
 
 - [Introduzione](#introduzione)
