@@ -1,5 +1,4 @@
-import BeachBall from "./Models/BeachBall";
-import Coral from "./Models/Coral";
+import Coral from "./model/Coral";
 
 const Models = () => {
     

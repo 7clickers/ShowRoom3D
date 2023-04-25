@@ -8,12 +8,12 @@ import { useThree } from "@react-three/fiber";
 import { PointerLockControls } from "@react-three/drei";
 
 // Componenti personalizzati
-import Player from "./Player.jsx";
-import Map from "./Map.jsx";
-import Lights from "./Lights.jsx";
-import Skybox from "./Skybox.jsx";
-import Models from "./Models.jsx";
-import BeachBall from "./Models/BeachBall.jsx";
+import Player from "../player/Player.jsx";
+import Lights from "../lights/Lights.jsx";
+import Map from "../Map/Map.jsx";
+import Skybox from "../skybox/Skybox.jsx";
+import Models from "../models/Models.jsx";
+import BeachBall from "../models/model/BeachBall.jsx";
 
 export const Scene = () => {
   // Ottieni oggetti camera e gl da useThree
@@ -48,7 +48,7 @@ export const Scene = () => {
         broadphase={"SAP"} // algoritmo di fase ampia
       >
         {/** Giocatore */}
-        <Player position={[0, 5, 0]} args={[0.5]}/>
+        <Player />
         {/** Mappa */}
         <Map />
         <Models />

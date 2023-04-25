@@ -1,12 +1,28 @@
 import React, { useRef, useEffect } from "react";
 import { useSphere } from "@react-three/cannon";
 import { useFrame, useThree } from "@react-three/fiber";
-import { useKeyboardInput } from "../UI_Listeners/movementKeyboardInput";
+import { useKeyboardInput } from "./movementKeyboardInput";
 import * as THREE from "three";
 
-const Player = (props) => {
+import { useDispatch, useSelector } from "react-redux";
+import { setPosition, setRotation } from "./playerSlice";
+
+const Player = () => {
+
+const dispatch = useDispatch();
+
+  // Access the player's position and rotation from the store
+  const playerPosition = useSelector((state) => state.player.position);
+  const playerRotation = useSelector((state) => state.player.rotation);
+
   // Accedi alla camera dalla scena
   const { camera } = useThree();
+  
+  useEffect(() => {
+    camera.position.set(playerPosition.x, playerPosition.y, playerPosition.z);
+    camera.rotation.set(playerRotation.x, playerRotation.y, playerRotation.z);
+  }, [camera, playerPosition, playerRotation]);  
+
   
   // Definisci i tasti da ascoltare
   const keysToListen = ["w", "s", "a", "d", " "];
@@ -31,7 +47,7 @@ const Player = (props) => {
   const [ref, api] = useSphere((index) => ({
     mass: 1,
     type: "Dynamic",
-    position: props.position,
+    position: [playerPosition.x, playerPosition.y, playerPosition.z],
   }));
 
   // Sottoscrivi agli aggiornamenti della velocità e archiviali nel useRef velocity
@@ -65,12 +81,28 @@ const Player = (props) => {
     const worldPos = new THREE.Vector3();
     ref.current.getWorldPosition(worldPos);
     camera.position.copy(worldPos);
+
+    // After updating the camera position
+    const plainPos = {
+      x: camera.position.x,
+      y: camera.position.y,
+      z: camera.position.z,
+    };
+
+    const plainRot = {
+      x: camera.rotation.x,
+      y: camera.rotation.y,
+      z: camera.rotation.z,
+    };
+
+    dispatch(setPosition(plainPos));
+    dispatch(setRotation(plainRot));
   });
 
   // Restituisci una mesh sferica con la posizione e la scala specificate
   return (
-    <mesh ref={ref} position={props.position}>
-      <sphereBufferGeometry args={[props.args]} />
+    <mesh ref={ref} position={playerPosition}>
+      <sphereBufferGeometry />
       <meshStandardMaterial color="#FFFF00" />
     </mesh>
   );

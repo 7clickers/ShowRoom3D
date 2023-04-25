@@ -3,11 +3,11 @@ import { useTexture } from "@react-three/drei";
 import { RepeatWrapping, Color, MeshStandardMaterial } from "three";
 import { useHeightfield } from '@react-three/cannon'
 
-import sandTextureURL from "../assets/map/color.jpg";
-import displacementMapURL from "../assets/map/displacement.png";
-import normalMapURL from "../assets/map/normal.jpg";
-import ambientOcclusionMapURL from "../assets/map/ambientOcclusion.jpg";
-import roughnessMapURL from "../assets/map/roughness.jpg";
+import sandTextureURL from "../../assets/map/color.jpg";
+import displacementMapURL from "../../assets/map/displacement.png";
+import normalMapURL from "../../assets/map/normal.jpg";
+import ambientOcclusionMapURL from "../../assets/map/ambientOcclusion.jpg";
+import roughnessMapURL from "../../assets/map/roughness.jpg";
 
 const canvas = document.createElement('canvas');
 const context = canvas.getContext('2d');
