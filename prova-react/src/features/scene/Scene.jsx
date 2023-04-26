@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 
 // Fisica
 import { Physics, Debug } from "@react-three/cannon";
@@ -6,16 +6,17 @@ import { Physics, Debug } from "@react-three/cannon";
 // Three
 import { useThree } from "@react-three/fiber";
 import { PointerLockControls } from "@react-three/drei";
+import { useSelector } from "react-redux";
 
 // Componenti personalizzati
 import Player from "../player/Player.jsx";
 import Lights from "../lights/Lights.jsx";
 import Map from "../Map/Map.jsx";
 import Skybox from "../skybox/Skybox.jsx";
-import Models from "../models/Models.jsx";
-import BeachBall from "../models/model/BeachBall.jsx";
+import Models from "../products/Models.jsx";
 
 export const Scene = () => {
+
   // Ottieni oggetti camera e gl da useThree
   const { camera, gl } = useThree();
   // Creare un useRef per controllare il puntatore
@@ -52,7 +53,6 @@ export const Scene = () => {
         {/** Mappa */}
         <Map />
         <Models />
-        <BeachBall/>
       </Physics>
     </>
   );
