@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - dev
+      - CI-set-up
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
