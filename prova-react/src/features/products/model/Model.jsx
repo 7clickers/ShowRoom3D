@@ -11,7 +11,8 @@ const Model = (props) => {
     if (modelRef.current) {
       onRendered(modelRef.current);
     }
-  }, [modelRef, onRendered]);
+  }, []); // Empty array as dependency
+  
 
   return (
     <>

@@ -1,20 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 import Model from './model/Model';
 
 const Models = ({ onRendered }) => {
   const products = useSelector((state) => state.product.products);
-  const [renderedObjects, setRenderedObjects] = useState([]);
-
-  useEffect(() => {
-    if (renderedObjects.length === products.length) {
-      onRendered(renderedObjects);
-    }
-  }, [renderedObjects, products, onRendered]);
+  const renderedObjects = useRef([]);
 
   const handleModelRendered = (modelObject) => {
-    setRenderedObjects((prev) => [...prev, modelObject]);
+    renderedObjects.current = [...renderedObjects.current, modelObject];
+    if (renderedObjects.current.length === products.length) {
+      onRendered(renderedObjects.current);
+    }
   };
+  
 
   return (
     <>

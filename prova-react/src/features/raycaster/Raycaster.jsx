@@ -20,7 +20,7 @@ const Raycaster = ({ productObjects }) => {
       // Check for intersections
       const newIntersects = raycaster.intersectObjects(productObjects);
       setIntersects(newIntersects);
-    }, 2000); // Debounce time in milliseconds
+    }, 0); // Debounce time in milliseconds
 
     window.addEventListener("mousemove", handleMouseMove);
 
