@@ -4,14 +4,17 @@ import React, { useEffect, useRef, useState } from "react";
 // Three
 import { useThree } from "@react-three/fiber";
 import { Environment, PointerLockControls } from "@react-three/drei";
+import { useSelector } from "react-redux";
 
 // Componenti personalizzati
 import Lights from "../lights/Lights.jsx";
 import Map from "../map/Map.jsx";
 import Skybox from "../skybox/Skybox.jsx";
-import Models from "../models/Models.jsx";
+import Models from "../products/Models.jsx";
+import Raycaster from "../raycaster/Raycaster.jsx";
 
-export const Scene = () => {
+const Scene = () => {
+
   // Ottieni oggetti camera e gl da useThree
   const { camera, gl } = useThree();
   // Creare un useRef per controllare il puntatore
@@ -29,6 +32,19 @@ export const Scene = () => {
     };
   }, [gl]);
 
+  const [productObjects, setProductObjects] = useState([]);
+
+  const handleModelsRendered = (renderedObjects) => {
+    setProductObjects(renderedObjects);
+  };
+
+  const [intersectedProductName, setIntersectedProductName] = useState(null);
+
+  const handleIntersectedProduct = (productName) => {
+    setIntersectedProductName(productName);
+  };
+
+
   return (
     <>
       {/** Blocco del puntatore */}
@@ -37,11 +53,21 @@ export const Scene = () => {
       <Environment files="src/assets/map/bg2.hdr" background />
       <Lights />
       {/** Oggetti fisici */}
-
-      {/** Giocatore */}
-      {/** Mappa */}
-      <Map />
-      <Models />
+      <Physics
+        gravity={[0, -9.81, 0]} // gravità
+        tolerance={0} // tolleranza
+        iterations={50} // iterazioni
+        broadphase={"SAP"} // algoritmo di fase ampia
+      >
+        {/** Giocatore */}
+        <Player />
+        {/** Mappa */}
+        <Map />
+        <Models onRendered={handleModelsRendered} />
+        <Raycaster productObjects={productObjects} />
+      </Physics>
     </>
   );
 };
+
+export default Scene;

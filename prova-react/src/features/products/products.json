@@ -1,0 +1,25 @@
+[
+    {
+    "id": "1",
+    "title": "Corallo A",
+    "description": "Esempio prodotto",
+    "price": 49.99,
+    "defaultColor": "red",
+    "availableColors": ["red", "blue", "green"],
+    "modelURL": "./src/assets/models/reed_coral.glb",
+    "position": { "x": 0, "y": 1, "z": 5 },
+    "scale": "2"
+    },
+    {
+    "id": "2",
+    "title": "Corallo B",
+    "description": "Esempio prodotto",
+    "price": 59.99,
+    "defaultColor": "blue",
+    "availableColors": ["red", "blue", "green"],
+    "modelURL": "./src/assets/models/reed_coral.glb",
+    "position": { "x": 4, "y": 1, "z": 0 },
+    "scale": "1"
+    }
+    
+]
