@@ -1,8 +1,8 @@
 [
     {
     "id": "1",
-    "title": "Example Product 1",
-    "description": "This is an example product.",
+    "title": "Corallo A",
+    "description": "Esempio prodotto",
     "price": 49.99,
     "defaultColor": "red",
     "availableColors": ["red", "blue", "green"],
@@ -12,8 +12,8 @@
     },
     {
     "id": "2",
-    "title": "Example Product 2",
-    "description": "This is another example product.",
+    "title": "Corallo B",
+    "description": "Esempio prodotto",
     "price": 59.99,
     "defaultColor": "blue",
     "availableColors": ["red", "blue", "green"],

@@ -43,7 +43,6 @@ const Scene = () => {
 
   const [intersectedProductName, setIntersectedProductName] = useState(null);
 
-  // Pass this function as a prop to the Raycaster component
   const handleIntersectedProduct = (productName) => {
     setIntersectedProductName(productName);
   };
