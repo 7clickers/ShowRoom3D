@@ -1,15 +1,17 @@
 import { useState, useEffect } from "react";
 import { useThree, useFrame } from "@react-three/fiber";
-
-import { debounce } from "../../common/debounce";
+import { useContext } from 'react';
+import ProductInteractionContext from "../../common/ProductInteractionContext";
 
 const Raycaster = ({ productObjects }) => {
   const { camera, raycaster, scene } = useThree();
 
   const [intersects, setIntersects] = useState([]);
 
+  const { setIntersectedProductName } = useContext(ProductInteractionContext);
+
   useEffect(() => {
-    const handleMouseMove = debounce((event) => {
+    const handleMouseMove = (event) => {
       // Get the position of the mouse on the screen
       const mouseX = (event.clientX / window.innerWidth) * 2 - 1;
       const mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
@@ -20,7 +22,7 @@ const Raycaster = ({ productObjects }) => {
       // Check for intersections
       const newIntersects = raycaster.intersectObjects(productObjects);
       setIntersects(newIntersects);
-    }, 0); // Debounce time in milliseconds
+    };
 
     window.addEventListener("mousemove", handleMouseMove);
 
@@ -33,8 +35,10 @@ const Raycaster = ({ productObjects }) => {
     if (intersects.length > 0) {
       const intersectedObject = intersects[0].object;
       if (intersectedObject) {
-        console.log(`Intersecting with product ${intersectedObject.name}`);
+        setIntersectedProductName(intersectedObject.name);
       }
+    } else {
+      setIntersectedProductName(null);
     }
   });
 

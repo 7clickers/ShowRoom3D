@@ -11,7 +11,7 @@ const Model = (props) => {
     if (modelRef.current) {
       onRendered(modelRef.current);
     }
-  }, []); // Empty array as dependency
+  }, []);
   
 
   return (
@@ -21,6 +21,7 @@ const Model = (props) => {
         object={clonedScene}
         scale={scale}
         position={position}
+        renderOrder={1} 
       />
     </>
   );

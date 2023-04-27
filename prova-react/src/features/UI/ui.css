@@ -1,0 +1,27 @@
+.crosshair {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: white;
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.model-interaction-prompt {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(30, 60, 90, 0.8);
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-align: center;
+    z-index: 2;
+  }

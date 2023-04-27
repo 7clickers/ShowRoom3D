@@ -16,7 +16,7 @@ import Skybox from "../skybox/Skybox.jsx";
 import Models from "../products/Models.jsx";
 import Raycaster from "../raycaster/Raycaster.jsx";
 
-export const Scene = () => {
+const Scene = () => {
 
   // Ottieni oggetti camera e gl da useThree
   const { camera, gl } = useThree();
@@ -40,6 +40,14 @@ export const Scene = () => {
   const handleModelsRendered = (renderedObjects) => {
     setProductObjects(renderedObjects);
   };
+
+  const [intersectedProductName, setIntersectedProductName] = useState(null);
+
+  // Pass this function as a prop to the Raycaster component
+  const handleIntersectedProduct = (productName) => {
+    setIntersectedProductName(productName);
+  };
+
 
   return (
     <>
@@ -65,3 +73,5 @@ export const Scene = () => {
     </>
   );
 };
+
+export default Scene;
