@@ -52,20 +52,13 @@ const Scene = () => {
       {/** Illuminazione */}
       <Environment files="src/assets/map/bg2.hdr" background />
       <Lights />
-      {/** Oggetti fisici */}
-      <Physics
-        gravity={[0, -9.81, 0]} // gravità
-        tolerance={0} // tolleranza
-        iterations={50} // iterazioni
-        broadphase={"SAP"} // algoritmo di fase ampia
-      >
-        {/** Giocatore */}
-        <Player />
-        {/** Mappa */}
-        <Map />
-        <Models onRendered={handleModelsRendered} />
-        <Raycaster productObjects={productObjects} />
-      </Physics>
+
+      {/** Giocatore */}
+      {/** Mappa */}
+      <Map />
+      <Models onRendered={handleModelsRendered} />
+      <Raycaster productObjects={productObjects} />
+
     </>
   );
 };

@@ -7,7 +7,7 @@
     "defaultColor": "red",
     "availableColors": ["red", "blue", "green"],
     "modelURL": "./src/assets/models/reed_coral.glb",
-    "position": { "x": 0, "y": 1, "z": 5 },
+    "position": { "x": 0, "y": 0.25, "z": 5 },
     "scale": "2"
     },
     {
@@ -18,8 +18,41 @@
     "defaultColor": "blue",
     "availableColors": ["red", "blue", "green"],
     "modelURL": "./src/assets/models/reed_coral.glb",
-    "position": { "x": 4, "y": 1, "z": 0 },
+    "position": { "x": 4, "y": 0.25, "z": 0 },
     "scale": "1"
+    },
+    {
+    "id": "3",
+    "title": "Jungle Tree",
+    "description": "Esempio prodotto",
+    "price": 59.99,
+    "defaultColor": "blue",
+    "availableColors": ["red", "blue", "green"],
+    "modelURL": "./src/assets/models/jungle_tree.glb",
+    "position": { "x": -1, "y": 0.25, "z": -4 },
+    "scale": "1"
+    },
+    {
+    "id": "4",
+    "title": "Jungle Tree",
+    "description": "Esempio prodotto",
+    "price": 59.99,
+    "defaultColor": "blue",
+    "availableColors": ["red", "blue", "green"],
+    "modelURL": "./src/assets/models/jungle_tree.glb",
+    "position": { "x": 16, "y": 0.25, "z": 0 },
+    "scale": "0.75"
+    },
+    {
+    "id": "5",
+    "title": "Jungle Tree",
+    "description": "Esempio prodotto",
+    "price": 59.99,
+    "defaultColor": "blue",
+    "availableColors": ["red", "blue", "green"],
+    "modelURL": "./src/assets/models/jungle_tree.glb",
+    "position": { "x": 14, "y": 0.25, "z": 13 },
+    "scale": "1.2"
     }
     
 ]

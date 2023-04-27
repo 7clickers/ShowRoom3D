@@ -12,7 +12,15 @@ const Model = (props) => {
       onRendered(modelRef.current);
     }
   }, []);
-  
+
+    // Traverse the clonedScene and enable castShadow for each mesh
+    useEffect(() => {
+      clonedScene.traverse((child) => {
+        if (child.isMesh) {
+          child.castShadow = true;
+        }
+      });
+    }, [clonedScene]);
 
   return (
     <>

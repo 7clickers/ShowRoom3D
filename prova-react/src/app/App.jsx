@@ -12,6 +12,7 @@ export default function App() {
       <ProductInteractionContext.Provider value={{ intersectedProductName, setIntersectedProductName }}>
         <UI />
         <Canvas>
+        <fog attach="fog" color="midnightblue" near={3} far={30} />
           <Scene />
         </Canvas>
       </ProductInteractionContext.Provider>
