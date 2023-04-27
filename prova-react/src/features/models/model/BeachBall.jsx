@@ -1,16 +1,8 @@
-import { useSphere } from "@react-three/cannon";
+
 import { useTexture } from "@react-three/drei";
 import { RepeatWrapping  } from "three";
 
 const BeachBall = () => {
-  const [ballRef] = useSphere(() => ({
-    mass: 0.5,
-    position: [2, 10, 2],
-    radius: 1,
-    material: {
-        restitution: 1, // Adjust this value to control bounciness
-      },
-  }));
 
   const colorMap = useTexture("./src/assets/BeachBallColor.jpg");
   colorMap.wrapS = RepeatWrapping;

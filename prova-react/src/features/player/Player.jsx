@@ -1,111 +1,145 @@
-import React, { useRef, useEffect } from "react";
-import { useSphere } from "@react-three/cannon";
-import { useFrame, useThree } from "@react-three/fiber";
-import { useKeyboardInput } from "./movementKeyboardInput";
-import * as THREE from "three";
+import { useRef, useEffect, useMemo } from 'react'
+import { Capsule } from 'three/examples/jsm/math/Capsule.js'
+import { Vector3 } from 'three'
+import { useFrame } from '@react-three/fiber'
+import useKeyboard from '../../common/useKeyboard'
+import useThrottledDispatch from '../../common/useThrottledDispatch'
 
-import { useDispatch, useSelector } from "react-redux";
-import { setPosition, setRotation } from "./playerSlice";
+import { useSelector, useDispatch } from 'react-redux';
+import { setPosition, setRotation } from './playerSlice';
 
-const Player = () => {
 
-const dispatch = useDispatch();
+const GRAVITY = 30
+const STEPS_PER_FRAME = 5
 
-  // Access the player's position and rotation from the store
+export default function Player({ octree }) { 
   const playerPosition = useSelector((state) => state.player.position);
-  const playerRotation = useSelector((state) => state.player.rotation);
 
-  // Accedi alla camera dalla scena
-  const { camera } = useThree();
+  const lastPositionDispatchTime = useRef(0);
+  const lastRotationDispatchTime = useRef(0);
+
+  const playerOnFloor = useRef(false)
+  const playerVelocity = useMemo(() => new Vector3(), [])
+  const playerDirection = useMemo(() => new Vector3(), [])
+  const capsule = useMemo(
+    () => new Capsule(
+      new Vector3(playerPosition.x, playerPosition.y - 1, playerPosition.z),
+      new Vector3(playerPosition.x, playerPosition.y, playerPosition.z),
+      0.5
+    ),
+    [playerPosition]
+  );
   
+  const dispatch = useDispatch();
+
+  const onPointerDown = () => {
+ 
+  }
+
   useEffect(() => {
-    camera.position.set(playerPosition.x, playerPosition.y, playerPosition.z);
-    camera.rotation.set(playerRotation.x, playerRotation.y, playerRotation.z);
-  }, [camera, playerPosition, playerRotation]);  
+    document.addEventListener('pointerdown', onPointerDown)
+    return () => {
+      document.removeEventListener('pointerdown', onPointerDown)
+    }
+  })
 
+
+  const keyboard = useKeyboard()
+
+  function getForwardVector(camera, playerDirection) {
+    camera.getWorldDirection(playerDirection)
+    playerDirection.y = 0
+    playerDirection.normalize()
+    return playerDirection
+  }
+
+  function getSideVector(camera, playerDirection) {
+    camera.getWorldDirection(playerDirection)
+    playerDirection.y = 0
+    playerDirection.normalize()
+    playerDirection.cross(camera.up)
+    return playerDirection
+  }
+
+  function controls(camera, delta, playerVelocity, playerOnFloor, playerDirection) {
+    const speedDelta = delta * (playerOnFloor ? 25 : 8)
+    keyboard['KeyA'] && playerVelocity.add(getSideVector(camera, playerDirection).multiplyScalar(-speedDelta))
+    keyboard['KeyD'] && playerVelocity.add(getSideVector(camera, playerDirection).multiplyScalar(speedDelta))
+    keyboard['KeyW'] && playerVelocity.add(getForwardVector(camera, playerDirection).multiplyScalar(speedDelta))
+    keyboard['KeyS'] && playerVelocity.add(getForwardVector(camera, playerDirection).multiplyScalar(-speedDelta))
+    if (playerOnFloor) {
+      if (keyboard['Space']) {
+        playerVelocity.y = 15
+      }
+    }
+  }
+
+  function updatePlayer(camera, delta, octree, capsule, playerVelocity, playerOnFloor) {
+    let damping = Math.exp(-4 * delta) - 1
+    if (!playerOnFloor) {
+      playerVelocity.y -= GRAVITY * delta
+      damping *= 0.1 // small air resistance
+    }
+    playerVelocity.addScaledVector(playerVelocity, damping)
+    const deltaPosition = playerVelocity.clone().multiplyScalar(delta)
+    capsule.translate(deltaPosition)
+    playerOnFloor = playerCollisions(capsule, octree, playerVelocity)
+    camera.position.copy(capsule.end)
+
+    const currentTime = performance.now();
+    const positionUpdateDelay = 1500;
   
-  // Definisci i tasti da ascoltare
-  const keysToListen = ["w", "s", "a", "d", " "];
-  
-  // Ottieni lo stato dei tasti usando il custom hook
-  const keysPressed = useKeyboardInput(keysToListen);
-  
-  // Inizializza direction, frontVector e sideVector come vettori vuoti
-  const direction = new THREE.Vector3();
-  const frontVector = new THREE.Vector3();
-  const sideVector = new THREE.Vector3();
-  
-  // Crea i useRef per velocità e accelerazione e inizializzali con vettori vuoti
-  const velocity = useRef(new THREE.Vector3());
-  const speed = useRef(new THREE.Vector3());
-  
-  // Costanti per la velocità di movimento e la potenza di salto
-  const SPEED = 5;
-  const JUMP_POWER = 4;
-
-  // Crea una sfera con la posizione e massa specificate
-  const [ref, api] = useSphere((index) => ({
-    mass: 1,
-    type: "Dynamic",
-    position: [playerPosition.x, playerPosition.y, playerPosition.z],
-  }));
-
-  // Sottoscrivi agli aggiornamenti della velocità e archiviali nel useRef velocity
-  useEffect(() => api.velocity.subscribe((v) => (velocity.current = new THREE.Vector3().fromArray(v))), []);
-
-  // Ad ogni frame, aggiorna il movimento del giocatore, la velocità e sincronizza la posizione della camera
-  useFrame(() => {
-    // Aggiorna frontVector in base ai tasti "w" e "s"
-    frontVector.set(0, 0, Number(keysPressed["s"]) - Number(keysPressed["w"]));
-    // Aggiorna sideVector in base ai tasti "a" e "d"
-    sideVector.set(Number(keysPressed["a"]) - Number(keysPressed["d"]), 0, 0);
-
-    // Calcola il vettore di direzione per il movimento
-    direction
-      .subVectors(frontVector, sideVector)
-      .normalize()
-      .multiplyScalar(SPEED)
-      .applyEuler(camera.rotation);
-
-    // Copia i valori di velocità correnti in speed.current
-    speed.current.fromArray(velocity.current.toArray());
-    // Aggiorna la velocità del giocatore in base alla direzione calcolata
-    api.velocity.set(direction.x, speed.current.y, direction.z);
-
-    // Se la barra spaziatrice è premuta e il giocatore è a terra, applica la potenza di salto
-    if (keysPressed[" "] && Math.abs(speed.current.y) < 0.05) {
-      api.velocity.set(speed.current.x, JUMP_POWER, speed.current.z);
+    if (currentTime - lastPositionDispatchTime.current > positionUpdateDelay) {
+      dispatch(setPosition({ x: capsule.end.x, y: capsule.end.y, z: capsule.end.z }));
+      lastPositionDispatchTime.current = currentTime;
     }
 
-    // Ottieni la posizione del giocatore e aggiorna la posizione della camera
-    const worldPos = new THREE.Vector3();
-    ref.current.getWorldPosition(worldPos);
-    camera.position.copy(worldPos);
+    return playerOnFloor
+  }
 
-    // After updating the camera position
-    const plainPos = {
-      x: camera.position.x,
-      y: camera.position.y,
-      z: camera.position.z,
-    };
 
-    const plainRot = {
-      x: camera.rotation.x,
-      y: camera.rotation.y,
-      z: camera.rotation.z,
-    };
+  function playerCollisions(capsule, octree, playerVelocity) {
+    if (!octree) return false; // <-- add this check
+  
+    const result = octree.capsuleIntersect(capsule)
+    let playerOnFloor = false
+    if (result) {
+      playerOnFloor = result.normal.y > 0
+      if (!playerOnFloor) {
+        playerVelocity.addScaledVector(result.normal, -result.normal.dot(playerVelocity))
+      }
+      capsule.translate(result.normal.multiplyScalar(result.depth))
+    }
+    return playerOnFloor
+  }
+  
 
-    dispatch(setPosition(plainPos));
-    dispatch(setRotation(plainRot));
-  });
+  function teleportPlayerIfOob(camera, capsule, playerVelocity) {
+    if (camera.position.y <= -100) {
+      playerVelocity.set(0, 0, 0)
+      capsule.start.set(0, 10, 0)
+      capsule.end.set(0, 11, 0)
+      camera.position.copy(capsule.end)
+      camera.rotation.set(0, 0, 0)
+    // Throttle position and rotation updates
+    const currentTime = performance.now();
+    const positionUpdateDelay = 1500;
 
-  // Restituisci una mesh sferica con la posizione e la scala specificate
-  return (
-    <mesh ref={ref} position={playerPosition}>
-      <sphereBufferGeometry />
-      <meshStandardMaterial color="#FFFF00" />
-    </mesh>
-  );
-};
+    if (currentTime - lastPositionDispatchTime.current > positionUpdateDelay) {
+      dispatch(setPosition({ x: capsule.end.x, y: capsule.end.y, z: capsule.end.z }));
+      lastPositionDispatchTime.current = currentTime;
+    }
+    }
+  }
 
-export default Player;
+  console.log("Octree:", octree, "capsuleIntersect:", octree?.capsuleIntersect);
+
+  useFrame(({ camera }, delta) => {
+    controls(camera, delta, playerVelocity, playerOnFloor.current, playerDirection)
+    const deltaSteps = Math.min(0.05, delta) / STEPS_PER_FRAME
+    for (let i = 0; i < STEPS_PER_FRAME; i++) {
+      playerOnFloor.current = updatePlayer(camera, deltaSteps, octree, capsule, playerVelocity, playerOnFloor.current)
+    }
+    teleportPlayerIfOob(camera, capsule, playerVelocity)
+  })
+}
