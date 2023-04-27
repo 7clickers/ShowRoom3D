@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 // Fisica
 import { Physics, Debug } from "@react-three/cannon";
@@ -14,6 +14,7 @@ import Lights from "../lights/Lights.jsx";
 import Map from "../Map/Map.jsx";
 import Skybox from "../skybox/Skybox.jsx";
 import Models from "../products/Models.jsx";
+import Raycaster from "../raycaster/Raycaster.jsx";
 
 export const Scene = () => {
 
@@ -34,6 +35,12 @@ export const Scene = () => {
     };
   }, [gl]);
 
+  const [productObjects, setProductObjects] = useState([]);
+
+  const handleModelsRendered = (renderedObjects) => {
+    setProductObjects(renderedObjects);
+  };
+
   return (
     <>
       {/** Blocco del puntatore */}
@@ -52,7 +59,8 @@ export const Scene = () => {
         <Player />
         {/** Mappa */}
         <Map />
-        <Models />
+        <Models onRendered={handleModelsRendered} />
+        <Raycaster productObjects={productObjects} />
       </Physics>
     </>
   );

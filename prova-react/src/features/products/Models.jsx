@@ -1,9 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import Model from './model/Model';
 
-const Models = () => {
+const Models = ({ onRendered }) => {
   const products = useSelector((state) => state.product.products);
+  const [renderedObjects, setRenderedObjects] = useState([]);
+
+  useEffect(() => {
+    if (renderedObjects.length === products.length) {
+      onRendered(renderedObjects);
+    }
+  }, [renderedObjects, products, onRendered]);
+
+  const handleModelRendered = (modelObject) => {
+    setRenderedObjects((prev) => [...prev, modelObject]);
+  };
 
   return (
     <>
@@ -17,6 +28,7 @@ const Models = () => {
             position={position}
             scale={product.scale}
             modelURL={product.modelURL}
+            onRendered={handleModelRendered}
           />
         );
       })}
