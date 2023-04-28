@@ -39,8 +39,8 @@ const Scene = () => {
       {/** Pointer lock */}
       <PointerLockControls ref={controls} args={[camera, gl.domElement]} />
       {/** Lighting */}
-      <Environment files="src/assets/map/bg2.hdr" background />
-
+      <Environment files={['src/assets/map/enviroment/px.png', 'src/assets/map/enviroment/nx.png', 'src/assets/map/enviroment/py.png', 'src/assets/map/enviroment/ny.png', 'src/assets/map/enviroment/pz.png', 'src/assets/map/enviroment/nz.png']} background/>
+      
       {/** Player */}
       {/** Map */}
       <Map />

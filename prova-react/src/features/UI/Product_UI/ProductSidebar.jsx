@@ -1,5 +1,7 @@
 import React from 'react';
 import '../ui.css';
+import { useDispatch,useSelector } from 'react-redux';
+import { addItem,removeAllItems,selectorCartItems,selectorTotalCost} from '../../cart/cartSlice';
 
 const ProductSidebar = ({ product, isVisible }) => {
 
@@ -13,6 +15,8 @@ const ProductSidebar = ({ product, isVisible }) => {
 
   const handleIncrement = () => onChange(quantity + 1);
   const handleDecrement = () => onChange(quantity - 1);
+
+  const dispatch = useDispatch();
 
   return (
     <div className={`product-sidebar ${visibleClass}`}>
@@ -58,7 +62,7 @@ const ProductSidebar = ({ product, isVisible }) => {
         <p className="amount">{product.price}€</p>
       </div>
       <div className="add-to-cart">
-        <button className="add-btn">Aggiungi al carrello</button>
+        <button className="add-btn" onClick={()=>dispatch(addItem({id: product.title, basePrice: product.price, quantity: quantity}))} >Aggiungi al carrello</button>
       </div>
     </div>
   );
