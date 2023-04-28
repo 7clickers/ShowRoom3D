@@ -1,19 +1,14 @@
-import { useContext } from 'react';
-import ProductInteractionContext from '../../common/ProductInteractionContext';
-import ModelInteractionPrompt from "./UI_elements/ModelInteractionPrompt";
 import PlayerPosition from "./UI_elements/PlayerPosition";
 import Crosshair from './UI_elements/Crosshair';
+import ProductUI from "./Product_UI/ProductUI";
 
-const UI = () => {
-    const { intersectedProductName } = useContext(ProductInteractionContext);
+const UI = ({ controlsRef }) => {
 
     return(
         <>  
             <Crosshair />
             <PlayerPosition />
-            {intersectedProductName && (
-                <ModelInteractionPrompt productName={intersectedProductName} />
-            )}
+            <ProductUI controlsRef={controlsRef} />
         </>
    
     )

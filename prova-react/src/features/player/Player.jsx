@@ -132,8 +132,6 @@ export default function Player({ octree }) {
     }
   }
 
-  console.log("Octree:", octree, "capsuleIntersect:", octree?.capsuleIntersect);
-
   useFrame(({ camera }, delta) => {
     controls(camera, delta, playerVelocity, playerOnFloor.current, playerDirection)
     const deltaSteps = Math.min(0.05, delta) / STEPS_PER_FRAME

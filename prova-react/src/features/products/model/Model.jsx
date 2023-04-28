@@ -9,6 +9,7 @@ const Model = (props) => {
 
   useEffect(() => {
     if (modelRef.current) {
+      modelRef.current.productID = id;
       onRendered(modelRef.current);
     }
   }, []);
@@ -17,10 +18,12 @@ const Model = (props) => {
     useEffect(() => {
       clonedScene.traverse((child) => {
         if (child.isMesh) {
+          child.productID = id;
           child.castShadow = true;
+          child.receiveShadow = true;
         }
       });
-    }, [clonedScene]);
+    }, [clonedScene, id]);
 
   return (
     <>

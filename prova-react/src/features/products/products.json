@@ -2,7 +2,7 @@
     {
     "id": "1",
     "title": "Corallo A",
-    "description": "Esempio prodotto",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum.",
     "price": 49.99,
     "defaultColor": "red",
     "availableColors": ["red", "blue", "green"],
@@ -13,7 +13,7 @@
     {
     "id": "2",
     "title": "Corallo B",
-    "description": "Esempio prodotto",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum.",
     "price": 59.99,
     "defaultColor": "blue",
     "availableColors": ["red", "blue", "green"],
@@ -24,7 +24,7 @@
     {
     "id": "3",
     "title": "Jungle Tree",
-    "description": "Esempio prodotto",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum.",
     "price": 59.99,
     "defaultColor": "blue",
     "availableColors": ["red", "blue", "green"],
@@ -35,7 +35,7 @@
     {
     "id": "4",
     "title": "Jungle Tree",
-    "description": "Esempio prodotto",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum.",
     "price": 59.99,
     "defaultColor": "blue",
     "availableColors": ["red", "blue", "green"],
@@ -46,7 +46,7 @@
     {
     "id": "5",
     "title": "Jungle Tree",
-    "description": "Esempio prodotto",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum.",
     "price": 59.99,
     "defaultColor": "blue",
     "availableColors": ["red", "blue", "green"],

@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { useSelector } from 'react-redux';
 import Model from './model/Model';
 
-const Models = ({ onRendered }) => {
+const Models = ({ onRendered, octree }) => {
   const products = useSelector((state) => state.product.products);
   const renderedObjects = useRef([]);
 
@@ -13,7 +13,6 @@ const Models = ({ onRendered }) => {
     }
   };
   
-
   return (
     <>
       {products.map((product) => {

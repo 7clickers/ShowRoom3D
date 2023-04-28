@@ -8,7 +8,7 @@ const Raycaster = ({ productObjects }) => {
 
   const [intersects, setIntersects] = useState([]);
 
-  const { setIntersectedProductName } = useContext(ProductInteractionContext);
+  const { setIntersectedProductID } = useContext(ProductInteractionContext);
 
   useEffect(() => {
     const handleMouseMove = (event) => {
@@ -34,11 +34,13 @@ const Raycaster = ({ productObjects }) => {
   useFrame(() => {
     if (intersects.length > 0) {
       const intersectedObject = intersects[0].object;
+      const intersectedProductID = intersectedObject.productID;
+
       if (intersectedObject) {
-        setIntersectedProductName(intersectedObject.name);
+        setIntersectedProductID(intersectedProductID);
       }
     } else {
-      setIntersectedProductName(null);
+      setIntersectedProductID(null);
     }
   });
 

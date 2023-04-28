@@ -1,12 +1,13 @@
 import React from 'react';
 import '../ui.css';
 
-const ModelInteractionPrompt = ({ productName }) => {
+const ProductInteractionPrompt = ({ productTitle }) => {
+
   return (
     <div className="model-interaction-prompt">
-      {productName}
+      {productTitle}
     </div>
   );
 };
 
-export default ModelInteractionPrompt;
+export default ProductInteractionPrompt;
