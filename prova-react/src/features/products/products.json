@@ -4,55 +4,47 @@
     "title": "Corallo A",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum.",
     "price": 49.99,
-    "defaultColor": "red",
-    "availableColors": ["red", "blue", "green"],
-    "modelURL": "./src/assets/models/reed_coral.glb",
+    "selectedVariantID": "1a",
+    "variants": [
+        {
+            "id": "1a",
+            "color": "red"
+        },
+        {
+            "id": "1b",
+            "color": "blue"
+        },
+        {
+            "id": "1c",
+            "color": "green"
+        }
+    ],
+    "modelURL": "./src/assets/models/coral_piece.glb",
     "position": { "x": 0, "y": 0.25, "z": 5 },
     "scale": "2"
     },
     {
     "id": "2",
-    "title": "Corallo B",
+    "title": "Corallo A",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum.",
-    "price": 59.99,
-    "defaultColor": "blue",
-    "availableColors": ["red", "blue", "green"],
-    "modelURL": "./src/assets/models/reed_coral.glb",
-    "position": { "x": 4, "y": 0.25, "z": 0 },
-    "scale": "1"
-    },
-    {
-    "id": "3",
-    "title": "Jungle Tree",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum.",
-    "price": 59.99,
-    "defaultColor": "blue",
-    "availableColors": ["red", "blue", "green"],
-    "modelURL": "./src/assets/models/jungle_tree.glb",
-    "position": { "x": -1, "y": 0.25, "z": -4 },
-    "scale": "1"
-    },
-    {
-    "id": "4",
-    "title": "Jungle Tree",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum.",
-    "price": 59.99,
-    "defaultColor": "blue",
-    "availableColors": ["red", "blue", "green"],
-    "modelURL": "./src/assets/models/jungle_tree.glb",
-    "position": { "x": 16, "y": 0.25, "z": 0 },
-    "scale": "0.75"
-    },
-    {
-    "id": "5",
-    "title": "Jungle Tree",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum.",
-    "price": 59.99,
-    "defaultColor": "blue",
-    "availableColors": ["red", "blue", "green"],
-    "modelURL": "./src/assets/models/jungle_tree.glb",
-    "position": { "x": 14, "y": 0.25, "z": 13 },
-    "scale": "1.2"
-    }
-    
+    "price": 49.99,
+    "selectedVariantID": "2a",
+    "variants": [
+        {
+            "id": "2a",
+            "color": "red"
+        },
+        {
+            "id": "2b",
+            "color": "blue"
+        },
+        {
+            "id": "2c",
+            "color": "green"
+        }
+    ],
+    "modelURL": "./src/assets/models/coral_piece.glb",
+    "position": { "x": 5, "y": 0.25, "z": -5 },
+    "scale": "2"
+    }    
 ]

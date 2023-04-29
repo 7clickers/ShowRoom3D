@@ -11,4 +11,7 @@ const productSlice = createSlice({
   reducers: {},
 });
 
+export const selectedVariantIDSelector = (productID) => (state) =>
+  state.products.find((product) => product.id === productID)?.selectedVariantID;
+
 export default productSlice.reducer;

@@ -31,17 +31,17 @@ const ProductSidebar = ({ product, isVisible }) => {
       </div>
       <div className="color-selection">
         <p>Seleziona il colore:</p>
-        {product.availableColors.map((color) => (
-          <div key={color} className="color-option">
-            <label htmlFor={`color-${color}`}>{color}</label>
+        {product.variants.map((variant) => (
+          <div key={variant.id} className="color-option">
+            <label htmlFor={`color-${variant.id}`}>{variant.color}</label>
             <input
               type="radio"
-              id={`color-${color}`}
+              id={`color-${variant.id}`}
               name="color"
-              className='radio-color'
-              value={color}
-              checked={color === product.defaultColor}
-              readOnly
+              className="radio-color"
+              value={variant.id}
+              checked={variant.id === selectedVariantID}
+              onChange={() => setSelectedVariantID(variant.id)}
             />
           </div>
         ))}
