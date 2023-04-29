@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import '../ui.css';
 import { useDispatch,useSelector } from 'react-redux';
 import { addItem,removeAllItems,selectorCartItems,selectorTotalCost} from '../../cart/cartSlice';
@@ -11,10 +12,10 @@ const ProductSidebar = ({ product, isVisible }) => {
 
   const visibleClass = isVisible ? 'visible' : '';
 
-  let quantity = 1;
+  const [quantity, setQuantity] = useState(1);
 
-  const handleIncrement = () => onChange(quantity + 1);
-  const handleDecrement = () => onChange(quantity - 1);
+  const handleIncrement = () => setQuantity(quantity + 1);
+  const handleDecrement = () => setQuantity(quantity - 1);
 
   const dispatch = useDispatch();
 
