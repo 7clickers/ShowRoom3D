@@ -1,37 +1,58 @@
 import { useRef, useEffect } from "react";
 import { useGLTF } from "@react-three/drei";
+import { useSelector } from 'react-redux';
+import { productByIDSelector } from "../productSlice";
 
-const Model = (props) => {
-  const { id, position, scale, modelURL, onRendered } = props;
-  const glb = useGLTF(modelURL);
+const Model = ({ product, onRendered }) => {
+  const selectedVariantID = product.selectedVariantID;
+  const glb = useGLTF(product.modelURL);
   const clonedScene = glb.scene.clone();
   const modelRef = useRef();
-
+  const positionArray = [product.position.x, product.position.y, product.position.z];
+  
   useEffect(() => {
     if (modelRef.current) {
-      modelRef.current.productID = id;
+      modelRef.current.productID = product.id;
       onRendered(modelRef.current);
     }
   }, []);
 
-    // Traverse the clonedScene and enable castShadow for each mesh
-    useEffect(() => {
-      clonedScene.traverse((child) => {
-        if (child.isMesh) {
-          child.productID = id;
-          child.castShadow = true;
-          child.receiveShadow = true;
+  useEffect(() => {
+    clonedScene.traverse((child) => {
+      if (child.isMesh) {
+        child.material = child.material.clone();
+        child.productID = product.id;
+        child.castShadow = true;
+        child.receiveShadow = true;
+      }
+    });
+  }, [clonedScene, selectedVariantID, product.id]);
+
+  useEffect(() => {
+    const selectedVariant = product?.variants.find((variant) => variant.id === selectedVariantID);
+    const color = selectedVariant?.color;
+
+    console.log('Model: selectedVariantID', selectedVariantID);
+  console.log('Model: color', color);
+  
+    modelRef.current?.traverse((child) => {
+      if (child.isMesh) {
+        if (color) {
+          child.material.color.set(color);
+        } else {
+          child.material.color.set(child.material.originalColor);
         }
-      });
-    }, [clonedScene, id]);
+      }
+    });
+  }, [selectedVariantID, product]);
 
   return (
     <>
       <primitive
         ref={modelRef}
         object={clonedScene}
-        scale={scale}
-        position={position}
+        scale={product.scale}
+        position={positionArray}
         renderOrder={1} 
       />
     </>

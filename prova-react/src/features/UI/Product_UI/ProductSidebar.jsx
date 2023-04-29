@@ -1,8 +1,9 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import '../ui.css';
 import { useDispatch,useSelector } from 'react-redux';
 import { addItem,removeAllItems,selectorCartItems,selectorTotalCost} from '../../cart/cartSlice';
+import { setSelectedVariantID } from '../../products/productSlice';
 
 const ProductSidebar = ({ product, isVisible }) => {
 
@@ -18,6 +19,9 @@ const ProductSidebar = ({ product, isVisible }) => {
   const handleDecrement = () => setQuantity(quantity - 1);
 
   const dispatch = useDispatch();
+  const selectedVariantID = product.selectedVariantID;
+
+  const [localSelectedVariantID, setLocalSelectedVariantID] = useState(selectedVariantID);
 
   return (
     <div className={`product-sidebar ${visibleClass}`}>
@@ -40,11 +44,23 @@ const ProductSidebar = ({ product, isVisible }) => {
               name="color"
               className="radio-color"
               value={variant.id}
-              checked={variant.id === selectedVariantID}
-              onChange={() => setSelectedVariantID(variant.id)}
+              checked={variant.id === localSelectedVariantID}
+              onChange={(e) => {
+                if (variant.id === localSelectedVariantID) {
+                  setLocalSelectedVariantID(null);
+                  console.log('ProductSidebar: setSelectedVariantID', variant.id);
+                  dispatch(setSelectedVariantID({ productID: product.id, variantID: null }));
+                } else {
+                  setLocalSelectedVariantID(variant.id);
+                  console.log('ProductSidebar: setSelectedVariantID', variant.id);
+                  dispatch(setSelectedVariantID({ productID: product.id, variantID: variant.id }));
+                }
+              }}
             />
           </div>
         ))}
+
+
       </div>
       <div className="product-quantity">
         <p>quantita': </p>
