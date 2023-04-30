@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useThree, useFrame } from "@react-three/fiber";
 import { useContext } from 'react';
 import ProductInteractionContext from "../../common/ProductInteractionContext";
+import SidebarContext from "../../common/SidebarContext";
 
 const Raycaster = ({ productObjects }) => {
   const { camera, raycaster, scene } = useThree();
@@ -9,6 +10,7 @@ const Raycaster = ({ productObjects }) => {
   const [intersects, setIntersects] = useState([]);
 
   const { setIntersectedProductID } = useContext(ProductInteractionContext);
+  const { isSidebarVisible } = useContext(SidebarContext);
 
   useEffect(() => {
     const handleMouseMove = (event) => {
@@ -32,15 +34,17 @@ const Raycaster = ({ productObjects }) => {
   }, [camera, raycaster, productObjects]);
 
   useFrame(() => {
-    if (intersects.length > 0) {
-      const intersectedObject = intersects[0].object;
-      const intersectedProductID = intersectedObject.productID;
-
-      if (intersectedObject) {
-        setIntersectedProductID(intersectedProductID);
+    if(!isSidebarVisible){
+      if (intersects.length > 0) {
+        const intersectedObject = intersects[0].object;
+        const intersectedProductID = intersectedObject.productID;
+  
+        if (intersectedObject) {
+          setIntersectedProductID(intersectedProductID);
+        }
+      } else {
+        setIntersectedProductID(null);
       }
-    } else {
-      setIntersectedProductID(null);
     }
   });
 
