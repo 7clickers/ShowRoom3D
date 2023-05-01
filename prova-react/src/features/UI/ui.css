@@ -20,15 +20,15 @@
   opacity: 0.8;
   pointer-events: none;
   z-index: 3;
-  transition: all 0.2s ease-in;
+  transition: all 0.1s ease-in;
   transform-origin: center;
   transform: translate(-50%, -50%);
 }
 
 .crosshair-yellow {
   background-color: rgb(255, 238, 0);
-  transition: all 0.2s ease-in;
-  transform: translate(-50%, -50%) scale(1.5);
+  transition: all 0.15s ease-in;
+  transform: translate(-50%, -50%) scale(2);
 }
 
 
@@ -61,12 +61,12 @@
   z-index: 9999;
   font-family: 'Inter', sans-serif;
   padding: 1em 2em;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.15s ease-in;
 }
 
 .product-sidebar.visible{
   transform: translateX(0);
-  transition: all 0.3s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 .product-sidebar .general-info .product-title{
