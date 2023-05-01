@@ -4,7 +4,7 @@
     "title": "Corallo A",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum.",
     "price": 49.99,
-    "selectedVariantID": "1c",
+    "selectedVariantID": "1a",
     "variants": [
         {
             "id": "1a",
@@ -20,7 +20,7 @@
         }
     ],
     "modelURL": "./src/assets/models/coral_piece.glb",
-    "position": { "x": 0, "y": 0.25, "z": 5 },
+    "position": { "x": 10, "y": 0.25, "z": -1 },
     "scale": "2"
     },
     {
@@ -44,7 +44,7 @@
         }
     ],
     "modelURL": "./src/assets/models/coral_piece.glb",
-    "position": { "x": 5, "y": 0.25, "z": -5 },
+    "position": { "x": -2, "y": 0.25, "z": -11 },
     "scale": "2"
     },
     {
@@ -52,7 +52,7 @@
         "title": "Corallo C",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum.",
         "price": 49.99,
-        "selectedVariantID": "3a",
+        "selectedVariantID": "3c",
         "variants": [
             {
                 "id": "3a",

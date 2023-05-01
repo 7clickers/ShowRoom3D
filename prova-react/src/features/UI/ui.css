@@ -13,7 +13,6 @@
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
   width: 10px;
   height: 10px;
   border-radius: 50%;
@@ -21,7 +20,17 @@
   opacity: 0.8;
   pointer-events: none;
   z-index: 3;
+  transition: all 0.2s ease-in;
+  transform-origin: center;
+  transform: translate(-50%, -50%);
 }
+
+.crosshair-yellow {
+  background-color: rgb(255, 238, 0);
+  transition: all 0.2s ease-in;
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
 
 .model-interaction-prompt {
   position: fixed;
@@ -116,6 +125,7 @@
   border-radius: 50%;
   outline: none;
   transition: 0.2s;
+  cursor: pointer;
 }
 
 .product-sidebar .color-selection .color-option .radio-color:checked{
@@ -238,4 +248,8 @@ input[type="number"]::-webkit-outer-spin-button {
   font-family: 'Inter', sans-serif;
   font-weight: 500;
   font-size: 1.1em;
+}
+
+.add-to-cart .add-btn:hover{
+  cursor: pointer;
 }
