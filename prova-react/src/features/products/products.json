@@ -4,19 +4,19 @@
     "title": "Corallo A",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum.",
     "price": 49.99,
-    "selectedVariantID": "1a",
+    "selectedColor": "red",
     "variants": [
         {
-            "id": "1a",
-            "color": "red"
+            "colorName": "red",
+            "colorCode": "red"
         },
         {
-            "id": "1b",
-            "color": "blue"
+            "colorName": "blue",
+            "colorCode": "blue"
         },
         {
-            "id": "1c",
-            "color": "green"
+            "colorName": "green",
+            "colorCode": "green"
         }
     ],
     "modelURL": "./src/assets/models/coral_piece.glb",
@@ -28,19 +28,19 @@
     "title": "Corallo B",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum.",
     "price": 49.99,
-    "selectedVariantID": "2b",
+    "selectedColor": "blue",
     "variants": [
         {
-            "id": "2a",
-            "color": "red"
+            "colorName": "red",
+            "colorCode": "red"
         },
         {
-            "id": "2b",
-            "color": "blue"
+            "colorName": "blue",
+            "colorCode": "blue"
         },
         {
-            "id": "2c",
-            "color": "green"
+            "colorName": "green",
+            "colorCode": "green"
         }
     ],
     "modelURL": "./src/assets/models/coral_piece.glb",
@@ -48,27 +48,27 @@
     "scale": "2"
     },
     {
-        "id": "3",
-        "title": "Corallo C",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum.",
-        "price": 49.99,
-        "selectedVariantID": "3c",
-        "variants": [
-            {
-                "id": "3a",
-                "color": "red"
-            },
-            {
-                "id": "3b",
-                "color": "blue"
-            },
-            {
-                "id": "3c",
-                "color": "green"
-            }
-        ],
-        "modelURL": "./src/assets/models/coral_piece.glb",
-        "position": { "x": -8, "y": 0.25, "z": 8 },
-        "scale": "2"
+    "id": "3",
+    "title": "Corallo C",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum.",
+    "price": 49.99,
+    "selectedColor": "null",
+    "variants": [
+        {
+            "colorName": "red",
+            "colorCode": "red"
+        },
+        {
+            "colorName": "blue",
+            "colorCode": "blue"
+        },
+        {
+            "colorName": "green",
+            "colorCode": "green"
+        }
+    ],
+    "modelURL": "./src/assets/models/coral_piece.glb",
+    "position": { "x": -8, "y": 0.25, "z": 8 },
+    "scale": "2"
     } 
 ]

@@ -6,6 +6,7 @@ import Player from "../player/Player";
 import Lights from "../lights/Lights";
 import Models from "../products/Models";
 import Raycaster from "../raycaster/Raycaster";
+import Decorations from "../decorations/Decorations";
 
 export default function Map() {
 
@@ -41,6 +42,7 @@ export default function Map() {
       <Lights />
       <Player octree={octree} colliders={colliders.current} />
       <Models octree={octree} onRendered={handleModelsRendered} />
+      <Decorations octree={octree} />
       <Raycaster productObjects={productObjects} />
     </>
   );

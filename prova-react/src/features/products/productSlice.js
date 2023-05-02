@@ -9,22 +9,22 @@ const productSlice = createSlice({
   name: 'product',
   initialState,
   reducers: {
-    setSelectedVariantID(state, action) {
-      const { productID, variantID } = action.payload;
+    setSelectedColor(state, action) {
+      const { productID, colorName } = action.payload;
       const product = state.products.find((product) => product.id === productID);
       if (product) {
-        product.selectedVariantID = variantID;
+        product.selectedColor = colorName;
       }
     },
   },
 });
 
-export const selectedVariantIDSelector = (productID) => (state) =>
-  state.products.find((product) => product.id === productID)?.selectedVariantID;
+export const selectedColorSelector = (productID) => (state) =>
+  state.products.find((product) => product.id === productID)?.selectedColor;
 
 export const productByIDSelector = (productID) => (state) =>
   state.product.products.find((product) => product.id === productID);
 
-export const { setSelectedVariantID } = productSlice.actions;
+export const { setSelectedColor } = productSlice.actions;
 
 export default productSlice.reducer;

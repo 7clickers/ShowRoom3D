@@ -3,7 +3,7 @@ import { useState, forwardRef } from 'react';
 import '../ui.css';
 import { useDispatch } from 'react-redux';
 import { addItem,removeAllItems,selectorCartItems,selectorTotalCost} from '../../cart/cartSlice';
-import { setSelectedVariantID } from '../../products/productSlice';
+import { setSelectedColor } from '../../products/productSlice';
 
 const ProductSidebar = forwardRef(({ product, isVisible }, ref) => {
 
@@ -20,7 +20,7 @@ const ProductSidebar = forwardRef(({ product, isVisible }, ref) => {
   const handleDecrement = () => setQuantity(quantity - 1);
 
   const dispatch = useDispatch();
-  const selectedVariantID = product.selectedVariantID;
+  const selectedColor = product.selectedColor;
 
   return (
     <div ref={ref} id="product-sidebar" className={`product-sidebar ${visibleClass}`}>
@@ -35,23 +35,23 @@ const ProductSidebar = forwardRef(({ product, isVisible }, ref) => {
       <div className="color-selection">
         <p>Seleziona il colore:</p>
         {product.variants.map((variant) => (
-          <div key={variant.id} className="color-option">
-            <label htmlFor={`color-${variant.id}`}>{variant.color}</label>
+          <div key={variant.colorName} className="color-option">
+            <label htmlFor={`color-${variant.colorName}`}>{variant.colorName}</label>
             <input
               type="radio"
-              id={`color-${variant.id}`}
+              id={`color-${variant.colorName}`}
               name="color"
               className="radio-color"
               value={variant.id}
-              checked={variant.id === selectedVariantID}
+              checked={variant.colorName === selectedColor}
               onClick={(e) => {
-                if (e.target.checked && variant.id === selectedVariantID) {
+                if (e.target.checked && variant.colorName === selectedColor) {
                   e.target.checked = false;
-                  setSelectedVariantID(null);
-                  dispatch(setSelectedVariantID({ productID: product.id, variantID: null }));
+                  setSelectedColor(null);
+                  dispatch(setSelectedColor({ productID: product.id, colorName: null }));
                 } else {
-                  setSelectedVariantID(variant.id);
-                  dispatch(setSelectedVariantID({ productID: product.id, variantID: variant.id }));
+                  setSelectedColor(variant.colorName);
+                  dispatch(setSelectedColor({ productID: product.id, colorName: variant.colorName }));
                 }
               }}
               onChange={() => {}}

@@ -14,9 +14,9 @@ const Model = ({ product, onRendered }) => {
   const modelRef = useRef();
   const positionArray = [product.position.x, product.position.y, product.position.z];
 
-  const selectedVariantID = product.selectedVariantID;
-  const selectedVariant = product?.variants.find((variant) => variant.id === selectedVariantID);
-  const color = selectedVariant?.color;
+  const selectedColorName = product.selectedColor;
+  const selectedColor = product?.variants.find((variant) => variant.colorName === selectedColorName);
+  const color = selectedColor?.colorCode;
   
   useEffect(() => {
     if (modelRef.current) {
