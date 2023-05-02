@@ -1,59 +1,29 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 
-// Fisica
-import { Physics, Debug } from "@react-three/cannon";
+import { Environment } from "@react-three/drei";
 
-// Three
-import { useThree } from "@react-three/fiber";
-import { PointerLockControls } from "@react-three/drei";
+import Map from "../map/Map";
+import PointerLock from "../pointerLock/pointerLock";
 
-// Componenti personalizzati
-import Player from "../player/Player.jsx";
-import Lights from "../lights/Lights.jsx";
-import Map from "../Map/Map.jsx";
-import Skybox from "../skybox/Skybox.jsx";
-import Models from "../models/Models.jsx";
-import BeachBall from "../models/model/BeachBall.jsx";
-
-export const Scene = () => {
-  // Ottieni oggetti camera e gl da useThree
-  const { camera, gl } = useThree();
-  // Creare un useRef per controllare il puntatore
-  const controls = useRef();
-
-  // Imposta il puntatore al blocco quando l'utente fa clic sul documento
-  useEffect(() => {
-    const handleFocus = () => {
-      controls.current.lock();
-    };
-    document.addEventListener("click", handleFocus);
-
-    return () => {
-      document.removeEventListener("click", handleFocus);
-    };
-  }, [gl]);
+const Scene = () => {
 
   return (
     <>
-      {/** Blocco del puntatore */}
-      <PointerLockControls ref={controls} args={[camera, gl.domElement]} />
-      {/** Illuminazione */}
-      <Skybox />
-      <Lights />
-      {/** Oggetti fisici */}
-      <Physics
-        gravity={[0, -9.81, 0]} // gravità
-        tolerance={0} // tolleranza
-        iterations={50} // iterazioni
-        broadphase={"SAP"} // algoritmo di fase ampia
-      >
-        {/** Giocatore */}
-        <Player />
-        {/** Mappa */}
-        <Map />
-        <Models />
-        <BeachBall/>
-      </Physics>
+     <PointerLock />
+      <Environment
+        files={[
+          "src/assets/map/enviroment/px.png",
+          "src/assets/map/enviroment/nx.png",
+          "src/assets/map/enviroment/py.png",
+          "src/assets/map/enviroment/ny.png",
+          "src/assets/map/enviroment/pz.png",
+          "src/assets/map/enviroment/nz.png",
+        ]}
+        background
+      />
+      <Map />
     </>
   );
 };
+
+export default Scene;

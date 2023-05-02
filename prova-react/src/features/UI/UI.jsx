@@ -1,9 +1,19 @@
 import PlayerPosition from "./UI_elements/PlayerPosition";
+import Crosshair from './UI_elements/Crosshair';
+import ProductUI from "./Product_UI/ProductUI";
 
-const UI = () => {
+const UI = ({ controlsRef }) => {
 
     return(
-        <PlayerPosition />
+        <>  
+        <div>
+            <Crosshair />
+            <PlayerPosition />
+            <ProductUI controlsRef={controlsRef} />
+        </div>
+
+        </>
+   
     )
 }
 
