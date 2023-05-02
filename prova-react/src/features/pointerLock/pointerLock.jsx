@@ -6,7 +6,7 @@ import SidebarContext from "../../common/SidebarContext";
 
 const PointerLock = () => {
   const { camera, gl } = useThree();
-  const { isSidebarVisible } = useContext(SidebarContext);
+  const { isSidebarVisible, setIsSidebarVisible } = useContext(SidebarContext);
 
   let controls;
 
@@ -33,33 +33,35 @@ const PointerLock = () => {
   }, [camera, gl]);
 
   useEffect(() => {
-    const handleFocus = (event) => {
+    const handleClick = (event) => {
       if (!isSidebarVisible && event.target === gl.domElement) {
         gl.domElement.requestPointerLock();
       }
     };
-
-    document.addEventListener("mousedown", handleFocus);
-
+  
+    document.addEventListener("mousedown", handleClick);
+  
     return () => {
-      document.removeEventListener("mousedown", handleFocus);
+      document.removeEventListener("mousedown", handleClick);
     };
   }, [gl, isSidebarVisible]);
+  
 
   useEffect(() => {
     if (isSidebarVisible) {
       document.exitPointerLock();
     }
-  }, [isSidebarVisible]);
-
-  useEffect(() => {
-    if (!isSidebarVisible) {
+    else{
       gl.domElement.requestPointerLock();
     }
-  }, [isSidebarVisible, gl]);
+  }, [isSidebarVisible]);
+
+
+  useEffect(() => {
+    gl.domElement.requestPointerLock();
+  }, [gl]);
 
   return null;
-
-}
+};
 
 export default PointerLock;

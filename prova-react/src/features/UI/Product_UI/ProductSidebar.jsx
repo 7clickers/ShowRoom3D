@@ -1,14 +1,16 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, forwardRef } from 'react';
 import '../ui.css';
-import { useDispatch,useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { addItem,removeAllItems,selectorCartItems,selectorTotalCost} from '../../cart/cartSlice';
+import { setSelectedVariantID } from '../../products/productSlice';
 
-const ProductSidebar = ({ product, isVisible }) => {
+const ProductSidebar = forwardRef(({ product, isVisible }, ref) => {
 
   if (!product) {
     return null;
   }
+
 
   const visibleClass = isVisible ? 'visible' : '';
 
@@ -18,9 +20,10 @@ const ProductSidebar = ({ product, isVisible }) => {
   const handleDecrement = () => setQuantity(quantity - 1);
 
   const dispatch = useDispatch();
+  const selectedVariantID = product.selectedVariantID;
 
   return (
-    <div className={`product-sidebar ${visibleClass}`}>
+    <div ref={ref} id="product-sidebar" className={`product-sidebar ${visibleClass}`}>
       <div className="general-info">
         <h2 className='product-title'>{product.title}</h2>
         <p className='product-desc'>{product.description}</p>
@@ -41,10 +44,23 @@ const ProductSidebar = ({ product, isVisible }) => {
               className="radio-color"
               value={variant.id}
               checked={variant.id === selectedVariantID}
-              onChange={() => setSelectedVariantID(variant.id)}
+              onClick={(e) => {
+                if (e.target.checked && variant.id === selectedVariantID) {
+                  e.target.checked = false;
+                  setSelectedVariantID(null);
+                  dispatch(setSelectedVariantID({ productID: product.id, variantID: null }));
+                } else {
+                  setSelectedVariantID(variant.id);
+                  dispatch(setSelectedVariantID({ productID: product.id, variantID: variant.id }));
+                }
+              }}
+              onChange={() => {}}
+              
             />
           </div>
         ))}
+
+
       </div>
       <div className="product-quantity">
         <p>quantita': </p>
@@ -67,6 +83,6 @@ const ProductSidebar = ({ product, isVisible }) => {
       </div>
     </div>
   );
-};
+});
 
 export default ProductSidebar;

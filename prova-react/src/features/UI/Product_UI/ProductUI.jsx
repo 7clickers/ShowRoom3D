@@ -1,4 +1,4 @@
-import { useContext, useState, useEffect } from 'react';
+import { useContext, useState, useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 
 import ProductInteractionContext from '../../../common/ProductInteractionContext';
@@ -8,11 +8,17 @@ import ProductInteractionPrompt from "./ProductInteractionPrompt";
 import ProductSidebar from './ProductSidebar';
 
 const ProductUI = () => {
+    const sidebarRef = useRef();
+
     const { intersectedProductID } = useContext(ProductInteractionContext);
     const { isSidebarVisible, setIsSidebarVisible } = useContext(SidebarContext);
     const [lastInteractedProduct, setLastInteractedProduct] = useState(null);
 
     const products = useSelector((state) => state.product.products);
+
+    useEffect(() => {
+        console.log('isSidebarVisible:', isSidebarVisible);
+      }, [isSidebarVisible]);
 
     useEffect(() => {
         if (intersectedProductID) {
@@ -21,19 +27,23 @@ const ProductUI = () => {
         }
       }, [intersectedProductID, products]);
 
-    useEffect(() => {
-        const handleKeyPress = (event) => {
-            if (event.key === 'e' || event.key === 'E') {
-                setIsSidebarVisible((prevVisible) => !prevVisible);
+        const handleLeftClick = (event) => {
+            if (event.button === 0) {
+            if (isSidebarVisible && sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+                setIsSidebarVisible(false);
+            } else if (intersectedProductID) {
+                setIsSidebarVisible(true);
+            }
             }
         };
 
-        window.addEventListener('keydown', handleKeyPress);
-        
+      // Replace the previous event listener code with this one
+      useEffect(() => {
+        document.addEventListener("mousedown", handleLeftClick);
         return () => {
-            window.removeEventListener('keydown', handleKeyPress);
+          document.removeEventListener("mousedown", handleLeftClick);
         };
-    }, [setIsSidebarVisible]);
+      }, [setIsSidebarVisible, intersectedProductID, isSidebarVisible]);
       
 
     return(
@@ -41,9 +51,12 @@ const ProductUI = () => {
         {intersectedProductID && lastInteractedProduct && (
             <ProductInteractionPrompt productTitle={lastInteractedProduct.title} />
         )}
-        {isSidebarVisible && (
-            <ProductSidebar product={lastInteractedProduct} isVisible={isSidebarVisible} />
-        )}
+            <ProductSidebar
+            ref={sidebarRef} 
+            product={lastInteractedProduct} 
+            isVisible={isSidebarVisible}
+            />
+
         </> 
     )
 }

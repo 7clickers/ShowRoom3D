@@ -1,5 +1,8 @@
-import { createContext } from 'react';
+import { createContext } from "react";
 
-const ProductInteractionContext = createContext();
+const ProductInteractionContext = createContext({
+  intersectedProductID: null,
+  setIntersectedProductID: () => {},
+});
 
 export default ProductInteractionContext;

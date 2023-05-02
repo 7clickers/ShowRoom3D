@@ -22,9 +22,7 @@ const Models = ({ onRendered, octree }) => {
           <Model
             key={product.id}
             id={product.id}
-            position={position}
-            scale={product.scale}
-            modelURL={product.modelURL}
+            product={product}
             onRendered={handleModelRendered}
           />
         );

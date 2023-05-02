@@ -6,9 +6,12 @@ const UI = ({ controlsRef }) => {
 
     return(
         <>  
+        <div>
             <Crosshair />
             <PlayerPosition />
             <ProductUI controlsRef={controlsRef} />
+        </div>
+
         </>
    
     )
