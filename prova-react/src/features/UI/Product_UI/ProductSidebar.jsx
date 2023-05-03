@@ -79,7 +79,7 @@ const ProductSidebar = forwardRef(({ product, isVisible }, ref) => {
         <p className="amount">{product.price}€</p>
       </div>
       <div className="add-to-cart">
-        <button className="add-btn" onClick={()=>dispatch(addItem({id: product.title, basePrice: product.price, quantity: quantity}))} >Aggiungi al carrello</button>
+        <button className="add-btn" onClick={()=>dispatch(addItem({id: product.title, basePrice: product.price, quantity: quantity,color: selectedColor}))} >Aggiungi al carrello</button>
       </div>
     </div>
   );
