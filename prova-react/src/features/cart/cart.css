@@ -1,0 +1,116 @@
+:root{
+    --primary-bg: #252A2F;
+    --lighter-bg: #31363a;
+    --primary-accent: #44CFD4;
+    --accent-darker: #18AEB4;
+    --primary-heading: #FFFFFF;
+    --primary-subheading: rgba(255,255,255,0.8);
+    --primary-text: rgba(255,255,255,0.5);
+    --button-text: #000000;
+}
+
+*{
+    margin:0em;
+    padding:0em;
+    box-sizing: border-box;
+}
+
+.cart-item{
+    display: grid;
+    grid-template-columns: 80% 20%;
+    align-items: center;
+    gap: 1em;
+    margin-top: 0.5em;
+}
+
+.single-delete{
+    border: none;
+    background-color: var(--primary-accent);
+    color: var(--button-text);
+    width: 30%;
+    border-radius: 9px;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 0.7em;
+    margin-top: 1em;
+}
+
+.quantity{
+    color: var(--primary-heading);
+    font-size: 0.8em;
+    font-weight: 800;
+    padding-bottom: 0px;
+}
+
+.delete-quantity{
+    display: flex;
+    flex-direction: row;
+    gap:0.5em;
+}
+
+#cart{
+    border-radius: 15px;
+    position: fixed;
+    right: 0; 
+    bottom: 0;
+    width: 300px;
+    height: 300px;
+    background-color: var(--primary-bg);
+    padding: 10px;
+    margin-bottom: 3em;
+    margin-right: 8px;
+    z-index: 9999;
+}
+
+.item{  
+    color: var(--primary-heading);
+    font-size: 0.8em;
+    font-weight: 600;
+}
+
+.product-price{
+    font-weight: 200;
+    font-size: 1.0em;
+}
+
+
+#group-cart{
+    display:flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#total-cost{
+    color:var(--primary-heading);
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 0.8em;
+}
+
+#cart-title{
+    display: flex;
+    justify-content: center;
+    color:var(--primary-heading);
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 1.0em;
+    margin-bottom: 2em;
+}
+
+#remove-all{
+    border: none;
+    background-color: var(--primary-accent);
+    color: var(--button-text);
+    width: 50%;
+    height: 2em;
+    border-radius: 9px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 0.8em;
+}
+
+#separator{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
