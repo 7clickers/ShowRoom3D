@@ -22,7 +22,9 @@ const cartSlice=createSlice({
                 state.cartItems[index].quantity += action.payload.quantity;
                 state.cartItems[index].price += action.payload.basePrice*action.payload.quantity;
             }
-            state.totalCost + action.payload.basePrice*action.payload.quantity; //In ogni caso aumento il total cost
+            state.totalCost = parseFloat(
+                (state.totalCost + action.payload.basePrice * action.payload.quantity).toFixed(2)
+              );
         },
         removeItem: (state,action)=>{
             const indexOfItem = state.cartItems.findIndex((item)=> item.id===action.payload.id);
@@ -30,7 +32,8 @@ const cartSlice=createSlice({
             if(state.cartItems[indexOfItem].quantity==1){
                 state.cartItems.splice(indexOfItem,1);
             }else{
-                state.cartItems[indexOfItem].quantity-=1;   
+                state.cartItems[indexOfItem].quantity-=1;
+                state.cartItems[indexOfItem].price = parseFloat((state.cartItems[indexOfItem].price - state.cartItems[indexOfItem].basePrice).toFixed(2));   
             }
         },
         removeAllItems: (state)=>{

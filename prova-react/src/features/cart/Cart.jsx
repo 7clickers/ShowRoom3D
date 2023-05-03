@@ -18,7 +18,7 @@ const Cart = () =>{
             <hr id="separator"/>
             <div id="group-cart">
                 <button id="remove-all" onClick={()=>dispatch(removeAllItems())}>Rimuovi tutto</button>
-                <p id="total-cost">{totalCost} €</p>
+                <p id="total-cost">{totalCost.toFixed(2)} €</p>
             </div>
         </div>
     );
