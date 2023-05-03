@@ -1,6 +1,5 @@
 \documentclass[a4paper]{article}
 \usepackage[normalem]{ulem}
-\usepackage{eurosym}
 \usepackage[font=small,labelfont=bf]{caption}
 
 % impostazioni generali
@@ -11,12 +10,8 @@
 
 \makeindex
 
-\makeatletter
-\renewcommand\paragraph{
-\@startsection {paragraph}{4}{0mm}{-\baselineskip}{.5\baselineskip}{\normalfont \normalsize \bfseries }}
-\makeatother
-
 \begin{document}
+\counterwithin{table}{section}
 
 % Prima pagina
 \input{../../../template/titlepage.tex}
@@ -30,23 +25,21 @@
 {
     \hypersetup{linkcolor=black}
     \tableofcontents
-    \listoffigures %elenco figure
-    \listoftables  %elenco tabelle
 }
 \pagebreak
 
-% sezioni comuni 
+% sezioni comuni
 % Informazioni generali
-\input{res/sections/01_Analisi_dei_rischi.tex}
+\input{res/sections/01_introduction.tex}
 \pagebreak
-\input{res/sections/02_modello_di_sviluppo.tex}
+
+% Contenuto
+\input{res/sections/02_content.tex}
 \pagebreak
-\input{res/sections/03_pianificazione.tex}
-\pagebreak
-\input{res/sections/04_Preventivo.tex}
-\pagebreak
-\input{res/sections/05_consuntivo.tex}
-\pagebreak
-\input{res/sections/06_attualizzazione_rischi.tex}
-\pagebreak
+
+% Tracciamento delle decisioni
+\input{../../../template/tracking.tex}
+\input{config/tracking_input.tex} % editare questo
+
+
 \end{document}

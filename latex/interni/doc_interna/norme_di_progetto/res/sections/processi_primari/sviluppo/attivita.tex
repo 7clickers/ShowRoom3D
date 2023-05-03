@@ -78,3 +78,135 @@ La documentazione da mostrare:
         \item \textit{Norme di Progetto};
         \item \textit{Verbali} interni ed esterni.
     \end{itemize}
+
+\subsubsection{Codifica}
+L’attività di codifica è assegnata ai programmatori. Seguendo quanto indicato nel diagramma delle classi, l'obbiettivo è quello di implementare ciò che è stato precedentemente progettato.
+La codifica dovrà rispettare delle norme per motivi legati alla leggibilità, manutenzione, verifica e validazione del codice.
+\paragraph{Stile di codifica}
+	\begin{itemize}
+		\item \textbf{Indentazione}: I blocchi di codice innestati dovranno avere un’indentazione di quattro spazi;
+		\item \textbf{Parentesi graffe}:La parentesi aperta dovrà essere inserita nella stessa riga di dichiarazione del costrutto, separata da uno spazio, mentre la parentesi chiusa dovrà essere inserita con la giusta indentazione alla riga immediatamente successiva all’ultima riga di codice del costrutto;
+		\item \textbf{Metodi}: il nome dei metodi dovrà iniziare con lettera minuscola e, se composto da più parole,
+			le successive dovranno iniziare con lettera maiuscola. E preferibile mantenere metodi brevi, con
+			poche righe di codice; 
+		\item \textbf{Classi}: il nome delle classi dovrà sempre iniziare con la lettera maiuscola e, come per i metodi,
+			se composto da più parole, le successive dovranno iniziare con la lettere maiuscola;
+		\item \textbf{Variabili}: il nome delle variabili deve sempre essere scritto in minuscolo e in inglese e la loro dichiarazione possibilmente all'inizio della funzione o script. Se il nome è composto da più parole, la seconda dovrà iniziare con la lettera maiuscola;
+		\item \textbf{Costanti}: il nome deve essere sempre scritto in maiuscolo e in inglese. Se il nome è composto da più parole, queste dovranno essere separate dal carattere ’ \textunderscore’;
+		\item \textbf{Univocità dei nomi}: tutti i costrutti dovranno avere nomi univoci e significativi;
+		\item \textbf{Commenti}: i commenti dovranno essere inseriti prima dell’inizio del costrutto e presentati in lingua italiana, inoltre sono obbligatori in parti di codice che non sono immediatamente comprensibili. Ogni volta che viene aggiornato un metodo va verificata la validità del commento;
+		\item \textbf{File}: dovranno avere un nome che inizia per lettera maiuscola che ne specifichi il contenuto.
+	\end{itemize}
+	
+	\paragraph{Norme linguaggi adottati} 
+ 	In questo paragrafo andremo a definire le norme che il gruppo ha deciso di adottare per ogni specifico linguaggio utilizzato nel progetto.
+	\subparagraph*{HTML} è oggi utilizzato per creazione della struttura logica di una pagina web,abbiamo 	 deciso di adottare le seguenti semplici normative:
+	\begin{itemize}
+	\item Utilizzare tag lowercase;
+	\item Chiudere tutti i tag;
+	\item Utilizzare attributi dei tag in lowercase;
+	\item Utilizzare le virgolette per i valori degli attributi.
+	\end{itemize}	
+	
+	\subparagraph*{CSS} linguaggio che gestisce il design e la presentazione delle pagine web. \\
+	Il gruppo ha concordato le seguenti normative:
+	\begin{itemize}
+	\item Un solo selettore per linea in set di regole con più selettori;
+	\item Un singolo spazio prima della parentesi graffa di apertura di un set di regole;
+	\item Una dichiarazione per linea di un blocco dichiarazioni;
+	\item  Un livello di rientro per ogni dichiarazione;
+	\item Un singolo spazio dopo i due-punti di una dichiarazione;
+	\item Includete sempre un “punto e virgola” alla fine dell'ultima dichiarazione in un blocco dichiarazione;
+	\item Mettete la parentesi graffa di chiusura di un set di regole, nella stessa colonna del primo carattere del set di regole;
+	\item Separate ogni set di regole con una linea vuota.
+	\end{itemize}
+	
+	\subparagraph*{JavaScript}  è un linguaggio di programmazione multi paradigma orientato agli eventi, utilizzato sia nella programmazione lato client web che lato server. \\
+Il gruppo ha deciso di adottare lo stile di codifica presente al seguente link:
+\begin{center}
+\href{https://github.com/airbnb/javascript}{https://github.com/airbnb/javascript(21-04-2023)}
+\end{center}
+
+\paragraph{Norme React.js}
+	Il gruppo ha concordato le seguenti normative:
+	\begin{itemize}
+	\item Il nome del componente deve essere uguale al nome del modulo con la prima lettera maiuscola;
+	\item Scrittura di informazioni dentro ad un tag;
+		\begin{itemize}
+			\item Se l’informazione può essere contenuta in una linea di codice allora si mantiene sulla stessa ;		linea
+			\item Se l’informazione è più lunga di una linea di codice allora bisogna indentare le informazioni.
+		\end{itemize}
+		\item Utilizzare sempre camelCase per i nomi delle prop;
+		\item Utilizzare i doppi apici tranne che per i valori nelle informazioni di stile;
+		\item Utilizzare una self-close se i tag non hanno figli;
+		\item Utilizzare className per assegnare classi CSS agli elementi;
+		\item Non comprimere troppo il codice ma utilizzare degli whitespace adeguati.
+	\end{itemize}
+	
+	\paragraph{Organizzazione Codice}
+	Il codice deve essere organizzato secondo la struttura chiama \textit{Feature Folders} raccomandata dalle linee guida di Redux.\\
+	In seguito riportiamo la struttura che il gruppo ha deciso di utilizzare per il progetto:
+	\begin{itemize}
+		\item \textbf{\textbackslash public}
+			\begin{itemize}
+				\item \textbf{index.html} 
+			\end{itemize}
+		\item \textbf{\textbackslash src} 
+			\begin{itemize}
+				\item \textbf{index.jsx} Punto di entrata che effettua il render dei vari componenti React
+				\item 	\textbf{\textbackslash app}
+					\begin{itemize}
+						\item \textbf{store.js} store setup
+						\item \textbf{App.jsx} root dei componenti React
+					\end{itemize}
+				\item \textbf{\textbackslash common} contiene componenti generici e utility
+			 	\item \textbf{\textbackslash features} contiene tutte le Feature folders
+			 	\begin{itemize}
+			 		\item \textbf{\textbackslash feature} Singola feature
+			 		\begin{itemize}
+			 			\item \textbf{featureSlice.js} contiene la logica del reducer e le azioni associate
+			 			\item \textbf{Feature.jsx} componente React
+			 			\item \textbf{Feature.css}
+			 		\end{itemize}
+			  \end{itemize}
+			  \item \textbf{\textbackslash assets}
+					\begin{itemize}
+						\item \textbf{\textbackslash models} cartella contenete i vari modelli da utilizzare nel applicativo
+						\item \textbf{\textbackslash img} cartella contenete icone ed immagini
+					\end{itemize}
+			\end{itemize}
+\end{itemize}				
+	
+	\paragraph{Strumenti di sviluppo}
+	Di seguito riportiamo gli strumenti utilizzati durante il processo di sviluppo:
+		\begin{itemize}
+			\item \textbf{React.js}: Libreria open-source per la creazione di interfacce utente in JavaScript;
+			\item \textbf{Three.js}: Libreria JavaScript utilizzata per la realizzazione di contenuti 3D per il web, utilizza le API WebGL;
+			\item \textbf{Node.js}: è un runtime system open source multipiattaforma orientato agli eventi per l'esecuzione di codice JavaScript;
+			\item \textbf{Redux}: è una architettura per scrivere applicazioni web basate su 					React,  fornisce un modo semplice per centralizzare lo stato e la logica di 		un'applicazione web;
+			\item \textbf{React three fiber}: è un React renderer per three.js , permette di costruire componenti riutilizzabili e indipendenti;
+		\end{itemize}
+		
+	\paragraph{Ambiente di lavoro}
+		Di seguito riportiamo gli strumenti che hanno definito il nostro ambiente di lavoro durante il processo di sviluppo.
+		\begin{itemize}
+			\item \textbf{Visual Studio Code}: Code editor scelto per sviluppare tutto il codice presente nel nostro progetto. Compatibile con Windows, MacOS e Linux;
+		\end{itemize}
+		
+	\paragraph{Configurazione Ambiente di lavoro}
+	La configurazione dell'ambiente di lavoro viene fatta da un componente del gruppo, che carica la cartella di lavoro configurata nel repo.  Successivamente gli altri componenti devono eseguire le seguenti istruzioni per mettersi in condizioni di lavorare.
+	Per prima cosa ogni componente del gruppo deve installare Node.js e NPM attraverso package manager oppure al seguente link: 
+	\begin{center}
+\href{https://nodejs.org/en/download}{DownloadNode.js}
+\end{center}
+Facendo riferimento alla \textit{v18.16.0} o successive.  Per verificare che l'installazione sia andata a buon fine aprire il terminale ed utilizzare il comando \textit{node -v} e \textit{npm -v}. \\
+Successivamente si deve entrare nella cartella di lavoro ottenuta dalla repo, aprire il terminale e utlizzare il comando \textbf{npm install} che installa tutte le dipendenze di progetto.
+
+
+	 
+	
+	
+	
+	
+	
+			
