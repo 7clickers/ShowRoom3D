@@ -4,7 +4,7 @@ import Decoration from './Decoration';
 
 const Decorations = ({ octree }) => {
   const decorations = useSelector((state) => state.decoration.decorations);
-
+  
   return (
     <>
       {decorations.map((decoration) => {
@@ -12,6 +12,7 @@ const Decorations = ({ octree }) => {
 
         return (
           <Decoration
+            octree={octree}
             key={decoration.id}
             id={decoration.id}
             decoration={decoration}

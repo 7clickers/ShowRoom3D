@@ -3,8 +3,11 @@ import { useGLTF } from "@react-three/drei";
 import { useSelector } from 'react-redux';
 import { productByIDSelector } from "../productSlice";
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader';
+import useOctree from "../../../common/useOctree";
+import useOctreeHelper from "../../../common/useOctreeHelper"; 
+import { Octree } from "three/examples/jsm/math/Octree";
 
-const Model = ({ product, onRendered }) => {
+const Model = ({ product, onRendered, octree }) => {
   const draco = new DRACOLoader();
   draco.setDecoderConfig({ type: 'js' });
   draco.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
@@ -17,13 +20,15 @@ const Model = ({ product, onRendered }) => {
   const selectedColorName = product.selectedColor;
   const selectedColor = product?.variants.find((variant) => variant.colorName === selectedColorName);
   const color = selectedColor?.colorCode;
-  
+ 
   useEffect(() => {
     if (modelRef.current) {
       modelRef.current.productID = product.id;
       onRendered(modelRef.current);
     }
   }, []);
+
+  useEffect(() => {octree.fromGraphNode(clonedScene);},[]);
 
   // Update materials and colors for each mesh in the cloned scene
   clonedScene.traverse((child) => {
