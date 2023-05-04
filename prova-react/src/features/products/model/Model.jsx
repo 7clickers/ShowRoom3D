@@ -3,9 +3,6 @@ import { useGLTF } from "@react-three/drei";
 import { useSelector } from 'react-redux';
 import { productByIDSelector } from "../productSlice";
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader';
-import useOctree from "../../../common/useOctree";
-import useOctreeHelper from "../../../common/useOctreeHelper"; 
-import { Octree } from "three/examples/jsm/math/Octree";
 
 const Model = ({ product, onRendered, octree }) => {
   const draco = new DRACOLoader();
