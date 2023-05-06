@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import PlayerPosition from "./UI_elements/PlayerPosition";
 import Crosshair from './UI_elements/Crosshair';
 import ProductUI from "./Product_UI/ProductUI";
@@ -8,6 +8,14 @@ import SidebarContext from "../../common/SidebarContext";
 
 const UI = ({ controlsRef }) => {
     const { isSidebarVisible, setIsSidebarVisible } = useContext(SidebarContext);
+    const [ready,setReady] = useState(false);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setReady(!ready);
+        }, 1000);
+        return () => clearTimeout(timer);
+      }, []);
 
     return(
         <>  
@@ -15,7 +23,7 @@ const UI = ({ controlsRef }) => {
             <Crosshair />
             <PlayerPosition />
             <ProductUI controlsRef={controlsRef} />
-            {isSidebarVisible && <Cart />}
+            {ready && <Cart />}
         </div>
 
         </>

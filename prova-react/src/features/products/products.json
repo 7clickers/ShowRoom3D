@@ -52,7 +52,7 @@
     "title": "Corallo C",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum.",
     "price": 49.99,
-    "selectedColor": "null",
+    "selectedColor": "standard",
     "variants": [
         {
             "colorName": "red",

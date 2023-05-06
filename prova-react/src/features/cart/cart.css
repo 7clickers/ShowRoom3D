@@ -23,11 +23,11 @@
     margin-top: 0.5em;
 }
 
-#item-scroll{
-    overflow-x: hidden;
-    overflow-y: hidden;
+.item-scroll{
+    overflow: hidden;
     scroll-behavior: smooth;
     max-height: 8.5em;
+    height: 100%;
 }
 
 .single-delete{
@@ -45,7 +45,7 @@
 .quantity{
     color: var(--primary-heading);
     font-size: 0.9em;
-    font-weight: 800;
+    font-weight: 600;
 }
 
 .delete-quantity{
@@ -71,12 +71,12 @@
 .item{  
     color: var(--primary-heading);
     font-family: 'Inter', sans-serif;
-    font-size: 0.7em;
-    font-weight: 600;
+    font-size: 0.9em;
+    font-weight: 800;
 }
 
 .product-price{
-    font-weight: 200;
+    font-weight: 300;
     font-size: 1.0em;
 }
 
