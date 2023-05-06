@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1683203115249" clover="3.2.0">
-  <project timestamp="1683203115249" name="All files">
+<coverage generated="1683375812001" clover="3.2.0">
+  <project timestamp="1683375812001" name="All files">
     <metrics statements="364" coveredstatements="42" conditionals="104" coveredconditionals="8" methods="121" coveredmethods="10" elements="589" coveredelements="60" complexity="0" loc="364" ncloc="364" packages="16" files="34" classes="34"/>
     <package name="src">
       <metrics statements="1" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
@@ -184,47 +184,47 @@
       <file name="Cart.jsx" path="C:\Users\Francesco\Desktop\ShowRoom3D\prova-react\src\features\cart\Cart.jsx">
         <metrics statements="13" coveredstatements="8" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="2"/>
         <line num="8" count="1" type="stmt"/>
-        <line num="9" count="3" type="stmt"/>
-        <line num="10" count="2" type="stmt"/>
-        <line num="11" count="2" type="stmt"/>
-        <line num="13" count="2" type="stmt"/>
-        <line num="14" count="2" type="stmt"/>
+        <line num="9" count="4" type="stmt"/>
+        <line num="10" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="13" count="3" type="stmt"/>
+        <line num="14" count="3" type="stmt"/>
         <line num="15" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="16" count="0" type="stmt"/>
         <line num="17" count="0" type="cond" truecount="0" falsecount="2"/>
         <line num="18" count="0" type="stmt"/>
-        <line num="22" count="2" type="stmt"/>
-        <line num="27" count="3" type="stmt"/>
+        <line num="22" count="3" type="stmt"/>
+        <line num="27" count="1" type="stmt"/>
         <line num="34" count="0" type="stmt"/>
       </file>
       <file name="CartItem.jsx" path="C:\Users\Francesco\Desktop\ShowRoom3D\prova-react\src\features\cart\CartItem.jsx">
         <metrics statements="4" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="1"/>
         <line num="5" count="1" type="stmt"/>
-        <line num="6" count="4" type="stmt"/>
-        <line num="7" count="3" type="stmt"/>
+        <line num="6" count="2" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
         <line num="15" count="0" type="stmt"/>
       </file>
       <file name="cartSlice.js" path="C:\Users\Francesco\Desktop\ShowRoom3D\prova-react\src\features\cart\cartSlice.js">
         <metrics statements="19" coveredstatements="19" conditionals="8" coveredconditionals="8" methods="7" coveredmethods="7"/>
         <line num="3" count="1" type="stmt"/>
         <line num="8" count="1" type="stmt"/>
-        <line num="13" count="4" type="cond" truecount="2" falsecount="0"/>
-        <line num="14" count="4" type="cond" truecount="2" falsecount="0"/>
-        <line num="15" count="3" type="stmt"/>
+        <line num="13" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="14" count="5" type="cond" truecount="2" falsecount="0"/>
+        <line num="15" count="4" type="stmt"/>
         <line num="23" count="1" type="stmt"/>
         <line num="24" count="1" type="stmt"/>
-        <line num="26" count="4" type="stmt"/>
+        <line num="26" count="5" type="stmt"/>
         <line num="31" count="4" type="cond" truecount="2" falsecount="0"/>
         <line num="32" count="2" type="stmt"/>
         <line num="33" count="2" type="cond" truecount="2" falsecount="0"/>
         <line num="34" count="1" type="stmt"/>
         <line num="36" count="1" type="stmt"/>
         <line num="37" count="1" type="stmt"/>
-        <line num="41" count="1" type="stmt"/>
-        <line num="42" count="1" type="stmt"/>
+        <line num="41" count="2" type="stmt"/>
+        <line num="42" count="2" type="stmt"/>
         <line num="46" count="1" type="stmt"/>
-        <line num="47" count="4" type="stmt"/>
-        <line num="48" count="4" type="stmt"/>
+        <line num="47" count="3" type="stmt"/>
+        <line num="48" count="3" type="stmt"/>
       </file>
     </package>
     <package name="src.features.decorations">

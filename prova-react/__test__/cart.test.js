@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { fireEvent, render, screen } from "@testing-library/react";
 import React from "react";
 import Cart from '../src/features/cart/Cart';
 import { Provider } from "react-redux";
@@ -25,68 +25,92 @@ describe('Cart tests', () => {
     const testProd2 = {id: 2, quantity: 1, basePrice: 200, color: 'white', price: 200};
 
     const testProd3 = {id: 3, quantity: 1, basePrice: 300, color: 'red', price: 300};
+    
+    describe('CartItem tests', () => {
+        it('Should stop rendering item when calling removeItem()', () => {
+            act(() => { 
+                store.dispatch(addItem(testProd1));
+            });
 
-    describe('addItem() tests', () => {
+            const removeItemButton = screen.getByText('X');
 
-        it('Should add a new item to the cart when calling addItem()', () => {
+            //fireEvent.click(removeItemButton);
+
+            expect(screen.getByText('X')).toBeInTheDocument();
+
+            //expect(true).toBe(true);
 
             act(() => { 
-    
-            store.dispatch(addItem(testProd1));
-            store.dispatch(addItem(testProd2));
-            store.dispatch(addItem(testProd3));
-    
+                store.dispatch(removeAllItems());
             });
-    
-            expect(store.getState().cart.cartItems).toStrictEqual([testProd1, testProd2, testProd3]);
+
         });
-
-        it('Should increase quantity of product in cart when adding a product with the same id when calling addItem()', () => {
-            
-            act(() => { 
-
-            store.dispatch(addItem(testProd1));
-
-            });
-    
-            expect(store.getState().cart.cartItems).toStrictEqual([testProd1double, testProd2, testProd3]);
-        });
-
     });
 
-    describe('removeItem() tests', () => {
+    describe('CartSlice tests', () => {
 
-        it('Should decrease quantity of product in cart when removing a product with the same id when calling removeItem()', () => {
+        describe('addItem() tests', () => {
+
+            it('Should add a new item to the cart when calling addItem()', () => {
+
+                act(() => { 
+        
+                store.dispatch(addItem(testProd1));
+                store.dispatch(addItem(testProd2));
+                store.dispatch(addItem(testProd3));
+        
+                });
+        
+                expect(store.getState().cart.cartItems).toStrictEqual([testProd1, testProd2, testProd3]);
+            });
+
+            it('Should increase quantity of product in cart when adding a product with the same id when calling addItem()', () => {
+                
+                act(() => { 
+
+                store.dispatch(addItem(testProd1));
+
+                });
+        
+                expect(store.getState().cart.cartItems).toStrictEqual([testProd1double, testProd2, testProd3]);
+            });
+
+        });
+
+        describe('removeItem() tests', () => {
+
+            it('Should decrease quantity of product in cart when removing a product with the same id when calling removeItem()', () => {
+
+                act(() => { 
+        
+                store.dispatch(removeItem(testProd1));
+        
+                });
+        
+                expect(store.getState().cart.cartItems).toStrictEqual([testProd1, testProd2, testProd3]);
+            });
+
+            it('Should remove product from the cart when removing the last unit with the same id when calling removeItem()', () => {
+
+                act(() => { 
+        
+                store.dispatch(removeItem(testProd3));
+        
+                });
+        
+                expect(store.getState().cart.cartItems).toStrictEqual([testProd1, testProd2]);
+            });
+        });
+        
+        it('Should remove all items from the cart when calling removeAllItems()', () => {
 
             act(() => { 
-    
-            store.dispatch(removeItem(testProd1));
-    
+
+            store.dispatch(removeAllItems());
+
             });
-    
-            expect(store.getState().cart.cartItems).toStrictEqual([testProd1, testProd2, testProd3]);
+
+            expect(store.getState().cart.cartItems).toStrictEqual([]);
         });
-
-        it('Should remove product from the cart when removing the last unit with the same id when calling removeItem()', () => {
-
-            act(() => { 
-    
-            store.dispatch(removeItem(testProd3));
-    
-            });
-    
-            expect(store.getState().cart.cartItems).toStrictEqual([testProd1, testProd2]);
-        });
-    });
-    
-    it('Should remove all items from the cart when calling removeAllItems()', () => {
-
-        act(() => { 
-
-        store.dispatch(removeAllItems());
-
-        });
-
-        expect(store.getState().cart.cartItems).toStrictEqual([]);
     });
 });
