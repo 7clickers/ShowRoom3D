@@ -1,7 +1,6 @@
 import { useContext, useState, useEffect, useRef } from 'react';
 import { useSelector } from 'react-redux';
 
-import ProductInteractionContext from '../../../common/ProductInteractionContext';
 import SidebarContext from '../../../common/SidebarContext';
 
 import ProductInteractionPrompt from "./ProductInteractionPrompt";
@@ -10,7 +9,10 @@ import ProductSidebar from './ProductSidebar';
 const ProductUI = () => {
     const sidebarRef = useRef();
 
-    const { intersectedProductID } = useContext(ProductInteractionContext);
+    const intersectedProductID = useSelector(
+      (state) => state.raycaster.intersectedProductID
+    );
+
     const { isSidebarVisible, setIsSidebarVisible } = useContext(SidebarContext);
     const [lastInteractedProduct, setLastInteractedProduct] = useState(null);
 
