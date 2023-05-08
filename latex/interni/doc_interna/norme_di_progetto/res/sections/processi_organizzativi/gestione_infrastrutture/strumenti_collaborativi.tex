@@ -17,19 +17,29 @@ I branch si dividono in:
     \begin{itemize} 
         \item \textbf{main}: contiene le versioni di release\textsubscript{g} del software;
         \item \textbf{documentation}: contiene i template latex\textsubscript{g} e rispettivi pdf della documentazione. I documenti presenti 
-		in documentation sono stati approvati dal responsabile o almeno verificati dai verificatori.
+		in documentation sono stati approvati dal responsabile o almeno verificati dai verificatori;
+		\item \textbf{dev}: contiene il codice del prodotto verificato dai verificatori.
     \end{itemize}
-	\item \textbf{Branches liberi}: viene creato un branch libero per ogni documento che si sta modificando. Il nome del branch deve essere:
+	\item \textbf{Branches derivanti da documention}: viene creato un branch libero per ogni documento che si sta modificando. Il nome del branch deve essere:
 	\begin{itemize}	
 		\item Uguale al nome del documento;
 		\item Scritto tutto in minuscolo;
 		\item Gli spazi tra le parole devono essere sostituiti con il trattino basso.
 	\end{itemize}
-	
-	In ogni branch libero possono lavorare uno o più componenti del gruppo, a condizione che ognuno lavori su parti diverse 
+	In ogni branch possono lavorare uno o più componenti del gruppo, a condizione che ognuno lavori su parti diverse 
 	del documento a cui fa riferimento il branch. Ad ogni componente che lavora sul branch  
 	viene assegnata una issue\textsubscript{g} da risolvere. Una volta che tutte le issue\textsubscript{g} relative al branch sono state risolte ed è avvenuta 
 	la verifica\textsubscript{g}, si fa il merge e il branch viene eliminato.
+	\item \textbf{Branches derivanti da dev}: viene creato un branch libero per ogni feature da aggiungere. Il nome del branch deve essere:
+	\begin{itemize}	
+		\item Uguale al nome della feature;
+		\item Scritto tutto in minuscolo;
+		\item Gli spazi tra le parole devono essere sostituiti con il trattino basso.
+	\end{itemize}
+	Ad ogni branch è associata una feature, a cui lavora un componente del gruppo. Una volta 
+	completata la feature, sempre nello stesso branch verranno svolti i test di unità dal verificatore. 
+	Successivamente, prima di fare il merge con il branch protetto dev, si dovranno eseguire con successo i test di integrazione.
+
 \end{itemize}
 
 \paragraph{Commits}
