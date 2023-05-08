@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useGLTF } from "@react-three/drei";
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader';
 
-const Decoration = ({ decoration }) => {
+const Decoration = ({ decoration, octree }) => {
   const draco = new DRACOLoader();
   draco.setDecoderConfig({ type: 'js' });
   draco.setDecoderPath('https://www.gstatic.com/draco/v1/decoders/');
@@ -11,6 +11,8 @@ const Decoration = ({ decoration }) => {
   const clonedScene = glb.scene.clone();
 
   const positionArray = [decoration.position.x, decoration.position.y, decoration.position.z];
+
+  useEffect(() => {octree.fromGraphNode(clonedScene);},[]);
 
   useEffect(() => {
     clonedScene.traverse((child) => {
