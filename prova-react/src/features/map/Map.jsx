@@ -7,6 +7,7 @@ import Lights from "../lights/Lights";
 import Models from "../products/Models";
 import Raycaster from "../raycaster/Raycaster";
 import Decorations from "../decorations/Decorations";
+import Flashlight from "../flashlight/Flashlight";
 
 export default function Map() {
 
@@ -26,7 +27,6 @@ export default function Map() {
   const { nodes, scene } = useGLTF("src/assets/map/fondale.glb");
   const octree = useOctree(scene);
   useOctreeHelper(octree);
-
   const colliders = useRef([]);
 
   return (
@@ -40,6 +40,7 @@ export default function Map() {
         />
       </group>
       <Lights />
+      <Flashlight />
       <Player octree={octree} colliders={colliders.current} />
       <Models octree={octree} onRendered={handleModelsRendered} />
       <Decorations octree={octree} />
