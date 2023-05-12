@@ -47,8 +47,8 @@ const ProductSidebar = forwardRef(({ product, isVisible }, ref) => {
               onClick={(e) => {
                 if (e.target.checked && variant.colorName === selectedColor) {
                   e.target.checked = false;
-                  setSelectedColor(null);
-                  dispatch(setSelectedColor({ productID: product.id, colorName: null }));
+                  setSelectedColor("standard");
+                  dispatch(setSelectedColor({ productID: product.id, colorName: "standard" }));
                 } else {
                   setSelectedColor(variant.colorName);
                   dispatch(setSelectedColor({ productID: product.id, colorName: variant.colorName }));
