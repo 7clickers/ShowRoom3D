@@ -1,0 +1,110 @@
+\section{Introduzione}
+\subsection{Scopo del documento}
+Lo scopo del seguente documento `e quello di illustrare le funzionalit`a fornite dall’applicazione e le
+istruzioni per l’utilizzo della stessa. L’utente sar`a quindi a conoscenza dei requisiti minimi necessari
+per il corretto funzionamento di ShopChain.
+\subsection{Glossario}
+I termini utilizzati in questo documento potrebbero generare dubbi riguardo al loro significato, richiedendo pertanto una definizione al fine di evitare ambiguit`a. Tali termini vengono contrassegnati da
+una G maiuscola finale a pedice della parola. Alla fine del documento stesso `e possibile reperire tale
+Glossario con i termini di interesse.
+\subsection{Cos'è Showroom 3D}
+Showroom 3D è un sito web che offre un'esperienza di shopping unica per gli appassionati di acquari. Grazie alla tecnologia 3D, gli utenti possono visualizzare e personalizzare in modo interattivo gli articoli per acquari come piante, rocce e decorazioni. Il sito offre una vasta gamma di prodotti di alta qualità e permette agli utenti di scegliere tra diverse opzioni di personalizzazione per soddisfare le loro esigenze. Inoltre, gli utenti possono acquistare direttamente gli articoli selezionati sul sito e riceverli comodamente a casa propria. Showroom 3D rappresenta la soluzione ideale per chi desidera rendere il proprio acquario unico e personalizzato.
+\subsection{Autenticazione}
+Non è presente nessuna funzione di autenticazione, quindi ogni parte e funzionalità del sito sono accessibili da chiuque senza dover effettuare un login. 
+Questo perchè il progetto didattico non aveva come interesse l'unica sezione in cui sarebbe stato necessario utilizzare una pagina di autenticazione, ovvero la parte di checkout del carrello e acquisto.
+\subsection{Browser supportati}
+Di seguito viene fornito un breve elenco delle versioni minime di tutti i browser sui quali
+il funzionamento del nostro prodotto è garantito:
+MODIFICARE
+\begin{itemize}
+	\item Mozilla Firefox, versione 97;
+	\item Google Chrome, versione 98;
+	\item Micosoft Edge, versione 98;
+	\item Brave, versione 1.36.
+\end{itemize}
+Per rendere effettivo il funzionamento su tali browser, deve essere abilitato JavaScript.
+\pagebreak
+
+
+
+\section{Panoramica del sito}
+screen completo
+L'utente che accede al sito si ritrova immediatamente, o dopo qualche secondo di loadinscreen, immerso nell'ambiente 3D, dove potrà compiere tutte le azioni e funzionalità offerte dal sito. 
+IMMAGINE DI COME SI PRESENTA IL SITO APPENA APERTO
+è uno showroom di oggetti per acquari
+(forse un po' rindondante con cos'è showroom 3D)
+\subsection{Funzionalità}
+Le funzionalità si cui può disporre l'utente sono le seguenti:
+\begin{itemize}
+\item navigazione in ambiente 3d immersivo;
+\item visione di articoli aquistabili;
+\item modifica delle caratteristiche di quest'ultimi;
+\item gestione degli acqusti tramite il carrello;
+\item riposizionamento.
+\end{itemize}
+\pagebreak
+
+\section{Interfaccia utente}
+Oltre all'ambiente 3D l'utente ha a disposizioni diversi strumenti per interagire col sistema e monitorare le sue attività sul sito:
+\subsection{Puntatore centrale}
+Al centro della schermata è sempre presente un pallino rotondo che indica la direzione in cui sta puntando la "telecamera" dell'utente. Qunado questo pallino incrocia un elemento acquistabile nell'ambientazione comparirà a schermo il nome dell'elemento puntato e il pallino cambierà colore per notificare più chiaramente che si tratta di un oggetto con cui è possibile interagire.
+IMMAGINE ELEMENTO PUNTATO CON NOME DELL'OGGETTO SOTTO
+\subsection{Item sidebar}
+Clickando il tasto sinistro del mouse quando la telecamera è puntata su un'oggetto è possibile aprirne la scheda che si presenta in questo modo:
+IMMAGINE SCHEDA PRODOTTO
+Come si nota dall'immagine la scheda riporta molte informazioni rigurdo all'oggetto, ovvero:
+\begin{itemize}
+	\item Nome;
+	\item Descrizione;
+	\item Dimensioni;
+	\item Peso;
+	\item Colore;
+	\item Quantità: selezionando una delle due freccie di questa riga è possibile aumentare o diminuire la quantità dell'oggetto da inserire nel carrello;
+	\item Costo;
+	\item Pulsante "Aggiungi al carrello": premendo questo pulsante verranno inseriti nel carrello un numero di oggetti che dipende dalla quantità selezionata e con le caratteristiche scelte.
+\end{itemize}
+
+Per chiudere la scheda dell'oggetto e tornare alla normale navigazione della stanza basta premere col mouse al di fuori di essa.
+IMMAGINE DELLA SIDEBAR CON EVIDENZIATE LE CARATTERISTICHE
+\subsubsection{Personalizzazione}
+All'interno della sidebar è possibile trovare alcuni campi modificabili, identficati da un menù a tendina con cui l'utente può effettuare la sua personalizzazione.
+Ogni oggetto è modificabile in almeno una caratteristica tra:
+\begin{itemize}
+	\item Colore;
+	\item Taglia;
+	\item Texture.
+\end{itemize}
+Una volta effettuata la modifica questa sarà applica anche nell'ambinte 3D e sarà quindi possibile osservare l'oggetto nelle sue varie configurazioni prima di effettuare l'aquisto una queste.
+IMMAGINE: DUE IMMAGINI DELLO STESSO CORALLO, NELLA PRIMA C'è ANCHE LA SIDEBAR E VIENE EVIDENZIATO IL CAMPO DI MOFICA, NELLA SECONDA IMMAGINE SI VEDE L'ELEMENTO MODIIFCATO
+\subsection{Carrello}
+IMMAGINE DEL CARRELLO
+Una volta acquistato un oggetto, quet'ultimo verrà inserito nel carrello (in basso a destra nello schermo), riportandone il nome, le caratteristiche personalizzate e il prezzo unitario.
+Il carrrello si presenta quindi come un elenco inizialmente vuoto, che si aggiorna in tempo reale e riporta gli oggetti scelti dal cliente.
+In fondo al carrellosi trovano:
+\begin{itemize}
+	\item Pulsante Checkout
+	\item Pulsante Svuota carrello
+	\item Prezzo totatle
+\end{itemize}
+Il carrello è fittizio, cioè non permette di effettuare veramente degli acquisti, infatti non è prevista nessuna funzione di pagamento ed inoltre non è persistente, cioè non salva nessun dato e tra una sessione e l'altra viene completatmente svuotato.
+
+\pagebreak
+\section{Navigazione}
+All'interno dello showroom sono previsti varie possibilità e limiti per muoversi:
+\begin{itemize}
+	\item Movimento orizzaontale coi tasti ↑ (avanti) ← (sinistra) → (destra) ↓ (indietro) oppure rispettivamente coi tasti w a s d;
+	\item Salto (breve movimento in alto per poi ricadere a terra) premendo la barra spaziatrice;
+	\item Teletrasporto (stanze o oggetti, dipende cosa implementeremo);
+	\item Collisioni con gli oggetti. Se l'utente prova a muoveri dentro ad un oggetto il movimento viene interrotto;
+	\item Collisioni con il limite della mappa. La zona in cui si muove l'utente è delimitata con varii ostacoli che fanno parte dell'ambientazione, se l'utente prova a muoversi al loro interno il movimento viene interrotto
+\end{itemize}
+IMMAGINI WASD E FRECCETTE
+\pagebreak
+
+
+
+Da capire se ci saranno:
+TORCIA
+STANZE
+
+
