@@ -25,6 +25,17 @@ architetturale derterminato dalle tecnologie adottate in quanto gran parte delle
 \textbf{Si suggerisce quindi di leggere la sezione} \ref{design Redux} \textbf{riguardante il design pattern architetturale determinato 
 dalle tecnologie adottate prima di proseguire con le successive}.
 
+\subsection{Riferimenti}
+\subsubsection{Riferimenti normativi}
+\begin{itemize}
+\item .
+\end{itemize}
+
+\subsubsection{Riferimenti informativi}
+\begin{itemize}
+\item .
+\end{itemize} 
+
 \section{Descrizione dell'architettura}
 \subsection{Elenco dei componenti}
 \begin{itemize}
@@ -32,66 +43,152 @@ dalle tecnologie adottate prima di proseguire con le successive}.
 		\begin{itemize}
 			\item \textbf{CartSlice}: componente che permette la gestione dello stato che contiene i dati riguardanti il carrello;
 			\item \textbf{ProductsSlice}: componente che permette la gestione dello stato che contiene i dati riguardanti i prodotti 
-			presenti all'interno dell'ambiente 3D.
-			\item \textbf{PlayerSlice}:
-			\item \textbf{RayCasterSlice}:
-			\item \textbf{DecorationSlice}: 
-			\item \textbf{SidebarSlice}:
+			presenti all'interno dell'ambiente 3D;
+			\item \textbf{PlayerSlice}: componente che permette la gestione dello stato che contiene i dati riguardanti il player;
+			\item \textbf{RayCasterSlice}: componente che permette la gestione dello stato che contiene i dati riguardanti il
+			prodotto con cui è possibile interagire nell'ambiente 3D;
+			\item \textbf{DecorationSlice}: componente che permette la gestione dello stato che contiene i dati riguardanti
+			il caricamento delle decorazioni all'interno dell'ambiente 3D;
+			\item \textbf{SidebarSlice}: componente che permette la gestione dello stato che contiene i dati riguardanti
+			la side-bar;
 		\end{itemize}
 	\item \textbf{\large Initial states}:
+	Gli stati iniziali contengono i dati di interesse comune tra componenti in modo da facilitarne il reperimento.
+	I dati che non sono di iteresse comune risiedono internamente ai componenti che li utilizzano.
 		\begin{itemize}
-			\item \textbf{CartInitialState}:
-			\item \textbf{ProductsInitialState}:
-			\item \textbf{PlayerInitialState}:
-			\item \textbf{RayCasterInitialState}:
-			\item \textbf{DecorationInitialState}:
-			\item \textbf{SidebarInitialState}:
+			\item \textbf{CartInitialState}: componente che contiene i dati relativi agli oggetti presenti all'interno del carrello;
+			\item \textbf{ProductsInitialState}: componente che contiene i dati relativi ai prodotti presenti all'interno dell'ambiente 3D;
+			\item \textbf{PlayerInitialState}: componente che contiene i dati relativi al player;
+			\item \textbf{RayCasterInitialState}: componente che contiene i dati utili ad interagire con un oggetto presente all'interno dell'
+			ambiente 3D;
+			\item \textbf{DecorationInitialState}: componente che contiene la lista di tutte le decorazioni presenti all'interno dell'ambiente 3D;
+			\item \textbf{SidebarInitialState}: componente che contiene i dati utili a reperire informazioni sulla sidebar;
 		\end{itemize}
 		\item \textbf{\large Actions}:
+		Per convenzione il nome delle azioni seguono il formato: [nome Slice dalla quale viene catturata].[nome azione]
 		\begin{itemize}
-			\item \textbf{sidebar.toggleSidebarIsOpen}:
-			\item \textbf{rayCaster.setLastProductPointed}:
-			\item \textbf{rayCaster.toggleRayCasterEnabled}:
-			\item \textbf{cart.addItems}:
-			\item \textbf{cart.removeItem}:
-			\item \textbf{cart.removeAll}: 
+			\item \textbf{sidebar.toggleSidebarIsOpen}: azione emessa quando si apre o si chiude la sidebar relativa ad un prodotto presente 
+			all'interno della scena 3D.
+			\\
+			Payload: nessuno;
+			\item \textbf{sidebar.setSelectedColor}: azione emessa quando si seleziona nella sidebar un nuovo colore per un prodotto.
+			\\
+			Payload: \{id:number, selectedColor: String\};
+			\\
+			id: ID del prodotto a cui cambiare il colore.
+			\\
+			selectedColor: colore selezionato;
+			\item \textbf{rayCaster.setLastProductPointed}: azione emessa per aggiornare l'ID che rappresenta l'ultimo oggetto puntato dal raycaster.
+			\\
+			\textit{Payload}: \{id:number\}
+			\\
+			id: ID dell'ultimo prodotto puntato dal raycaster;
+			\item \textbf{rayCaster.toggleRayCasterEnabled}: azione emessa per abilitare o disabilitare il raycaster.
+			\\
+			\textit{Payload}: nessuno;
+			\item \textbf{cart.addItems}: azione emessa per aggiungere uno o più prodotti al carrello.
+			\\
+			\textit{Payload}: {id: number, price: number, quantity: number,selectedColor: String}
+			\\
+			id: ID del prodotto da aggiungere al carrello.
+			\\
+			price: prezzo del prodotto da aggiungere al carrello.
+			\\
+			quantity: quantità di prodotti da aggiungere al carrello.
+			\\
+			selectedColor: colore selezionato del prodotto da aggiungere al carrello.
+			\item \textbf{cart.removeItem}: azione emessa per rimuovere un prodotto dal carrello.
+			\\
+			Payload: nessuno;
+			\item \textbf{cart.removeAll}: azione emessa per rimuovere tutti i prodotti presenti nel carrello.
+			\\
+			Payload: nessuno;
 		\end{itemize}
 		\item \textbf{\large Model components}:
 		\begin{itemize}
-			\item \textbf{Coordinate}:
-			\item \textbf{Camera}:
-			\item \textbf{Octree}:
-			\item \textbf{Vector3}:
-			\item \textbf{Capsule}:
-			\item \textbf{Player}:
-			\item \textbf{CartItem}:
+			\item \textbf{Coordinate}: classe 
+			\item \textbf{Camera}: classe offerta dalla libreria three.js.
+			Rappresenta l'utente all'interno dell'ambiente 3D.
+			Modificando gli attributi di questa classe l'utente compie movimenti spaziali e può esplorare l'ambiente che 
+			lo circonda da prospettive diverse.
+			\item \textbf{Octree}: classe offerta dalla libreria three.js.
+			L'Octree è una struttura dati ad albero utilizzata per la rappresentazione e la gestione di dati spaziali 
+			tridimensionali. 
+			In particolare, viene utilizzata per dividere lo spazio tridimensionale in regioni più piccole, 
+			suddividendo ciascuna regione in otto sotto-regioni.
+			Utile per determinare con quale prodotto si sta interagendo o per rilevare le collisioni.
+			\item \textbf{Vector3}: classe offerta dalla libreria three.js.
+			Rappresenta un vettore tridimensionale, ovvero una grandezza fisica caratterizzata da una direzione e da una lunghezza.
+			Il vettore tridimensionale viene comunemente utilizzato per definire la posizione, la rotazione, 
+			la scala e la direzione degli oggetti all'interno di una scena 3D. 
+			\item \textbf{Capsule}: classe offerta dalla libreria three.js.
+			La classe Capsule offre la possibilità di impostare una forma di collisione personalizzata 
+			per l'oggetto rappresentato dalla capsula. 
+			\item \textbf{Player}: classe con il compito di tenere traccia ed aggiornare le informazioni riguardanti 
+			lo stato dell'utente all'interno dell'ambiente 3D.
+			Le informazioni principali di cui si occupa la classe sono la posizione spaziale, la posizione della camera,
+			la velocità dell'utente o se l' utente si trova in una posizione sopraelevata rispetto al piano che rappresenta 
+			lo zero della scena.
+			\item \textbf{CartItem}: classe che rappresenta un item all'interno del carrello.
+			Quando viene aggiunto un prodotto al carrello viene creato un item che ne raccoglie le informazioni utili 
+			alla sua visualizzazione all' interno del carrello e all'acquisto.
 		\end{itemize}
 		\item \textbf{\large UI React components}:
+		I seguenti componenti hanno il compito di visualizzare i dati del modello e costituiscono l'interfaccia 
+		utente. 
 		\begin{itemize}
-			\item \textbf{UI}:
-			\item \textbf{Crosshair}:
-			\item \textbf{Cart}:
-			\item \textbf{PlayerPosition}:
-			\item \textbf{CartItem}:
-			\item \textbf{ProductUI}:
-			\item \textbf{ProductInteractionPrompt}:
-			\item \textbf{Sidebar}:
-			\item \textbf{ColorSelector}:
-			\item \textbf{SelectColorItem}:
-			\item \textbf{ProductDetails}:
+			\item \textbf{UI}: componente React che contiene i componenti grafici che vanno a costituire l'interfaccia
+			utente. 
+			\item \textbf{Crosshair}: componente react-three-fiber che viene utilizzato per aiutare l'utente a puntare
+			un determinato punto nello spazio 3D.
+			Solitamente viene indicato con un punto o una croce al centro dello schermo ed usato come puntatore dall'utente.
+			\item \textbf{Cart}: componente React che rappresenta il carrello.
+			\item \textbf{PlayerPosition}: componente React con il compito di visualizzare a schermo la posizione in cui 
+			si trova l'utente all'interno della scena 3D.
+			\item \textbf{CartItem}: componente React che rappresenta un prodotto all'interno del carrello.
+			Contiene le informazioni basilari necessarie alla visualizzazione e all'acquisto di un prodotto.
+			\item \textbf{ProductUI}:  componente React che contiene i componenti dell'interfaccia utente per la visualizzazione
+			del ProductInteractionPrompt e della sidebar.
+			\item \textbf{ProductInteractionPrompt}: componente React che contiene i componenti grafici che vanno a costituire 
+			la parte dell'interfaccia utente relativa alla visualizzazione del nome del prodotto con cui si sta interagendo.
+			\item \textbf{Sidebar}: componente React che contiene i componenti necessari a visualizzare i 
+			dettagli del prodotto con cui si sta iteragendo e i componenti con cui è possibile modificare le caratteristiche del 
+			prodotto e aggiungerne la quantità specificata al carrello.
+			\item \textbf{ColorSelector}: componente React che contiene i componenti necessari per compiere un'azione di selezione colore.
+			\item \textbf{SelectColorItem}: componente React con cui è possibile compiere un'azione di selezione colore.
+			\item \textbf{ProductDetails}: componente React per la visualizzazione dei dettagli di un prodotto.
 		\end{itemize}
 		\item \textbf{\large 3D React components}:
+		I seguenti componenti hanno il compito di visualizzare i dati del modello costituiscono il canvas 
+		sul quale viene renderizzata la scena 3D.
 		\begin{itemize}
-			\item \textbf{Canvas}:
-			\item \textbf{Scene}:
-			\item \textbf{PointerLock}:
-			\item \textbf{Environment}:
-			\item \textbf{Map}:
-			\item \textbf{Player}:
-			\item \textbf{Lights}:
-			\item \textbf{Models}:
-			\item \textbf{Decorations}:
-			\item \textbf{RayCaster}:
+			\item \textbf{Canvas}: componente react-three-fiber che comprende gli elementi grafici che vanno a costituire
+			la scena 3D.
+			Il componente Canvas si occupa di creare un nuovo canvas HTML e di associarlo a una nuova istanza di THREE.WebGLRenderer, 
+			che viene utilizzata per renderizzare la scena Three.js all'interno del componente React.
+			Fornisce una camera e una serie di props opzionali utili alla configurazione dell'ambiente 3D.
+			\item \textbf{Scene}: componente react-three-fiber che rappresente l'ambiente 3D.
+			Si tratta di uno spazio virtuale 3D in cui gli oggetti vengono posizionati, orientati e illuminati.
+			\item \textbf{PointerLock}: componente react-three-fiber che consente di fare le richieste di PointerLock fornite da
+			three.js. 
+			Un pointerLock consente di controllare la camera e di disattivare i controlli della camera quando 
+			necessario (ad esempio quando si apre un menu di interazione con un prodotto).
+			\item \textbf{Environment}: componente react-three-fiber utilizzato per creare una scena base configurata
+			secondo impostazioni standard settabili.
+			\item \textbf{Map}: componente React che contiene i componenti che costituiscono la scena.
+			Tra essi possiamo trovare: player, lights, models, decorations, raycaster.
+			\item \textbf{Player}: componente React che contiene il player.
+			\item \textbf{Lights}: componente React che rappresenta le luci all'interno della scena.
+			\item \textbf{Models}: componente React che rappresenta un prodotto all'interno dell'ambiente 3D.
+			I modelli vengono caricati all'interno della scena specificandonone il path del modello .gltf, la posizione
+			in cui si vogliono collocare e le caratteristiche del prodotto legato al modello da caricare.
+			\item \textbf{Decorations}: una decorazione è un modello .gltf che si differisce dal modello di un prodotto 
+			per il fatto che non è modificabile e non può essere aggiunto al carrello.
+			\item \textbf{RayCaster}: componente three.js che rappresenta un oggetto utilizzato per effettuare 
+			collisioni e interazioni tra gli oggetti nella scena e il puntatore del mouse.
+			Il raycaster genera un raggio virtuale che parte dalla posizione del puntatore del mouse e attraversa lo schermo fino a 
+			raggiungere un oggetto nella scena, se presente. 
+			È possibile quindi utilizzare questa informazione per eseguire azioni in risposta all'interazione dell'utente.
 		\end{itemize}
 \end{itemize}
 \subsection{Design pattern architetturale determinato dalle tecnologie adottate}
@@ -188,7 +285,7 @@ CartFeaturesDiagram contiene i componenti coinvolti nelle interazioni con il car
 \begin{itemize}
 		\item \textbf{CartSlice}
 		\begin{itemize}
-			\item \textit{Connessioni}:
+			\item \textit{Connessioni}: 
 			\item \textit{Interazioni}:
 		\end{itemize}
 		\item \textbf{ProductsSlice}
@@ -284,28 +381,3 @@ CartFeaturesDiagram contiene i componenti coinvolti nelle interazioni con il car
 
 
 
-\subsection{Riferimenti}
-\subsubsection{Riferimenti normativi}
-\begin{itemize}
-\item Capitolato d’appalto C6: \url{https://www.math.unipd.it/~tullio/IS-1/2022/Progetto/C6.pdf};
-\item \textit{Norme di Progetto};
-\item \textit{Verbale esterno 17/11/22};
-\item \textit{Verbale interno 01/12/22};
-\item \textit{Verbale interno 07/12/22};
-\item \textit{Verbale esterno 11/01/23};
-\item \textit{Verbale esterno 18/01/23};
-\item \textit{Verbale esterno 17/02/23};
-\item \textit{Verbale interno 24/02/23}.
-\end{itemize}
-
-\subsubsection{Riferimenti informativi}
-\begin{itemize}
-\item Presentazione del capitolato: \url{https://www.math.unipd.it/~tullio/IS-1/2022/Progetto/C6.pdf};
-
-\item Three.Js - Riferimenti:
-\begin{itemize}
-\item Fondamenti di Three.js: \url{https://threejs.org/manual/#en/fundamentals};
-\item Documentazione Three.js: \url{https://threejs.org/docs/index.html#manual/en/introduction/Creating-a-scene};
-\item Repository\textsubscript{g} informativa Three.js: \url{https://github.com/mrdoob/three.js/}.
-\end{itemize} 
-\end{itemize} 
