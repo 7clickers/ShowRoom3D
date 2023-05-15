@@ -28,16 +28,13 @@ Per rendere effettivo il funzionamento su tali browser, deve essere abilitato Ja
 
 
 \section{Panoramica del sito}
-screen completo
-L'utente che accede al sito si ritrova immediatamente, o dopo qualche secondo di loadinscreen, immerso nell'ambiente 3D, dove potrà compiere tutte le azioni e funzionalità offerte dal sito. 
 \begin{figure}[H]
   \renewcommand{\thefigure}{1}
   \includegraphics[width=\linewidth]{./res/images/schermata_iniziale.png}
   \caption{Showroom subito dopo l'apertura}
   \label{Showroom subito dopo l'apertura}
 \end{figure}
-è uno showroom di oggetti per acquari
-(forse un po' rindondante con cos'è showroom 3D)
+L'utente che accede al sito si ritrova immediatamente, o dopo qualche secondo di schermata di caricamento, immerso nell'ambiente 3D, dove potrà compiere tutte le azioni e funzionalità offerte dal sito. 
 \subsection{Funzionalità}
 Le funzionalità si cui può disporre l'utente sono le seguenti:
 \begin{itemize}
@@ -62,15 +59,17 @@ Al centro della schermata è sempre presente un pallino rotondo che indica la di
   \label{Utilizzo puntatore}
 \end{figure}
 
+\pagebreak
+
 \subsection{Item sidebar}
 Clickando il tasto sinistro del mouse quando la telecamera è puntata su un'oggetto è possibile aprirne la scheda che si presenta in questo modo:
 \begin{figure}[H]
   \renewcommand{\thefigure}{1}
 \begin{center}
-  \includegraphics[width=\linewidth]{./res/images/sidebar_vuota.png}
+  \includegraphics[width=8cm]{./res/images/scheda_evidenziata.png}
  \end{center}
- \caption{Scheda del prodotto}
-  \label{Scheda del prodotto}
+ \caption{Dettagli scheda del prodotto}
+  \label{Dettagli scheda del prodotto}
 \end{figure}
 Come si nota dall'immagine la scheda riporta molte informazioni rigurdo all'oggetto, ovvero:
 \begin{itemize}
@@ -85,14 +84,6 @@ Come si nota dall'immagine la scheda riporta molte informazioni rigurdo all'ogge
 \end{itemize}
 
 Per chiudere la scheda dell'oggetto e tornare alla normale navigazione della stanza basta premere col mouse al di fuori di essa.
-\begin{figure}[H]
-  \renewcommand{\thefigure}{1}
-\begin{center}
-  \includegraphics[width=8cm]{./res/images/scheda_evidenziata.png}
- \end{center}
- \caption{Dettagli scheda del prodotto}
-  \label{Dettagli scheda del prodotto}
-\end{figure}
 \subsubsection{Personalizzazione}
 All'interno della sidebar è possibile trovare alcuni campi modificabili, identficati da un menù a tendina con cui l'utente può effettuare la sua personalizzazione.
 Ogni oggetto è modificabile in almeno una caratteristica tra:
@@ -102,7 +93,16 @@ Ogni oggetto è modificabile in almeno una caratteristica tra:
 	\item Texture.
 \end{itemize}
 Una volta effettuata la modifica questa sarà applica anche nell'ambinte 3D e sarà quindi possibile osservare l'oggetto nelle sue varie configurazioni prima di effettuare l'aquisto una queste.
-IMMAGINE: DUE IMMAGINI DELLO STESSO CORALLO, NELLA PRIMA C'è ANCHE LA SIDEBAR E VIENE EVIDENZIATO IL CAMPO DI MOFICA, NELLA SECONDA IMMAGINE SI VEDE L'ELEMENTO MODIIFCATO
+\begin{figure}[H]
+  \renewcommand{\thefigure}{2}
+\begin{center}
+  \includegraphics[width=\linewidth]{./res/images/modifica.png}
+\end{center}
+  \caption{Modifica colore di un oggetto}
+  \label{Modifica colore di un oggetto}
+\end{figure}
+\pagebreak
+
 \subsection{Carrello}
 \begin{figure}[H]
   \renewcommand{\thefigure}{2}
@@ -122,8 +122,8 @@ In fondo al carrellosi trovano:
 	\item Prezzo totatle
 \end{itemize}
 Il carrello è fittizio, cioè non permette di effettuare veramente degli acquisti, infatti non è prevista nessuna funzione di pagamento ed inoltre non è persistente, cioè non salva nessun dato e tra una sessione e l'altra viene completatmente svuotato.
-
 \pagebreak
+
 \section{Navigazione}
 All'interno dello showroom sono previsti varie possibilità e limiti per muoversi:
 \begin{itemize}
