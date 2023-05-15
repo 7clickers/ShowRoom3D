@@ -15,12 +15,12 @@ Questo perchè il progetto didattico non aveva come interesse l'unica sezione in
 \subsection{Browser supportati}
 Di seguito viene fornito un breve elenco delle versioni minime di tutti i browser sui quali
 il funzionamento del nostro prodotto è garantito:
-MODIFICARE
 \begin{itemize}
-	\item Mozilla Firefox, versione 97;
-	\item Google Chrome, versione 98;
-	\item Micosoft Edge, versione 98;
-	\item Brave, versione 1.36.
+	\item Mozilla Firefox, versione 109;
+	\item Google Chrome, versione 110;
+	\item Micosoft Edge, versione 110;
+	\item Safari, versione 16;
+	\item Opera, versione 95.
 \end{itemize}
 Per rendere effettivo il funzionamento su tali browser, deve essere abilitato JavaScript.
 \pagebreak
@@ -30,7 +30,12 @@ Per rendere effettivo il funzionamento su tali browser, deve essere abilitato Ja
 \section{Panoramica del sito}
 screen completo
 L'utente che accede al sito si ritrova immediatamente, o dopo qualche secondo di loadinscreen, immerso nell'ambiente 3D, dove potrà compiere tutte le azioni e funzionalità offerte dal sito. 
-IMMAGINE DI COME SI PRESENTA IL SITO APPENA APERTO
+\begin{figure}[H]
+  \renewcommand{\thefigure}{1}
+  \includegraphics[width=\linewidth]{./res/images/schermata_iniziale.png}
+  \caption{Showroom subito dopo l'apertura}
+  \label{Showroom subito dopo l'apertura}
+\end{figure}
 è uno showroom di oggetti per acquari
 (forse un po' rindondante con cos'è showroom 3D)
 \subsection{Funzionalità}
@@ -48,10 +53,25 @@ Le funzionalità si cui può disporre l'utente sono le seguenti:
 Oltre all'ambiente 3D l'utente ha a disposizioni diversi strumenti per interagire col sistema e monitorare le sue attività sul sito:
 \subsection{Puntatore centrale}
 Al centro della schermata è sempre presente un pallino rotondo che indica la direzione in cui sta puntando la "telecamera" dell'utente. Qunado questo pallino incrocia un elemento acquistabile nell'ambientazione comparirà a schermo il nome dell'elemento puntato e il pallino cambierà colore per notificare più chiaramente che si tratta di un oggetto con cui è possibile interagire.
-IMMAGINE ELEMENTO PUNTATO CON NOME DELL'OGGETTO SOTTO
+\begin{figure}
+  \renewcommand{\thefigure}{1}
+\begin{center}
+  \includegraphics[width=8cm]{./res/images/puntatore.png}
+ \end{center}
+ \caption{Utilizzo puntatore}
+  \label{Utilizzo puntatore}
+\end{figure}
+
 \subsection{Item sidebar}
 Clickando il tasto sinistro del mouse quando la telecamera è puntata su un'oggetto è possibile aprirne la scheda che si presenta in questo modo:
-IMMAGINE SCHEDA PRODOTTO
+\begin{figure}[H]
+  \renewcommand{\thefigure}{1}
+\begin{center}
+  \includegraphics[width=\linewidth]{./res/images/sidebar_vuota.png}
+ \end{center}
+ \caption{Scheda del prodotto}
+  \label{Scheda del prodotto}
+\end{figure}
 Come si nota dall'immagine la scheda riporta molte informazioni rigurdo all'oggetto, ovvero:
 \begin{itemize}
 	\item Nome;
@@ -65,7 +85,14 @@ Come si nota dall'immagine la scheda riporta molte informazioni rigurdo all'ogge
 \end{itemize}
 
 Per chiudere la scheda dell'oggetto e tornare alla normale navigazione della stanza basta premere col mouse al di fuori di essa.
-IMMAGINE DELLA SIDEBAR CON EVIDENZIATE LE CARATTERISTICHE
+\begin{figure}[H]
+  \renewcommand{\thefigure}{1}
+\begin{center}
+  \includegraphics[width=8cm]{./res/images/scheda_evidenziata.png}
+ \end{center}
+ \caption{Dettagli scheda del prodotto}
+  \label{Dettagli scheda del prodotto}
+\end{figure}
 \subsubsection{Personalizzazione}
 All'interno della sidebar è possibile trovare alcuni campi modificabili, identficati da un menù a tendina con cui l'utente può effettuare la sua personalizzazione.
 Ogni oggetto è modificabile in almeno una caratteristica tra:
@@ -77,7 +104,15 @@ Ogni oggetto è modificabile in almeno una caratteristica tra:
 Una volta effettuata la modifica questa sarà applica anche nell'ambinte 3D e sarà quindi possibile osservare l'oggetto nelle sue varie configurazioni prima di effettuare l'aquisto una queste.
 IMMAGINE: DUE IMMAGINI DELLO STESSO CORALLO, NELLA PRIMA C'è ANCHE LA SIDEBAR E VIENE EVIDENZIATO IL CAMPO DI MOFICA, NELLA SECONDA IMMAGINE SI VEDE L'ELEMENTO MODIIFCATO
 \subsection{Carrello}
-IMMAGINE DEL CARRELLO
+\begin{figure}[H]
+  \renewcommand{\thefigure}{2}
+\begin{center}
+  \includegraphics[width=8cm]{./res/images/carrello.png}
+\end{center}
+  \caption{Showroom subito dopo l'apertura}
+  \label{Showroom subito dopo l'apertura}
+\end{figure}
+
 Una volta acquistato un oggetto, quet'ultimo verrà inserito nel carrello (in basso a destra nello schermo), riportandone il nome, le caratteristiche personalizzate e il prezzo unitario.
 Il carrrello si presenta quindi come un elenco inizialmente vuoto, che si aggiorna in tempo reale e riporta gli oggetti scelti dal cliente.
 In fondo al carrellosi trovano:
@@ -98,7 +133,12 @@ All'interno dello showroom sono previsti varie possibilità e limiti per muovers
 	\item Collisioni con gli oggetti. Se l'utente prova a muoveri dentro ad un oggetto il movimento viene interrotto;
 	\item Collisioni con il limite della mappa. La zona in cui si muove l'utente è delimitata con varii ostacoli che fanno parte dell'ambientazione, se l'utente prova a muoversi al loro interno il movimento viene interrotto
 \end{itemize}
-IMMAGINI WASD E FRECCETTE
+\begin{figure}[H]
+  \renewcommand{\thefigure}{2}
+  \includegraphics[width=\linewidth]{./res/images/comandi_direzionali.png}
+  \caption{Showroom subito dopo l'apertura}
+  \label{Showroom subito dopo l'apertura}
+\end{figure}
 \pagebreak
 
 
