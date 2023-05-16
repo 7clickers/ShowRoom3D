@@ -23,7 +23,6 @@ export default function Map() {
     setIntersectedProductName(productName);
   };
 
-
   const { nodes, scene } = useGLTF("src/assets/map/fondale.glb");
   const octree = useOctree(scene);
   useOctreeHelper(octree);
@@ -39,6 +38,7 @@ export default function Map() {
           rotation={[0, 1.57, 0]}
         />
       </group>
+
       <Lights />
       <Flashlight />
       <Player octree={octree} colliders={colliders.current} />
