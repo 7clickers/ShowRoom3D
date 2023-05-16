@@ -32,8 +32,8 @@ const Cart = () =>{
             <hr id="separator"/>
             <p id="total-cost">Total: {totalCost.toFixed(2)} €</p>
             <div id="group-cart">
-                <button id="fakebuy">Checkout</button>
                 <button id="remove-all" onClick={()=>dispatch(removeAllItems())}>Remove all</button>
+                <button id="fakebuy">Checkout</button>
             </div>
         </div>
     );
