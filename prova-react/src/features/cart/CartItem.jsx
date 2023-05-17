@@ -7,11 +7,11 @@ const CartItem = (props) =>{
     return(
         <div className="cart-item">
             <div className="item">
-                <h2 className="product-name">{props.name} - {props.color}</h2>
-                <h2 className="product-price">{(props.price).toFixed(2)} €</h2>
+                <p className="product-name">{props.name} - {props.color}</p>
+                <p className="product-price">{(props.price).toFixed(2)} €</p>
             </div>
             <div className="delete-quantity">
-                <h2 className="quantity">{props.quantity}</h2>
+                <p className="quantity">{props.quantity}</p>
                 <button className="single-delete" onClick={()=>dispatch(removeItem({id: props.name,quantity: props.quantity,basePrice: props.price ,color: props.color}))}>X</button>
             </div>
         </div>

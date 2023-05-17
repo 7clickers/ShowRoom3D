@@ -10,23 +10,25 @@ const Cart = () =>{
     const totalCost = useSelector(selectorTotalCost);
     const dispatch = useDispatch();
 
-    const cartitems = document.getElementById("item-scroll");
     addEventListener("wheel",(e)=>{
         if(e.wheelDelta<0){
-            cartitems.scrollBy(0,80);
+            document.getElementsByClassName("item-scroll")[0].scrollBy(0,80);
         }else if(e.wheelDelta>0){
-            cartitems.scrollBy(0,-80);
+            document.getElementsByClassName("item-scroll")[0].scrollBy(0,-80);
         }
     });
+
+    let n=0;
 
     return(
         <div id="cart">
             <h2 id="cart-title">Shopping Cart</h2>
-            <div id="item-scroll">
+            <ul className="item-scroll">
                 {items.map((cartitem)=>{
-                    return <CartItem name={cartitem.id} quantity={cartitem.quantity} price={cartitem.price} color={cartitem.color}/>
+                    n += 1;
+                    return <li key={n}><CartItem name={cartitem.id} quantity={cartitem.quantity} price={cartitem.price} color={cartitem.color}/></li>
                 })}
-            </div>
+            </ul>
             <hr id="separator"/>
             <p id="total-cost">Total: {totalCost.toFixed(2)} €</p>
             <div id="group-cart">
