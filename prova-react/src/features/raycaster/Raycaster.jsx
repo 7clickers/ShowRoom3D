@@ -16,12 +16,9 @@ const Raycaster = ({ productObjects, decorObjects }) => {
 
   useEffect(() => {
     const handleMouseMove = (event) => {
-      // Get the position of the mouse on the screen
-      const mouseX = (event.clientX / window.innerWidth) * 2 - 1;
-      const mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
   
       // Update the raycaster's position
-      raycaster.setFromCamera(new THREE.Vector2(mouseX, mouseY), camera);
+      raycaster.setFromCamera(new THREE.Vector2(0, 0), camera);
   
       // Check for intersections
       const newIntersects = raycaster.intersectObjects([...productObjects, ...decorObjects]);
