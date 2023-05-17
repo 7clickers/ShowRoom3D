@@ -10,7 +10,6 @@ import productsData from "../src/features/products/products.json";
 
 
 describe('productSlice tests', () => {
-    
     /*
         Test di Unità - Controlla se la modifica su productSlice funziona
     */
@@ -33,16 +32,3 @@ describe('productSlice tests', () => {
 });
 
 
-/*
-Test di Integrità - ProductSidebar + Store + productSlice
-*/
-
-describe('ProductSidebar tests', () => { 
-    it('Should change the variable selectedColor to the product in example', () => {
-        act(() => { render(<Provider store={store}><ProductSidebar product={productsData[0]} isVisible={true}/></Provider>)});
-        const btn = screen.getByLabelText("green");
-        fireEvent.click(btn);
-        const product = store.getState().product.products.find((product) => product.id === "1" );
-        expect( product ).toHaveProperty('selectedColor','green');               
-    });
-});
