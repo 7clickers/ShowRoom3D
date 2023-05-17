@@ -49,4 +49,17 @@ describe('Cart rendering tests', () => {
         expect(store.getState().cart.cartItems).toStrictEqual([]);
 
     });
+    it('Should try to remove the items and work even if cart is empty',()=>{
+        act(() => { render(
+            <Provider store={store}>
+                <Cart />
+            </Provider>
+        )});
+
+        const removeAllItemButton = screen.getByText('Remove all');
+
+        fireEvent.click(removeAllItemButton);
+
+        expect(store.getState().cart.cartItems).toStrictEqual([]);
+    });
 });
