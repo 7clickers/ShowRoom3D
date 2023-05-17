@@ -1,7 +1,6 @@
 import { useRef, useEffect } from "react";
 import { useGLTF } from "@react-three/drei";
 import { useSelector } from 'react-redux';
-import { productByIDSelector } from "../productSlice";
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader';
 
 const Model = ({ product, onRendered, octree }) => {
