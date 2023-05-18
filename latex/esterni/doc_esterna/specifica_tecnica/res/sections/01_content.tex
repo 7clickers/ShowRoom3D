@@ -365,8 +365,8 @@ CartFeaturesDiagram include i componenti che svolgono le funzioni riguardanti il
 		\item \textit{CartItem} (Composizione): crea le istanze di CartItem durante il rendering.
 		Cart gestisce interamente il ciclo di vita delle istanze di un CatrItem che quindi per composizione
 		non può essere condiviso con altri componenti.
-		\item \textit{cart.removeAllItems} (Dipendenza semplice \textless send\textgreater): crea ed emette un'istanza dell'azione cart.removeAllItems.
 		\item \textit{CartSlice} (Associazione): possiede come attributo implicito (dovuto a Redux) un'istanza di CartSlice.
+		\item \textit{cart.removeAllItems} (Dipendenza semplice \textless send\textgreater): crea ed emette un'istanza dell'azione cart.removeAllItems.
 	\end{itemize} 
 	\textbf{Interazioni}:
 	\begin{itemize}
@@ -421,6 +421,7 @@ CartFeaturesDiagram include i componenti che svolgono le funzioni riguardanti il
 			\end{figure}
 		\end{landscape}
 		\restoregeometry
+		% Sistemare alcune parti
 		\paragraph*{Descrizione del diagramma:}
 		PlayerFeaturesDiagram include i componenti che svolgono le funzioni riguardanti le interazioni dell'utente con 
 		l'ambiente 3D.
@@ -456,140 +457,225 @@ CartFeaturesDiagram include i componenti che svolgono le funzioni riguardanti il
 		\\\\
 		\textbf{Dipendenze}:
 		\begin{itemize}
-			\item \textit{PlayerSlice} (Associazione): 
-			\item \textit{Coordinate} (Associazione): 
-			\item \textit{Coordinate} (Dipendenza semplice \textless create\textgreater): 
-			\item \textit{Camera} (Dipendenza semplice \textless use\textgreater): 
-			\item \textit{Octree} (Dipendenza semplice \textless use\textgreater): 
-			\item \textit{player.setPosition} (Dipendenza semplice \textless send\textgreater): 
-			\item \textit{player.setRotation} (Dipendenza semplice \textless send\textgreater): 
+			\item \textit{PlayerSlice} (Associazione): possiede come attributo implicito (dovuto a Redux) un'istanza di PlayerSlice.
+			\item \textit{Coordinate} (Associazione): utilizza Coordinate per tenere traccia al suo interno della posizione in cui si trova l'utente.
+			\item \textit{Coordinate} (Dipendenza semplice \textless create\textgreater): Crea l'istanza di Coordinate che rappresenta il payload di player.setPosition
+			e di player.setRotation.
+			\item \textit{Camera} (Dipendenza semplice \textless use\textgreater): utilizza la camera del canvas in cui viene renderizzata l'applicazione
+			 per aggiornare la scena 3D.
+			\item \textit{Octree} (Dipendenza semplice \textless use\textgreater): usa l'Octree della scena per individuare le collisioni dell'utente con 
+			gli oggetti all'interno dell'ambiente 3D.
+			\item \textit{player.setPosition} (Dipendenza semplice \textless send\textgreater): crea ed emette un'istanza dell'azione player.setPosition.
+			\item \textit{player.setRotation} (Dipendenza semplice \textless send\textgreater): crea ed emette un'istanza dell'azione player.setRotation.
 		\end{itemize}
 		\textbf{Interazioni}:
 		\begin{itemize}
-			\item \textit{CartInitialState}: 
+			\item \textit{PlayerSlice}: chiama i selettori \textit{selectorPosition} e \textit{selectorRotation} per ricavare da PlayerInitialState la
+			posizione del player e la posizione della camera rispettivamente.
+			\item \textit{Camera}: 
+			\item \textit{Octree}: 
 		\end{itemize}
 		\textbf{Action emesse}:
 		\begin{itemize}
-			\item \textit{cart.removeItem}: emessa quando l'utente rimuove il prodotto corrispondente all'item dal carrello.
+			\item \textit{player.setPosition}: emessa quando .
+			\item \textit{player.setRotation}: emessa quando .
+		\end{itemize}
+\end{itemize}
+
+\newgeometry{margin=0.5cm}
+\begin{landscape}
+	\thispagestyle{empty}
+	\subsubsection{SidebarFeaturesDiagram}
+	\begin{figure}[H]
+		\centering
+		\includegraphics[scale=0.75, keepaspectratio]{./res/images/SidebarFeaturesDiagram.PNG}
+		\caption[UML delle classi SidebarFeaturesDiagram]{
+			UML delle classi SidebarFeaturesDiagram.
+			\\
+			\textbf{Legenda}: 
+			[\textit{Slices}: rosso] -
+			[\textit{Actions}: giallo] -
+			[\textit{Model classes}: grigio] -
+			[\textit{Initial states}: azzurro] -
+			[\textit{UI React components}: verde]}
+		\end{figure}
+	\end{landscape}
+	\restoregeometry
+	\paragraph*{Descrizione del diagramma:}
+	SidebarFeaturesDiagram include i componenti che svolgono le funzioni riguardanti la side-bar.
+\begin{itemize}
+		\item \textbf{ProductsSlice}
+		\\\\
+		\textbf{Dipendenze}:
+		\begin{itemize}
+			\item \textit{ProductsInitialState} (composizione): si occupa della costruzione e distruzione dell'istanza di ProductsInitialState
+			che non viene condivisa con altri componenti in quanto ProductsSlice si occupa in modo esclusivo della sua gestione.
+			\item \textit{products.setSelectedColor} (Dipendenza semplice \textless use\textgreater): cattura un'istanza di products.setSelectedColor e il 
+			reducer ne utilizza il payload per modificare l'attributo selectedColor del prodotto che ha ID specificato.
+		\end{itemize}
+		\textbf{Actions catturate}:
+		\begin{itemize}
+			\item \textit{products.setSelectedColor}: utilizzata dal reducer per chiamare \textit{setSelectedColor}.
+		\end{itemize}
+		\item \textbf{ProductsInitialState}
+		\\\\
+		\textbf{Dipendenze}:
+		\begin{itemize}
+			\item \textit{Product} (Associazione): ha come attributo la lista di tutti i prodotti disponibili.
+			% sono arrivato qua
+		\end{itemize}
+		\item \textbf{Sidebar}
+		\\\\
+		\textbf{Dipendenze}:
+		\begin{itemize}
+			\item \textit{ProductsSlice} (Associazione):
+			\item \textit{ColorSelector} (Associazione): ha un attributo di tipo Coordinate per position e rotation che indicano la posizione del player e la 
+			posizione della camera rispettivamente.
+		\end{itemize}
+		\textbf{Interazioni}:
+		\begin{itemize}
+			\item \textit{ProductsSlice}:
+		\end{itemize}
+		\item \textbf{ColorSelector}
+		\\\\
+		\textbf{Dipendenze}:
+		\begin{itemize}
+			\item \textit{ProductsSlice} (Associazione): possiede come attributo implicito (dovuto a Redux) un'istanza di PlayerSlice.
+			\item \textit{SelectColorItem} (Associazione): possiede come attributo implicito (dovuto a Redux) un'istanza di PlayerSlice.
+		\end{itemize}
+		\textbf{Interazioni}:
+		\begin{itemize}
+			\item \textit{ProductsSlice}:
+		\end{itemize}
+		\item \textbf{SelectColorItem}
+		\\\\
+		\textbf{Dipendenze}:
+		\begin{itemize}
+			\item \textit{PayloadSetSelectedColor} (Associazione): possiede come attributo implicito (dovuto a Redux) un'istanza di PlayerSlice.
+			\item \textit{products.setSelectedColor} (Associazione): possiede come attributo implicito (dovuto a Redux) un'istanza di PlayerSlice.
+		\end{itemize}
+		\textbf{Action emesse}:
+		\begin{itemize}
+			\item \textit{products.setSelectedColor}: emessa quando .
+		\end{itemize}
+		\item \textbf{Product}
+		\\\\
+		\textbf{Dipendenze}:
+		\begin{itemize}
+			\item \textit{ModelGLTF} (Associazione): possiede come attributo implicito (dovuto a Redux) un'istanza di PlayerSlice.
+			\item \textit{Color} (Associazione): possiede come attributo implicito (dovuto a Redux) un'istanza di PlayerSlice.
 		\end{itemize}
 \end{itemize}
 
 
 
 
-		\newgeometry{margin=0.5cm}
-		\begin{landscape}
-			\thispagestyle{empty}
-			\subsubsection{SidebarFeaturesDiagram}
-			\begin{figure}[H]
-				\centering
-				\includegraphics[scale=0.75, keepaspectratio]{./res/images/SidebarFeaturesDiagram.PNG}
-				\caption[UML delle classi SidebarFeaturesDiagram]{
-					UML delle classi SidebarFeaturesDiagram.
-					\\
-					\textbf{Legenda}: 
-					[\textit{Slices}: rosso] -
-					[\textit{Actions}: giallo] -
-					[\textit{Model classes}: grigio] -
-					[\textit{Initial states}: azzurro] -
-					[\textit{UI React components}: verde]}
-				\end{figure}
-			\end{landscape}
-			\restoregeometry
-			
-			\newgeometry{margin=0.5cm}
-			\begin{landscape}
-				\thispagestyle{empty}
-				\subsubsection{InterfaceFeaturesDiagram}
-		\begin{figure}[H]
-			\centering
-			\includegraphics[scale=0.75, keepaspectratio]{./res/images/InterfaceFeaturesDiagram.PNG}
-			\caption[UML delle classi InterfaceFeaturesDiagram]{
-			UML delle classi InterfaceFeaturesDiagram.
-			\\
-			\textbf{Legenda}: 
-			[\textit{Slices}: rosso] -
-			[\textit{Actions}: giallo] -
-			[\textit{Model classes}: grigio] -
-			[\textit{Initial states}: azzurro] -
-			[\textit{UI React components}: verde]}
-		\end{figure}
-	\end{landscape}
-	\restoregeometry
+
+
+
+
+
+
+
+
+
+
+
+
 
 	\newgeometry{margin=0.5cm}
 	\begin{landscape}
 		\thispagestyle{empty}
-		\subsubsection{StoreDiagram}
-		\begin{figure}[H]
-			\centering
-			\includegraphics[scale=0.7, keepaspectratio]{./res/images/StoreDiagram.PNG}
-			\caption[UML delle classi StoreDiagram]{
-			UML delle classi StoreDiagram.
-			\\
-			\textbf{Legenda}: 
-			[\textit{Slices}: rosso] -
-			[\textit{Actions}: giallo] -
-			[\textit{Model classes}: grigio] -
-			[\textit{Initial states}: azzurro] -
-			[\textit{UI React components}: verde]}
-		\end{figure}
-	\end{landscape}
-	\restoregeometry
-		\subsubsection{SkyLevelReactComponentsHierarchy}
-		\begin{figure}[H]
-			\centering
-			\includegraphics[scale=0.75, keepaspectratio]{./res/images/SkyLevelReactComponentHierarchy.PNG}
-			\caption[UML delle classi SkyLevelReactComponentsHierarchy]{
-			UML delle classi SkyLevelReactComponentsHierarchy.
-			\\
-			\textbf{Legenda}: 
-			[\textit{Slices}: rosso] -
-			[\textit{Actions}: giallo] -
-			[\textit{Model classes}: grigio] -
-			[\textit{Initial states}: azzurro] -
-			[\textit{UI React components}: verde]}
-		\end{figure}
+		\subsubsection{InterfaceFeaturesDiagram}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.75, keepaspectratio]{./res/images/InterfaceFeaturesDiagram.PNG}
+	\caption[UML delle classi InterfaceFeaturesDiagram]{
+	UML delle classi InterfaceFeaturesDiagram.
+	\\
+	\textbf{Legenda}: 
+	[\textit{Slices}: rosso] -
+	[\textit{Actions}: giallo] -
+	[\textit{Model classes}: grigio] -
+	[\textit{Initial states}: azzurro] -
+	[\textit{UI React components}: verde]}
+\end{figure}
+\end{landscape}
+\restoregeometry
 
-	\newgeometry{margin=0.5cm}
-	\begin{landscape}
-		\thispagestyle{empty}
-		\subsubsection{UIReactComponentsHierarchy}
-		\begin{figure}[H]
-			\centering
-			\includegraphics[scale=0.7, keepaspectratio]{./res/images/UIReactComponentsHierarchy.PNG}
-			\caption[UML delle classi UIReactComponentsHierarchy]{
-			UML delle classi UIReactComponentsHierarchy.
-			\\
-			\textbf{Legenda}: 
-			[\textit{Slices}: rosso] -
-			[\textit{Actions}: giallo] -
-			[\textit{Model classes}: grigio] -
-			[\textit{Initial states}: azzurro] -
-			[\textit{UI React components}: verde]}
-		\end{figure}
-	\end{landscape}
-	\restoregeometry
-	
-	\newgeometry{margin=0.5cm}
-	\begin{landscape}
-		\thispagestyle{empty}
-		\subsubsection{CanvasReactComponentsHierarchy}
-		\begin{figure}[H]
-			\centering
-			\includegraphics[scale=0.7 , keepaspectratio]{./res/images/CanvasReactComponentsHierarchy.PNG}
-			\caption[UML delle classi CanvasReactComponentsHierarchy]{
-			UML delle classi CanvasReactComponentsHierarchy.
-			\\
-			\textbf{Legenda}: 
-			[\textit{Slices}: rosso] -
-			[\textit{Actions}: giallo] -
-			[\textit{Model classes}: grigio] -
-			[\textit{Initial states}: azzurro] -
-			[\textit{UI React components}: verde]}
-		\end{figure}
-	\end{landscape}
-	\restoregeometry
+\newgeometry{margin=0.5cm}
+\begin{landscape}
+\thispagestyle{empty}
+\subsubsection{StoreDiagram}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.7, keepaspectratio]{./res/images/StoreDiagram.PNG}
+	\caption[UML delle classi StoreDiagram]{
+	UML delle classi StoreDiagram.
+	\\
+	\textbf{Legenda}: 
+	[\textit{Slices}: rosso] -
+	[\textit{Actions}: giallo] -
+	[\textit{Model classes}: grigio] -
+	[\textit{Initial states}: azzurro] -
+	[\textit{UI React components}: verde]}
+\end{figure}
+\end{landscape}
+\restoregeometry
+\subsubsection{SkyLevelReactComponentsHierarchy}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.75, keepaspectratio]{./res/images/SkyLevelReactComponentHierarchy.PNG}
+	\caption[UML delle classi SkyLevelReactComponentsHierarchy]{
+	UML delle classi SkyLevelReactComponentsHierarchy.
+	\\
+	\textbf{Legenda}: 
+	[\textit{Slices}: rosso] -
+	[\textit{Actions}: giallo] -
+	[\textit{Model classes}: grigio] -
+	[\textit{Initial states}: azzurro] -
+	[\textit{UI React components}: verde]}
+\end{figure}
+
+\newgeometry{margin=0.5cm}
+\begin{landscape}
+\thispagestyle{empty}
+\subsubsection{UIReactComponentsHierarchy}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.7, keepaspectratio]{./res/images/UIReactComponentsHierarchy.PNG}
+	\caption[UML delle classi UIReactComponentsHierarchy]{
+	UML delle classi UIReactComponentsHierarchy.
+	\\
+	\textbf{Legenda}: 
+	[\textit{Slices}: rosso] -
+	[\textit{Actions}: giallo] -
+	[\textit{Model classes}: grigio] -
+	[\textit{Initial states}: azzurro] -
+	[\textit{UI React components}: verde]}
+\end{figure}
+\end{landscape}
+\restoregeometry
+
+\newgeometry{margin=0.5cm}
+\begin{landscape}
+\thispagestyle{empty}
+\subsubsection{CanvasReactComponentsHierarchy}
+\begin{figure}[H]
+	\centering
+	\includegraphics[scale=0.7 , keepaspectratio]{./res/images/CanvasReactComponentsHierarchy.PNG}
+	\caption[UML delle classi CanvasReactComponentsHierarchy]{
+	UML delle classi CanvasReactComponentsHierarchy.
+	\\
+	\textbf{Legenda}: 
+	[\textit{Slices}: rosso] -
+	[\textit{Actions}: giallo] -
+	[\textit{Model classes}: grigio] -
+	[\textit{Initial states}: azzurro] -
+	[\textit{UI React components}: verde]}
+\end{figure}
+\end{landscape}
+\restoregeometry
 
 \subsection{Architettura di deployment}
 \subsection{Idiomi e pattern di livello più basso}
