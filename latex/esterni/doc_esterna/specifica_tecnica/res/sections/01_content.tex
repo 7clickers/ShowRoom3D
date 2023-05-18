@@ -282,7 +282,7 @@ adatta alla maggior parte dei casi di utilizzo. Per inserire i componenti all'in
 componente \textit{scene}.
 \subsection{Architettura logica}
 Per facilitare la lettura dei diagrammi delle classi è stato scelto di organizzarli per feature in modo che ogni diagramma 
-rappresenti i componenti che permettono l'implementazione di funzionalita' specifiche.
+rappresenti i componenti che permettono l'implementazione di funzionalità specifiche.
 Sono presenti dei diagrammi che non seguono questa convenzione che sono utili per avere una visione generale sulle dipendenze
 di alcuni componenti.
 \\\\
@@ -322,80 +322,85 @@ I diagrammi prodotti che forniscono una visione generale delle dipendenze tra co
 \restoregeometry
 
 \paragraph*{Descrizione del diagramma:}
-CartFeaturesDiagram contiene i componenti coinvolti nelle interazioni con il carrello.
+CartFeaturesDiagram include i componenti che svolgono le funzioni riguardanti il carrello.
 \begin{itemize}
 		\item \textbf{CartSlice}
+		\\\\
+		\textbf{Dipendenze}:
 		\begin{itemize}
-			\item \textit{Dipendenze}: CartInitialState
-			\\\\
-			dipendenza da CartInitialState (composizione): CartInitialState si occupa della costruzione e distruzione dell'istanza di CartInitialState
-			e non viene condivisa con altri componenti in quanto CartSlice si occupa in modo esclusivo della sua gestione.
-			\\\\
-			\item \textit{Interazioni}:
-			\\\\
-			CartInitialState: viene modificato in base alle actions catturate dai reducers della slice.
-			\\\\
-			\item \textit{Actions catturate}: cart.removeAll, cart.removeItem, cart.addItems
-			\\\\
-			cart.removeAll: quando viene fatto il dispatch da un altro componente viene catturata e chiamato il reducer removeAll che svuota la lista items presente in
-			CartInitialState ed imposta il totalCost a zero.
-			\\\\
-			cart.removeItem: quando viene fatto il dispatch da un altro componente viene catturata e chiamato il reducer removeItem che 
-			decrementa la quantità dell'item specificato dal payload.
-			Se la quantità dopo il decremento risulta essere uguale a 0 l'item viene rimosso da items.
-			\\\\
-			cart.addItems: quando viene fatto il dispatch da un altro componente viene catturata e chiamato il reducer addItems che se le caratteristiche 
-			specificate nel payload dell'azione corrispondono a quelle di un item presente all'interno del carrello ne incrementa la quantità del valore
-			specificato nel payload altrimenti viene aggiunto un nuovo item ad items con le caratteristiche e quantità specificate dal payload.  
-			\\\\
+			\item \textit{CartInitialState} (composizione): si occupa della costruzione e distruzione dell'istanza di CartInitialState
+			che non viene condivisa con altri componenti in quanto CartSlice si occupa in modo esclusivo della sua gestione.
+			\item \textit{CartItem} (dipendenza semplice \textless create\textgreater): si occupa della costruzione dei CartItem 
+			da inserire all'interno della lista items di CartInitialState.
+			\item \textit{cart.addItems} (Dipendenza semplice \textless use\textgreater): cattura un'istanza di cart.addItems e il 
+			reducer ne utilizza il payload per aggiungere un item ad items in CartInitialState.
+			Se le caratteristiche specificate nel payload corrispondono a quelle di un item presente ne incrementa la quantità 
+			del valore specificato altrimenti viene aggiunto un nuovo item con le caratteristiche e quantità specificate.  
+			\item \textit{cart.removeItem} (Dipendenza semplice \textless use\textgreater): cattura un'istanza di cart.removeItem e il reducer
+			ne utilizza il payload per decrementare la quantità dell'item specificato.
+			Se la quantità dopo il decremento risulta essere uguale a 0 l'item viene rimosso da items in CartInitialState.
+			\item \textit{cart.removeAllItems} (Dipendenza semplice \textless use\textgreater): cattura un'istanza di cart.removeAllItems e chiama il reducer 
+			che svuota la lista items presente iCartInitialState ed imposta il totalCost a 0.
+		\end{itemize}
+		\textbf{Interazioni}:
+		\begin{itemize}
+			\item \textit{CartInitialState}: viene modificato in base alle actions catturate dal reducer della slice.
+		\end{itemize}
+		\textbf{Actions catturate}:
+		\begin{itemize}
+			\item \textit{cart.addItems}: utilizzata dal reducer per chiamare \textit{addItems}.
+			\item \textit{cart.removeItem}: utilizzata dal reducer per chiamare \textit{removeItem}.
+			\item \textit{cart.removeAllItems}: utilizzata dal reducer per chiamare \textit{removeAllItems}.
 		\end{itemize}
 		\item \textbf{CartInitialState}
+		\\\\
+		\textbf{Dipendenze}: 
 		\begin{itemize}
-			\item \textit{Dipendenze}: 
-			\\\\
-			dipendenza da CartItem (Associazione):
-			\\\\
-			\item \textit{Interazioni}:
-			\\\\
-			items: contiene la lista di CartItem che vengono aggiunti o tolti dal carrello
-			\\\\
-		\end{itemize} 
-		\item \textbf{cart.removeAll}
-		\begin{itemize}
-			\item \textit{Connessioni}:
-			\item \textit{Interazioni}:
-		\end{itemize} 
-		\item \textbf{cart.removeItem}
-		\begin{itemize}
-			\item \textit{Connessioni}:
-			\item \textit{Interazioni}:
-		\end{itemize} 
-		\item \textbf{cart.addItems}
-		\begin{itemize}
-			\item \textit{Connessioni}:
-			\item \textit{Interazioni}:
-		\end{itemize} 	
-		\item \textbf{CartItem}
-		\begin{itemize}
-			\item \textit{Connessioni}:
-			\item \textit{Interazioni}:
+			\item \textit{CartItem} (Associazione): contiene la lista degli item che rappresentano i prodotti presenti nel carrello.
 		\end{itemize} 
 		\item \textbf{Cart}
+		\\\\
+		\textbf{Dipendenze}:
 		\begin{itemize}
-			\item \textit{Connessioni}:
-			\item \textit{Interazioni}:
-		\end{itemize} 
-		\item \textbf{CartItem}
-		\begin{itemize}
-			\item \textit{Connessioni}:
-			\item \textit{Interazioni}:
-		\end{itemize} 
-		\item \textbf{ProductSidebar}
-		\begin{itemize}
-			\item \textit{Connessioni}:
-			\item \textit{Interazioni}:
-		\end{itemize} 
+		\item \textit{CartItem} (Composizione): crea le istanze di CartItem durante il rendering.
+		Cart gestisce interamente il ciclo di vita delle istanze di un CatrItem che quindi per composizione
+		non può essere condiviso con altri componenti.
+		\item \textit{cart.removeAllItems} (Dipendenza semplice \textless send\textgreater): crea ed emette un'istanza dell'azione cart.removeAllItems.
+		\item \textit{CartSlice} (Associazione): possiede come attributo implicito (dovuto a Redux) un'istanza di CartSlice.
+	\end{itemize} 
+	\textbf{Interazioni}:
+	\begin{itemize}
+		\item \textit{CartSlice}: chiama i selettori \textit{selectorCartItems} e \textit{selectorTotalCost} per reperire gli items e il costo totale dei prodotti 
+		allo scopo di compiere il rendering dei suoi componenti figli.
 	\end{itemize}
+	\textbf{Action emesse}:
+	\begin{itemize}
+		\item \textit{cart.removeAllItems}: emessa quando l'utente rimuove tutti i prodotti dal carrello.
+	\end{itemize}
+	\item \textbf{CartItemReact}
+	\\\\
+	\textbf{Dipendenze}: 
+	\begin{itemize}
+		\item \textit{cart.removeItem} (Dipendenza semplice \textless send\textgreater): crea ed emette un'istanza dell'azione cart.removeItem.
+	\end{itemize}
+	\textbf{Action emesse}:
+	\begin{itemize}
+		\item \textit{cart.removeItem}: emessa quando l'utente rimuove il prodotto corrispondente all'item dal carrello.
+	\end{itemize}
+	\item \textbf{Sidebar}
+	\\\\
+	\textbf{Dipendenze}:
+	\begin{itemize}
+		\item \textit{ProductsSlice} (Associazione): possiede come attributo implicito (dovuto a Redux) un'istanza di ProductsSlice.
+		\item \textit{PayloadAddItems} (Dipendenza semplice \textless create\textgreater): crea il payload da fornire alla action cart.addItems.
+		\item \textit{cart.addItems} (Dipendenza semplice \textless send\textgreater): crea ed emette un'istanza dell'azione cart.addItems.
+		\end{itemize}
+		\textbf{Interazioni}:
+		\begin{itemize}
+			\item \textit{ProductsSlice}: chiama il selettore \textit{selectorProductByID} per reperire le informazioni del prodotto 
+			allo scopo di compiere il rendering dei suoi componenti figli.
+		\end{itemize}
+\end{itemize}
 	
 	\newgeometry{margin=0.5cm}
 	\begin{landscape}
@@ -405,42 +410,97 @@ CartFeaturesDiagram contiene i componenti coinvolti nelle interazioni con il car
 			\centering
 			\includegraphics[scale=0.7, keepaspectratio]{./res/images/PlayerFeaturesDiagram.PNG}
 			\caption[UML delle classi PlayerFeaturesDiagram]{
-			UML delle classi PlayerFeaturesDiagram.
-			\\
-			\textbf{Legenda}: 
-			[\textit{Slices}: rosso] -
-			[\textit{Actions}: giallo] -
-			[\textit{Model classes}: grigio] -
-			[\textit{Initial states}: azzurro] -
-			[\textit{UI React components}: verde]}
-		\end{figure}
-	\end{landscape}
-	\restoregeometry
+				UML delle classi PlayerFeaturesDiagram.
+				\\
+				\textbf{Legenda}: 
+				[\textit{Slices}: rosso] -
+				[\textit{Actions}: giallo] -
+				[\textit{Model classes}: grigio] -
+				[\textit{Initial states}: azzurro] -
+				[\textit{UI React components}: verde]}
+			\end{figure}
+		\end{landscape}
+		\restoregeometry
+		\paragraph*{Descrizione del diagramma:}
+		PlayerFeaturesDiagram include i componenti che svolgono le funzioni riguardanti le interazioni dell'utente con 
+		l'ambiente 3D.
+\begin{itemize}
+		\item \textbf{PlayerSlice}
+		\\\\
+		\textbf{Dipendenze}:
+		\begin{itemize}
+			\item \textit{PlayerInitialState} (composizione): si occupa della costruzione e distruzione dell'istanza di PlayerInitialState
+			che non viene condivisa con altri componenti in quanto PlayerSlice si occupa in modo esclusivo della sua gestione.
+			\item \textit{player.setPosition} (Dipendenza semplice \textless use\textgreater): cattura un'istanza di player.setPosition e il 
+			reducer ne utilizza il payload impostare l'attributo position in PlayerInitialState.
+			\item \textit{player.setRotation} (Dipendenza semplice \textless use\textgreater): cattura un'istanza di player.setPosition e il 
+			reducer ne utilizza il payload impostare l'attributo rotation in PlayerInitialState.
+		\end{itemize}
+		\textbf{Interazioni}:
+		\begin{itemize}
+			\item \textit{PlayerInitialState}: viene modificato in base alle actions catturate dal reducer della slice.
+		\end{itemize}
+		\textbf{Actions catturate}:
+		\begin{itemize}
+			\item \textit{player.setPosition}: utilizzata dal reducer per chiamare \textit{setPosition}.
+			\item \textit{player.setRotation}: utilizzata dal reducer per chiamare \textit{setRotation}.
+		\end{itemize}
+		\item \textbf{PlayerInitialState}
+		\\\\
+		\textbf{Dipendenze}:
+		\begin{itemize}
+			\item \textit{Coordinate} (Associazione): ha un attributo di tipo Coordinate per position e rotation che indicano la posizione del player e la 
+			posizione della camera rispettivamente.
+		\end{itemize}
+		\item \textbf{Player}
+		\\\\
+		\textbf{Dipendenze}:
+		\begin{itemize}
+			\item \textit{PlayerSlice} (Associazione): 
+			\item \textit{Coordinate} (Associazione): 
+			\item \textit{Coordinate} (Dipendenza semplice \textless create\textgreater): 
+			\item \textit{Camera} (Dipendenza semplice \textless use\textgreater): 
+			\item \textit{Octree} (Dipendenza semplice \textless use\textgreater): 
+			\item \textit{player.setPosition} (Dipendenza semplice \textless send\textgreater): 
+			\item \textit{player.setRotation} (Dipendenza semplice \textless send\textgreater): 
+		\end{itemize}
+		\textbf{Interazioni}:
+		\begin{itemize}
+			\item \textit{CartInitialState}: 
+		\end{itemize}
+		\textbf{Action emesse}:
+		\begin{itemize}
+			\item \textit{cart.removeItem}: emessa quando l'utente rimuove il prodotto corrispondente all'item dal carrello.
+		\end{itemize}
+\end{itemize}
 
-	\newgeometry{margin=0.5cm}
-	\begin{landscape}
-		\thispagestyle{empty}
-		\subsubsection{SidebarFeaturesDiagram}
-		\begin{figure}[H]
-			\centering
-			\includegraphics[scale=0.75, keepaspectratio]{./res/images/SidebarFeaturesDiagram.PNG}
-			\caption[UML delle classi SidebarFeaturesDiagram]{
-			UML delle classi SidebarFeaturesDiagram.
-			\\
-			\textbf{Legenda}: 
-			[\textit{Slices}: rosso] -
-			[\textit{Actions}: giallo] -
-			[\textit{Model classes}: grigio] -
-			[\textit{Initial states}: azzurro] -
-			[\textit{UI React components}: verde]}
-		\end{figure}
-	\end{landscape}
-	\restoregeometry
 
-	\newgeometry{margin=0.5cm}
-	\begin{landscape}
-		\thispagestyle{empty}
-		\subsubsection{InterfaceFeaturesDiagram}
+
+
+		\newgeometry{margin=0.5cm}
+		\begin{landscape}
+			\thispagestyle{empty}
+			\subsubsection{SidebarFeaturesDiagram}
+			\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.75, keepaspectratio]{./res/images/SidebarFeaturesDiagram.PNG}
+				\caption[UML delle classi SidebarFeaturesDiagram]{
+					UML delle classi SidebarFeaturesDiagram.
+					\\
+					\textbf{Legenda}: 
+					[\textit{Slices}: rosso] -
+					[\textit{Actions}: giallo] -
+					[\textit{Model classes}: grigio] -
+					[\textit{Initial states}: azzurro] -
+					[\textit{UI React components}: verde]}
+				\end{figure}
+			\end{landscape}
+			\restoregeometry
+			
+			\newgeometry{margin=0.5cm}
+			\begin{landscape}
+				\thispagestyle{empty}
+				\subsubsection{InterfaceFeaturesDiagram}
 		\begin{figure}[H]
 			\centering
 			\includegraphics[scale=0.75, keepaspectratio]{./res/images/InterfaceFeaturesDiagram.PNG}
