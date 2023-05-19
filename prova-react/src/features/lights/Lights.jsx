@@ -4,7 +4,7 @@ const Lights = () => {
         <directionalLight
           castShadow={true}
           position={[0, 30, 0]}
-          intensity={1}
+          intensity={0.2}
           shadow-mapSize-width={1024}
           shadow-mapSize-height={1024}
           shadow-camera-far={10}
