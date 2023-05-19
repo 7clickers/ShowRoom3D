@@ -6,10 +6,8 @@ const useRaycasterLogic = (camera, raycaster, productObjects) => {
 
   useEffect(() => {
     const handleMouseMove = (event) => {
-      const mouseX = (event.clientX / window.innerWidth) * 2 - 1;
-      const mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
   
-      raycaster.setFromCamera(new THREE.Vector2(mouseX, mouseY), camera);
+      raycaster.setFromCamera(new THREE.Vector2(0, 0), camera);
   
       const newIntersects = raycaster.intersectObjects(productObjects);
       setIntersects(newIntersects);
