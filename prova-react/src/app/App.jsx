@@ -15,7 +15,7 @@ export default function App() {
         <SidebarContext.Provider value={{ isSidebarVisible, setIsSidebarVisible }}>
           {isSceneLoaded && <UI/>}     
           <Canvas shadows>
-            <fog attach="fog" color="black" near={3} far={30} />
+            <fog attach="fog" color="black" near={10} far={50} />
             <Scene sceneIsLoad={setSceneIsLoad}/>
           </Canvas>
         </SidebarContext.Provider>

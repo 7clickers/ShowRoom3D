@@ -46,7 +46,7 @@ function Flashlight() {
       ref={ref}
       color={"#dcfafc"}
       position={[0, 0.25, 0.2]}
-      angle={Math.PI / 7}
+      angle={Math.PI / 8}
       penumbra={0.3}
       intensity={0}
       decay={0}
