@@ -1,9 +1,9 @@
-import { useState, useEffect } from "react";
-import * as THREE from 'three';
+import { useContext } from "react";
 import { useThree, useFrame } from "@react-three/fiber";
-import { useContext } from 'react';
-import ProductInteractionContext from "../../common/ProductInteractionContext";
+import { useDispatch, useSelector } from "react-redux";
+import { setIntersectedProductID } from "./raycasterSlice";
 import SidebarContext from "../../common/SidebarContext";
+import useRaycasterLogic from "./useRaycasterLogic";
 
 const Raycaster = ({ productObjects, decorObjects }) => {
   const { camera, raycaster, scene } = useThree();
@@ -11,8 +11,12 @@ const Raycaster = ({ productObjects, decorObjects }) => {
 
   const [intersects, setIntersects] = useState([]);
 
-  const { setIntersectedProductID } = useContext(ProductInteractionContext);
+  const intersectedProductID = useSelector(
+    (state) => state.raycaster.intersectedProductID
+  );
+  const dispatch = useDispatch();
   const { isSidebarVisible } = useContext(SidebarContext);
+  const intersects = useRaycasterLogic(camera, raycaster, productObjects);
 
   useEffect(() => {
     const handleMouseMove = (event) => {
@@ -34,16 +38,16 @@ const Raycaster = ({ productObjects, decorObjects }) => {
   
 
   useFrame(() => {
-    if(!isSidebarVisible){
+    if (!isSidebarVisible) {
       if (intersects.length > 0) {
         const intersectedObject = intersects[0].object;
         let intersectedProductID = intersectedObject.productID;
   
         if (intersectedObject) {
-          setIntersectedProductID(intersectedProductID);
+          dispatch(setIntersectedProductID(intersectedProductID));
         }
       } else {
-        setIntersectedProductID(null);
+        dispatch(setIntersectedProductID(null));
       }
     }
   });
