@@ -1,6 +1,6 @@
 // Importa le funzioni necessarie dalla libreria di testing
 import { renderHook, act } from "@testing-library/react-hooks";
-import useRaycasterLogic from "./useRaycasterLogic";
+import useRaycasterLogic from "../src/features/raycaster/useRaycasterLogic";
 
 // Avvia una serie di test per il componente useRaycasterLogic
 describe("useRaycasterLogic", () => {

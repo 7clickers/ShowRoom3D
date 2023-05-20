@@ -1,19 +1,18 @@
-import { useContext, useState, useEffect, useRef } from 'react';
-import { useSelector } from 'react-redux';
-
-import SidebarContext from '../../../common/SidebarContext';
-
+import { useState, useEffect, useRef } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { setIsSidebarVisible } from '../uiSlice';
 import ProductInteractionPrompt from "./ProductInteractionPrompt";
 import ProductSidebar from './ProductSidebar';
 
 const ProductUI = () => {
+    const dispatch = useDispatch();
     const sidebarRef = useRef();
 
     const intersectedProductID = useSelector(
       (state) => state.raycaster.intersectedProductID
     );
 
-    const { isSidebarVisible, setIsSidebarVisible } = useContext(SidebarContext);
+    const isSidebarVisible = useSelector((state) => state.ui.isSidebarVisible);
     const [lastInteractedProduct, setLastInteractedProduct] = useState(null);
 
     const products = useSelector((state) => state.product.products);
@@ -35,9 +34,9 @@ const ProductUI = () => {
         const handleLeftClick = (event) => {
             if (event.button === 0) {
             if (isSidebarVisible && sidebarRef.current && !sidebarRef.current.contains(event.target)) {
-                setIsSidebarVisible(false);
+                dispatch(setIsSidebarVisible(false));
             } else if (intersectedProductID && intersectedProductID != "decoration") {
-                setIsSidebarVisible(true);
+                dispatch(setIsSidebarVisible(true));
             }
             }
         };

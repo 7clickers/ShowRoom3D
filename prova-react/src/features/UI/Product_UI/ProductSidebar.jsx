@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, forwardRef } from 'react';
 import '../ui.css';
 import { useDispatch } from 'react-redux';
-import { addItem,removeAllItems,selectorCartItems,selectorTotalCost} from '../../cart/cartSlice';
+import { addItem } from '../../cart/cartSlice';
 import { setSelectedColor } from '../../products/productSlice';
 
 const ProductSidebar = forwardRef(({ product, isVisible }, ref) => {
