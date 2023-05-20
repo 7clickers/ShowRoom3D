@@ -5,7 +5,7 @@ import { useContext } from 'react';
 import ProductInteractionContext from "../../common/ProductInteractionContext";
 import SidebarContext from "../../common/SidebarContext";
 
-const Raycaster = ({ productObjects }) => {
+const Raycaster = ({ productObjects, decorObjects }) => {
   const { camera, raycaster, scene } = useThree();
   //raycaster.far = 5;
 
@@ -16,15 +16,12 @@ const Raycaster = ({ productObjects }) => {
 
   useEffect(() => {
     const handleMouseMove = (event) => {
-      // Get the position of the mouse on the screen
-      const mouseX = (event.clientX / window.innerWidth) * 2 - 1;
-      const mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
   
       // Update the raycaster's position
-      raycaster.setFromCamera(new THREE.Vector2(mouseX, mouseY), camera);
+      raycaster.setFromCamera(new THREE.Vector2(0, 0), camera);
   
       // Check for intersections
-      const newIntersects = raycaster.intersectObjects(productObjects);
+      const newIntersects = raycaster.intersectObjects([...productObjects, ...decorObjects]);
       setIntersects(newIntersects);
     };
   
@@ -33,14 +30,14 @@ const Raycaster = ({ productObjects }) => {
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
     };
-  }, [camera, raycaster, productObjects]);
+  }, [camera, raycaster, productObjects, decorObjects]);
   
 
   useFrame(() => {
     if(!isSidebarVisible){
       if (intersects.length > 0) {
         const intersectedObject = intersects[0].object;
-        const intersectedProductID = intersectedObject.productID;
+        let intersectedProductID = intersectedObject.productID;
   
         if (intersectedObject) {
           setIntersectedProductID(intersectedProductID);

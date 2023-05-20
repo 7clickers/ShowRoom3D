@@ -17,6 +17,12 @@ export default function Map() {
     setProductObjects(renderedObjects);
   };
 
+  const [decorObjects, setDecorObjects] = useState([]);
+
+  const handleDecorsRendered = (renderedObjects) => {
+    setDecorObjects(renderedObjects);
+  };
+
   const [intersectedProductName, setIntersectedProductName] = useState(null);
 
   const handleIntersectedProduct = (productName) => {
@@ -43,8 +49,8 @@ export default function Map() {
       <Flashlight />
       <Player octree={octree} colliders={colliders.current} />
       <Models octree={octree} onRendered={handleModelsRendered} />
-      <Decorations octree={octree} />
-      <Raycaster productObjects={productObjects} />
+      <Decorations octree={octree} onRendered={handleDecorsRendered} />
+      <Raycaster productObjects={productObjects} decorObjects={decorObjects} />
     </>
   );
 }

@@ -5,7 +5,13 @@ import "../ui.css";
 
 const Crosshair = () => {
   const { intersectedProductID } = useContext(ProductInteractionContext);
-  const crosshairClass = intersectedProductID ? "crosshair crosshair-yellow" : "crosshair";
+  let crosshairClass = "crosshair";
+
+  if (intersectedProductID === "decoration") {
+    crosshairClass += " crosshair-red-x";
+  } else if (intersectedProductID) {
+    crosshairClass += " crosshair-yellow";
+  }
 
   return <div className={crosshairClass}></div>;
 };
