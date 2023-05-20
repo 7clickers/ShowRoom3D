@@ -38,18 +38,17 @@ L'utente che accede al sito si ritrova immediatamente, o dopo qualche secondo di
 \subsection{Funzionalità}
 Le funzionalità si cui può disporre l'utente sono le seguenti:
 \begin{itemize}
-\item navigazione in ambiente 3d immersivo;
+\item navigazione in ambiente 3D immersivo;
 \item visione di articoli aquistabili;
 \item modifica delle caratteristiche di quest'ultimi;
-\item gestione degli acqusti tramite il carrello;
-\item riposizionamento.
+\item gestione degli acquisti tramite il carrello;
 \end{itemize}
 \pagebreak
 
 \section{Interfaccia utente}
 Oltre all'ambiente 3D l'utente ha a disposizioni diversi strumenti per interagire col sistema e monitorare le sue attività sul sito:
 \subsection{Puntatore centrale}
-Al centro della schermata è sempre presente un pallino rotondo che indica la direzione in cui sta puntando la "telecamera" dell'utente. Qunado questo pallino incrocia un elemento acquistabile nell'ambientazione comparirà a schermo il nome dell'elemento puntato e il pallino cambierà colore per notificare più chiaramente che si tratta di un oggetto con cui è possibile interagire.
+Al centro della schermata è sempre presente un pallino rotondo che indica la direzione in cui sta puntando la "telecamera" dell'utente. Qunado questo pallino incrocia un elemento acquistabile nell'ambientazione comparirà a schermo il nome dell'elemento puntato e il pallino si ingrandirà leggermente e cambierà colore per notificare più chiaramente che si tratta di un oggetto con cui è possibile interagire.
 \begin{figure}
   \renewcommand{\thefigure}{1}
 \begin{center}
@@ -90,14 +89,15 @@ Come si nota dall'immagine la scheda riporta molte informazioni rigurdo all'ogge
 
 Per chiudere la scheda dell'oggetto e tornare alla normale navigazione della stanza basta premere col mouse al di fuori di essa.
 \subsubsection{Personalizzazione}
-All'interno della sidebar è possibile trovare alcuni campi modificabili, identficati da un menù a tendina con cui l'utente può effettuare la sua personalizzazione.
+All'interno della sidebar è possibile trovare alcuni campi modificabili, identficati da una serie di pulsanti con cui l'utente può effettuare la sua personalizzazione.
+Deselezionando il pulsante di modifica di una caratteristica è possibile riportare quella caratteristica alla sua versione standard.
 Ogni oggetto è modificabile in almeno una caratteristica tra:
 \begin{itemize}
 	\item Colore;
 	\item Taglia;
 	\item Texture.
 \end{itemize}
-Una volta effettuata la modifica questa sarà applica anche nell'ambinte 3D e sarà quindi possibile osservare l'oggetto nelle sue varie configurazioni prima di effettuare l'aquisto una queste.
+Una volta effettuata la modifica questa sarà applicata anche nell'ambinte 3D e sarà quindi possibile osservare l'oggetto nelle sue varie configurazioni prima di effettuare l'aquisto una queste.
 \begin{figure}[H]
   \renewcommand{\thefigure}{2}
 \begin{center}
@@ -119,12 +119,12 @@ Una volta effettuata la modifica questa sarà applica anche nell'ambinte 3D e sa
 \end{figure}
 
 Una volta acquistato un oggetto, quet'ultimo verrà inserito nel carrello (in basso a destra nello schermo), riportandone il nome, le caratteristiche personalizzate e il prezzo unitario.
-Il carrrello si presenta quindi come un elenco inizialmente vuoto, che si aggiorna in tempo reale e riporta gli oggetti scelti dal cliente.
-In fondo al carrellosi trovano:
+Il carrello si presenta quindi come un elenco inizialmente vuoto, che si aggiorna in tempo reale e riporta gli oggetti scelti dal cliente.
+In fondo al carrello si trovano:
 \begin{itemize}
-	\item Pulsante Checkout
-	\item Pulsante Svuota carrello
-	\item Prezzo totatle
+	\item Pulsante Checkout;
+	\item Pulsante Svuota carrello;
+	\item Prezzo totale.
 \end{itemize}
 Il carrello è fittizio, cioè non permette di effettuare veramente degli acquisti, infatti non è prevista nessuna funzione di pagamento ed inoltre non è persistente, cioè non salva nessun dato e tra una sessione e l'altra viene completatmente svuotato.
 \pagebreak
@@ -132,7 +132,7 @@ Il carrello è fittizio, cioè non permette di effettuare veramente degli acquis
 \subsection{Illuminazione}
 All'interno dello showroom è presente una luce ambientale che illumina in modo uniforme tutto l'ambiente, ma al fine di offrire una visione più dinamica dell'ambientazione e degli oggetti in vendita sono state inserite le seguenti caratteristiche:
 \begin{itemize}
-	\item una "nebbia" ovvero una prrogressiva diminuzione della luminosità mano a mano che ci si allontana da un punto.
+	\item una "nebbia" ovvero una progressiva diminuzione della luminosità mano a mano che ci si allontana da un punto.
 	\item una "torcia" che proietta una luce direzionale (conica) davanti all'utente. Questa funzionalità si può attivare e disattivare premendo il pulsante F.
 IMMAGINE TORCIA
 \end{itemize}
@@ -142,9 +142,9 @@ IMMAGINE TORCIA
 All'interno dello showroom sono previsti varie possibilità e limiti per muoversi:
 \begin{itemize}
 	\item Movimento orizzaontale coi tasti ↑ (avanti) ← (sinistra) → (destra) ↓ (indietro) oppure rispettivamente coi tasti w a s d;
-	\item Salto (breve movimento in alto per poi ricadere a terra) premendo la barra spaziatrice;
-	\item Collisioni con gli oggetti. Se l'utente prova a muoveri dentro ad un oggetto il movimento viene interrotto;
-	\item Collisioni con il limite della mappa. La zona in cui si muove l'utente è delimitata con varii ostacoli che fanno parte dell'ambientazione, se l'utente prova a muoversi al loro interno il movimento viene interrotto. 
+	\item Salto (breve movimento in alto per poi ricadere a terra) premendo la barra spaziatrice. L'altezza del salto viene limitato se si prova a salire troppo in alto, per evitare di superare i limiti della mappa;
+	\item Collisioni con gli oggetti. Se l’utente prova a collidere con un oggetto il movimento viene interrotto;
+	\item Collisioni con il limite della mappa. La zona in cui si muove l'utente è delimitata con vari ostacoli che fanno parte dell'ambientazione, se l'utente prova a muoversi al loro interno il movimento viene interrotto. 
 	\item Nel caso in cui l'utente dovesse riuscire ad oltrepassare i limiti della stanza verrà teletrasportato al punto predefinito dal quale è iniziata la navigazione.
 \end{itemize}
 \begin{figure}[H]
@@ -155,23 +155,16 @@ All'interno dello showroom sono previsti varie possibilità e limiti per muovers
 \end{figure}
 
 \subsection{Stanze}
-Lo showroom è stato diviso in più stanze con temi diversi:
+Lo showroom è suddiviso in due stanze, contenenti due tipologie di articoli diversi:
 \begin{itemize}
 	\item Tema coralli
 	\item Tema pirati
 \end{itemize}
-Come è possibile capire dal nome delle stanze, in ogniuna vengono venduti articoli diversi in base al tema.\\
-Le stanze sono interconnesse tra loro ed è possibile arrivare ad ogni stanza semplicemente camminando nell'ambinetazione, senza quindi l'utilizzo di diversi tipi di navigazione o di cambi di pagina web.
+In ognuna delle due stanze vengono venduti articoli inerenti al tema.\\
+Le stanze sono interconnesse tra loro ed è possibile arrivare ad ogni stanza semplicemente camminando nell'ambientazione, senza quindi l'utilizzo di diversi tipi di navigazione o di cambi di pagina web.
 Questo è il collegamento tra la stanza coralli e la stanza pirati
 IMMAGINE TUNNEL (SONO QUESTI I TEMI DELLE DUE STANZE?)
 
 \pagebreak
-
-
-
-
-Da capire se ci saranno:
-TORCIA
-STANZE
 
 
