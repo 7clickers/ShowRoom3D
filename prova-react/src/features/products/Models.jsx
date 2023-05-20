@@ -20,6 +20,7 @@ const Models = ({ onRendered, octree }) => {
 
         return (
           <Model
+            octree={octree}
             key={product.id}
             id={product.id}
             product={product}

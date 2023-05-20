@@ -5,7 +5,7 @@ const initialState = {
   products: productsData,
 };
 
-const productSlice = createSlice({
+export const productSlice = createSlice({
   name: 'product',
   initialState,
   reducers: {
@@ -18,12 +18,6 @@ const productSlice = createSlice({
     },
   },
 });
-
-export const selectedColorSelector = (productID) => (state) =>
-  state.products.find((product) => product.id === productID)?.selectedColor;
-
-export const productByIDSelector = (productID) => (state) =>
-  state.product.products.find((product) => product.id === productID);
 
 export const { setSelectedColor } = productSlice.actions;
 

@@ -6,9 +6,13 @@ const Crosshair = () => {
   const intersectedProductID = useSelector(
     (state) => state.raycaster.intersectedProductID
   );
-  
-  const crosshairClass = intersectedProductID ? "crosshair crosshair-yellow" : "crosshair";
+  let crosshairClass = "crosshair";
 
+  if (intersectedProductID === "decoration") {
+    crosshairClass += " crosshair-red-x";
+  } else if (intersectedProductID) {
+    crosshairClass += " crosshair-yellow";
+  }
   return <div className={crosshairClass}></div>;
 };
 

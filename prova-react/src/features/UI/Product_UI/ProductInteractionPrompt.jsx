@@ -1,11 +1,11 @@
 import React from 'react';
 import '../ui.css';
 
-const ProductInteractionPrompt = ({ productTitle }) => {
+const ProductInteractionPrompt = ({ productTitle, intersectedProductID }) => {
 
   return (
     <div className="model-interaction-prompt">
-      {productTitle}
+      {intersectedProductID === "decoration" ? "Coming soon" : productTitle}
     </div>
   );
 };

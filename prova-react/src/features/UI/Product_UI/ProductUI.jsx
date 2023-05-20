@@ -23,6 +23,9 @@ const ProductUI = () => {
       }, [isSidebarVisible]);
 
     useEffect(() => {
+        if (intersectedProductID == "decoration"){
+          setLastInteractedProduct(null);
+        }
         if (intersectedProductID) {
           const product = products.find((p) => p.id === intersectedProductID);
           setLastInteractedProduct(product);
@@ -33,7 +36,7 @@ const ProductUI = () => {
             if (event.button === 0) {
             if (isSidebarVisible && sidebarRef.current && !sidebarRef.current.contains(event.target)) {
                 setIsSidebarVisible(false);
-            } else if (intersectedProductID) {
+            } else if (intersectedProductID && intersectedProductID != "decoration") {
                 setIsSidebarVisible(true);
             }
             }
@@ -50,9 +53,9 @@ const ProductUI = () => {
 
     return(
         <>
-        {intersectedProductID && lastInteractedProduct && (
-            <ProductInteractionPrompt productTitle={lastInteractedProduct.title} />
-        )}
+          {(intersectedProductID && (lastInteractedProduct || intersectedProductID === "decoration")) && (
+            <ProductInteractionPrompt productTitle={lastInteractedProduct?.title} intersectedProductID={intersectedProductID} />
+          )}
             <ProductSidebar
             ref={sidebarRef} 
             product={lastInteractedProduct} 

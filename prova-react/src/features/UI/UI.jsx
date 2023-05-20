@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useEffect} from "react";
 import PlayerPosition from "./UI_elements/PlayerPosition";
 import Crosshair from './UI_elements/Crosshair';
 import ProductUI from "./Product_UI/ProductUI";
@@ -15,7 +15,7 @@ const UI = ({ controlsRef }) => {
             <Crosshair />
             <PlayerPosition />
             <ProductUI controlsRef={controlsRef} />
-            {isSidebarVisible && <Cart />}
+            <Cart />
         </div>
 
         </>
