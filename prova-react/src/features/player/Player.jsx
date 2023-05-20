@@ -3,19 +3,15 @@ import { Capsule } from 'three/examples/jsm/math/Capsule.js'
 import { Vector3 } from 'three'
 import { useFrame } from '@react-three/fiber'
 import useKeyboard from '../../common/useKeyboard'
-import useThrottledDispatch from '../../common/useThrottledDispatch'
 
 import { useSelector, useDispatch } from 'react-redux';
 import { setPosition, setRotation } from './playerSlice';
-
-import SidebarContext from "../../common/SidebarContext";
-
 
 const GRAVITY = 30
 const STEPS_PER_FRAME = 5
 
 export default function Player({ octree }) { 
-  const { isSidebarVisible } = useContext(SidebarContext);
+  const isSidebarVisible = useSelector((state) => state.ui.isSidebarVisible)
   const playerPosition = useSelector((state) => state.player.position);
 
   const lastPositionDispatchTime = useRef(0);
