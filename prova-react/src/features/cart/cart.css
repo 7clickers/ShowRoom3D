@@ -7,6 +7,7 @@
     --primary-subheading: rgba(255,255,255,0.8);
     --primary-text: rgba(255,255,255,0.5);
     --button-text: #000000;
+    --button-less-visible: #74808a;
 }
 
 *{
@@ -107,7 +108,19 @@
     margin-bottom: 1em;
 }
 
-#remove-all,#fakebuy{
+#remove-all{
+    border: none;
+    background-color: var(--button-less-visible);
+    color: var(--button-text);
+    width: 40%;
+    height: 2em;
+    border-radius: 9px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 900;
+    font-size: 0.8em;
+}
+
+#fakebuy{
     border: none;
     background-color: var(--primary-accent);
     color: var(--button-text);
