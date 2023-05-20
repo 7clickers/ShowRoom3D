@@ -418,53 +418,18 @@ CartFeaturesDiagram include i componenti che svolgono le funzioni riguardanti il
 		PlayerFeaturesDiagram include i componenti che svolgono le funzioni riguardanti le interazioni dell'utente con 
 		l'ambiente 3D.
 \begin{itemize}
-		\item \textbf{PlayerSlice}
-		\\\\
-		\textbf{Dipendenze}:
-		\begin{itemize}
-			\item \textit{PlayerInitialState} (composizione): si occupa della costruzione e distruzione dell'istanza di PlayerInitialState
-			che non viene condivisa con altri componenti in quanto PlayerSlice si occupa in modo esclusivo della sua gestione.
-			\item \textit{player.setPosition} (Dipendenza semplice \textless use\textgreater): cattura un'istanza di player.setPosition e il 
-			reducer ne utilizza il payload impostare l'attributo position in PlayerInitialState.
-			\item \textit{player.setRotation} (Dipendenza semplice \textless use\textgreater): cattura un'istanza di player.setPosition e il 
-			reducer ne utilizza il payload impostare l'attributo rotation in PlayerInitialState.
-		\end{itemize}
-		\textbf{Interazioni}:
-		\begin{itemize}
-			\item \textit{PlayerInitialState}: viene modificato in base alle actions catturate dal reducer della slice.
-		\end{itemize}
-		\textbf{Actions catturate}:
-		\begin{itemize}
-			\item \textit{player.setPosition}: utilizzata dal reducer per chiamare \textit{setPosition}.
-			\item \textit{player.setRotation}: utilizzata dal reducer per chiamare \textit{setRotation}.
-		\end{itemize}
-		\item \textbf{PlayerInitialState}
-		\\\\
-		\textbf{Dipendenze}:
-		\begin{itemize}
-			\item \textit{Coordinate} (Associazione): ha un attributo di tipo Coordinate per position e rotation che indicano la posizione del player e la 
-			posizione della camera rispettivamente.
-		\end{itemize}
 		\item \textbf{Player}
 		\\\\
 		\textbf{Dipendenze}:
 		\begin{itemize}
-			\item \textit{PlayerSlice} (Associazione): possiede come attributo implicito (dovuto a Redux) un'istanza di PlayerSlice.
-			\item \textit{Coordinate} (Associazione): utilizza Coordinate per tenere traccia al suo interno della posizione in cui si trova l'utente.
-			\item \textit{Coordinate} (Dipendenza semplice \textless create\textgreater): Crea l'istanza di Coordinate che rappresenta il payload di player.setPosition
-			e di player.setRotation.
 			\item \textit{Camera} (Dipendenza semplice \textless use\textgreater): utilizza la camera del canvas in cui viene renderizzata l'applicazione
-			 per aggiornare la scena 3D.
+			 per aggiornare la scena 3D;
 			\item \textit{Octree} (Dipendenza semplice \textless use\textgreater): usa l'Octree della scena per individuare le collisioni dell'utente con 
 			gli oggetti all'interno dell'ambiente 3D.
-			\item \textit{player.setPosition} (Dipendenza semplice \textless send\textgreater): crea ed emette un'istanza dell'azione player.setPosition.
-			\item \textit{player.setRotation} (Dipendenza semplice \textless send\textgreater): crea ed emette un'istanza dell'azione player.setRotation.
 		\end{itemize}
 		\textbf{Interazioni}:
 		\begin{itemize}
-			\item \textit{PlayerSlice}: chiama i selettori \textit{selectorPosition} e \textit{selectorRotation} per ricavare da PlayerInitialState la
-			posizione del player e la posizione della camera rispettivamente.
-			\item \textit{Camera}: sposta la camera a seconda dei comandi dell'utente.
+			\item \textit{Camera}: sposta la camera a seconda dei comandi dell'utente;
 			\item \textit{Octree}: quando rileva una collisione la velocità del player viene impostata a 0. 
 		\end{itemize}
 \end{itemize}
@@ -496,7 +461,7 @@ CartFeaturesDiagram include i componenti che svolgono le funzioni riguardanti il
 		\textbf{Dipendenze}:
 		\begin{itemize}
 			\item \textit{ProductsInitialState} (Composizione): si occupa della costruzione e distruzione dell'istanza di ProductsInitialState
-			che non viene condivisa con altri componenti in quanto ProductsSlice si occupa in modo esclusivo della sua gestione.
+			che non viene condivisa con altri componenti in quanto ProductsSlice si occupa in modo esclusivo della sua gestione;
 			\item \textit{products.setSelectedColor} (Dipendenza semplice \textless use\textgreater): cattura un'istanza di products.setSelectedColor e il 
 			reducer ne utilizza il payload per modificare l'attributo selectedColor del prodotto che ha ID specificato.
 		\end{itemize}
@@ -542,14 +507,12 @@ CartFeaturesDiagram include i componenti che svolgono le funzioni riguardanti il
 		\\\\
 		\textbf{Dipendenze}:
 		\begin{itemize}
-			\item \textit{ModelGLTF} (Composizione): corrisponde al modello 3D che viene visualizzato all'interno dell'ambiente 3D.
-			Ogni prodotto possiede un'istanza del modello gltf che non viene condivisa con altri componenti per evitare
-			modifiche indesiderate nel caso di modifiche a modelli condivisi tra piú prodotti.
+			\item \textit{ModelGLTF} (Associazione): corrisponde al modello 3D che viene visualizzato all'interno dell'ambiente 3D;
 			\item \textit{Color} (Associazione): l'attributo availableColors indica i colori disponibili per il prodotto.
 		\end{itemize}
 \end{itemize}
 
-
+% siamo arrivati qua
 	\newgeometry{margin=0.5cm}
 	\begin{landscape}
 		\thispagestyle{empty}
@@ -788,12 +751,7 @@ al suo interno.
 
 \subsection{Architettura di deployment}
 
-In questa sezione viene indicato come i componenti che costituiscono l'app vengono allocati in esecuzione.
-
-
-
-
-
+come viene fatta la build e come viene configurato il server che ospita l'app
 
 \subsection{Altri aspetti di design}
 
