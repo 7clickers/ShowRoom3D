@@ -1,0 +1,3 @@
+import type { Node, Scene } from '@gltf-transform/core';
+/** @deprecated Use {@link listNodeScenes} instead. */
+export declare function getNodeScene(node: Node): Scene | null;

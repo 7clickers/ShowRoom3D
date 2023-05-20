@@ -1,0 +1,30 @@
+import { mat4, Mesh } from '@gltf-transform/core';
+/**
+ * Applies a transform matrix to every {@link Primitive} in the given {@link Mesh}.
+ *
+ * Method:
+ * - If any primitives are shared by other meshes, they will be detached.
+ * - If any vertex streams are shared by primitives of other meshes, vertex data
+ *  will be overwritten unless _overwrite=false_ or the indices are masked. If
+ * 	_overwrite=false_, a detached copy of the vertex stream is made before applying
+ * 	the transform.
+ * - Primitives within the mesh sharing vertex streams will continue to share those streams.
+ * - For indexed primitives, only indexed vertices are modified.
+ *
+ * Example:
+ *
+ * ```javascript
+ * import { fromTranslation } from 'gl-matrix/mat4';
+ * import { transformMesh } from '@gltf-transform/functions';
+ *
+ * // offset vertices, y += 10.
+ * transformMesh(mesh, fromTranslation([], [0, 10, 0]));
+ * ```
+ *
+ * @param mesh
+ * @param matrix
+ * @param overwrite Whether to overwrite vertex streams in place. If false,
+ * 		streams shared with other meshes will be detached.
+ * @param skipIndices Vertices, specified by index, to be _excluded_ from the transformation.
+ */
+export declare function transformMesh(mesh: Mesh, matrix: mat4, overwrite?: boolean, skipIndices?: Set<number>): void;

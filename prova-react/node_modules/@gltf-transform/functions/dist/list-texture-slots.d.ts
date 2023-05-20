@@ -1,0 +1,12 @@
+import { Texture } from '@gltf-transform/core';
+/**
+ * Returns names of all texture slots using the given texture.
+ *
+ * Example:
+ *
+ * ```js
+ * const slots = listTextureSlots(texture);
+ * // → ['occlusionTexture', 'metallicRoughnesTexture']
+ * ```
+ */
+export declare function listTextureSlots(texture: Texture): string[];

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="2" failures="1" errors="0" time="0.374">
+  <testsuite name="test fun di prova" errors="0" failures="0" skipped="0" timestamp="2023-05-10T15:29:13" time="0.227" tests="1">
+    <testcase classname="test fun di prova primo test della funzione di prova" name="test fun di prova primo test della funzione di prova" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="1" skipped="0" timestamp="2023-05-10T15:29:13" time="0.117" tests="1">
+    <testcase classname=" adds 1 + 2 to equal 3" name=" adds 1 + 2 to equal 3" time="0.006">
+      <failure>Error: expect(received).toEqual(expected) // deep equality
+
+- Expected  - 1
++ Received  + 1
+
+@@ -9,11 +9,11 @@
+          &quot;y&quot;: 0.25,
+          &quot;z&quot;: -1,
+        },
+        &quot;price&quot;: 49.99,
+        &quot;scale&quot;: &quot;2&quot;,
+-       &quot;selectedColor&quot;: &quot;blue&quot;,
++       &quot;selectedColor&quot;: &quot;blus&quot;,
+        &quot;title&quot;: &quot;Corallo A&quot;,
+        &quot;variants&quot;: Array [
+          Object {
+            &quot;colorCode&quot;: &quot;red&quot;,
+            &quot;colorName&quot;: &quot;red&quot;,
+    at Object.toEqual (/Users/mirko/Desktop/ShowRoom3D/prova-react/src/features/products/productSlice.test.js:33:19)
+    at Promise.then.completed (/Users/mirko/Desktop/ShowRoom3D/prova-react/node_modules/jest-circus/build/utils.js:293:28)
+    at new Promise (&lt;anonymous&gt;)
+    at callAsyncCircusFn (/Users/mirko/Desktop/ShowRoom3D/prova-react/node_modules/jest-circus/build/utils.js:226:10)
+    at _callCircusTest (/Users/mirko/Desktop/ShowRoom3D/prova-react/node_modules/jest-circus/build/run.js:297:40)
+    at _runTest (/Users/mirko/Desktop/ShowRoom3D/prova-react/node_modules/jest-circus/build/run.js:233:3)
+    at _runTestsForDescribeBlock (/Users/mirko/Desktop/ShowRoom3D/prova-react/node_modules/jest-circus/build/run.js:135:9)
+    at run (/Users/mirko/Desktop/ShowRoom3D/prova-react/node_modules/jest-circus/build/run.js:68:3)
+    at runAndTransformResultsToJestFormat (/Users/mirko/Desktop/ShowRoom3D/prova-react/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapterInit.js:122:21)
+    at jestAdapter (/Users/mirko/Desktop/ShowRoom3D/prova-react/node_modules/jest-circus/build/legacy-code-todo-rewrite/jestAdapter.js:79:19)
+    at runTestInternal (/Users/mirko/Desktop/ShowRoom3D/prova-react/node_modules/jest-runner/build/runTest.js:367:16)
+    at runTest (/Users/mirko/Desktop/ShowRoom3D/prova-react/node_modules/jest-runner/build/runTest.js:444:34)</failure>
+    </testcase>
+  </testsuite>
+</testsuites>
