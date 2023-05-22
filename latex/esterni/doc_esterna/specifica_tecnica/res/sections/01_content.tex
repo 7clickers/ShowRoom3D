@@ -13,8 +13,7 @@ Dopo aver fornito un elenco descrittivo dei componenti verranno spiegati nel det
 \begin{itemize}
 	\item Design pattern architetturale determinato dalle tecnologie adottate;
 	\item Architettura logica (dipendenze e interazioni tra componenti);
-	\item Architettura di deployment;
-	\item Altri aspetti progettuali.
+	\item Architettura di deployment.
 \end{itemize}
 
 \subsection{Suggerimenti per la comprensione del documento}
@@ -27,12 +26,14 @@ dalle tecnologie adottate prima di proseguire con le successive}.
 \subsection{Riferimenti}
 \subsubsection{Riferimenti normativi}
 \begin{itemize}
-\item .
+\item Capitolato d'appalto C6;
+\item \textit{Norme di Progetto v};
+\item \textit{Analisi dei Requisiti c}.
 \end{itemize}
 
 \subsubsection{Riferimenti informativi}
 \begin{itemize}
-\item .
+\item Materiale didattico IS: Diagrammi delle classi.
 \end{itemize} 
 
 \section{Descrizione dell'architettura}
@@ -45,7 +46,6 @@ dalle tecnologie adottate prima di proseguire con le successive}.
 			\item \textbf{CartSlice}: componente che permette la gestione dello stato che contiene i dati riguardanti il carrello;
 			\item \textbf{ProductsSlice}: componente che permette la gestione dello stato che contiene i dati riguardanti i prodotti 
 			presenti all'interno dell'ambiente 3D;
-			\item \textbf{PlayerSlice}: componente che permette la gestione dello stato che contiene i dati riguardanti il player;
 			\item \textbf{RayCasterSlice}: componente che permette la gestione dello stato che contiene i dati riguardanti il
 			raycaster;
 			\item \textbf{DecorationSlice}: componente che permette la gestione dello stato che contiene i dati riguardanti
@@ -60,7 +60,6 @@ dalle tecnologie adottate prima di proseguire con le successive}.
 		\begin{itemize}
 			\item \textbf{CartInitialState}: componente che contiene i dati relativi agli oggetti presenti all'interno del carrello;
 			\item \textbf{ProductsInitialState}: componente che contiene i dati relativi ai prodotti presenti all'interno dell'ambiente 3D;
-			\item \textbf{PlayerInitialState}: componente che contiene i dati relativi al player;
 			\item \textbf{RayCasterInitialState}: componente che contiene i dati utili ad interagire con un oggetto presente all'interno dell'
 			ambiente 3D;
 			\item \textbf{DecorationInitialState}: componente che contiene la lista di tutte le decorazioni presenti all'interno dell'ambiente 3D;
@@ -299,7 +298,7 @@ I diagrammi prodotti che forniscono una visione generale delle dipendenze tra co
 	\subsubsection{CartFeaturesDiagram}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[scale=0.75, keepaspectratio]{./res/images/CartFeaturesDiagram.PNG}
+		\includegraphics[scale=0.7, keepaspectratio]{./res/images/cartFeaturesDiagram.PNG}
 		\caption[UML delle classi CartFeaturesDiagram]{
 		UML delle classi CartFeaturesDiagram.
 		\\
@@ -393,27 +392,16 @@ CartFeaturesDiagram include i componenti che svolgono le funzioni riguardanti il
 			allo scopo di compiere il rendering dei suoi componenti figli.
 		\end{itemize}
 \end{itemize}
-	
-	\newgeometry{margin=0.5cm}
-	\begin{landscape}
-		\thispagestyle{empty}
 		\subsubsection{PlayerFeaturesDiagram}
 		\begin{figure}[H]
 			\centering
-			\includegraphics[scale=0.7, keepaspectratio]{./res/images/PlayerFeaturesDiagram.PNG}
+			\includegraphics[scale=0.6, keepaspectratio]{./res/images/playerFeaturesDiagram.PNG}
 			\caption[UML delle classi PlayerFeaturesDiagram]{
 				UML delle classi PlayerFeaturesDiagram.
 				\\
 				\textbf{Legenda}: 
-				[\textit{Slices}: rosso] -
-				[\textit{Actions}: giallo] -
-				[\textit{Model classes}: grigio] -
-				[\textit{Initial states}: azzurro] -
-				[\textit{UI React components}: verde]}
+				[\textit{Model classes}: grigio]}
 			\end{figure}
-		\end{landscape}
-		\restoregeometry
-		% Sistemare alcune parti
 		\paragraph*{Descrizione del diagramma:}
 		PlayerFeaturesDiagram include i componenti che svolgono le funzioni riguardanti le interazioni dell'utente con 
 		l'ambiente 3D.
@@ -440,7 +428,7 @@ CartFeaturesDiagram include i componenti che svolgono le funzioni riguardanti il
 	\subsubsection{SidebarFeaturesDiagram}
 	\begin{figure}[H]
 		\centering
-		\includegraphics[scale=0.75, keepaspectratio]{./res/images/SidebarFeaturesDiagram.PNG}
+		\includegraphics[scale=0.7, keepaspectratio]{./res/images/sidebarFeaturesDiagram.PNG}
 		\caption[UML delle classi SidebarFeaturesDiagram]{
 			UML delle classi SidebarFeaturesDiagram.
 			\\
@@ -511,15 +499,13 @@ CartFeaturesDiagram include i componenti che svolgono le funzioni riguardanti il
 			\item \textit{Color} (Associazione): l'attributo availableColors indica i colori disponibili per il prodotto.
 		\end{itemize}
 \end{itemize}
-
-% siamo arrivati qua
 	\newgeometry{margin=0.5cm}
 	\begin{landscape}
 		\thispagestyle{empty}
 		\subsubsection{InterfaceFeaturesDiagram}
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.75, keepaspectratio]{./res/images/InterfaceFeaturesDiagram.PNG}
+	\includegraphics[scale=0.75, keepaspectratio]{./res/images/interfaceFeaturesDiagram.PNG}
 	\caption[UML delle classi InterfaceFeaturesDiagram]{
 	UML delle classi InterfaceFeaturesDiagram.
 	\\
@@ -606,7 +592,7 @@ InterfaceFeaturesDiagram include i componenti necessari per il corretto aggiorna
 \subsubsection{StoreDiagram}
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.7, keepaspectratio]{./res/images/StoreDiagram.PNG}
+	\includegraphics[scale=0.7, keepaspectratio]{./res/images/storeDiagram.PNG}
 	\caption[UML delle classi StoreDiagram]{
 	UML delle classi StoreDiagram.
 	\\
@@ -664,15 +650,12 @@ Include lo \textit{store} e le slice che compongono lo stato globale dell'applic
 \subsubsection{SkyLevelReactComponentsHierarchy}
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.75, keepaspectratio]{./res/images/SkyLevelReactComponentHierarchy.PNG}
+	\includegraphics[scale=0.75, keepaspectratio]{./res/images/skyLevelReactComponentHierarchy.PNG}
 	\caption[UML delle classi SkyLevelReactComponentsHierarchy]{
 	UML delle classi SkyLevelReactComponentsHierarchy.
 	\\
 	\textbf{Legenda}: 
-	[\textit{Slices}: rosso] -
-	[\textit{Actions}: giallo] -
 	[\textit{Model classes}: grigio] -
-	[\textit{Initial states}: azzurro] -
 	[\textit{UI React components}: verde]}
 \end{figure}
 
@@ -707,12 +690,8 @@ Include i macrocomponenti React che costituiscono l'applicazione.
 	\includegraphics[scale=0.7, keepaspectratio]{./res/images/UIReactComponentsHierarchy.PNG}
 	\caption[UML delle classi UIReactComponentsHierarchy]{
 	UML delle classi UIReactComponentsHierarchy.
-	\\
 	\textbf{Legenda}: 
-	[\textit{Slices}: rosso] -
 	[\textit{Actions}: giallo] -
-	[\textit{Model classes}: grigio] -
-	[\textit{Initial states}: azzurro] -
 	[\textit{UI React components}: verde]}
 \end{figure}
 \end{landscape}
@@ -720,24 +699,18 @@ Include i macrocomponenti React che costituiscono l'applicazione.
 \paragraph*{Descrizione del diagramma:}
 Contiene i componenti che costituiscono l'interfaccia utente.
 Lo schema illustra come è organizzato l'albero delle discendenze tra componenti dell'interfaccia utente.
-Le dipendenze di composizione di un componente indicano che il gestisce il ciclo di vita dei componenti figli che sono contenuti 
-al suo interno.
-
 \newgeometry{margin=0.5cm}
 \begin{landscape}
 \thispagestyle{empty}
 \subsubsection{CanvasReactComponentsHierarchy}
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.7 , keepaspectratio]{./res/images/CanvasReactComponentsHierarchy.PNG}
+	\includegraphics[scale=0.7 , keepaspectratio]{./res/images/canvasReactComponentsHierarchy.PNG}
 	\caption[UML delle classi CanvasReactComponentsHierarchy]{
 	UML delle classi CanvasReactComponentsHierarchy.
 	\\
 	\textbf{Legenda}: 
-	[\textit{Slices}: rosso] -
 	[\textit{Actions}: giallo] -
-	[\textit{Model classes}: grigio] -
-	[\textit{Initial states}: azzurro] -
 	[\textit{UI React components}: verde]}
 \end{figure}
 \end{landscape}
@@ -746,35 +719,21 @@ al suo interno.
 \paragraph*{Descrizione del diagramma:}
 Contiene i componenti che costituiscono l'ambiente 3D.
 Lo schema illustra come è organizzato l'albero delle discendenze tra componenti del canvas.
-Le dipendenze di composizione di un componente indicano che il gestisce il ciclo di vita dei componenti figli che sono contenuti 
-al suo interno.
 
 \subsection{Architettura di deployment}
-
-come viene fatta la build e come viene configurato il server che ospita l'app
-
-\subsection{Altri aspetti di design}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+L'obiettivo è di creare un pacchetto di file statici che possa essere eseguito in un browser web senza necessità di un server di sviluppo.
+Questo processo avviene in due fasi principali: la \textit{fase di build} e la \textit{fase di produzione}.
+\subsubsection{Build}
+Nella fase di build, usiamo Vite come strumento di build. 
+Vite è responsabile della trasformazione codice sorgente JavaScript in un formato che può essere facilmente eseguito dai browser. 
+Durante il processo di build Vite esegue vari task tra cui la trasformazione codice JSX in JavaScript,
+il bundling dei nostri file JavaScript in un unico file e l'ottimizzazione di questo file per la produzione.
+Vite compila e ottimizza i file del progetto, inclusi tutti i file di codice sorgente e i file di risorse statiche come CSS, immagini e modelli, 
+in un pacchetto di file ottimizzati per la produzione. 
+Questo pacchetto viene poi scritto in una directory di output, chiamata dist.
+Per avviare il processo di build, usiamo il comando npm run build. Questo comando esegue un task definito nel nostro file package.json che avvia 
+Vite.
+\subsubsection{Produzione}
+Una volta che il processo di build è completo, l'applicazione è pronta per la fase di produzione. 
+In questa fase, il pacchetto di file statici generato da Vite può essere caricato su un server web. 
+Questi file sono poi pronti per essere serviti da un server web a un client per l'esecuzione nel browser.
