@@ -1,8 +1,0 @@
-[
-    {
-        "id": "1",
-        "modelURL": "./src/assets/models/decors/anchor.glb",
-        "position": { "x": 13, "y": 0.25, "z": -13 },
-        "scale": "0.1"
-    }
-]
