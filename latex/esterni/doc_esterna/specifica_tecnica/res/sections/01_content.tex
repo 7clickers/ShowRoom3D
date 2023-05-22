@@ -4,16 +4,16 @@
 In questo documento sono state segnate con il pedice "g" tutte le parole che, secondo noi, necessitano di una spiegazione ulteriore per evitare
 eventuali ambiguità o incomprensioni.
 
-La spiegazione di questi termini la si può trovare nel documento di \textit{Glossario}.
+La spiegazione di questi termini la si può trovare nel documento di \textit{Glossario}. 
 
 \subsection{Scopo del documento}
 Il documento \textit{Specifica Tecnica} ha lo scopo di descrivere i componenti utilizzati e le scelte progettuali fatte per la realizzazione del prodotto.
 
-Dopo aver fornito un elenco descrittivo dei componenti verranno spiegati nel dettaglio, utilizzando l'ausilio degli schemi UML, i seguenti punti di interesse: 
+Dopo aver fornito un elenco descrittivo dei componenti verranno spiegati nel dettaglio, utilizzando l'ausilio degli schemi UML\textsubscript{g}, i seguenti punti di interesse: 
 \begin{itemize}
 	\item Design pattern architetturale determinato dalle tecnologie adottate;
-	\item Architettura logica (dipendenze e interazioni tra componenti);
-	\item Architettura di deployment.
+	\item Architettura logica (dipendenze\textsubscript{g} e interazioni\textsubscript{g} tra componenti);
+	\item Architettura di deployment\textsubscript{g}.
 \end{itemize}
 
 \subsection{Suggerimenti per la comprensione del documento}
@@ -23,17 +23,20 @@ architetturale derterminato dalle tecnologie adottate in quanto gran parte delle
 \textbf{Si suggerisce quindi di leggere la sezione} \ref{design Redux} \textbf{riguardante il design pattern architetturale determinato 
 dalle tecnologie adottate prima di proseguire con le successive}.
 
-\subsection{Riferimenti}
-\subsubsection{Riferimenti normativi}
+\subsection{Riferimenti normativi}
 \begin{itemize}
-\item Capitolato d'appalto C6;
-\item \textit{Norme di Progetto v};
-\item \textit{Analisi dei Requisiti c}.
+\item \href{https://www.math.unipd.it/~tullio/IS-1/2022/Progetto/C6.pdf}{Capitolato d'appalto C6} [riferimento al documento in data 22-05-2023];
+\item \textit{Glossario v2.0.0};
+\item \textit{Norme di Progetto v2.0.0};
+\item \textit{Analisi dei Requisiti v3.0.0}.
 \end{itemize}
-
-\subsubsection{Riferimenti informativi}
+\subsection{Riferimenti informativi}
 \begin{itemize}
-\item Materiale didattico IS: Diagrammi delle classi.
+\item \href{https://www.math.unipd.it/~rcardin/swea/2023/Diagrammi%20delle%20Classi.pdf}{Materiale didattico IS: Diagrammi delle classi} [riferimento al documento in data 22-05-2023].
+\item \href{https://legacy.reactjs.org/docs/getting-started.html}{Documentazione React} [riferimento v18.2.0].
+\item \href{https://threejs.org/}{Documentazione Three.js} [riferimento r152].
+\item \href{https://docs.pmnd.rs/react-three-fiber/getting-started/introduction}{Documentazione react-three-fiber} [riferimento v.8.13.0].
+\item \href{https://redux-toolkit.js.org/introduction/getting-started}{Documentazione redux-toolkit} [riferimento v.1.9.5].
 \end{itemize} 
 
 \section{Descrizione dell'architettura}
@@ -51,7 +54,7 @@ dalle tecnologie adottate prima di proseguire con le successive}.
 			\item \textbf{DecorationSlice}: componente che permette la gestione dello stato che contiene i dati riguardanti
 			il caricamento delle decorazioni all'interno dell'ambiente 3D;
 			\item \textbf{SidebarSlice}: componente che permette la gestione dello stato che contiene i dati riguardanti
-			la side-bar.
+			la sidebar\textsubscript{g}.
 		\end{itemize}
 	\item \textbf{\large Initial states}
 	\\\\
@@ -63,7 +66,7 @@ dalle tecnologie adottate prima di proseguire con le successive}.
 			\item \textbf{RayCasterInitialState}: componente che contiene i dati utili ad interagire con un oggetto presente all'interno dell'
 			ambiente 3D;
 			\item \textbf{DecorationInitialState}: componente che contiene la lista di tutte le decorazioni presenti all'interno dell'ambiente 3D;
-			\item \textbf{SidebarInitialState}: componente che contiene i dati utili a reperire informazioni sulla sidebar;
+			\item \textbf{SidebarInitialState}: componente che contiene i dati utili a reperire informazioni sulla sidebar\textsubscript{g};
 		\end{itemize}
 		\item \textbf{\large Actions}
 		\\\\
@@ -72,11 +75,11 @@ dalle tecnologie adottate prima di proseguire con le successive}.
 		\\
 		Per convenzione il nome delle azioni segue il formato: [nome Slice dalla quale viene catturata].[nome azione].
 		\begin{itemize}
-			\item \textbf{sidebar.toggleSidebarIsOpen}: azione emessa quando si apre o si chiude la sidebar relativa ad un prodotto presente 
+			\item \textbf{sidebar\textsubscript{g}.toggleSidebarIsOpen}: azione emessa quando si apre o si chiude la sidebar\textsubscript{g} relativa ad un prodotto presente 
 			all'interno della scena 3D.
 			\\
 			Payload: nessuno;
-			\item \textbf{products.setSelectedColor}: azione emessa quando si seleziona nella sidebar un nuovo colore per un prodotto.
+			\item \textbf{products.setSelectedColor}: azione emessa quando si seleziona nella sidebar\textsubscript{g} un nuovo colore per un prodotto.
 			\\
 			Payload: PayloadSetSelectedColor \{id:number, selectedColor: String\};
 			\\
@@ -113,29 +116,29 @@ dalle tecnologie adottate prima di proseguire con le successive}.
 		\end{itemize}
 		\item \textbf{\large Model components}
 		\\\\
-		Classi offerte dalle librerie utilizzate:
+		Classi offerte dalle librerie\textsubscript{g} utilizzate:
 		\begin{itemize}
 			
-			\item \textbf{Camera}: classe offerta dalla libreria three.js.
+			\item \textbf{Camera}: classe offerta dalla libreria\textsubscript{g} three.js.
 			Rappresenta l'utente all'interno dell'ambiente 3D.
 			Modificando gli attributi di questa classe l'utente compie movimenti spaziali e può esplorare l'ambiente che 
 			lo circonda da prospettive diverse;
-			\item \textbf{Octree}: classe offerta dalla libreria three.js.
+			\item \textbf{Octree}: classe offerta dalla libreria\textsubscript{g} three.js.
 			L'Octree è una struttura dati ad albero utilizzata per la rappresentazione e la gestione di dati spaziali 
 			tridimensionali. 
 			In particolare, viene utilizzata per dividere lo spazio tridimensionale in regioni più piccole, 
 			suddividendo ciascuna regione in otto sotto-regioni.
 			Utile per determinare con quale prodotto si sta interagendo o per rilevare le collisioni;
-			\item \textbf{Vector3}: classe offerta dalla libreria three.js.
+			\item \textbf{Vector3}: classe offerta dalla libreria\textsubscript{g} three.js.
 			Rappresenta un vettore tridimensionale, ovvero una grandezza fisica caratterizzata da una direzione e da una lunghezza.
 			Il vettore tridimensionale viene comunemente utilizzato per definire la posizione, la rotazione, 
 			la scala e la direzione degli oggetti all'interno di una scena 3D;
-			\item \textbf{Capsule}: classe offerta dalla libreria three.js.
-			La classe Capsule offre la possibilità di impostare una forma di collisione personalizzata 
+			\item \textbf{Capsule}: classe offerta dalla libreria\textsubscript{g} three.js.
+			La classe Capsule offre la possibilità di impostare una forma di collisione\textsubscript{g} personalizzata 
 			per l'oggetto rappresentato dalla capsula; 
 			\item \textbf{Store}: Lo store in Redux è l'oggetto che tiene traccia dello stato dell'applicazione. 
 			Contiene il reducer che specifica come le azioni influenzano lo stato e offre metodi per accedere allo stato corrente, 
-			inviare azioni e registrare funzioni di callback per essere avvisati quando lo stato cambia;
+			inviare azioni e registrare funzioni di callback\textsubscript{g} per essere avvisati quando lo stato cambia;
 			\item \textbf{RootReducer}: componente Redux che combina tutti i reducers dell'applicazione in uno stato globale. 
 			Questa funzione viene passata allo store per gestire lo stato complessivo dell'applicazione.
 		\end{itemize}
@@ -160,20 +163,21 @@ dalle tecnologie adottate prima di proseguire con le successive}.
 		
 		\item \textbf{\large UI React components}
 		\\\\
-		I seguenti componenti hanno il compito di visualizzare i dati dello stato che costituiscono l'interfaccia 
-		utente. 
+		I seguenti componenti hanno il compito di visualizzare i dati dello stato che costituiscono \textit{l'interfaccia 
+		utente}\textsubscript{g}. 
 		\begin{itemize}
-			\item \textbf{UI}: contiene i componenti grafici che vanno a costituire l'interfaccia
-			utente; 
+			\item \textbf{UI}: contiene i componenti grafici che vanno a costituire \textit{l'interfaccia 
+			utente}\textsubscript{g}; 
 			\item \textbf{Crosshair}: componente react-three-fiber che viene utilizzato per aiutare l'utente a puntare
 			un determinato punto nello spazio 3D.
 			Viene indicato con un punto o una croce al centro dello schermo ed usato come puntatore dall'utente;
 			\item \textbf{Cart}: rappresenta il carrello;
 			\item \textbf{CartItem}: rappresenta un prodotto all'interno del carrello.
 			Contiene le informazioni necessarie alla visualizzazione e all'acquisto di un prodotto;
-			\item \textbf{ProductUI}: contiene i componenti dell'interfaccia utente per la visualizzazione
-			del ProductInteractionPrompt e della sidebar;
-			\item \textbf{Sidebar}: contiene i componenti necessari a visualizzare i 
+			\item \textbf{ProductUI}: contiene i componenti dell'\textit{l'interfaccia 
+		utente}\textsubscript{g} per la visualizzazione
+			del ProductInteractionPrompt e della sidebar\textsubscript{g};
+			\item \textbf{sidebar\textsubscript{g}}: contiene i componenti necessari a visualizzare i 
 			dettagli del prodotto con cui si sta iteragendo e i componenti con cui è possibile modificare le caratteristiche del 
 			prodotto e aggiungerne la quantità specificata al carrello;
 			\item \textbf{ColorSelector}: contiene i componenti necessari per compiere un'azione di selezione colore;
@@ -222,7 +226,7 @@ dalle tecnologie adottate prima di proseguire con le successive}.
 \label{design Redux}
 
 \subsubsection{Redux-Toolkit}
-I componenti che costituiscono l'architettura utilizzata seguono il pattern offerto dalla libreria Redux-Toolkit.
+I componenti che costituiscono l'architettura utilizzata seguono il pattern offerto dalla libreria\textsubscript{g} Redux-Toolkit.
 
 Redux-Toolkit è pensato per integrarsi con React e il principale vantaggio che offre è quello di poter gestire i dati condivisi tra 
 i componenti React in modo centralizzato semplificando la gestione dello stato globale dell'applicazione.
@@ -262,7 +266,7 @@ I componenti che formano l'architettura di Redux-Toolkit sono:
 \end{itemize}
 
 \subsubsection{React-three-fiber}
-Questa libreria fornisce un 'punto d'incontro' tra React (libreria javascript per la creazione di interfacce utente) e Three.js (libreria usata per
+Questa libreria\textsubscript{g} fornisce un 'punto d'incontro' tra React (libreria\textsubscript{g} javascript per la creazione di interfacce utente) e Three.js (libreria\textsubscript{g} usata per
 la modellazione dell'ambiente 3D) semplificando la creazione dei componenti da inserire all'interno dell'ambiente 3D.
 
 React-three-fiber rende la scrittura del codice dichiarativa creando dei componenti React 'preconfezionati' che rappresentano i componenti 3D.
@@ -274,7 +278,7 @@ componente \textit{scene}.
 \subsection{Architettura logica}
 Per facilitare la lettura dei diagrammi delle classi è stato scelto di organizzarli per feature in modo che ogni diagramma 
 rappresenti i componenti che permettono l'implementazione di funzionalità specifiche.
-Sono presenti dei diagrammi che non seguono questa convenzione che sono utili per avere una visione generale sulle dipendenze
+Sono presenti dei diagrammi che non seguono questa convenzione che sono utili per avere una visione generale sulle dipendenze\textsubscript{g}
 di alcuni componenti.
 \\\\
 I diagrammi prodotti che rappresentano funzionalità specifiche sono:
@@ -282,14 +286,16 @@ I diagrammi prodotti che rappresentano funzionalità specifiche sono:
 	\item \textbf{CartFeaturesDiagram}: include i componenti che svolgono le funzioni riguardanti il carrello;
 	\item \textbf{PlayerFeaturesDiagram}: include i componenti che svolgono le funzioni riguardanti le interazioni dell'utente con 
 	l'ambiente 3D;
-	\item \textbf{SidebarFeaturesDiagram}: include i componenti che svolgono le funzioni riguardanti la side-bar;
-	\item \textbf{InterfaceFeaturesDiagram}: include i componenti necessari per il corretto aggiornamento dell'interfaccia utente.
+	\item \textbf{SidebarFeaturesDiagram}: include i componenti che svolgono le funzioni riguardanti la sidebar\textsubscript{g};
+	\item \textbf{InterfaceFeaturesDiagram}: include i componenti necessari per il corretto aggiornamento dell'\textit{l'interfaccia 
+		utente}\textsubscript{g}.
 \end{itemize}
-I diagrammi prodotti che forniscono una visione generale delle dipendenze tra componenti sono:
+I diagrammi prodotti che forniscono una visione generale delle dipendenze\textsubscript{g} tra componenti sono:
 \begin{itemize}
 	\item \textbf{StoreDiagram}: include lo \textit{store} e le slice che compongono lo stato globale dell'applicazione;
 	\item \textbf{SkyLevelReactComponentsHierarchy}: contiene i macrocomponenti React che costituiscono l'applicazione;
-	\item \textbf{UIReactComponentsHierarchy}: contiene i componenti che costituiscono l'interfaccia utente;
+	\item \textbf{UIReactComponentsHierarchy}: contiene i componenti che costituiscono l'\textit{l'interfaccia 
+		utente}\textsubscript{g};
 	\item \textbf{CanvasReactComponentsHierarchy}: contiene i componenti che costituiscono gli elementi dell'ambiente 3D.
 \end{itemize}
 \newgeometry{margin=0.5cm}
@@ -317,20 +323,20 @@ CartFeaturesDiagram include i componenti che svolgono le funzioni riguardanti il
 \begin{itemize}
 		\item \textbf{CartSlice}
 		\\\\
-		\textbf{Dipendenze}:
+		\textbf{Dipendenze\textsubscript{g}}:
 		\begin{itemize}
 			\item \textit{CartInitialState} (composizione): si occupa della costruzione e distruzione dell'istanza di CartInitialState
 			che non viene condivisa con altri componenti in quanto CartSlice si occupa in modo esclusivo della sua gestione.
-			\item \textit{CartItem} (dipendenza semplice \textless create\textgreater): si occupa della costruzione dei CartItem 
+			\item \textit{CartItem} (dipendenza\textsubscript{g} semplice \textless create\textgreater): si occupa della costruzione dei CartItem 
 			da inserire all'interno della lista items di CartInitialState;
-			\item \textit{cart.addItems} (Dipendenza semplice \textless use\textgreater): cattura un'istanza di cart.addItems e il 
+			\item \textit{cart.addItems} (dipendenza\textsubscript{g} semplice \textless use\textgreater): cattura un'istanza di cart.addItems e il 
 			reducer ne utilizza il payload per aggiungere un item ad items in CartInitialState.
 			Se le caratteristiche specificate nel payload corrispondono a quelle di un item presente ne incrementa la quantità 
 			del valore specificato altrimenti viene aggiunto un nuovo item con le caratteristiche e quantità specificate;  
-			\item \textit{cart.removeItem} (Dipendenza semplice \textless use\textgreater): cattura un'istanza di cart.removeItem e il reducer
+			\item \textit{cart.removeItem} (dipendenza\textsubscript{g} semplice \textless use\textgreater): cattura un'istanza di cart.removeItem e il reducer
 			ne utilizza il payload per decrementare la quantità dell'item specificato.
 			Se la quantità dopo il decremento risulta essere uguale a 0 l'item viene rimosso da items in CartInitialState;
-			\item \textit{cart.removeAllItems} (Dipendenza semplice \textless use\textgreater): cattura un'istanza di cart.removeAllItems e chiama il reducer 
+			\item \textit{cart.removeAllItems} (dipendenza\textsubscript{g} semplice \textless use\textgreater): cattura un'istanza di cart.removeAllItems e chiama il reducer 
 			che svuota la lista items presente in CartInitialState ed imposta il totalCost a 0.
 		\end{itemize}
 		\textbf{Interazioni}:
@@ -345,24 +351,24 @@ CartFeaturesDiagram include i componenti che svolgono le funzioni riguardanti il
 		\end{itemize}
 		\item \textbf{CartInitialState}
 		\\\\
-		\textbf{Dipendenze}: 
+		\textbf{Dipendenze\textsubscript{g}}: 
 		\begin{itemize}
 			\item \textit{CartItem} (Associazione): contiene la lista degli item che rappresentano i prodotti presenti nel carrello.
 		\end{itemize} 
 		\item \textbf{Cart}
 		\\\\
-		\textbf{Dipendenze}:
+		\textbf{Dipendenze\textsubscript{g}}:
 		\begin{itemize}
-		\item \textit{CartItem} (Composizione): crea le istanze di CartItem durante il rendering.
+		\item \textit{CartItem} (Composizione): crea le istanze di CartItem durante il rendering\textsubscript{g}.
 		Cart gestisce interamente il ciclo di vita delle istanze di un CatrItem che quindi per composizione
 		non può essere condiviso con altri componenti.
 		\item \textit{CartSlice} (Associazione): possiede come attributo implicito (dovuto a Redux) un'istanza di CartSlice.
-		\item \textit{cart.removeAllItems} (Dipendenza semplice \textless send\textgreater): crea ed emette un'istanza dell'azione cart.removeAllItems.
+		\item \textit{cart.removeAllItems} (dipendenza\textsubscript{g} semplice \textless send\textgreater): crea ed emette un'istanza dell'azione cart.removeAllItems.
 	\end{itemize} 
 	\textbf{Interazioni}:
 	\begin{itemize}
 		\item \textit{CartSlice}: chiama i selettori \textit{selectorCartItems} e \textit{selectorTotalCost} per reperire gli items e il costo totale dei prodotti 
-		allo scopo di compiere il rendering dei suoi componenti figli.
+		allo scopo di compiere il rendering\textsubscript{g} dei suoi componenti figli.
 	\end{itemize}
 	\textbf{Action emesse}:
 	\begin{itemize}
@@ -370,26 +376,26 @@ CartFeaturesDiagram include i componenti che svolgono le funzioni riguardanti il
 	\end{itemize}
 	\item \textbf{CartItemReact}
 	\\\\
-	\textbf{Dipendenze}: 
+	\textbf{Dipendenze\textsubscript{g}}: 
 	\begin{itemize}
-		\item \textit{cart.removeItem} (Dipendenza semplice \textless send\textgreater): crea ed emette un'istanza dell'azione cart.removeItem.
+		\item \textit{cart.removeItem} (dipendenza\textsubscript{g} semplice \textless send\textgreater): crea ed emette un'istanza dell'azione cart.removeItem.
 	\end{itemize}
 	\textbf{Action emesse}:
 	\begin{itemize}
 		\item \textit{cart.removeItem}: emessa quando l'utente rimuove il prodotto corrispondente all'item dal carrello.
 	\end{itemize}
-	\item \textbf{Sidebar}
+	\item \textbf{sidebar\textsubscript{g}}
 	\\\\
-	\textbf{Dipendenze}:
+	\textbf{Dipendenze\textsubscript{g}}:
 	\begin{itemize}
 		\item \textit{ProductsSlice} (Associazione): possiede come attributo implicito (dovuto a Redux) un'istanza di ProductsSlice.
-		\item \textit{PayloadAddItems} (Dipendenza semplice \textless create\textgreater): crea il payload da fornire alla action cart.addItems.
-		\item \textit{cart.addItems} (Dipendenza semplice \textless send\textgreater): crea ed emette un'istanza dell'azione cart.addItems.
+		\item \textit{PayloadAddItems} (dipendenza\textsubscript{g} semplice \textless create\textgreater): crea il payload da fornire alla action cart.addItems.
+		\item \textit{cart.addItems} (dipendenza\textsubscript{g} semplice \textless send\textgreater): crea ed emette un'istanza dell'azione cart.addItems.
 		\end{itemize}
 		\textbf{Interazioni}:
 		\begin{itemize}
 			\item \textit{ProductsSlice}: chiama il selettore \textit{selectorProductByID} per reperire le informazioni del prodotto 
-			allo scopo di compiere il rendering dei suoi componenti figli.
+			allo scopo di compiere il rendering\textsubscript{g} dei suoi componenti figli.
 		\end{itemize}
 \end{itemize}
 		\subsubsection{PlayerFeaturesDiagram}
@@ -408,17 +414,17 @@ CartFeaturesDiagram include i componenti che svolgono le funzioni riguardanti il
 \begin{itemize}
 		\item \textbf{Player}
 		\\\\
-		\textbf{Dipendenze}:
+		\textbf{Dipendenze\textsubscript{g}}:
 		\begin{itemize}
-			\item \textit{Camera} (Dipendenza semplice \textless use\textgreater): utilizza la camera del canvas in cui viene renderizzata l'applicazione
+			\item \textit{Camera} (dipendenza\textsubscript{g} semplice \textless use\textgreater): utilizza la camera del canvas in cui viene renderizzata l'applicazione
 			 per aggiornare la scena 3D;
-			\item \textit{Octree} (Dipendenza semplice \textless use\textgreater): usa l'Octree della scena per individuare le collisioni dell'utente con 
+			\item \textit{Octree} (dipendenza\textsubscript{g} semplice \textless use\textgreater): usa l'Octree della scena per individuare le collisioni dell'utente con 
 			gli oggetti all'interno dell'ambiente 3D.
 		\end{itemize}
 		\textbf{Interazioni}:
 		\begin{itemize}
 			\item \textit{Camera}: sposta la camera a seconda dei comandi dell'utente;
-			\item \textit{Octree}: quando rileva una collisione la velocità del player viene impostata a 0. 
+			\item \textit{Octree}: quando rileva una collisione\textsubscript{g} la velocità del player viene impostata a 0. 
 		\end{itemize}
 \end{itemize}
 
@@ -442,15 +448,15 @@ CartFeaturesDiagram include i componenti che svolgono le funzioni riguardanti il
 	\end{landscape}
 	\restoregeometry
 	\paragraph*{Descrizione del diagramma:}
-	SidebarFeaturesDiagram include i componenti che svolgono le funzioni riguardanti la side-bar.
+	SidebarFeaturesDiagram include i componenti che svolgono le funzioni riguardanti la sidebar\textsubscript{g}.
 \begin{itemize}
 		\item \textbf{ProductsSlice}
 		\\\\
-		\textbf{Dipendenze}:
+		\textbf{Dipendenze\textsubscript{g}}:
 		\begin{itemize}
 			\item \textit{ProductsInitialState} (Composizione): si occupa della costruzione e distruzione dell'istanza di ProductsInitialState
 			che non viene condivisa con altri componenti in quanto ProductsSlice si occupa in modo esclusivo della sua gestione;
-			\item \textit{products.setSelectedColor} (Dipendenza semplice \textless use\textgreater): cattura un'istanza di products.setSelectedColor e il 
+			\item \textit{products.setSelectedColor} (dipendenza\textsubscript{g} semplice \textless use\textgreater): cattura un'istanza di products.setSelectedColor e il 
 			reducer ne utilizza il payload per modificare l'attributo selectedColor del prodotto che ha ID specificato.
 		\end{itemize}
 		\textbf{Actions catturate}:
@@ -459,33 +465,33 @@ CartFeaturesDiagram include i componenti che svolgono le funzioni riguardanti il
 		\end{itemize}
 		\item \textbf{ProductsInitialState}
 		\\\\
-		\textbf{Dipendenze}:
+		\textbf{Dipendenze\textsubscript{g}}:
 		\begin{itemize}
 			\item \textit{Product} (Associazione): ha come attributo la lista di tutti i prodotti disponibili.
 		\end{itemize}
-		\item \textbf{Sidebar}
+		\item \textbf{sidebar\textsubscript{g}}
 		\\\\
-		\textbf{Dipendenze}:
+		\textbf{Dipendenze\textsubscript{g}}:
 		\begin{itemize}
 			\item \textit{ProductsSlice} (Associazione): possiede come attributo implicito (dovuto a Redux) un'istanza di ProductsSlice.
 		\end{itemize}
 		\textbf{Interazioni}:
 		\begin{itemize}
-			\item \textit{ProductsSlice}: chiama selectorProductByID per ricavare le informazioni necessarie a fare il rendering
+			\item \textit{ProductsSlice}: chiama selectorProductByID per ricavare le informazioni necessarie a fare il rendering\textsubscript{g}
 			dei suoi componenti figli.
 		\end{itemize}
 		\item \textbf{ColorSelector}
 		\\\\
-		\textbf{Dipendenze}:
+		\textbf{Dipendenze\textsubscript{g}}:
 		\begin{itemize}
 			\item \textit{SelectColorItem} (Composizione): contiene gli item che rappresentano i colori selezionabili del prodotto.
 		\end{itemize}
 		\item \textbf{SelectColorItem}
 		\\\\
-		\textbf{Dipendenze}:
+		\textbf{Dipendenze\textsubscript{g}}:
 		\begin{itemize}
-			\item \textit{PayloadSetSelectedColor} (Dipendenza semplice \textless create\textgreater): crea il payload necessario all'azione products.setSelectedColor.
-			\item \textit{products.setSelectedColor} (Dipendenza semplice \textless send\textgreater): emette products.setSelectedColor.
+			\item \textit{PayloadSetSelectedColor} (dipendenza\textsubscript{g} semplice \textless create\textgreater): crea il payload necessario all'azione products.setSelectedColor.
+			\item \textit{products.setSelectedColor} (dipendenza\textsubscript{g} semplice \textless send\textgreater): emette products.setSelectedColor.
 		\end{itemize}
 		\textbf{Action emesse}:
 		\begin{itemize}
@@ -493,7 +499,7 @@ CartFeaturesDiagram include i componenti che svolgono le funzioni riguardanti il
 		\end{itemize}
 		\item \textbf{Product}
 		\\\\
-		\textbf{Dipendenze}:
+		\textbf{Dipendenze\textsubscript{g}}:
 		\begin{itemize}
 			\item \textit{ModelGLTF} (Associazione): corrisponde al modello 3D che viene visualizzato all'interno dell'ambiente 3D;
 			\item \textit{Color} (Associazione): l'attributo availableColors indica i colori disponibili per il prodotto.
@@ -519,43 +525,44 @@ CartFeaturesDiagram include i componenti che svolgono le funzioni riguardanti il
 \end{landscape}
 \restoregeometry
 \paragraph*{Descrizione del diagramma:}
-InterfaceFeaturesDiagram include i componenti necessari per il corretto aggiornamento dell'interfaccia utente.
+InterfaceFeaturesDiagram include i componenti necessari per il corretto aggiornamento dell'\textit{l'interfaccia 
+		utente}\textsubscript{g}.
 \begin{itemize}
 		\item \textbf{SidebarSlice}
 		\\\\
-		\textbf{Dipendenze}:
+		\textbf{Dipendenze\textsubscript{g}}:
 		\begin{itemize}
 			\item \textit{SidebarInitialState} (Composizione): si occupa della costruzione e distruzione dell'istanza di SidebarInitialState
 			che non viene condivisa con altri componenti in quanto SidebarSlice si occupa in modo esclusivo della sua gestione.
-			\item \textit{sidebar.toggleSidebarIsOpen} (Dipendenza semplice \textless use\textgreater): cattura un'istanza di sidebar.toggleSidebarIsOpen
+			\item \textit{sidebar\textsubscript{g}.toggleSidebarIsOpen} (dipendenza\textsubscript{g} semplice \textless use\textgreater): cattura un'istanza di sidebar\textsubscript{g}.toggleSidebarIsOpen
 			per commutare il valore dell'attributo productSidebarIsOpen in SidebarInitialState.
 		\end{itemize}
 		\textbf{Actions catturate}:
 		\begin{itemize}
-			\item \textit{sidebar.toggleSidebarIsOpen}: utilizzata dal reducer per chiamare \textit{toggleSidebarIsOpen}.
+			\item \textit{sidebar\textsubscript{g}.toggleSidebarIsOpen}: utilizzata dal reducer per chiamare \textit{toggleSidebarIsOpen}.
 		\end{itemize}
-		\item \textbf{SideBar}
+		\item \textbf{sidebar\textsubscript{g}}
 		\\\\
-		\textbf{Dipendenze}:
+		\textbf{Dipendenze\textsubscript{g}}:
 		\begin{itemize}
 			\item \textit{RayCasterSlice} (Associazione): utilizza selectorLastProductPointed per ricavare l'ID dell'ultimo 
 			prodotto puntato dal rayCaster. Se il raycaster non sta puntando a nessun prodotto il selettore ritorna null.
-			\item \textit{sidebar.toggleSidebarIsOpen} (Dipendenza semplice \textless send\textgreater): emette un'azione
-			sidebar.toggleSidebarIsOpen.
+			\item \textit{sidebar\textsubscript{g}.toggleSidebarIsOpen} (dipendenza\textsubscript{g} semplice \textless send\textgreater): emette un'azione
+			sidebar\textsubscript{g}.toggleSidebarIsOpen.
 		\end{itemize}
 		\textbf{Action emesse}:
 		\begin{itemize}
-			\item \textit{sidebar.toggleSidebarIsOpen}: emessa quando l'utente apre o chiude la sidebar
+			\item \textit{sidebar\textsubscript{g}.toggleSidebarIsOpen}: emessa quando l'utente apre o chiude la sidebar\textsubscript{g}
 		\end{itemize}
 		\item \textbf{RayCasterSlice}
 		\\\\
-		\textbf{Dipendenze}:
+		\textbf{Dipendenze\textsubscript{g}}:
 		\begin{itemize}
 			\item \textit{RayCarsterInitialState} (Composizione): si occupa della costruzione e distruzione dell'istanza di RayCarsterInitialState
 			che non viene condivisa con altri componenti in quanto RayCasterSlice si occupa in modo esclusivo della sua gestione.
-			\item \textit{rayCaster.setLastProductPointed} (Dipendenza semplice \textless use\textgreater): cattura un'istanza di rayCaster.setLastProductPointed
+			\item \textit{rayCaster.setLastProductPointed} (dipendenza\textsubscript{g} semplice \textless use\textgreater): cattura un'istanza di rayCaster.setLastProductPointed
 			per aggiornare il valore dell'attributo lastProductPointed con l'ID dell'ultimo oggetto puntato dal raycaster. 
-			\item \textit{rayCaster.toggleRayCasterEnabled} (Dipendenza semplice \textless use\textgreater): cattura un'istanza di sidebar.toggleSidebarIsOpen
+			\item \textit{rayCaster.toggleRayCasterEnabled} (dipendenza\textsubscript{g} semplice \textless use\textgreater): cattura un'istanza di sidebar\textsubscript{g}.toggleSidebarIsOpen
 			per commutare il valore dell'attributo rayCasterIsEnabled in SidebarInitialState. 
 		\end{itemize}
 		\textbf{Action catturate}:
@@ -565,34 +572,34 @@ InterfaceFeaturesDiagram include i componenti necessari per il corretto aggiorna
 		\end{itemize}
 		\item \textbf{RayCaster}
 		\\\\
-		\textbf{Dipendenze}:
+		\textbf{Dipendenze\textsubscript{g}}:
 		\begin{itemize}
 			\item \textit{SidebarSlice} (Associazione): utilizza selectorproductSidebarIsOpen.
-			\item \textit{rayCaster.setLastProductPointed} (Dipendenza semplice \textless send\textgreater): emette un'azione
+			\item \textit{rayCaster.setLastProductPointed} (dipendenza\textsubscript{g} semplice \textless send\textgreater): emette un'azione
 			rayCaster.setLastProductPointed.
-			\item \textit{rayCaster.toggleRayCasterEnabled} (Dipendenza semplice \textless send\textgreater): emette un'azione
+			\item \textit{rayCaster.toggleRayCasterEnabled} (dipendenza\textsubscript{g} semplice \textless send\textgreater): emette un'azione
 			rayCaster.toggleRayCasterEnabled.
 		\end{itemize}
 		\textbf{Interazioni}:
 		\begin{itemize}
-			\item \textit{SidebarSlice}: chiama selectorproductSidebarIsOpen per verificare se la sidebar
+			\item \textit{SidebarSlice}: chiama selectorproductSidebarIsOpen per verificare se la sidebar\textsubscript{g}
 			è aperta o chiusa in modo da abilitare o disabilitare il raycaster a seconda del caso.
 		\end{itemize}
 		\textbf{Action emesse}:
 		\begin{itemize}
 			\item \textit{rayCaster.setLastProductPointed}: emessa quando il raycaster punta un prodotto all'interno dell'ambiente 3D.
-			\item \textit{rayCaster.toggleRayCasterEnabled}: emessa quando viene aperta la sidebar per disabilitare i raycaster.
+			\item \textit{rayCaster.toggleRayCasterEnabled}: emessa quando viene aperta la sidebar\textsubscript{g} per disabilitare i raycaster.
 		\end{itemize}
 \end{itemize}
 
 
-\newgeometry{margin=0.5cm}
+\newgeometry{margin=0.5cm} 
 \begin{landscape}
 \thispagestyle{empty}
 \subsubsection{StoreDiagram}
 \begin{figure}[H]
 	\centering
-	\includegraphics[scale=0.7, keepaspectratio]{./res/images/storeDiagram.PNG}
+	\includegraphics[scale=0.65, keepaspectratio]{./res/images/storeDiagram.PNG}
 	\caption[UML delle classi StoreDiagram]{
 	UML delle classi StoreDiagram.
 	\\
@@ -608,14 +615,14 @@ Include lo \textit{store} e le slice che compongono lo stato globale dell'applic
 \begin{itemize}
 		\item \textbf{Store}
 		\\\\
-		\textbf{Dipendenze}:
+		\textbf{Dipendenze\textsubscript{g}}:
 		\begin{itemize}
 			\item \textit{RootReducer} (Associazione): ha un attributo RootReducer che permette di combinare piú slice con cui lo store interagisce 
 			per modificare lo stato globale dell'applicazione.
 		\end{itemize}
 		\item \textbf{RootReducer}
 		\\\\
-		\textbf{Dipendenze}:
+		\textbf{Dipendenze\textsubscript{g}}:
 		\begin{itemize}
 			\item \textit{CartSlice} (Associazione): ha un attributo CartSlice per offrire allo store l'accesso alla slice.
 			\item \textit{ProductsSlice} (Associazione): ha un attributo ProductsSlice per offrire allo store l'accesso alla slice.
@@ -626,7 +633,7 @@ Include lo \textit{store} e le slice che compongono lo stato globale dell'applic
 		\end{itemize}
 		\item \textbf{DecorationsSlice}
 		\\\\
-		\textbf{Dipendenze}:
+		\textbf{Dipendenze\textsubscript{g}}:
 		\begin{itemize}
 			\item \textit{DecorationInitialState}: si occupa della costruzione e distruzione dell'istanza di DecorationInitialState
 			che non viene condivisa con altri componenti in quanto DecorationsSlice si occupa in modo esclusivo della sua gestione.
@@ -634,14 +641,14 @@ Include lo \textit{store} e le slice che compongono lo stato globale dell'applic
 
 		\item \textbf{DecorationInitialState}
 		\\\\
-		\textbf{Dipendenze}:
+		\textbf{Dipendenze\textsubscript{g}}:
 		\begin{itemize}
 			\item \textit{Decoration}: contiene la lista delle decorazioni presenti all'interno dell'ambiente 3D.
 		\end{itemize}
 
 		\item \textbf{Decoration}
 		\\\\
-		\textbf{Dipendenze}:
+		\textbf{Dipendenze\textsubscript{g}}:
 		\begin{itemize}
 			\item \textit{DecorationModelGLTF} (Composizione): costruisce l'istanza del modello che rappresenta la decorazione.
 		\end{itemize}
@@ -664,7 +671,7 @@ Include i macrocomponenti React che costituiscono l'applicazione.
 \begin{itemize}
 		\item \textbf{Provider}
 		\\\\
-		\textbf{Dipendenze}:
+		\textbf{Dipendenze\textsubscript{g}}:
 		\begin{itemize}
 			\item \textit{Store} (Associazione): tutti i componenti figli fanno riferimento allo store passato come props al 
 			componente Provider.
@@ -673,9 +680,10 @@ Include i macrocomponenti React che costituiscono l'applicazione.
 
 		\item \textbf{App}
 		\\\\
-		\textbf{Dipendenze}:
+		\textbf{Dipendenze\textsubscript{g}}:
 		\begin{itemize}
-			\item \textit{IU} (Composizione): crea il componente figlio che contiene l'interfaccia utente.
+			\item \textit{IU} (Composizione): crea il componente figlio che contiene l'\textit{l'interfaccia 
+		utente}\textsubscript{g}.
 			\item \textit{Canvas} (Coomposizione): crea il componente figlio che contiene l'ambiente 3D.
 		\end{itemize}
 \end{itemize}
@@ -697,8 +705,10 @@ Include i macrocomponenti React che costituiscono l'applicazione.
 \end{landscape}
 \restoregeometry
 \paragraph*{Descrizione del diagramma:}
-Contiene i componenti che costituiscono l'interfaccia utente.
-Lo schema illustra come è organizzato l'albero delle discendenze tra componenti dell'interfaccia utente.
+Contiene i componenti che costituiscono l'\textit{l'interfaccia 
+		utente}\textsubscript{g}.
+Lo schema illustra come è organizzato l'albero delle discendenze tra componenti dell'\textit{l'interfaccia 
+		utente}\textsubscript{g}.
 \newgeometry{margin=0.5cm}
 \begin{landscape}
 \thispagestyle{empty}
@@ -722,18 +732,18 @@ Lo schema illustra come è organizzato l'albero delle discendenze tra componenti
 
 \subsection{Architettura di deployment}
 L'obiettivo è di creare un pacchetto di file statici che possa essere eseguito in un browser web senza necessità di un server di sviluppo.
-Questo processo avviene in due fasi principali: la \textit{fase di build} e la \textit{fase di produzione}.
+Questo processo avviene in due fasi principali: la \textit{fase di build\textsubscript{g}} e la \textit{fase di produzione}.
 \subsubsection{Build}
-Nella fase di build, usiamo Vite come strumento di build. 
+Nella fase di build\textsubscript{g}, usiamo Vite come strumento di build\textsubscript{g}. 
 Vite è responsabile della trasformazione codice sorgente JavaScript in un formato che può essere facilmente eseguito dai browser. 
-Durante il processo di build Vite esegue vari task tra cui la trasformazione codice JSX in JavaScript,
+Durante il processo di build\textsubscript{g} Vite esegue vari task tra cui la trasformazione codice JSX in JavaScript,
 il bundling dei nostri file JavaScript in un unico file e l'ottimizzazione di questo file per la produzione.
 Vite compila e ottimizza i file del progetto, inclusi tutti i file di codice sorgente e i file di risorse statiche come CSS, immagini e modelli, 
 in un pacchetto di file ottimizzati per la produzione. 
 Questo pacchetto viene poi scritto in una directory di output, chiamata dist.
-Per avviare il processo di build, usiamo il comando npm run build. Questo comando esegue un task definito nel nostro file package.json che avvia 
+Per avviare il processo di build\textsubscript{g}, usiamo il comando npm run build\textsubscript{g}. Questo comando esegue un task definito nel nostro file package.json che avvia 
 Vite.
 \subsubsection{Produzione}
-Una volta che il processo di build è completo, l'applicazione è pronta per la fase di produzione. 
+Una volta che il processo di build\textsubscript{g} è completo, l'applicazione è pronta per la fase di produzione. 
 In questa fase, il pacchetto di file statici generato da Vite può essere caricato su un server web. 
 Questi file sono poi pronti per essere serviti da un server web a un client per l'esecuzione nel browser.
