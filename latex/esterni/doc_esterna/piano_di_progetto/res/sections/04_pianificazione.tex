@@ -119,61 +119,13 @@ Questo periodo inizia subito dopo la revisione di Requirements and Technology Ba
 \end{center}
 \subsubsection{Attività}
 \begin{itemize}
-\item \textbf{Documentazione:} vengono effettuate modifiche correttive ai documenti che necessitano di un aggiornamento o di una revisione;
-\item \textbf{Codifica:} i programmatori creano il codice del prodotto basato sulle attività individuate all'inizio dello Sprint\textsubscript{g}, partendo dalla base del periodo precedente e aggiungendo nuove funzionalità per ottenere una versione funzionante del prodotto;
-\item \textbf{Product Baseline\textsubscript{g}:} quest'attività introduce la baseline architetturale del prodotto attraverso i diagrammi delle classi e di sequenza, dimostrando la coerenza con quanto presentato durante l'attività di Technology Baseline;  
-\item \textbf{Test:} i programmatori creano test di unità e di integrazione per i componenti sviluppati durante questo periodo;
-\item \textbf{Manuali:} vengono redatti il \textit{Manuale Utente} e \textit{Manuale Sviluppatore}, in relazione alle funzionalità implementate. Questi documenti forniscono istruzioni sull'uso del sistema per gli utenti coinvolti.
+\item \textbf{Documentazione:} stesura o modifiche ai documenti;
+\item \textbf{Codifica:} produzione di codice o attività inerenti;
+\item \textbf{UML\textsubscript{g}:} creazione dei diagrammi UML\textsubscript{g} o attività inerenti;  
+\item \textbf{Test:} creazione dei test di unità e di integrazione;
+\item \textbf{Manuali:} stesura dei manuali.
 \end{itemize}
-
-\subsubsection{Backlog}
-In questa sezione è riportata la tabella del backlog, così strutturata:
-\begin{itemize}
-    \item \textbf{Task:} il nome della task;
-    \item \textbf{Descrizione:} una breve descrizione della task;
-    \item \textbf{Data inizio:} la data in cui si pianifica di iniziare la task, oppure viene indicato con "-" che la task in 
-    questione è ricorrente;
-    \item \textbf{Attività:} l'attività a cui fa riferimento la task. Le attività possono essere: PB, (Product Baseline), Doc (Documentazione), Test o Manuali.
-\end{itemize}
-\begin{longtable}{ 
-	>{\centering}M{0.23\textwidth} 
-	>{\centering}M{0.44\textwidth}
-	>{\centering}M{0.13\textwidth}
-	>{\centering}M{0.10\textwidth}
-	}
-	\rowcolorhead
-	\centering 
-	\headertitle{Task} &	
-	\headertitle{Descrizione} &
-	\headertitle{Data inizio} &
-	\headertitle{Attività}
-	\endfirsthead	
-	\endhead
-	
-	Apprendimento librerie & Si studiano individualmente le librerie scelte & 29-03-2023 & PB \tabularnewline
-	Individuazione pattern architetturali & Si individuano dei pattern architetturali adeguati & 29-03-2023 & PB \tabularnewline
-	Diagramma delle classi & Viene prodotto il diagramma delle classi & 07-04-2023 & PB \tabularnewline
-	Diagramma di sequenza & Viene prodotto il diagramma di sequenza & 10-04-2023 & PB \tabularnewline
-	Correzione Piano di Qualifica & Viene sistemato il Piano di Qualifica in base alle correzioni nella RTB & 29-03-2023 & Doc \tabularnewline
-	Aggiornamento grafici Piano di Qualifica & Vengono calcolati i valori delle metriche e aggiornati i grafici & 05-04-2023 & Doc \tabularnewline
-	Modello di sviluppo nel Piano di Progetto & Viene cambiato il modello di sviluppo, passando al modello agile & 29-03-2023 & Doc \tabularnewline
-	Pianificazione sprint nel Piano di Progetto & Viene pianificato lo sprint successivo & - & Doc \tabularnewline
-	Preventivo dello sprint nel Piano di Progetto & Viene calcolato il preventivo per lo sprint successivo & - & Doc \tabularnewline
-	Consuntivo dello sprint nel Piano di Progetto & Viene calcolato il consuntivo per lo sprint concluso & - & Doc \tabularnewline
-	Diario di Bordo & Viene scritto il Diario di Bordo & - & Doc \tabularnewline
-	Verbale & Viene redatto il verbale al termine di ogni riunione & - & Doc \tabularnewline
-	Correzione Norme di Progetto & Vengono sistemate le Norme di Progetto in base alle correzioni nella RTB & 29-03-2023 & Doc \tabularnewline
-	Aggiornamento Norme di Progetto & Vengono aggiunte le norme sulla codifica & 12-04-2023 & Doc \tabularnewline
-	Specifica Tecnica & Viene scritto il documento \textit{Specifica Tecnica} & 14-04-2023 & Doc \tabularnewline
-	Manuale Utente & Viene scritto il documento \textit{Manuale Utente} & 21-04-2023 & Manuali \tabularnewline
-	Manuale Sviluppatore & Viene scritto il documento \textit{Manuale Sviluppatore} & 21-04-2023 & Manuali \tabularnewline
-	Test di unità & Vengono scritti i test di unità & - & Test \tabularnewline
-	Test di integrità & Vengono scritti i test di integrità & - & Test \tabularnewline
-	Test di sistema & Vengono scritti i test di sistema & - & Test \tabularnewline
-	Test di accettazione & Vengono scritti i test di accettazione & - & Test \tabularnewline
-	\captionline \caption{Backlog: Progettazione di dettaglio e codifica dei requisiti}
-\end{longtable}
-
+% ====================================================== SPRINT 1
 \subsubsection{Sprint 1}
 \begin{center}
 \textbf{periodo:} dal 29-03-2023 al 05-04-2023\\
@@ -183,23 +135,25 @@ Si inizia anche ad individuare dei pattern architetturali adeguati e a studiare 
 \begin{longtable}{ 
 	>{\centering}M{0.30\textwidth} 
 	>{\centering}M{0.10\textwidth}
+	>{\centering}M{0.20\textwidth}
 	}
 	\rowcolorhead
 	\centering 
 	\headertitle{Task} &	
-	\headertitle{Priorità}
+	\headertitle{Priorità} &
+	\headertitle{Attività}
 	\endfirsthead	
 	\endhead
 	
-	Apprendimento librerie & Media \tabularnewline
-	Individuazione pattern architetturali & Media \tabularnewline
-	Correzione Piano di Qualifica & Bassa \tabularnewline
-	Modello di sviluppo nel Piano di Progetto & Alta \tabularnewline
-	Pianificazione sprint nel Piano di Progetto & Alta \tabularnewline
-	Preventivo dello sprint nel Piano di Progetto & Alta \tabularnewline
-	Diario di Bordo & Bassa \tabularnewline
-	Verbale & Bassa \tabularnewline
-	Correzione Norme di Progetto & Media \tabularnewline
+	Apprendimento librerie & Media & Codifica\tabularnewline
+	Individuazione pattern architetturali & Media & UML\tabularnewline
+	Correzione Piano di Qualifica & Bassa & Documentazione\tabularnewline
+	Modello di sviluppo nel Piano di Progetto & Alta & Documentazione\tabularnewline
+	Pianificazione sprint nel Piano di Progetto & Alta & Documentazione\tabularnewline
+	Preventivo dello sprint nel Piano di Progetto & Alta & Documentazione\tabularnewline
+	Diario di Bordo & Bassa & Documentazione\tabularnewline
+	Verbale & Bassa & Documentazione\tabularnewline
+	Correzione Norme di Progetto & Media & Documentazione\tabularnewline
 	\captionline \caption{Task assegnate nello sprint 1}
 \end{longtable}
 
@@ -209,7 +163,7 @@ Si inizia anche ad individuare dei pattern architetturali adeguati e a studiare 
     \includegraphics[scale=0.56]{image/gantt_sprint1.PNG}
     \caption{Diagramma di Gantt\textsubscript{g} Sprint\textsubscript{g} 1}
 \end{figure}
-
+% ====================================================== SPRINT 2
 \subsubsection{Sprint 2}
 \begin{center}
 \textbf{periodo:} dal 06-04-2023 al 13-04-2023\\
@@ -218,59 +172,27 @@ In questo sprint\textsubscript{g} il gruppo si concentra a produrre un possibile
 Nel caso avanzino ore lavorative ci occuperemo della produzione di un possibile diagramma di sequenza e di iniziare la stesura delle norme
 di codifica.
 
-Attualmente le task presenti nel backlog sono le seguenti:
-
-\begin{longtable}{ 
-	>{\centering}M{0.23\textwidth} 
-	>{\centering}M{0.44\textwidth}
-	>{\centering}M{0.13\textwidth}
-	>{\centering}M{0.10\textwidth}
-	}
-	\rowcolorhead
-	\centering 
-	\headertitle{Task} &	
-	\headertitle{Descrizione} &
-	\headertitle{Data inizio} &
-	\headertitle{Attività}
-	\endfirsthead	
-	\endhead
-	
-	Diagramma delle classi & Viene prodotto il diagramma delle classi & 06-04-2023 & PB \tabularnewline
-	Verbale del VI\_06-04-2023 & Viene redatto il verbale  VI\_06-04-2023& 06-04-2023 & Doc \tabularnewline
-	Verbale del VE\_05-04-2023 & Viene redatto il verbale VE\_05-04-2023& 06-04-2023 & Doc \tabularnewline
-	Diario di Bordo del 10-04-2023 & Viene scritto il Diario di Bordo del 10-04-2023 & 09-04-2023 & Doc \tabularnewline
-	Pianificazione sprint 3 & Viene pianificato lo sprint 3 & 11-04-2023 & Doc \tabularnewline
-	Diagramma di sequenza & Viene prodotto il diagramma di sequenza & 10-04-2023 & PB \tabularnewline
-	Norme sulla codifica & Vengono aggiunte le norme sulla codifica & 10-04-2023 & Doc \tabularnewline
-	Norme sui test di unità & Vengono scritte le norme sui test di unità & - & Test \tabularnewline
-	Norme sui test di integrità & Vengono scritte le norme sui test di integrità & - & Doc \tabularnewline
-	Norme sui test di sistema & Vengono scritte le norme sui test di sistema & - & Doc \tabularnewline
-	Norme sui test di accettazione & Vengono scritte le norme sui test di accettazione & - & Doc \tabularnewline
-	Specifica Tecnica & Viene scritto il documento \textit{Specifica Tecnica} & - & Doc \tabularnewline
-	Manuale Utente & Viene scritto il documento \textit{Manuale Utente} & - & Doc \tabularnewline
-	Manuale Sviluppatore & Viene scritto il documento \textit{Manuale Sviluppatore} & - & Doc \tabularnewline
-	\captionline \caption{Backlog: Progettazione di dettaglio e codifica dei requisiti}
-\end{longtable}
-
 Le task assegnate per questo sprint sono:
 \begin{longtable}{ 
 	>{\centering}M{0.30\textwidth} 
 	>{\centering}M{0.10\textwidth}
+	>{\centering}M{0.20\textwidth}
 	}
 	\rowcolorhead
 	\centering 
 	\headertitle{Task} &	
-	\headertitle{Priorità}
+	\headertitle{Priorità} &
+	\headertitle{Attività}
 	\endfirsthead	
 	\endhead
 	
-	Diagramma delle classi & Alta \tabularnewline
-	Diario di Bordo del 10-04-2023 & Alta \tabularnewline
-	Verbale del VI\_06-04-2023 & Alta \tabularnewline
-	Verbale del VE\_05-04-2023 & Alta \tabularnewline
-	Pianificazione sprint 3 & Alta \tabularnewline
-	Diagramma di sequenza & Media \tabularnewline
-	Norme sulla codifica & Media \tabularnewline
+	Diagramma delle classi & Alta & UML\tabularnewline
+	Diario di Bordo del 10-04-2023 & Alta & Documentazione\tabularnewline
+	Verbale del VI\_06-04-2023 & Alta & Documentazione\tabularnewline
+	Verbale del VE\_05-04-2023 & Alta & Documentazione\tabularnewline
+	Pianificazione sprint 3 & Alta & Documentazione\tabularnewline
+	Diagramma di sequenza & Media & UML\tabularnewline
+	Norme sulla codifica & Media & Documentazione\tabularnewline
 	
 \end{longtable}
 
@@ -278,5 +200,93 @@ Le task assegnate per questo sprint sono:
 	\centering 
 	\includegraphics[scale=0.42]{image/gantt_sprint2.PNG}
 	\caption{Diagramma di Gantt\textsubscript{g} Sprint\textsubscript{g} 2}
+\end{figure}
+\pagebreak
+% ====================================================== SPRINT 3
+\subsubsection{Sprint 3}
+\begin{center}
+\textbf{periodo:} dal 14-04-2023 al 21-04-2023\\
+\end{center}
+In questo sprint\textsubscript{g} verranno richiesti dei chiarimenti al Professor Riccardo Cardin sul diagramma delle classi prodotto.
+Successivamente il gruppo si concentra a provare l'esattezza del diagramma delle classi prodotto tramite una prima codifica esplorativa per tornare a correggere
+il diagramma nel caso verranno trovati degli errori di progettazione o aspetti che vanno migliorati.
+
+
+Le task assegnate per questo sprint sono:
+\begin{longtable}{ 
+	>{\centering}M{0.30\textwidth} 
+	>{\centering}M{0.10\textwidth}
+	>{\centering}M{0.20\textwidth}
+	}
+	\rowcolorhead
+	\centering 
+	\headertitle{Task} &	
+	\headertitle{Priorità} &
+	\headertitle{Attività}
+	\endfirsthead	
+	\endhead
+	
+	Norme di codifica & Alta & Documentazione\tabularnewline
+	Norme sui test di unità & Alta & Documentazione\tabularnewline
+	Norme sui test di integrazione & Alta & Documentazione\tabularnewline
+	Scena base & Media & Codifica\tabularnewline
+	Movimenti player & Media & Codifica\tabularnewline
+	Aggiornamento analisi dei rischi Piano di Progetto & Bassa & Documentazione\tabularnewline
+	Aggiunta sezione introduzione Piano di Progetto & Bassa & Documentazione\tabularnewline
+	VE\_14-04-2023 & Bassa & Documentazione\tabularnewline
+	Pianificazione Sprint 4 & Bassa & Documentazione\tabularnewline
+	
+\end{longtable}
+
+\begin{figure}[H]
+	\centering 
+	\includegraphics[scale=0.42]{image/gantt_sprint3.PNG}
+	\caption{Diagramma di Gantt\textsubscript{g} Sprint\textsubscript{g} 3}
+\end{figure}
+\pagebreak
+% ====================================================== SPRINT 4
+\subsubsection{Sprint 4}
+\begin{center}
+\textbf{periodo:} dal 22-04-2023 al 03-05-2023\\
+\end{center}
+In questo sprint\textsubscript{g} ci concentreremo soprattutto sulla codifica e il consolidamento delle norme di codifica, di test e diagramma delle classi.
+Dopo aver sviluppato una parte dell'applicazione verrà contattato il proponente per chiedere un parere sull' esperienza utente e per far vedere quanto prodotto dalla codifica.
+Contatteremo anche il Professor Riccardo Cardin per far vedere le modifiche che secondo noi possono essere definitive apportate al diagramma delle classi.
+Alla fine di questo sprint\textsubscript{g} ci aspettiamo di aver raggiunto un buon punto nello sviluppo dell'applicazione.
+Probabilmente sarà necessario uno sprint ulteriore per concludere il progetto in quanto lo sprint 4 non prevede la stesura dei manuali e 
+della documentazione necessaria a candidarsi alla revisione TB.
+Nel caso si verificassero imprevisti personali o modifiche all'applicazione verrà tenuto in considerazione di aggiungere più di uno sprint.
+A questo punto ci rendiamo conto che non sarà possibile soddisfare i requisiti opzionali in quanto il gruppo non dispone del monte ore e budget
+necessario.
+
+Le task assegnate per questo sprint sono:
+\begin{longtable}{ 
+	>{\centering}M{0.30\textwidth} 
+	>{\centering}M{0.10\textwidth}
+	>{\centering}M{0.20\textwidth}
+	}
+	\rowcolorhead
+	\centering 
+	\headertitle{Task} &	
+	\headertitle{Priorità} &
+	\headertitle{Attività}
+	\endfirsthead	
+	\endhead
+	
+	Norme sull'integrazione continua & Alta & Documentazione\tabularnewline
+	Pianificazione Sprint 5  & Media & Documentazione\tabularnewline
+	Diario di Bordo del 24-04-2023 & Media & Documentazione\tabularnewline
+	Norme di codifica & Alta & Documentazione\tabularnewline
+	Norme di test & Alta & Documentazione\tabularnewline
+	Codifica scena base & Alta & Documentazione\tabularnewline
+	Codifica movimenti player & Alta & Documentazione\tabularnewline
+	
+	
+\end{longtable}
+
+\begin{figure}[H]
+	\centering 
+	\includegraphics[scale=0.42]{image/gantt_sprint3.PNG}
+	\caption{Diagramma di Gantt\textsubscript{g} Sprint\textsubscript{g} 4}
 \end{figure}
 \pagebreak
