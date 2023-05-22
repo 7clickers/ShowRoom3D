@@ -1,0 +1,37 @@
+\documentclass[a4paper]{article}
+\usepackage[normalem]{ulem}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{pdflscape}
+\usepackage{geometry}
+\input{res/reqTable.tex}
+
+% impostazioni generali
+\input{../../../template/package.tex}
+
+% dati relativi alla prima pagina
+\input{config/titlepage_input.tex} % editare questo
+
+\makeindex
+
+\begin{document}
+
+% Prima pagina
+\input{../../../template/titlepage.tex}
+
+% Diario delle modifiche
+\input{../../../template/changelog.tex}
+\input{config/changelog_input.tex} % editare questo
+\pagebreak
+
+% Indice
+{
+    \hypersetup{linkcolor=black}
+    \tableofcontents
+    \listoffigures
+}
+\pagebreak
+
+% Contenuto
+\input{res/sections/01_content.tex}
+
+\end{document}
