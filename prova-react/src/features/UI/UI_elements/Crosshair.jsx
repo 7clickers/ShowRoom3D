@@ -1,10 +1,11 @@
 import React from "react";
-import { useContext } from "react";
-import ProductInteractionContext from "../../../common/ProductInteractionContext";
+import { useSelector } from "react-redux";
 import "../ui.css";
 
 const Crosshair = () => {
-  const { intersectedProductID } = useContext(ProductInteractionContext);
+  const intersectedProductID = useSelector(
+    (state) => state.raycaster.intersectedProductID
+  );
   let crosshairClass = "crosshair";
 
   if (intersectedProductID === "decoration") {
@@ -12,7 +13,6 @@ const Crosshair = () => {
   } else if (intersectedProductID) {
     crosshairClass += " crosshair-yellow";
   }
-
   return <div className={crosshairClass}></div>;
 };
 
