@@ -277,11 +277,59 @@ In questa sezione vengono utilizzate le seguenti sigle per lo stato di ogni test
 \end{itemize}
 
 \subsection{Test di unità}
-Questi test verranno stabiliti durante la Progettazione.
+Per garantire il funzionamento dei singoli componenti che possono lavorare in maniera autonoma senza bisogno di dipendenze abbiamo effettuato questi test. Non abbiamo ritenuto necessario testare componenti o parti di componenti che:
+\begin{itemize}
+	\item Utilizzavano funzionalità già assodate e documentate;
+	\item Componenti che raggruppavano altri componenti.
+\end{itemize} 
+\begin{longtable}{
+		>{\centering}M{0.20\textwidth}
+		>{\centering}M{0.35\textwidth}	 
+		>{\centering}M{0.20\textwidth} 
+		}
+	\rowcolorhead
+	\headertitle{Test} &
+	\centering \headertitle{Descrizione} &	
+	\headertitle{Stato} 
+	\endfirsthead	
+	\endhead
+TU1 & Si verifichi che la posizione del player cambi quando utilizza i tasti di movimento & S\tabularnewline
+TU2 & Si verifichi che la rotazione del player cambi quando muove la visuale col mouse & S\tabularnewline
+TU3 & Si verifichi che avvenga il cambiamento colore ad un oggetto interagibile & S\tabularnewline
+TU4 & Si verifichi la funzionalità dell’aggiunta all’array che rappresenta gli oggetti nel carrello e l’incremento del costo totale & S\tabularnewline
+TU5 & Si verifichi che la funzionalità di aggiungere un oggetto al carrello funzioni solo con oggetti validi & S\tabularnewline
+TU6 & Si verifichi la possibilità di utilizzare i selettori Redux per reperire l’array logico del carrello e il costo totale & S\tabularnewline
+TU7 & Si verifichi la funzionalità della rimozione totale dall’array del carrello & S\tabularnewline
+TU8 & Si verifichi che la funzionalità di rimozione totale dell’array carrello funzioni anche se il carrello è vuoto & S\tabularnewline
+TU9 & Si verifichi la funzionalità di eliminazione singola dal carrello & S\tabularnewline
+TU10 & Si verifichi che l’eliminazione singola funziona solo con oggetti realmente presenti nell’array carrello & S\tabularnewline
+TU11 & Si verifichi che il raycaster funzioni & S\tabularnewline
+TU12 & Si verifichi che funzioni la possibilità di aggiungere quantità di un oggetto selezionato & S\tabularnewline
+TU13 & Si verifichi che funzioni la possibilità di diminuire quantità di un oggetto selezionato & S\tabularnewline
+\end{longtable}
 
-\subsection{Test di integrità}
-Questi test verranno stabiliti durante la Progettazione.
-
+\subsection{Test di integrazione}
+Per assicurare che ogni componente lavori correttamente con gli altri componenti, il gruppo ha deciso di effettuare i seguenti Test di Integrazione.
+\begin{longtable}{
+		>{\centering}M{0.20\textwidth}
+		>{\centering}M{0.35\textwidth}	 
+		>{\centering}M{0.20\textwidth} 
+		}
+	\rowcolorhead
+	\headertitle{Test} &
+	\centering \headertitle{Descrizione} &	
+	\headertitle{Stato} 
+	\endfirsthead	
+	\endhead
+TI1 & Si verifichi che la modifica di cambiamento colore venga apportata ad un oggetto esempio nel file JSON contenente i prodotti interagibili & S\tabularnewline
+TI2 & Si verifichi che un elemento nel carrello , se eliminato singolarmente, scompaia dal componente Cart e anche dall’array logico del carrello & S\tabularnewline
+TI3 & Si verifichi che il bottone “Remove all” funzioni rimuovendo sia da Cart che da cartSlice tutti gli oggetti & S\tabularnewline
+TI4 & Si verifichi che il bottone “Remove all” funzioni anche se il carrello è vuoto & S\tabularnewline
+TI5 & Si verifichi che il cambio di colore nella Sidebar venga salvato & S\tabularnewline
+TI6 & Si verifichi che il colore ritorni a standard se viene deselezionata una modifica di colore & S\tabularnewline
+TI7 & Si verifichi che venga aggiunto un oggetto al carrello dalla sidebar & S\tabularnewline
+TI8 & Si verifichi che venga aggiunta la quantità selezionata di un oggetto già presente nel carrello & S\tabularnewline
+\end{longtable}
 \subsection{Test di accettazione}
 Questi test verranno stabiliti durante la fase di Collaudo.
 
@@ -298,29 +346,29 @@ Per assicurare che vengano rispettati i requisiti concordati nel documento di \t
 	\headertitle{Stato} 
 	\endfirsthead	
 	\endhead
-TSRF1 & Si verifica\textsubscript{g} che l'utente possa aggiungere, l'oggetto con cui sta interagendo, nel carrello & N \tabularnewline
-TSRF2 & Si verifica\textsubscript{g} che l'utente possa visualizzare il contenuto del carrello & N \tabularnewline
-TSRF2.1 & Si verifica\textsubscript{g} che l'utente possa visualizzare la lista degli oggetti presenti nel carrello & N \tabularnewline
-TSRF2.1.1 & Si verifica\textsubscript{g} che l'utente possa interagire con un oggetto nel carrello & N \tabularnewline
-TSRF2.1.1.1 & Si verifica\textsubscript{g} che l'utente possa visualizzare la caratteristica del nome di ogni oggetto presente nella lista degli oggetti presenti nel carrello & N \tabularnewline
-TSRF2.1.1.2 & Si verifica\textsubscript{g} che l'utente possa visualizzare la caratteristica del costo di ogni oggetto presente nella lista degli oggetti presenti nel carrello & N \tabularnewline
-TSRF2.1.1.3 & Si verifica\textsubscript{g} che l'utente possa visualizzare la caratteristica della quantità di ogni oggetto presente nella lista degli oggetti presenti nel carrello & N \tabularnewline
-TSRF2.2 & Si verifica\textsubscript{g} che l'utente possa visualizzare il costo totale degli oggetti che ha inserito nel carrello & N \tabularnewline
-TSRF3 & Si verifica\textsubscript{g} che l'utente abbia la possibilità di rimuovere tutti gli oggetti dal carrello & N \tabularnewline
-TSRF4 & Si verifica\textsubscript{g} che l'utente abbia la possibilità di rimuovere un singolo oggetto dal carrello & N \tabularnewline
-TSRF5 & Si verifica\textsubscript{g} che l'utente possa muoversi in maniera direzionale & N \tabularnewline
-TSRF5.1 & Si verifica\textsubscript{g} che l'utente possa compiere movimenti direzionali nell'asse X & N \tabularnewline
-TSRF5.2 & Si verifica\textsubscript{g} che l'utente possa compiere movimenti direzionali nell'asse Y & N \tabularnewline
-TSRF5.3 & Si verifica\textsubscript{g} che l'utente possa compiere movimenti direzionali nell'asse Z & N \tabularnewline
-TSRF6 & Si verifica\textsubscript{g} che l'utente possa compiere spostamenti di camera & N \tabularnewline
-TSRF6.1 & Si verifica\textsubscript{g} che l'utente possa compiere spostamenti di camera nell'asse X & N \tabularnewline
-TSRF6.2 & Si verifica\textsubscript{g} che l'utente possa compiere spostamenti di camera nell'asse Y & N \tabularnewline
-TSRF7 & Si verifica\textsubscript{g} che l'utente possa modificare la combinazione dei colori di un oggetto & N \tabularnewline
-TSRF8 & Si verifica\textsubscript{g} che l'utente venga notificato in caso non fosse possibile modificare un oggetto & N \tabularnewline
+TSRF1 & Si verifica\textsubscript{g} che l'utente possa aggiungere, l'oggetto con cui sta interagendo, nel carrello & S \tabularnewline
+TSRF2 & Si verifica\textsubscript{g} che l'utente possa visualizzare il contenuto del carrello & S \tabularnewline
+TSRF2.1 & Si verifica\textsubscript{g} che l'utente possa visualizzare la lista degli oggetti presenti nel carrello & S \tabularnewline
+TSRF2.1.1 & Si verifica\textsubscript{g} che l'utente possa interagire con un oggetto nel carrello & S \tabularnewline
+TSRF2.1.1.1 & Si verifica\textsubscript{g} che l'utente possa visualizzare la caratteristica del nome di ogni oggetto presente nella lista degli oggetti presenti nel carrello & S \tabularnewline
+TSRF2.1.1.2 & Si verifica\textsubscript{g} che l'utente possa visualizzare la caratteristica del costo di ogni oggetto presente nella lista degli oggetti presenti nel carrello & S \tabularnewline
+TSRF2.1.1.3 & Si verifica\textsubscript{g} che l'utente possa visualizzare la caratteristica della quantità di ogni oggetto presente nella lista degli oggetti presenti nel carrello & S \tabularnewline
+TSRF2.2 & Si verifica\textsubscript{g} che l'utente possa visualizzare il costo totale degli oggetti che ha inserito nel carrello & S \tabularnewline
+TSRF3 & Si verifica\textsubscript{g} che l'utente abbia la possibilità di rimuovere tutti gli oggetti dal carrello & S \tabularnewline
+TSRF4 & Si verifica\textsubscript{g} che l'utente abbia la possibilità di rimuovere un singolo oggetto dal carrello & S \tabularnewline
+TSRF5 & Si verifica\textsubscript{g} che l'utente possa muoversi in maniera direzionale & S \tabularnewline
+TSRF5.1 & Si verifica\textsubscript{g} che l'utente possa compiere movimenti direzionali nell'asse X & S \tabularnewline
+TSRF5.2 & Si verifica\textsubscript{g} che l'utente possa compiere movimenti direzionali nell'asse Y & S \tabularnewline
+TSRF5.3 & Si verifica\textsubscript{g} che l'utente possa compiere movimenti direzionali nell'asse Z & S \tabularnewline
+TSRF6 & Si verifica\textsubscript{g} che l'utente possa compiere spostamenti di camera & S \tabularnewline
+TSRF6.1 & Si verifica\textsubscript{g} che l'utente possa compiere spostamenti di camera nell'asse X & S \tabularnewline
+TSRF6.2 & Si verifica\textsubscript{g} che l'utente possa compiere spostamenti di camera nell'asse Y & S \tabularnewline
+TSRF7 & Si verifica\textsubscript{g} che l'utente possa modificare la combinazione dei colori di un oggetto & S \tabularnewline
+TSRF8 & Si verifica\textsubscript{g} che l'utente venga notificato in caso non fosse possibile modificare un oggetto & S \tabularnewline
 TSRF9 & Si verifica\textsubscript{g} che l'utente possa visualizzare la lista degli oggetti della stanza in cui si trova & N \tabularnewline
 TSRF9.1 & Si verifica\textsubscript{g} che l'utente possa visualizzare un singolo oggetto nella lista degli oggetti della stanza in cui si trova & N \tabularnewline
 TSRF9.1.1 & Si verifica\textsubscript{g} che l'utente possa visualizzare la caratteristica del nome di ogni oggetto della lista degli oggetti della stanza in cui si trova & N \tabularnewline
-TSRF10 & Si verifica\textsubscript{g} che l'utente possa visualizzare tutti i dettagli di un oggetto selezionato & N \tabularnewline
+TSRF10 & Si verifica\textsubscript{g} che l'utente possa visualizzare tutti i dettagli di un oggetto selezionato & S \tabularnewline
 TSRF11 & Si verifica\textsubscript{g} che l'utente abbia la possibilità di riposizionarsi vicino ad un oggetto nella stanza in cui si trova & N \tabularnewline
 TSRF12 & Si verifica\textsubscript{g} che l'utente possa riposizionarsi in una stanza da lui selezionata & N \tabularnewline
 TSRF13 & Si verifica\textsubscript{g} che l'utente venga notificato in caso il riposizionamento in una stanza non sia possibile & N \tabularnewline
@@ -331,9 +379,9 @@ TSRF15.1.1 & Si verifica\textsubscript{g} che l'utente possa visualizzare la car
 TSRF15.1.2 & Si verifica\textsubscript{g} che l'utente possa visualizzare la caratteristica della tipologia di oggetti presenti in ogni stanza nella lista delle stanze & N \tabularnewline
 TSRF16 & Si verifica\textsubscript{g} che l'utente possa riposizionare un oggetto presente nella stanza in cui si trova & N \tabularnewline
 TSRF17 & Si verifica\textsubscript{g} che l'utente non possa riposizionare un oggetto in una coordinata non legittima & N \tabularnewline
-TSRF18 & Si verifica\textsubscript{g} che l'utente sia in grado ad illuminare l'ambiente davanti a lui & N \tabularnewline
-TSRF19 & Si verifica\textsubscript{g} che l'utente venga notificato se il contenuto del carrello è vuoto & N \tabularnewline
-TSRF20 & Si verifica\textsubscript{g} che l'utente possa visualizzare un oggetto illuminato & N \tabularnewline
+TSRF18 & Si verifica\textsubscript{g} che l'utente sia in grado ad illuminare l'ambiente davanti a lui & S \tabularnewline
+TSRF19 & Si verifica\textsubscript{g} che l'utente venga notificato se il contenuto del carrello è vuoto & S \tabularnewline
+TSRF20 & Si verifica\textsubscript{g} che l'utente possa visualizzare un oggetto illuminato & S \tabularnewline
 \end{longtable}
 
 \subsection{Tracciamento dei test}
@@ -382,4 +430,53 @@ TSRF18 & RF18\tabularnewline
 TSRF19 & RF19\tabularnewline
 TSRF20 & RF20\tabularnewline
 
+\end{longtable}
+
+\subsubsection{Test di Unità - File di Test}
+\begin{longtable}{
+		>{\centering}M{0.10\textwidth}
+		>{\centering}M{0.30\textwidth}
+		>{\centering}M{0.45\textwidth}	 
+		}
+	\rowcolorhead
+	\headertitle{Test} &
+	\centering \headertitle{File di test} &	
+	\centering \headertitle{Nome test} 
+	\endfirsthead	
+	\endhead
+TU1 & \_\_test\_\_/playerSlice.test.js & it(’should set the player position’)\{ … \}\tabularnewline
+TU2 & \_\_test\_\_/playerSlice.test.js & it(’should set the player rotation’)\{ … \}\tabularnewline
+TU3 & \_\_test\_\_/productSlice.test.js & it('Should change color to the product in example')\{ … \}\tabularnewline
+TU4 & \_\_test\_\_/cartSlice.test.js & it('Should add an item to the array (that represents the logic of the cart) of the slice and increment the totalCost’)\{ … \}\tabularnewline
+TU5 & \_\_test\_\_/cartSlice.test.js & it('Should not be able to add this item’) \{ … \}\tabularnewline
+TU6 & \_\_test\_\_/cartSlice.test.js & it('Should be able to use the cartItems selector and the totalCost selector’)\{ … \}\tabularnewline
+TU7 & \_\_test\_\_/cartSlice.test.js & it('Should remove all the item in the cart')\{ … \}\tabularnewline
+TU8 & \_\_test\_\_/cartSlice.test.js & it('Should remove all the items even if the cart is empty’)\{ … \}\tabularnewline
+TU9 & \_\_test\_\_/cartSlice.test.js & it('Should remove the item in example’)\{ … \}\tabularnewline
+TU10 & \_\_test\_\_/cartSlice.test.js & it('Should be able to work even if the item provided do not exist in the cart’)\{ … \}\tabularnewline
+TU11 & \_\_test\_\_/useRaycasterLogic.test.js & it('should update intersects when mouse moves’)\{ … \}\tabularnewline
+TU12 & \_\_test\_\_/productSidebar.test.js & it('Should add more then one quantity of the item selected’)\{ … \}\tabularnewline
+TU13 & \_\_test\_\_/productSidebar.test.js & it('Should decrease of one the quantity of the item’)\{ … \}\tabularnewline
+\end{longtable}
+
+\subsubsection{Test di Integrità - File di Test}
+\begin{longtable}{
+		>{\centering}M{0.10\textwidth}
+		>{\centering}M{0.30\textwidth}
+		>{\centering}M{0.45\textwidth}	 
+		}
+	\rowcolorhead
+	\headertitle{Test} &
+	\centering \headertitle{File di test} &	
+	\centering \headertitle{Nome test} 
+	\endfirsthead	
+	\endhead
+TI1 & \_\_test\_\_/productSlice.test.js & it('Should change color to the product with the ID=1 imported from the JSON file’)\{ … \} \tabularnewline
+TI2 & \_\_test\_\_/cart.test.js & it('Should stop rendering item in cart when clicking "X" button’)\{ … \}\tabularnewline
+TI3 & \_\_test\_\_/cart.test.js & it('Should stop rendering all items in cart when clicking "Remove all" button’)\{ … \}\tabularnewline
+TI4 & \_\_test\_\_/cart.test.js & it('Should try to remove the items and work even if cart is empty’)\{ … \}\tabularnewline
+TI5	& \_\_test\_\_/productSidebar.test.js & it('Should change the variable selectedColor to the product in example’)\{ … \}\tabularnewline
+TI6 & \_\_test\_\_/productSidebar.test.js & it('Should remove the selected color if the button with the current color is pressed, putting the standard color to the item’)\{ … \}\tabularnewline
+TI7 & \_\_test\_\_/productSidebar.test.js & it('Should add an item to the cart’)\{ … \}\tabularnewline
+TI8 & \_\_test\_\_/productSidebar.test.js & it('Should add more than one quantity of the item to the cart, testing also if it adds the quantity to the item that is already in the cart’)\{ … \}\tabularnewline
 \end{longtable}
