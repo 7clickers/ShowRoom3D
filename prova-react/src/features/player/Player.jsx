@@ -64,13 +64,19 @@ export default function Player({ octree }) {
   function controls(camera, delta, playerVelocity, playerOnFloor, playerDirection) {
     const speedDelta = delta * (playerOnFloor ? 25 : 8)
     keyboard['KeyA'] && playerVelocity.add(getSideVector(camera, playerDirection).multiplyScalar(-speedDelta))
+    keyboard['ArrowLeft'] && playerVelocity.add(getSideVector(camera, playerDirection).multiplyScalar(-speedDelta))
     keyboard['KeyD'] && playerVelocity.add(getSideVector(camera, playerDirection).multiplyScalar(speedDelta))
+    keyboard['ArrowRight'] && playerVelocity.add(getSideVector(camera, playerDirection).multiplyScalar(speedDelta))
     keyboard['KeyW'] && playerVelocity.add(getForwardVector(camera, playerDirection).multiplyScalar(speedDelta))
+    keyboard['ArrowUp'] && playerVelocity.add(getForwardVector(camera, playerDirection).multiplyScalar(speedDelta))
     keyboard['KeyS'] && playerVelocity.add(getForwardVector(camera, playerDirection).multiplyScalar(-speedDelta))
+    keyboard['ArrowDown'] && playerVelocity.add(getForwardVector(camera, playerDirection).multiplyScalar(-speedDelta))
     if (playerOnFloor) {
-      if (keyboard['Space']) {
-        playerVelocity.y = 15
-      }
+      if (camera.position.y <= 4){
+        if (keyboard['Space']) {
+          playerVelocity.y = 15
+        }
+      }  
     }
   }
 
