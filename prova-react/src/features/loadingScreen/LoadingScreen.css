@@ -69,3 +69,10 @@ label[for="progress-bar"] {
     color: var(--primary-heading);
 
 }
+
+@media all and (max-width: 1265px) {
+
+    .loading-screen h1 {
+        font-size: 2.5rem;
+    }
+}
