@@ -1,12 +1,12 @@
 \section{Introduzione}
 \subsection{Scopo del documento}
-Lo scopo del seguente documento `e quello di illustrare le funzionalit`a fornite dall’applicazione e le
-istruzioni per l’utilizzo della stessa. L’utente sar`a quindi a conoscenza dei requisiti minimi necessari
-per il corretto funzionamento di ShopChain.
+Lo scopo del seguente documento è quello di illustrare le funzionalità fornite dall’applicazione e le
+istruzioni per l’utilizzo della stessa. L’utente sarà quindi a conoscenza dei requisiti minimi necessari
+per il corretto funzionamento di Showroom 3D.
 \subsection{Glossario}
-I termini utilizzati in questo documento potrebbero generare dubbi riguardo al loro significato, richiedendo pertanto una definizione al fine di evitare ambiguit`a. Tali termini vengono contrassegnati da
-una G maiuscola finale a pedice della parola. Alla fine del documento stesso `e possibile reperire tale
-Glossario con i termini di interesse.
+In questo documento sono state segnate con il pedice ”g” tutte le parole che, secondo noi, necessitano
+di una spiegazione ulteriore per evitare eventuali ambiguità o incomprensioni. La spiegazione di questi
+termini la si pu`o trovare nel documento di Glossario.
 \subsection{Cos'è Showroom 3D}
 Showroom 3D è un sito web che offre un'esperienza di shopping unica per gli appassionati di acquari. Grazie alla tecnologia 3D, gli utenti possono visualizzare e personalizzare in modo interattivo gli articoli per acquari come piante, rocce e decorazioni. Il sito offre una vasta gamma di prodotti di alta qualità e permette agli utenti di scegliere tra diverse opzioni di personalizzazione per soddisfare le loro esigenze. Inoltre, gli utenti possono acquistare direttamente gli articoli selezionati sul sito e riceverli comodamente a casa propria. Showroom 3D rappresenta la soluzione ideale per chi desidera rendere il proprio acquario unico e personalizzato.
 \subsection{Autenticazione}
@@ -28,13 +28,23 @@ Per rendere effettivo il funzionamento su tali browser, deve essere abilitato Ja
 
 
 \section{Panoramica del sito}
+
+Il sito subito dopo esser stato aperto presenta una schermata di caricamento con una barra di progeresso che permette di monitorare il caricamento delle risorse durante l'attesa.
 \begin{figure}[H]
   \renewcommand{\thefigure}{1}
+  \includegraphics[width=\linewidth]{./res/images/loading_screen.png}
+  \caption{Schermata di caricamento}
+  \label{Schermata di caricamento}
+\end{figure}
+L'utente dopo il completamento del caricamento si ritrova immediatamente immerso nell'ambiente 3D, dove potrà compiere tutte le azioni e funzionalità offerte dal sito. 
+\begin{figure}[H]
+  \renewcommand{\thefigure}{2}
   \includegraphics[width=\linewidth]{./res/images/schermata_iniziale.png}
   \caption{Showroom subito dopo l'apertura}
   \label{Showroom subito dopo l'apertura}
 \end{figure}
-L'utente che accede al sito si ritrova immediatamente, o dopo qualche secondo di schermata di caricamento, immerso nell'ambiente 3D, dove potrà compiere tutte le azioni e funzionalità offerte dal sito. 
+\pagebreak
+
 \subsection{Funzionalità}
 Le funzionalità si cui può disporre l'utente sono le seguenti:
 \begin{itemize}
@@ -43,14 +53,13 @@ Le funzionalità si cui può disporre l'utente sono le seguenti:
 \item modifica delle caratteristiche di quest'ultimi;
 \item gestione degli acquisti tramite il carrello;
 \end{itemize}
-\pagebreak
 
 \section{Interfaccia utente}
 Oltre all'ambiente 3D l'utente ha a disposizioni diversi strumenti per interagire col sistema e monitorare le sue attività sul sito:
 \subsection{Puntatore centrale}
 Al centro della schermata è sempre presente un pallino rotondo che indica la direzione in cui sta puntando la "telecamera" dell'utente. Qunado questo pallino incrocia un elemento acquistabile nell'ambientazione comparirà a schermo il nome dell'elemento puntato e il pallino si ingrandirà leggermente e cambierà colore per notificare più chiaramente che si tratta di un oggetto con cui è possibile interagire.
 \begin{figure}
-  \renewcommand{\thefigure}{1}
+  \renewcommand{\thefigure}{3}
 \begin{center}
   \includegraphics[width=8cm]{./res/images/puntatore.png}
  \end{center}
@@ -68,7 +77,7 @@ IMMAGINE PUNTATORE A X
 \subsection{Item sidebar}
 Clickando il tasto sinistro del mouse quando la telecamera è puntata su un'oggetto è possibile aprirne la scheda che si presenta in questo modo:
 \begin{figure}[H]
-  \renewcommand{\thefigure}{1}
+  \renewcommand{\thefigure}{4}
 \begin{center}
   \includegraphics[width=8cm]{./res/images/scheda_evidenziata.png}
  \end{center}
@@ -99,7 +108,7 @@ Ogni oggetto è modificabile in almeno una caratteristica tra:
 \end{itemize}
 Una volta effettuata la modifica questa sarà applicata anche nell'ambinte 3D e sarà quindi possibile osservare l'oggetto nelle sue varie configurazioni prima di effettuare l'aquisto una queste.
 \begin{figure}[H]
-  \renewcommand{\thefigure}{2}
+  \renewcommand{\thefigure}{5}
 \begin{center}
   \includegraphics[width=\linewidth]{./res/images/modifica.png}
 \end{center}
@@ -110,12 +119,12 @@ Una volta effettuata la modifica questa sarà applicata anche nell'ambinte 3D e 
 
 \subsection{Carrello}
 \begin{figure}[H]
-  \renewcommand{\thefigure}{2}
+  \renewcommand{\thefigure}{6}
 \begin{center}
   \includegraphics[width=8cm]{./res/images/carrello.png}
 \end{center}
-  \caption{Showroom subito dopo l'apertura}
-  \label{Showroom subito dopo l'apertura}
+  \caption{Carrello}
+  \label{Carrello}
 \end{figure}
 
 Una volta acquistato un oggetto, quet'ultimo verrà inserito nel carrello (in basso a destra nello schermo), riportandone il nome, le caratteristiche personalizzate e il prezzo unitario.
@@ -134,8 +143,14 @@ All'interno dello showroom è presente una luce ambientale che illumina in modo 
 \begin{itemize}
 	\item una "nebbia" ovvero una progressiva diminuzione della luminosità mano a mano che ci si allontana da un punto.
 	\item una "torcia" che proietta una luce direzionale (conica) davanti all'utente. Questa funzionalità si può attivare e disattivare premendo il pulsante F.
-IMMAGINE TORCIA
 \end{itemize}
+
+\begin{figure}[H]
+  \renewcommand{\thefigure}{7}
+  \includegraphics[width=\linewidth]{./res/images/torcia.png}
+  \caption{Torcia accesa}
+  \label{Torcia acccesa}
+\end{figure}
 
 
 \section{Navigazione}
@@ -148,10 +163,10 @@ All'interno dello showroom sono previsti varie possibilità e limiti per muovers
 	\item Nel caso in cui l'utente dovesse riuscire ad oltrepassare i limiti della stanza verrà teletrasportato al punto predefinito dal quale è iniziata la navigazione.
 \end{itemize}
 \begin{figure}[H]
-  \renewcommand{\thefigure}{2}
+  \renewcommand{\thefigure}{8}
   \includegraphics[width=\linewidth]{./res/images/comandi_direzionali.png}
-  \caption{Showroom subito dopo l'apertura}
-  \label{Showroom subito dopo l'apertura}
+  \caption{comandi direzionali}
+  \label{comandi direzionali}
 \end{figure}
 
 \subsection{Stanze}
