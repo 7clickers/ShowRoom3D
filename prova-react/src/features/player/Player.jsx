@@ -1,18 +1,17 @@
-import { useRef, useEffect, useMemo } from 'react'
+import { useRef, useEffect, useMemo, useContext } from 'react'
 import { Capsule } from 'three/examples/jsm/math/Capsule.js'
 import { Vector3 } from 'three'
 import { useFrame } from '@react-three/fiber'
 import useKeyboard from '../../common/useKeyboard'
-import useThrottledDispatch from '../../common/useThrottledDispatch'
 
 import { useSelector, useDispatch } from 'react-redux';
 import { setPosition, setRotation } from './playerSlice';
-
 
 const GRAVITY = 30
 const STEPS_PER_FRAME = 5
 
 export default function Player({ octree }) { 
+  const isSidebarVisible = useSelector((state) => state.ui.isSidebarVisible)
   const playerPosition = useSelector((state) => state.player.position);
 
   const lastPositionDispatchTime = useRef(0);
@@ -62,6 +61,9 @@ export default function Player({ octree }) {
   }
 
   function controls(camera, delta, playerVelocity, playerOnFloor, playerDirection) {
+    if (isSidebarVisible) {
+      return;
+    }
     const speedDelta = delta * (playerOnFloor ? 25 : 8)
     keyboard['KeyA'] && playerVelocity.add(getSideVector(camera, playerDirection).multiplyScalar(-speedDelta))
     keyboard['ArrowLeft'] && playerVelocity.add(getSideVector(camera, playerDirection).multiplyScalar(-speedDelta))

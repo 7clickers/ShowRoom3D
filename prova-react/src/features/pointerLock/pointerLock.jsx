@@ -1,12 +1,11 @@
-import { useEffect, useContext } from "react";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 import { useThree } from "@react-three/fiber";
 import { PointerLockControls as ThreePointerLockControls } from "three/examples/jsm/controls/PointerLockControls";
 
-import SidebarContext from "../../common/SidebarContext";
-
 const PointerLock = () => {
   const { camera, gl } = useThree();
-  const { isSidebarVisible, setIsSidebarVisible } = useContext(SidebarContext);
+  const isSidebarVisible = useSelector(state => state.ui.isSidebarVisible);
 
   let controls;
 

@@ -17,8 +17,8 @@
 }
 
 .cart-item{
-    display: grid;
-    grid-template-columns: 80% 20%;
+    display: flex;
+    justify-content: space-between;
     align-items: center;
     gap: 1em;
     margin-top: 0.5em;
@@ -32,26 +32,41 @@
 }
 
 .single-delete{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-transform: lowercase;
     border: none;
     background-color: var(--primary-accent);
     color: var(--button-text);
-    width: 40%;
-    border-radius: 15px;
-    text-align: center;
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    font-size: 0.7em;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.15s ease-in-out;
+}
+
+.single-delete:hover{
+    border: 2px solid var(--primary-accent);
+    background-color: transparent;
+    color: var(--primary-accent);
+    font-weight: 500;
 }
 
 .quantity{
     color: var(--primary-heading);
-    font-size: 0.9em;
+    font-size: 1em;
     font-weight: 600;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
 }
 
 .delete-quantity{
     display: flex;
     flex-direction: row;
+    align-items: center;
     gap:0.5em;
 }
 
@@ -59,12 +74,13 @@
     border-radius: 1em;
     position: fixed;
     right: 0; 
-    bottom: 0;
+    top: 0;
     width: 20em;
-    height: 25em;
+    min-height: 10em;
+    max-height: 25em;
     background-color: var(--primary-bg);
     padding: 1em;
-    margin-bottom: 3em;
+    margin-top: 1em;
     margin-right: 1em;
     z-index: 9999;
     display: flex;
@@ -94,7 +110,7 @@
 #total-cost{
     color:var(--primary-heading);
     font-family: 'Inter', sans-serif;
-    font-weight: 900;
+    font-weight: 700;
     font-size: 1.0em;
     text-align: right;
 }
@@ -111,14 +127,17 @@
 
 #remove-all{
     border: none;
-    background-color: var(--button-less-visible);
-    color: var(--button-text);
+    background-color: transparent;
+    color: var(--primary-accent);
+    border: 1px solid var(--primary-accent);
     width: 40%;
     height: 2em;
     border-radius: 9px;
     font-family: 'Inter', sans-serif;
-    font-weight: 900;
+    font-weight: 700;
     font-size: 0.8em;
+    cursor: pointer;
+    transition: all 0.1s ease-in;
 }
 
 #fakebuy{
@@ -129,8 +148,14 @@
     height: 2em;
     border-radius: 9px;
     font-family: 'Inter', sans-serif;
-    font-weight: 900;
+    font-weight: 700;
     font-size: 0.8em;
+    cursor: pointer;
+    transition: all 0.1s ease-in;
+}
+
+#remove-all:hover, #fakebuy:hover{
+    transform: scale(0.95);
 }
 
 #separator{

@@ -9,6 +9,11 @@
   --button-text: #000000;
 }
 
+.leva-c-kWgxhW-bCBHqk-fill-false{
+  right: 50%;
+  transform: translateX(50%);
+}
+
 .crosshair {
   position: fixed;
   top: 50%;
@@ -31,6 +36,31 @@
   transform: translate(-50%, -50%) scale(2);
 }
 
+.crosshair-red-x{
+  background-color: rgb(130, 0, 0);
+  width: 1px;
+  height: 1px;
+}
+
+.crosshair-red-x::before,
+.crosshair-red-x::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 32px;
+  height: 4px;
+  background-color: rgb(130, 0, 0);
+  transform: translate(-50%, -50%);
+}
+
+.crosshair-red-x::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.crosshair-red-x::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
 
 .model-interaction-prompt {
   position: fixed;
@@ -151,7 +181,7 @@ product-sidebar .color-selection .color-option .radio-color:checked + label{
 .product-sidebar .product-quantity p{
   color: var(--primary-heading);
   font-size: 1.2em;
-  font-weight: 300;
+  font-weight: 700;
   margin: 0;
 }
 
@@ -173,6 +203,7 @@ product-sidebar .color-selection .color-option .radio-color:checked + label{
   width: 36px;
   text-align: center;
   font-family: 'Inter', sans-serif;
+  font-weight: 700;
   font-size: 1.3em;
   color: var(--primary-heading);
   border: none;
@@ -222,14 +253,14 @@ input[type="number"]::-webkit-outer-spin-button {
 .product-sidebar .product-cost p{
   color: var(--primary-heading);
   font-size: 1.2em;
-  font-weight: 300;
+  font-weight: 700;
   margin: 0;
 }
 
 .product-sidebar .product-cost .amount{
   color: var(--primary-heading);
   font-size: 1.5em;
-  font-weight: 500;
+  font-weight: 700;
   margin: 0;
 }
 
@@ -246,10 +277,12 @@ input[type="number"]::-webkit-outer-spin-button {
   border-radius: 9px;
   text-align: center;
   font-family: 'Inter', sans-serif;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 1.1em;
+  transition: all 0.1s ease-in;
 }
 
 .add-to-cart .add-btn:hover{
   cursor: pointer;
+  transform: scale(0.95);
 }
