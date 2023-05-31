@@ -2,7 +2,6 @@
 \subsection{Verifica della qualità dei processi\textsubscript{g}}
 In questa sezione vengono riportati i risultati dell'attività di verifica\textsubscript{g} effettuata relativa alla qualità del processo\textsubscript{g}.\\
 Per calcolare le seguenti misure abbiamo utilizzato le formule e le nozioni descritte nel documento di \textit{Norme di Progetto} e i dati redatti nel documento di \textit{Piano di Progetto}.\\
-La metrica di Code Coverage non è stata testata nello sviluppo del PoC\textsubscript{g} in quanto verrà eseguita successivamente in seguito ai Test nel codice del progetto.\\
 \begin{longtable}{ 
 		>{\centering}M{0.45\textwidth} 
 		>{\centering}M{0.17\textwidth}
@@ -15,21 +14,20 @@ La metrica di Code Coverage non è stata testata nello sviluppo del PoC\textsubs
 	\endfirsthead	
 	\endhead
 	
-	Planned Value & 8784,29 \euro & Superato\tabularnewline
-	Actual Cost & 7460 \euro & Superato\tabularnewline
-	Estimated at Completion & 12944,93 \euro & Superato\tabularnewline
-	Earned Value & 8490,07 \euro & Superato\tabularnewline
-	Estimated to Complete & 5484,93 \euro & Superato\tabularnewline
-	Cost Variance& 1030,07 \euro & Superato\tabularnewline
-	Schedule Variance & -3,46\% & Superato\tabularnewline
-	Budget Variance & 1324,29 \euro & Superato\tabularnewline
+	Planned Value & 13975 \euro & Superato\tabularnewline
+	Actual Cost & 11670 \euro & Superato\tabularnewline
+	Estimated at Completion & 12321,47 \euro & Superato\tabularnewline
+	Earned Value & 12323,53 \euro & Superato\tabularnewline
+	Estimated to Complete & 651,47 \euro & Superato\tabularnewline
+	Cost Variance& 1653,53 \euro & Superato\tabularnewline
+	Schedule Variance & -4,66\% & Superato\tabularnewline
+	Budget Variance & 2305 \euro & Superato\tabularnewline
 	Requirement Stability Index& 100\% & Superato\tabularnewline
-	Code coverage & - & Non testato\tabularnewline
+	Code coverage & 80\% & Superato\tabularnewline
 	Rischi non previsti & 0 & Superato\tabularnewline
-	Metriche soddisfatte & 90\% & Superato\tabularnewline
+	Metriche soddisfatte & 95,24\% & Superato\tabularnewline
 \end{longtable}
-\noindent Qui vengono riportati i grafici per varie metriche di processo\textsubscript{g} significative nei tre periodi identificati.
-Nei primi tre grafici viene rappresentato di quanto differisce ciascun valore da quello precedente per periodo.
+\noindent Qui vengono riportati i grafici per varie metriche di processo\textsubscript{g} significative nei periodi svolti. E' presente anche un secondo grafico per ogni metrica che rappresenta l'ultimo periodo in cui si è utilizzato il metodo Agile.
 \paragraph{Planned Value}
 \begin{center}
 \begin{figure}[H]
@@ -279,14 +277,16 @@ In questa sezione vengono riportati i risultati dell'attività di verifica\texts
 	\endfirsthead	
 	\endhead
 	Percentuale di requisiti soddisfatti& 100\% Obbligatori + 28\% Facoltativi  & Superato\tabularnewline
-	Densità di fallimenti durante l'esecuzione& 0\% & Superato\tabularnewline
+	Densità di fallimenti durante l'esecuzione& 15\% & Superato\tabularnewline
 	Tempo medio di risposta & minore di 1s & Superato\tabularnewline
 	Tempo di caricamento& 7 secondi & Superato\tabularnewline
 	Facilità di apprendimento& 90 secondi & Superato\tabularnewline
-	Densità dei commenti & 15,93\% & Superato\tabularnewline
+	Densità dei commenti & 11,05\% & Superato\tabularnewline
 	Browser supportati & 100\% & Superato\tabularnewline
 \end{longtable}
-\noindent Nella seguente tabella è stata calcolata la Complessità Ciclomatica del PoC\textsubscript{g}.
+\noindent Nella seguente tabella è stata calcolata la Complessità Ciclomatica del prodotto.\\
+Sono stati inseriti i metodi che presentavano punti decisionali.
+Avendo più metodi su ogni modulo è stato deciso di calcolare la media dei metodi per modulo.
 \begin{longtable}{ 
 		>{\centering}M{0.40\textwidth} 
 		>{\centering}M{0.15\textwidth}
@@ -298,18 +298,28 @@ In questa sezione vengono riportati i risultati dell'attività di verifica\texts
 	\headertitle{Esito} 	
 	\endfirsthead	
 	\endhead
-	Player.js & 2 & Superato\tabularnewline
-	Light.js & 1 & Superato\tabularnewline
-	Product.js & 1 & Superato\tabularnewline
-	Raycasting.js & 6 & Superato\tabularnewline
-	Renderer.js & 2 & Superato\tabularnewline
-	Showroom\_poc.js & 1 & Superato\tabularnewline
-	Source\_loader.js & 2 & Superato\tabularnewline
-	UI\_listeners.js & 1 & Superato\tabularnewline
+	Player.jsx & 6 & Superato\tabularnewline
+	Model.jsx & 5 & Superato\tabularnewline
+	ProductUI.jsx & 12 & Non superato\tabularnewline
+	pointerLock.jsx & 4 & Superato\tabularnewline
+	Flashlight.jsx & 3 & Superato\tabularnewline
+	Raycaster.jsx & 3 & Superato\tabularnewline
+	Decoration.jsx & 1,5 & Superato\tabularnewline
+	Cart.jsx & 2 & Superato\tabularnewline
+	Map.jsx & 1 & Superato\tabularnewline
+	useRaycasterLogic.jsx & 0 & Superato\tabularnewline
+	CartItem.jsx & 0 & Superato\tabularnewline
+	productSlice.js & 2 & Superato\tabularnewline
+	Crosshair.jsx & 2 & Superato\tabularnewline
+	Scene.jsx & 0 & Superato\tabularnewline
+	ProductInteractionPrompt.jsx & 0 & Superato\tabularnewline
+	Lights.jsx & 0 & Superato\tabularnewline
+	UI.jsx & 0 & Superato\tabularnewline
+	cartSlice.js & 0 & Superato\tabularnewline
 	
 \end{longtable}
 
-Il PoC\textsubscript{g} è stato testato sui seguenti browser:
+Il prodotto è stato testato sui seguenti browser:
 \begin{longtable}{ 
 		>{\centering}M{0.45\textwidth} 
 		>{\centering}M{0.25\textwidth} 
