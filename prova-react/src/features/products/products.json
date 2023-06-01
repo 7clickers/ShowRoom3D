@@ -1,55 +1,7 @@
 [
     {
     "id": "1",
-    "title": "Corallo A",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum.",
-    "price": 49.99,
-    "selectedColor": "red",
-    "variants": [
-        {
-            "colorName": "red",
-            "colorCode": "red"
-        },
-        {
-            "colorName": "blue",
-            "colorCode": "blue"
-        },
-        {
-            "colorName": "green",
-            "colorCode": "green"
-        }
-    ],
-    "modelURL": "./src/assets/models/coral_piece.glb",
-    "position": { "x": 10, "y": 0.25, "z": -1 },
-    "scale": "2"
-    },
-    {
-    "id": "2",
-    "title": "Corallo B",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum.",
-    "price": 49.99,
-    "selectedColor": "blue",
-    "variants": [
-        {
-            "colorName": "red",
-            "colorCode": "red"
-        },
-        {
-            "colorName": "blue",
-            "colorCode": "blue"
-        },
-        {
-            "colorName": "green",
-            "colorCode": "green"
-        }
-    ],
-    "modelURL": "./src/assets/models/coral_piece.glb",
-    "position": { "x": -2, "y": 0.25, "z": -11 },
-    "scale": "2"
-    },
-    {
-    "id": "3",
-    "title": "Corallo C",
+    "title": "Jesus",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum.",
     "price": 49.99,
     "selectedColor": "standard",
@@ -67,8 +19,152 @@
             "colorCode": "green"
         }
     ],
-    "modelURL": "./src/assets/models/coral_piece.glb",
-    "position": { "x": -8, "y": 0.25, "z": 8 },
-    "scale": "2"
-    } 
+    "modelURL": "./src/assets/models/jesus.glb",
+    "position": { "x": -9, "y": -1, "z": 4 },
+    "scale": "5"
+    },
+    {
+        "id": "2",
+        "title": "Corallo A",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum.",
+        "price": 9.99,
+        "selectedColor": "standard",
+        "variants": [
+            {
+                "colorName": "red",
+                "colorCode": "red"
+            },
+            {
+                "colorName": "blue",
+                "colorCode": "blue"
+            },
+            {
+                "colorName": "green",
+                "colorCode": "green"
+            }
+        ],
+        "modelURL": "./src/assets/models/purple_coral.glb",
+        "position": { "x": -25, "y": 0.25, "z": 1.5 },
+        "scale": "2"
+        },  
+    {
+        "id": "3",
+        "title": "Moai",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum.",
+        "price": 23.50,
+        "selectedColor": "standard",
+        "variants": [
+            {
+                "colorName": "red",
+                "colorCode": "red"
+            },
+            {
+                "colorName": "blue",
+                "colorCode": "blue"
+            },
+            {
+                "colorName": "green",
+                "colorCode": "green"
+            }
+        ],
+        "modelURL": "./src/assets/models/moai.glb",
+        "position": { "x": -14, "y": 0.25, "z": -12 },
+        "scale": "2"
+        },
+    {
+        "id": "4",
+        "title": "Corallo B",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum.",
+        "price": 2.99,
+        "selectedColor": "standard",
+        "variants": [
+            {
+                "colorName": "red",
+                "colorCode": "red"
+            },
+            {
+                "colorName": "blue",
+                "colorCode": "blue"
+            },
+            {
+                "colorName": "green",
+                "colorCode": "green"
+            }
+        ],
+        "modelURL": "./src/assets/models/coral_piece.glb",
+        "position": { "x": 2, "y": 0.25, "z": 7 },
+        "scale": "2"
+    },
+    {
+        "id": "5",
+        "title": "Alghe",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum.",
+        "price": 0.99,
+        "selectedColor": "standard",
+        "variants": [
+            {
+                "colorName": "red",
+                "colorCode": "red"
+            },
+            {
+                "colorName": "blue",
+                "colorCode": "blue"
+            },
+            {
+                "colorName": "green",
+                "colorCode": "green"
+            }
+        ],
+        "modelURL": "./src/assets/models/pianta.glb",
+        "position": { "x": 35, "y": 0.25, "z": 0 },
+        "scale": "8"
+    },
+    {
+        "id": "6",
+        "title": "Nave Pirata",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum.",
+        "price": 70.00,
+        "selectedColor": "standard",
+        "variants": [
+            {
+                "colorName": "red",
+                "colorCode": "red"
+            },
+            {
+                "colorName": "blue",
+                "colorCode": "blue"
+            },
+            {
+                "colorName": "green",
+                "colorCode": "green"
+            }
+        ],
+        "modelURL": "./src/assets/models/nave_pirata.glb",
+        "position": { "x": 53, "y": 0.25, "z": 4 },
+        "scale": "1.5"
+    },
+    {
+        "id": "7",
+        "title": "Teschio",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vestibulum.",
+        "price": 22.00,
+        "selectedColor": "standard",
+        "variants": [
+            {
+                "colorName": "red",
+                "colorCode": "red"
+            },
+            {
+                "colorName": "blue",
+                "colorCode": "blue"
+            },
+            {
+                "colorName": "green",
+                "colorCode": "green"
+            }
+        ],
+        "modelURL": "./src/assets/models/teschio.glb",
+        "position": { "x": 43, "y": 0.25, "z": 15 },
+        "scale": "2"
+    }
 ]
