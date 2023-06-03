@@ -20,8 +20,8 @@
         }
     ],
     "modelURL": "./src/assets/models/jesus.glb",
-    "position": { "x": -9, "y": -1, "z": 4 },
-    "scale": "5"
+    "position": { "x": -7, "y": -1, "z": 9 },
+    "scale": "3.5"
     },
     {
         "id": "2",
@@ -93,7 +93,7 @@
         ],
         "modelURL": "./src/assets/models/coral_piece.glb",
         "position": { "x": 2, "y": 0.25, "z": 7 },
-        "scale": "2"
+        "scale": "1.5"
     },
     {
         "id": "5",
@@ -117,7 +117,7 @@
         ],
         "modelURL": "./src/assets/models/pianta.glb",
         "position": { "x": 35, "y": 0.25, "z": 0 },
-        "scale": "8"
+        "scale": "2"
     },
     {
         "id": "6",
@@ -140,7 +140,7 @@
             }
         ],
         "modelURL": "./src/assets/models/nave_pirata.glb",
-        "position": { "x": 53, "y": 0.25, "z": 4 },
+        "position": { "x": 50, "y": 0.25, "z": 4 },
         "scale": "1.5"
     },
     {
@@ -164,7 +164,7 @@
             }
         ],
         "modelURL": "./src/assets/models/teschio.glb",
-        "position": { "x": 43, "y": 0.25, "z": 15 },
+        "position": { "x": 43, "y": 0, "z": 15 },
         "scale": "2"
     }
 ]
