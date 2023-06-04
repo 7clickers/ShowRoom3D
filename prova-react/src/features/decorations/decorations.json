@@ -1,8 +1,14 @@
 [
     {
         "id": "1",
-        "modelURL": "./src/assets/models/decors/anchor.glb",
-        "position": { "x": 13, "y": 0.25, "z": -13 },
-        "scale": "0.1"
+        "modelURL": "./src/assets/models/decors/ancora.glb",
+        "position": { "x": 40, "y": 0.25, "z": -12 },
+        "scale": "0.5"
+    },
+    {
+        "id": "2",
+        "modelURL": "./src/assets/models/decors/reed_coral.glb",
+        "position": { "x": 1, "y": 0, "z": -7 },
+        "scale": "0.2"
     }
 ]
