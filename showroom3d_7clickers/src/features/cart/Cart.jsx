@@ -29,7 +29,7 @@ const Cart = () =>{
                     return <li key={n}><CartItem name={cartitem.id} quantity={cartitem.quantity} price={cartitem.price} color={cartitem.color}/></li>
                 })}
             </ul>
-            <hr id="separator"/>
+            <hr id="separator-cart"/>
             <p id="total-cost">Total: {totalCost.toFixed(2)} €</p>
             <div id="group-cart">
                 <button id="remove-all" onClick={()=>dispatch(removeAllItems())}>Remove all</button>

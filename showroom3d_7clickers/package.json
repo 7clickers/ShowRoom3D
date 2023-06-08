@@ -13,6 +13,7 @@
     "@react-three/drei": "^9.65.3",
     "@react-three/fiber": "^8.12.0",
     "@reduxjs/toolkit": "^1.9.3",
+    "@testing-library/react-hooks": "^8.0.1",
     "gltfjsx": "^6.1.4",
     "jest-junit": "^16.0.0",
     "leva": "^0.9.34",
@@ -26,8 +27,10 @@
     "@babel/preset-env": "^7.21.5",
     "@babel/preset-react": "^7.18.6",
     "@rollup/plugin-url": "^8.0.1",
+    "@testing-library/dom": "^9.3.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react": "^3.1.0",
@@ -38,6 +41,10 @@
   "jest": {
     "transform": {
       "^.+\\.jsx?$": "babel-jest"
+    },
+    "moduleNameMapper": {
+      "\\.(css|less|sass|scss)$": "<rootDir>/styleMock.js",
+      "\\.(gif|ttf|eot|svg)$": "<rootDir>/fileMock.js"
     },
     "testEnvironment": "jsdom"
   }

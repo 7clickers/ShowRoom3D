@@ -1,10 +1,11 @@
 import { Provider } from 'react-redux';
 import { act } from 'react-dom/test-utils';
 import {describe, expect, it} from '@jest/globals';
-import { fireEvent,render,screen } from "@testing-library/react";
+import { fireEvent,getByText,render,screen} from "@testing-library/react";
 import React from "react";
 import store from '../src/app/Store'
-import ProductSidebar from "../src/features/UI/Product_UI/ProductSidebar";
+import userEvent from '@testing-library/user-event'
+import ProductSidebar from "../src/features/UI/Product_UI/ProductSidebar"
 import productsData from "../src/features/products/products.json";
 
 describe('ProductSidebar tests', () => { 
@@ -17,12 +18,12 @@ describe('ProductSidebar tests', () => {
         expect( product ).toHaveProperty('selectedColor','green');               
     });
     /* Test di Unità - ProductSidebar */
-    it('Should remove the selected color if the button with the current color is pressed, putting the standard color to the item',()=>{
+    it('Should remove the selected color if the button with the current color is pressed putting another color',()=>{
         act(() => { render(<Provider store={store}><ProductSidebar product={productsData[0]} isVisible={true}/></Provider>)});
-        const btn2 = screen.getByLabelText(productsData[0].selectedColor);
-        fireEvent.click(btn2);
-        const product = store.getState().product.products.find((product) => product.id === "1" );
-        expect( product ).toHaveProperty('selectedColor','standard');       
+        const btn = screen.getByLabelText("red");
+        fireEvent.click(btn);
+        const product2 = store.getState().product.products.find((product) => product.id === "1" );
+        expect( product2 ).toHaveProperty('selectedColor','red');
     });
     /* Test di Unità - ProductSidebar */
     it('Should add more then one quantity of the item selected',()=>{

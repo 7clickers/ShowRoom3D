@@ -1,3 +1,9 @@
+*{
+    margin:0em;
+    padding:0em;
+    box-sizing: border-box;
+}
+
 :root{
     --primary-bg: #252A2F;
     --lighter-bg: #31363a;
@@ -10,11 +16,6 @@
     --button-less-visible: #74808a;
 }
 
-*{
-    margin:0em;
-    padding:0em;
-    box-sizing: border-box;
-}
 
 .cart-item{
     display: flex;
@@ -120,8 +121,8 @@
     justify-content: center;
     color:var(--primary-heading);
     font-family: 'Inter', sans-serif;
-    font-weight: 900;
-    font-size: 1.0em;
+    font-weight: 1000;
+    font-size: 1.15em;
     margin-bottom: 1em;
 }
 
@@ -158,7 +159,7 @@
     transform: scale(0.95);
 }
 
-#separator{
-    margin-top: 1em;
+#separator-cart{
+    margin-top: 0.2em;
     margin-bottom: 1em;
 }

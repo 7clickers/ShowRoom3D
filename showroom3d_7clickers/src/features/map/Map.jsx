@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useGLTF } from "@react-three/drei";
 import useOctree from "../../common/useOctree";
-import useOctreeHelper from "../../common/useOctreeHelper";
 import Player from "../player/Player";
 import Lights from "../lights/Lights";
 import Models from "../products/Models";
@@ -31,19 +30,10 @@ export default function Map() {
 
   const { nodes, materials, scene } = useGLTF("src/assets/map/map_no_tunnel_texture.glb");
   const octree = useOctree(scene);
-  useOctreeHelper(octree);
   const colliders = useRef([]);
 
   return (
     <>
-      {/*  <group dispose={null}>
-        <mesh
-          receiveShadow
-          geometry={nodes.Landscape001.geometry}
-          material={nodes.Landscape001.material}
-          rotation={[0, 1.57, 0]}
-        />
-      </group> */}
       <group dispose={null}>
         <group
           position={[-9.95, 0, -29.29]}

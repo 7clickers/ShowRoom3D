@@ -7,8 +7,8 @@
     },
     {
         "id": "2",
-        "modelURL": "./src/assets/models/decors/reed_coral.glb",
+        "modelURL": "./src/assets/models/decors/newcoral.glb",
         "position": { "x": 1, "y": 0, "z": -7 },
-        "scale": "0.2"
+        "scale": "1.5"
     }
 ]
