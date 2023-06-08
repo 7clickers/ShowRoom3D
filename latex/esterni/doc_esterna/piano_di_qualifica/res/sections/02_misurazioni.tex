@@ -190,6 +190,7 @@ Per calcolare i seguenti valori non sono stati considerati: i changelog, la pagi
 	VE 23-04-05 & 60 & Superato\tabularnewline
 	VE 23-04-14 & 63 & Superato\tabularnewline
 	VE 23-05-12 & 64 & Superato\tabularnewline
+	VE 23-06-07 & 60 & Superato\tabularnewline
 	VI 22-10-25 & 74 & Superato\tabularnewline
 	VI 22-10-26 & 79 & Superato\tabularnewline
 	VI 22-11-04 & 63 & Superato\tabularnewline
@@ -404,7 +405,7 @@ TI2 & Si verifichi che un elemento nel carrello , se eliminato singolarmente, sc
 TI3 & Si verifichi che il bottone “Remove all” funzioni rimuovendo sia da Cart che da cartSlice tutti gli oggetti & S\tabularnewline
 TI4 & Si verifichi che il bottone “Remove all” funzioni anche se il carrello è vuoto & S\tabularnewline
 TI5 & Si verifichi che il cambio di colore nella Sidebar venga salvato & S\tabularnewline
-TI6 & Si verifichi che il colore ritorni a standard se viene deselezionata una modifica di colore & S\tabularnewline
+TI6 & Si verifichi che il colore modificato possa cambiare ulteriormente & S\tabularnewline
 TI7 & Si verifichi che venga aggiunto un oggetto al carrello dalla sidebar & S\tabularnewline
 TI8 & Si verifichi che venga aggiunta la quantità selezionata di un oggetto già presente nel carrello & S\tabularnewline
 \end{longtable}
@@ -554,7 +555,7 @@ TI2 & \_\_test\_\_/cart.test.js & it('Should stop rendering item in cart when cl
 TI3 & \_\_test\_\_/cart.test.js & it('Should stop rendering all items in cart when clicking "Remove all" button’)\{ … \}\tabularnewline
 TI4 & \_\_test\_\_/cart.test.js & it('Should try to remove the items and work even if cart is empty’)\{ … \}\tabularnewline
 TI5	& \_\_test\_\_/productSidebar.test.js & it('Should change the variable selectedColor to the product in example’)\{ … \}\tabularnewline
-TI6 & \_\_test\_\_/productSidebar.test.js & it('Should remove the selected color if the button with the current color is pressed, putting the standard color to the item’)\{ … \}\tabularnewline
+TI6 & \_\_test\_\_/productSidebar.test.js & it('Should remove the selected color if the button with the current color is pressed putting another color’)\{ … \}\tabularnewline
 TI7 & \_\_test\_\_/productSidebar.test.js & it('Should add an item to the cart’)\{ … \}\tabularnewline
 TI8 & \_\_test\_\_/productSidebar.test.js & it('Should add more than one quantity of the item to the cart, testing also if it adds the quantity to the item that is already in the cart’)\{ … \}\tabularnewline
 \end{longtable}
