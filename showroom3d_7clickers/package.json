@@ -13,7 +13,6 @@
     "@react-three/drei": "^9.65.3",
     "@react-three/fiber": "^8.12.0",
     "@reduxjs/toolkit": "^1.9.3",
-    "@testing-library/react-hooks": "^8.0.1",
     "gltfjsx": "^6.1.4",
     "jest-junit": "^16.0.0",
     "leva": "^0.9.34",
