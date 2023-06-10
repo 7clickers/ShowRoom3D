@@ -1,0 +1,284 @@
+:root{
+  --primary-bg: #252A2F;
+  --lighter-bg: #31363a;
+  --primary-accent: #44CFD4;
+  --accent-darker: #18AEB4;
+  --primary-heading: #FFFFFF;
+  --primary-subheading: rgba(255,255,255,0.8);
+  --primary-text: rgba(255,255,255,0.5);
+  --button-text: #000000;
+}
+
+.leva-c-kWgxhW-bCBHqk-fill-false{
+  right: 50%;
+  transform: translateX(50%);
+}
+
+.crosshair {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: white;
+  opacity: 0.8;
+  pointer-events: none;
+  z-index: 3;
+  transition: all 0.1s ease-in;
+  transform-origin: center;
+  transform: translate(-50%, -50%);
+}
+
+.crosshair-yellow {
+  background-color: rgb(255, 238, 0);
+  transition: all 0.15s ease-in;
+  transform: translate(-50%, -50%) scale(2);
+}
+
+.crosshair-red-x{
+  background-color: rgb(130, 0, 0);
+  width: 1px;
+  height: 1px;
+}
+
+.crosshair-red-x::before,
+.crosshair-red-x::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 32px;
+  height: 4px;
+  background-color: rgb(130, 0, 0);
+  transform: translate(-50%, -50%);
+}
+
+.crosshair-red-x::before {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.crosshair-red-x::after {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.model-interaction-prompt {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(30, 60, 90, 0.8);
+  font-family: 'Inter', sans-serif;
+  color: var(--primary-heading);
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-align: center;
+  z-index: 2;
+}
+
+.product-sidebar{
+  position: fixed;
+  left: 0;
+  top: 0;
+  transform: translateX(-100%);
+  display: flex;
+  flex-direction: column;
+  gap: 1.65em;
+  background-color: var(--primary-bg);
+  width: 22.5%;
+  height: 100%;
+  z-index: 9999;
+  font-family: 'Inter', sans-serif;
+  padding: 1em 2em;
+  transition: all 0.15s ease-in;
+}
+
+.product-sidebar.visible{
+  transform: translateX(0);
+  transition: all 0.2s ease-in-out;
+}
+
+.product-sidebar .general-info .product-title{
+  color: var(--primary-heading);
+  font-size: 1.7em;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.product-sidebar .general-info .product-desc{
+  color: var(--primary-subheading);
+  font-size: 1em;
+  font-weight: 200;
+}
+
+.product-sidebar .general-info .product-specs .product-dimensions,
+.product-sidebar .general-info .product-specs .product-weight{
+  color: var(--primary-text);
+  font-weight: 200;
+  font-size: 0.85em;
+  margin: 0;
+}
+
+.product-sidebar .color-selection{
+  
+}
+
+.product-sidebar .color-selection p{
+  color: var(--primary-subheading);
+  font-weight: 200;
+}
+
+.product-sidebar .color-selection .color-option{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--lighter-bg);
+  padding: 1.2em 1.6em;
+  border-radius: 9px;
+  margin: 6px 0;
+}
+
+.product-sidebar .color-selection .color-option label{
+  color: var(--primary-text);
+  font-size: 1em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.product-sidebar .color-selection .color-option .radio-color{
+  appearance: none;
+  width: 24px;
+  height: 24px;
+  border: 3.2px solid var(--primary-text);
+  opacity: 0.5;
+  border-radius: 50%;
+  outline: none;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.product-sidebar .color-selection .color-option .radio-color:checked{
+  background-color: var(--accent-darker);
+  border-color: var(--primary-accent);
+  opacity: 1;
+}
+
+product-sidebar .color-selection .color-option .radio-color:checked + label{
+  color: var(--primary-heading);
+}
+
+.product-sidebar .color-selection .color-option .radio-color:focus{
+  opacity: 1;
+}
+
+.product-sidebar .product-quantity{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-sidebar .product-quantity p{
+  color: var(--primary-heading);
+  font-size: 1.2em;
+  font-weight: 700;
+  margin: 0;
+}
+
+.product-sidebar .product-quantity .quantity-number-input {
+  display: flex;
+  background-color: var(--lighter-bg);
+  border-radius: 9px;
+  padding: 4px 8px;
+}
+
+.product-sidebar .product-quantity .quantity-number-input button {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 1.2em;
+  color: var(--primary-accent);
+}
+
+.product-sidebar .product-quantity .number-input {
+  width: 36px;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1.3em;
+  color: var(--primary-heading);
+  border: none;
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+  -ms-appearance: textfield;
+  background-color: transparent;
+}
+
+.decrement,
+.increment {
+  background-color: transparent;
+  border: 1px solid transparent;
+  font-size: 18px;
+  padding: 4px;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+}
+
+.decrement:hover,
+.increment:hover {
+  background-color: #e1e1e1;
+}
+
+.decrement:active,
+.increment:active {
+  background-color: #d1d1d1;
+}
+
+/* Hide default number input arrows for all browsers */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+
+.product-sidebar .product-cost{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product-sidebar .product-cost p{
+  color: var(--primary-heading);
+  font-size: 1.2em;
+  font-weight: 700;
+  margin: 0;
+}
+
+.product-sidebar .product-cost .amount{
+  color: var(--primary-heading);
+  font-size: 1.5em;
+  font-weight: 700;
+  margin: 0;
+}
+
+.add-to-cart .add-btn{
+  border: none;
+  background-color: var(--primary-accent);
+  color: var(--button-text);
+  width: 100%;
+  padding: 12px 0;
+  border-radius: 9px;
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 1.1em;
+  transition: all 0.1s ease-in;
+}
+
+.add-to-cart .add-btn:hover{
+  cursor: pointer;
+  transform: scale(0.95);
+}

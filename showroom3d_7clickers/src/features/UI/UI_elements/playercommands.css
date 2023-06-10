@@ -1,0 +1,38 @@
+#container{
+    position: absolute;
+    background-color: #252A2F;
+    padding: 1em;
+    border-radius: 1em;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+}
+
+
+#command-title{
+    display: flex;
+    justify-content: center;
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    color: #FFFFFF;
+    font-family: 'Inter', 'sans-serif';
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+#separator{
+    margin-top: 0.7em;
+    margin-bottom: 0.7em;
+}
+
+.command-line{
+    margin-bottom:0.2em;
+    color: rgba(255,255,255,0.8);
+    font-family: 'Inter', 'sans-serif';
+    font-weight: 400;
+    font-size: 0.9em;
+}
+
+.highlight{
+    color: #44CFD4;
+}
