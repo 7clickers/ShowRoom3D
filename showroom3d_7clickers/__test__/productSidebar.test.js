@@ -4,7 +4,6 @@ import {describe, expect, it} from '@jest/globals';
 import { fireEvent,getByText,render,screen} from "@testing-library/react";
 import React from "react";
 import store from '../src/app/Store'
-import userEvent from '@testing-library/user-event'
 import ProductSidebar from "../src/features/UI/Product_UI/ProductSidebar"
 import productsData from "../src/features/products/products.json";
 
