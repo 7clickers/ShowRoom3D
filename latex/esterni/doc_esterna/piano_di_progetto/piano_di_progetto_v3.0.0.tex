@@ -1,0 +1,54 @@
+\documentclass[a4paper]{article}
+\usepackage[normalem]{ulem}
+\usepackage{eurosym}
+\usepackage[font=small,labelfont=bf]{caption}
+
+% impostazioni generali
+\input{../../../template/package.tex}
+
+% dati relativi alla prima pagina
+\input{config/titlepage_input.tex} % editare questo
+
+\makeindex
+
+\makeatletter
+\renewcommand\paragraph{
+\@startsection {paragraph}{4}{0mm}{-\baselineskip}{.5\baselineskip}{\normalfont \normalsize \bfseries }}
+\makeatother
+
+\begin{document}
+
+% Prima pagina
+\input{../../../template/titlepage.tex}
+
+% Diario delle modifiche
+\input{../../../template/changelog.tex}
+\input{config/changelog_input.tex} % editare questo
+\pagebreak
+
+% Indice
+{
+    \hypersetup{linkcolor=black}
+    \tableofcontents
+    \listoffigures %elenco figure
+    \listoftables  %elenco tabelle
+}
+\pagebreak
+
+% sezioni comuni 
+% Informazioni generali
+\input{res/sections/01_Analisi_dei_rischi.tex}
+\pagebreak
+\input{res/sections/02_modello_di_sviluppo_iniziale.tex}
+\pagebreak
+\input{res/sections/03_modello_di_sviluppo_attuale.tex}
+\pagebreak
+\input{res/sections/04_pianificazione.tex}
+\pagebreak
+\input{res/sections/05_Preventivo.tex}
+\pagebreak
+\input{res/sections/06_consuntivo.tex}
+\pagebreak
+\input{res/sections/07_attualizzazione_rischi.tex}
+\pagebreak
+\end{document}

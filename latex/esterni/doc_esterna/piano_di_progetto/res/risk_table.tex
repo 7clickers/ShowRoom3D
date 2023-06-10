@@ -1,0 +1,27 @@
+\newcommand{\riskTable}[1]{
+	 
+
+\renewcommand{\arraystretch}{1.5}
+\rowcolors{2}{pari}{dispari}
+\begin{longtable}{ 
+		>{\centering}M{0.2\textwidth} 
+		>{\raggedright}M{0.3\textwidth} 
+		>{\centering}M{0.07\textwidth}
+		>{\centering}M{0.1\textwidth}
+		>{\raggedright}M{0.20\textwidth} 
+		 }
+	\rowcolorhead
+	\headertitle{Nome} &
+	\headertitle{Descrizione} &
+	\centering \headertitle{Prob.} &	
+	\headertitle{Pericolo} &
+	\headertitle{Precauzioni}
+	\endfirsthead	
+	\endhead
+	
+	#1
+
+\end{longtable}
+\vspace{0.2em}
+
+}

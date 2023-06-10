@@ -1,0 +1,29 @@
+\subsubsection{Verifica\textsubscript{g} della documentazione}
+\label{verifica_documentazione} 
+La verifica\textsubscript{g} viene svolta da due verificatori prima del merge con il branch documentation all'apertura di una pull request.
+Il primo verificatore sarà quello che esaminerà il documento seguendo una checklist. Il documento verrà esaminato a partire dalle modifiche fatte dopo l'ultima versione verificata, 
+deducibili tramite il registro delle modifiche.
+\\\\
+La verifica\textsubscript{g} di un documento prevede di seguire la seguente checklist:
+\begin{itemize}
+    \item Lettura esplorativa del testo;
+    \item Seconda lettura del testo per capirne meglio i concetti esposti;
+    \item Segnalare i concetti poco chiari o errati;
+    \item Valutare se il testo è organizzato in maniera opportuna ed eventualmente suggerire un'alternativa migliore;
+    \item Valutare se ci sono parti mancanti ed eventualmente segnalarne la mancanza;
+    \item Segnalare errori grammaticali;
+    \item Segnalare le parti che non rispettano le \textit{Norme di Progetto} riguardanti la stesura del documento;
+    \item Segnalare i termini che sono contenuti anche nel \textit{Glossario} a cui non sono stati inseriti i pedici "g";
+    \item Segnalare i nomi dei documenti che non sono stati scritti seguendo la convenzione;
+    \item Segnalare le parti del registro delle modifiche mancanti o che non sono state compilate correttamente seguendo le \textit{Norme di Progetto};
+    \item Segnalare errori nell'intestazione del documento.
+\end{itemize}
+In caso non ci sia nulla da segnalare il verificatore dovrà spuntare come approvata la Pull Request nella sezione 
+dedicata su GitHub\textsubscript{g}. 
+A questo punto se un secondo verificatore noterà la necessità di qualche altro cambiamento da apportare lo segnalerà a 
+chi ha fatto la stesura, se invece ritiene che il documento è corretto dovrà:
+\begin{itemize}
+    \item Creare la riga nel registro delle modifiche, nel file changelog\_input.tex, inserendo la nuova versione secondo le regole di versionamento, i nomi dei verificatori e in descrizione "Verifica\textsubscript{g}";
+    \item Spuntare come approvata la Pull Request nella sezione dedicata su GitHub\textsubscript{g};
+    \item Confermare il merge secondo le norme descritte nella sezione \fullref{Pull_Requests}.
+\end{itemize}

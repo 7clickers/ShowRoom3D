@@ -1,0 +1,39 @@
+\documentclass[a4paper]{article}
+\usepackage[normalem]{ulem}
+\usepackage{eurosym}
+
+% impostazioni generali
+\input{../../../template/package.tex}
+
+% dati relativi alla prima pagina
+\input{config/titlepage_input.tex} % editare questo
+
+\makeindex
+
+\begin{document}
+\counterwithin{table}{section}  
+
+% Prima pagina
+\input{../../../template/titlepage.tex}
+
+% Diario delle modifiche
+\input{../../../template/changelog.tex}
+\input{config/changelog_input.tex} % editare questo
+\pagebreak
+
+
+% indice
+\renewcommand{\contentsname}{Indice}
+ \hypersetup{linkcolor=black}
+\tableofcontents
+\pagebreak
+\setcounter{tocdepth}{2} %l'indice basta quello alfabetico
+\setcounter{secnumdepth}{0}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{1}} % per nascondere i subsubsection dall'indice
+% Indice
+
+\pagebreak
+\input{res/sections/01_alphabetical_order.tex}
+
+
+\end{document}

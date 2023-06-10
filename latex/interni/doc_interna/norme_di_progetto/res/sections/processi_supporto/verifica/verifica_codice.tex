@@ -1,0 +1,75 @@
+\subsubsection{Verifica del codice}
+L'attività di analisi dinamica del codice si concretizza con lo sviluppo e l'utillizzo dei test. I test servono per assicurare un certo comportamento delle componenti oppure dell'intera applicazione. Esistono più tipi di test ed ogni tipologia va a controllare aspetti diversi del software, nello specifico:
+\begin{itemize}
+    \item \textit{Test di unità}:  è il tipo di test che verifica se i singoli moduli funzionano correttamente. L'obiettivo principale del test unitario è identificare, analizzare e correggere i difetti in ciascuna unità isolandola dal sistema. É compito del programmatore che implementa un modulo di scrivere il test di unità corrispondente. Inoltre i test di unità devono rispettare la struttura AAA che prevede di dividere il test in queste 3 parti:
+	\begin{itemize}
+		\item \textit{Arrange}: si prepara l'oggetto e i prerequisiti del test;
+		\item \textit{Act}: si svolge l'effettiva componente da testare;
+		\item \textit{Assert}: si verifica che i risultati ottenuti nella fase di Act corrispondano ai risultati attesi.
+	\end{itemize}
+    \item \textit{Test di integrazione}: è il tipo di test che verifica che i moduli già testati singolarmente si comportino correttamente anche quando interagiscono tra di loro;
+    \item \textit{Test di regressione}: è il tipo di test che verifica che dopo l'aggiunta di una nuova feature il codice complessivo non perda di qualità, ovvero che le componenti già integrate continuino a comportarsi nel modo atteso;
+    \item \textit{Test di sistema}:  è il tipo di test che verifica l'intero comportamento del sistema. In particolare controlla che i requisiti necessari vengano soddisfatti;
+    \item \textit{Test di accettazione}:  è il tipo di test che verifica che l'applicazione nel suo complesso soddisfi pienamente i requisiti dal punto di vista strettamente funzionale. Viene effettuato alla fine dello sviluppo dell'applicazione, quando ha già superato tutti gli altri test, e ne precede il rilascio.
+\end{itemize}
+Ogni test è caratterizzato dei seguenti parametri:
+\begin{itemize}
+	\item \textbf{ambiente}: sistema hardware e software sul quale verrà eseguito il test;
+	\item \textbf{stato iniziale}: stato iniziale dal quale il test viene eseguito;
+	\item \textbf{input}: dati in ingresso immessi;
+	\item \textbf{output}: dati in uscita attesi; 
+	\item\textbf{istruzioni aggiuntive}: ulteriori istruzioni su come deve essere eseguito il test e su come interpretare i risultati ottenuti.
+\end{itemize}
+Per ottenere un buon test è necessario :
+\begin{itemize}
+	\item che sia ripetibile;
+	\item che specifichi l'ambiente di esecuzione;
+	\item che indichi input e output richiesti;
+	\item che in caso di fallimento fornisca informazioni sul motivo di quest'ultimo tramite una serie di eccezioni che devono essere previste nella scrittura del test.
+\end{itemize}
+
+
+\paragraph{Codice identificativo}
+I test vengono identificati tramite un codice così definito:
+
+\begin{center} \textbf{T[tipo][codice identificativo]} \end{center}
+
+Dove il codice identificativo è un numero univoco e il tipo può essere:
+\begin{itemize}
+	\item \textbf{U}: test di unità;
+	\item \textbf{I}: test di integrazione;
+	\item \textbf{R}: test di regressione;
+	\item \textbf{S}: test di sistema;
+	\item \textbf{A}: test di accettazione.
+\end{itemize}
+
+\paragraph{Continuous Integration}
+I test verranno svolti secondo il workflow della CI (Continuous Integration) che prevede che venga effettuata la build del codice ogni volta che viene eseguito un commit nella repository, durante la quale avviene anche l'esecuzione automatica di tutti i test implementati.\\
+Nel caso in cui la build dovesse fallire sarà necessario trovare la causa del fallimento con la massima priorità e in caso non fosse possibile identificarla in poco tempo è necessario ripristinare la repository all'ultimo commit nel quale la build aveva avuto successo.\\
+Per evitare quindi di perdere grosse porzioni di lavoro, è buona prassi svolgere commit frequenti, di portata non eccessiva.
+La buona implementazione di questa pratica garantisce che il codice all'interno della repository sia sempre funzionante.
+
+\paragraph{Procedimento di verifica del software}
+Qui vengono riportate le varie casistiche che posso scaturire durante la fase di test, e il modo in cui comportarsi a seguito del loro successo o fallimento:
+\begin{itemize}
+	\item Il programmatore apporta cambiamenti alla repository effettuando un commit;
+	\item Viene eseguita la build dell'intera applicazione tramite il processo di CI:
+		\begin{itemize}
+		\item Se la build ha successo si passa al punto successivo;
+		\item Se la build fallisce il programmatore cerca di correggere l'errore nel codice e se non ci riesce ritorna all'ultimo commit in cui il codice è verificato;
+		\end{itemize}
+	\item Vengono eseguiti i test:
+		\begin{itemize}
+		\item Se tutti i test hanno successo si passa al punto successivo;
+		\item Se almeno un test fallisce il programmatore cerca di correggere l'errore nel codice e se non ci riesce ritorna all'ultimo commit in cui il codice è verificato;
+		\end{itemize}
+	\item Vengono calcolate in automatico la copertura del codice e le metriche riguardanti la codifica
+	\item Vengono registrati i valori nel cruscotto di qualità.
+\end{itemize}
+
+\paragraph{Strumenti}
+\begin{itemize}
+	\item Per l'attività di analisi statica si utilizza SonarCloud, un software configurabile ed integrabile con le Action di Github che permette di controllare la qualità del codice;
+	\item Per l'attività di analisi dinamica si utilizza Cypress, un software integrabile con le Action di GitHub che facilità la scrittura dei test;
+	\item Per l'implementazione del workflow CI vengono usate le Action messe a disposizione di GitHub, configurabili tramite un file .yml oppure .yaml.
+\end{itemize}
