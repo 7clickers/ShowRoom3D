@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import "../ui.css";
+import "../ui.css"
 
 const Crosshair = () => {
   const intersectedProductID = useSelector(

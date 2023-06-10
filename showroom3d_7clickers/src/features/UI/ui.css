@@ -264,10 +264,6 @@ input[type="number"]::-webkit-outer-spin-button {
   margin: 0;
 }
 
-.add-to-cart{
-
-}
-
 .add-to-cart .add-btn{
   border: none;
   background-color: var(--primary-accent);

@@ -1,6 +1,5 @@
 import { useRef, useEffect } from "react";
 import { useGLTF } from "@react-three/drei";
-import { useSelector } from 'react-redux';
 import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader';
 
 const Model = ({ product, onRendered, octree }) => {
@@ -43,8 +42,8 @@ const Model = ({ product, onRendered, octree }) => {
     clonedScene.traverse((child) => {
       if (child.isMesh) {
         child.productID = product.id;
-        child.castShadow = true;
-        child.receiveShadow = true;
+        child.castShadow = false;
+        child.receiveShadow = false;
       }
     });
   }, [clonedScene, product.id]);

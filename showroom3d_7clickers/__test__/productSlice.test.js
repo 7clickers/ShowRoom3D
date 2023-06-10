@@ -1,12 +1,8 @@
 import { fireEvent,render,screen } from "@testing-library/react";
 import React from "react";
 import store from '../src/app/Store'
-import { productSlice,setSelectedColor,selectedColorSelector } from "../src/features/products/productSlice";
-import { Provider } from 'react-redux';
-import { act } from 'react-dom/test-utils';
+import { productSlice,setSelectedColor} from "../src/features/products/productSlice";
 import {describe, expect, it} from '@jest/globals';
-import ProductSidebar from "../src/features/UI/Product_UI/ProductSidebar";
-import productsData from "../src/features/products/products.json";
 
 
 describe('productSlice tests', () => {
